@@ -1,4 +1,4 @@
-export type EnvironmentKey = "local" | "dev" | "stg" | "prod";
+export type EnvironmentKey = "local" | "dev" | "stg" | "prd";
 
 export type Environment = {
   key: EnvironmentKey;
@@ -23,7 +23,7 @@ export const environments: Environment[] = [
     url: process.env.NEXT_PUBLIC_APP_URL_STG ?? "",
   },
   {
-    key: "prod",
+    key: "prd",
     label: "Production",
     url: process.env.NEXT_PUBLIC_APP_URL_PRD ?? "",
   },
@@ -33,7 +33,10 @@ export function detectCurrentEnvironment(origin: string): EnvironmentKey {
   const normalize = (url: string) => url.replace(/\/$/, "");
   const current = normalize(origin);
 
-  if (current.startsWith("http://localhost") || current.startsWith("http://127.0.0.1")) {
+  if (
+    current.startsWith("http://localhost") ||
+    current.startsWith("http://127.0.0.1")
+  ) {
     return "local";
   }
 
