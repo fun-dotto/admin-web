@@ -1,7 +1,7 @@
 packages: []
 allowBuilds:
   "@firebase/util": false
-  msw: false
+  esbuild: false
   protobufjs: false
   sharp: false
   unrs-resolver: false
