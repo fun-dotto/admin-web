@@ -18,8 +18,16 @@ const authMiddleware: Middleware = {
 
     if (typeof window !== "undefined") {
       // クライアントサイド: Firebase Authからトークンを取得
-      const { auth } = await import("@/lib/firebase");
+      const [{ getToken }, { appCheck, auth }] = await Promise.all([
+        import("firebase/app-check"),
+        import("@/lib/firebase"),
+      ]);
       token = await auth.currentUser?.getIdToken();
+
+      if (appCheck) {
+        const appCheckToken = await getToken(appCheck);
+        request.headers.set("X-Firebase-AppCheck", appCheckToken.token);
+      }
     } else {
       // サーバーサイド: Cookieからトークンを取得
       const { cookies } = await import("next/headers");
