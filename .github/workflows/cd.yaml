@@ -43,7 +43,7 @@ jobs:
           echo "Environment: $TARGET_ENVIRONMENT"
 
           # Service name suffix
-          if [ "$TARGET_ENVIRONMENT" = "prod" ]; then
+          if [ "$TARGET_ENVIRONMENT" = "prd" ]; then
             export SERVICE_NAME_SUFFIX=""
           else
             export SERVICE_NAME_SUFFIX="-$TARGET_ENVIRONMENT"
