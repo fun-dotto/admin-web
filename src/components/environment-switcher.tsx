@@ -2,7 +2,7 @@
 
 import { Check, ChevronsUpDown } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import {
   DropdownMenu,
@@ -24,11 +24,11 @@ import {
 } from "@/lib/environments";
 
 export function EnvironmentSwitcher() {
-  const [currentKey, setCurrentKey] = useState<EnvironmentKey>("local");
-
-  useEffect(() => {
-    setCurrentKey(detectCurrentEnvironment(window.location.origin));
-  }, []);
+  const [currentKey] = useState<EnvironmentKey>(() =>
+    typeof window === "undefined"
+      ? "local"
+      : detectCurrentEnvironment(window.location.origin),
+  );
 
   const currentEnv =
     environments.find((env) => env.key === currentKey) ?? environments[0];
@@ -39,7 +39,7 @@ export function EnvironmentSwitcher() {
     if (target.key === currentKey) return;
 
     const { pathname, search, hash } = window.location;
-    window.location.href = `${target.url.replace(/\/$/, "")}${pathname}${search}${hash}`;
+    window.location.assign(`${target.url.replace(/\/$/, "")}${pathname}${search}${hash}`);
   };
 
   return (
