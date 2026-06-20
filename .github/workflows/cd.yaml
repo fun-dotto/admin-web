@@ -90,8 +90,7 @@ jobs:
           --build-arg NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=${{ secrets.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID }} \
           --build-arg NEXT_PUBLIC_APP_URL_DEV=${{ vars.NEXT_PUBLIC_APP_URL_DEV }} \
           --build-arg NEXT_PUBLIC_APP_URL_STG=${{ vars.NEXT_PUBLIC_APP_URL_STG }} \
-          --build-arg NEXT_PUBLIC_APP_URL_QA=${{ vars.NEXT_PUBLIC_APP_URL_QA }} \
-          --build-arg NEXT_PUBLIC_APP_URL_PROD=${{ vars.NEXT_PUBLIC_APP_URL_PROD }}
+          --build-arg NEXT_PUBLIC_APP_URL_PRD=${{ vars.NEXT_PUBLIC_APP_URL_PRD }}
       - name: Authenticate
         id: auth
         uses: google-github-actions/auth@v3

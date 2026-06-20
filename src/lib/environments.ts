@@ -1,4 +1,4 @@
-export type EnvironmentKey = "local" | "dev" | "stg" | "qa" | "prod";
+export type EnvironmentKey = "local" | "dev" | "stg" | "prod";
 
 export type Environment = {
   key: EnvironmentKey;
@@ -23,14 +23,9 @@ export const environments: Environment[] = [
     url: process.env.NEXT_PUBLIC_APP_URL_STG ?? "",
   },
   {
-    key: "qa",
-    label: "QA",
-    url: process.env.NEXT_PUBLIC_APP_URL_QA ?? "",
-  },
-  {
     key: "prod",
     label: "Production",
-    url: process.env.NEXT_PUBLIC_APP_URL_PROD ?? "",
+    url: process.env.NEXT_PUBLIC_APP_URL_PRD ?? "",
   },
 ];
 
