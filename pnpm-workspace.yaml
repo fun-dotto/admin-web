@@ -1,5 +1,3 @@
-packages: []
-
 onlyBuiltDependencies:
   - "@firebase/util"
   - esbuild
