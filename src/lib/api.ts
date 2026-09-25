@@ -1,13 +1,26 @@
 import createClient, { type Middleware } from "openapi-fetch";
 import type { paths } from "@/types/openapi";
 
+async function readBody(body: Request | Response): Promise<unknown> {
+  const text = await body.clone().text();
+  if (!text) return undefined;
+  try {
+    return JSON.parse(text);
+  } catch {
+    return text;
+  }
+}
+
 const loggingMiddleware: Middleware = {
   async onRequest({ request }) {
-    console.log(`[API Request] ${request.method} ${request.url}`);
+    console.log(`[API Request] ${request.method} ${request.url}`, await readBody(request));
     return request;
   },
   async onResponse({ request, response }) {
-    console.log(`[API Response] ${request.method} ${request.url} -> ${response.status}`);
+    console.log(
+      `[API Response] ${request.method} ${request.url} -> ${response.status}`,
+      await readBody(response),
+    );
     return response;
   },
 };
