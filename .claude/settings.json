@@ -1,16 +1,11 @@
 {
   "defaultMode": "default",
-  "enabledMcpjsonServers": [
-    "dotto-figma",
-    "dotto-notion"
-  ],
+  "enabledMcpjsonServers": ["dotto-figma", "dotto-notion"],
   "enabledPlugins": {
-    "chrome-devtools-mcp@chrome-devtools-plugins": true,
-    "code-review@claude-plugins-official": true,
+    "chrome-devtools-mcp@claude-plugins-official": true,
     "codex@openai-codex": true,
     "context7@claude-plugins-official": true,
-    "firebase@firebase": true,
-    "pr-review-toolkit@claude-plugins-official": true
+    "firebase@firebase": true
   },
   "permissions": {
     "allow": [
@@ -124,12 +119,6 @@
       "Read(**/.env)",
       "Read(**/.env.*)",
       "Read(**/.envrc)",
-      "Write(**/.env)",
-      "Write(**/.env.*)",
-      "Write(**/.envrc)",
-      "Write(**/.claude/settings.json)",
-      "Write(**/.claude/settings.local.json)",
-      "Write(**/.codex/config.toml)",
       "mcp__plugin_firebase_firebase__auth_get_users",
       "mcp__plugin_firebase_firebase__auth_set_sms_region_policy",
       "mcp__plugin_firebase_firebase__auth_update_user",
