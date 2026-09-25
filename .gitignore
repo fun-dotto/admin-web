@@ -46,5 +46,4 @@ firebase-adminsdk-key.json
 .open-next/
 src/types/openapi.d.ts
 
-.claude/worktrees/
-
+mise.local.toml
