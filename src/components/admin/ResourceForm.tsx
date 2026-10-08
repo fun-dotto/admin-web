@@ -3,6 +3,7 @@ import { Button } from "#/components/ui/button";
 import type { FieldSpec, FormValues } from "#/lib/admin/fields";
 import { cn } from "#/lib/utils";
 import { ResourceFormField } from "./ResourceFormField";
+import type { ReferenceOptionsState } from "./ResourceReferenceField";
 
 export type ResourceFormProps = Omit<
 	React.ComponentProps<"form">,
@@ -13,6 +14,8 @@ export type ResourceFormProps = Omit<
 	submitLabel?: string;
 	submitting?: boolean;
 	error?: string;
+	/** 参照フィールドの選択肢 (フィールド名ごと) */
+	references?: Record<string, ReferenceOptionsState>;
 	onSubmit: (values: FormValues) => void;
 	onCancel?: () => void;
 };
@@ -41,6 +44,7 @@ export function ResourceForm({
 	submitLabel = "保存",
 	submitting,
 	error,
+	references,
 	onSubmit,
 	onCancel,
 	className,
@@ -64,6 +68,7 @@ export function ResourceForm({
 					spec={field}
 					defaultValue={defaultValues[field.name]}
 					disabled={submitting}
+					reference={references?.[field.name]}
 				/>
 			))}
 			{error && (

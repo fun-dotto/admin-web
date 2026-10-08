@@ -12,6 +12,7 @@ export type FieldKind =
 	| "timestamp"
 	| "date"
 	| "enum"
+	| "reference"
 	| "json";
 
 export type FieldOption = { value: string; label: string };
@@ -23,7 +24,11 @@ export type FieldSpec = {
 	kind: FieldKind;
 	required: boolean;
 	options?: FieldOption[];
+	/** kind が reference のときの参照先リソース */
+	reference?: FieldReference;
 };
+
+export type FieldReference = { slug: string; label: string };
 
 export type FormValues = Record<string, string | boolean>;
 
@@ -87,14 +92,27 @@ function toFieldSpec(field: DescField): FieldSpec {
 	}
 }
 
+export type FieldSpecOptions = {
+	exclude?: string[];
+	/** 別リソースの ID を持つフィールドの参照先を返す */
+	resolveReference?: (fieldName: string) => FieldReference | undefined;
+};
+
 export function getFieldSpecs(
 	message: DescMessage,
-	options: { exclude?: string[] } = {},
+	options: FieldSpecOptions = {},
 ): FieldSpec[] {
 	const exclude = new Set([...hiddenFieldNames, ...(options.exclude ?? [])]);
 	return message.fields
 		.filter((field) => !exclude.has(field.name))
-		.map(toFieldSpec);
+		.map((field) => {
+			const spec = toFieldSpec(field);
+			const reference =
+				spec.kind === "string"
+					? options.resolveReference?.(field.name)
+					: undefined;
+			return reference ? { ...spec, kind: "reference", reference } : spec;
+		});
 }
 
 const pad = (value: number) => String(value).padStart(2, "0");

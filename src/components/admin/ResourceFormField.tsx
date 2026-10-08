@@ -10,11 +10,17 @@ import {
 } from "#/components/ui/select";
 import { Textarea } from "#/components/ui/textarea";
 import type { FieldSpec } from "#/lib/admin/fields";
+import {
+	type ReferenceOptionsState,
+	ResourceReferenceField,
+} from "./ResourceReferenceField";
 
 export type ResourceFormFieldProps = {
 	spec: FieldSpec;
 	defaultValue?: string | boolean;
 	disabled?: boolean;
+	/** kind が reference のときの選択肢 */
+	reference?: ReferenceOptionsState;
 };
 
 const inputTypes = {
@@ -28,6 +34,7 @@ export function ResourceFormField({
 	spec,
 	defaultValue,
 	disabled,
+	reference,
 }: ResourceFormFieldProps) {
 	const id = `field-${spec.name}`;
 
@@ -53,7 +60,18 @@ export function ResourceFormField({
 				{spec.label}
 				{spec.required && <span className="text-destructive">*</span>}
 			</Label>
-			{spec.kind === "enum" ? (
+			{spec.kind === "reference" ? (
+				<ResourceReferenceField
+					id={id}
+					name={spec.name}
+					resourceLabel={spec.reference?.label ?? spec.label}
+					options={reference?.options ?? []}
+					loading={reference?.loading}
+					error={reference?.error}
+					defaultValue={textValue}
+					disabled={disabled}
+				/>
+			) : spec.kind === "enum" ? (
 				<Select
 					name={spec.name}
 					defaultValue={textValue || undefined}

@@ -1,13 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
-import { expect, fn, userEvent, within } from "storybook/test";
-import { sampleFields } from "./fixtures";
+import { expect, fn, screen, userEvent, within } from "storybook/test";
+import { sampleFields, sampleReferences } from "./fixtures";
 import { ResourceForm } from "./ResourceForm";
 
 const meta = {
 	title: "Admin/ResourceForm",
 	component: ResourceForm,
 	tags: ["autodocs"],
-	args: { fields: sampleFields, onSubmit: fn(), onCancel: fn() },
+	args: {
+		fields: sampleFields,
+		references: sampleReferences,
+		onSubmit: fn(),
+		onCancel: fn(),
+	},
 	decorators: [(Story) => <div className="max-w-lg">{Story()}</div>],
 } satisfies Meta<typeof ResourceForm>;
 
@@ -25,6 +30,7 @@ export const WithValues: Story = {
 			grade: "GRADE_B2",
 			availableFrom: "2026-10-08T12:00",
 			date: "2026-10-08",
+			subjectId: "subject-2",
 			isPublished: true,
 			metadata: "{}",
 		},
@@ -49,6 +55,27 @@ export const Submit: Story = {
 			isPublished: true,
 		});
 	},
+};
+
+export const SelectReference: Story = {
+	args: {
+		fields: sampleFields.filter((field) => field.kind === "reference"),
+	},
+	play: async ({ args, canvasElement }) => {
+		const canvas = within(canvasElement);
+		await userEvent.click(canvas.getByRole("combobox"));
+		await userEvent.click(
+			await screen.findByRole("option", { name: /線形代数学/ }),
+		);
+		await userEvent.click(canvas.getByRole("button", { name: "保存" }));
+		await expect(args.onSubmit).toHaveBeenCalledWith({
+			subjectId: "subject-2",
+		});
+	},
+};
+
+export const ReferenceLoading: Story = {
+	args: { references: { subjectId: { options: [], loading: true } } },
 };
 
 export const Cancel: Story = {

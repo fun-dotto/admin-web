@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
-import { sampleFields } from "./fixtures";
+import { sampleFields, sampleReferences } from "./fixtures";
 import { ResourceFormField } from "./ResourceFormField";
 
 const field = (name: string) => {
@@ -47,6 +47,21 @@ export const BooleanField: Story = {
 
 export const JsonField: Story = {
 	args: { spec: field("metadata"), defaultValue: '{\n  "key": "value"\n}' },
+};
+
+export const ReferenceField: Story = {
+	args: {
+		spec: field("subjectId"),
+		reference: sampleReferences.subjectId,
+		defaultValue: "subject-1",
+	},
+};
+
+export const ReferenceFieldError: Story = {
+	args: {
+		spec: field("subjectId"),
+		reference: { options: [], error: "取得に失敗しました" },
+	},
 };
 
 export const Disabled: Story = {
