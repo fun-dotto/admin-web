@@ -68,6 +68,36 @@ globs: ["src/**/*.tsx", "src/**/*.stories.tsx", "src/styles.css"]
 - キーボード操作とフォーカス表示 (`focus-visible:`) を損なわない。shadcn/ui (Radix) の a11y 挙動を上書きしない。
 - Storybook の a11y アドオンで違反が出ない状態を保つ。
 
+### クリック可能な行・カード（stretched link）
+
+テーブルの行やカード全体をクリックで遷移させたい場合は、`tr` / `div` に `onClick` を付けず、stretched link で実装する。
+
+- 理由: `onClick` だけではキーボード操作・スクリーンリーダーで遷移できず、新しいタブで開く・URL コピーなどリンク本来の機能も失われるため。
+- 実装方針:
+  - 行（カード）のコンテナに `relative` を付ける。
+  - 遷移先を表すリンク（`<Link>` / `<a>`）は 1 つだけ置き、主となる列（ID・名前など）に配置する。リンクのテキストがそのまま遷移先の説明になるようにする。
+  - リンクに `after:absolute after:inset-0` を付けて、クリック領域を行全体に広げる。フォーカス表示も `focus-visible:after:` で行全体に出す。
+  - 行内のボタンなど他の操作要素には `relative z-10` を付けてリンクより前面に出し、`stopPropagation` に頼らない。
+  - 遷移は `navigate()` ではなくリンク要素で行う。
+
+## フォーム: 別リソースの参照
+
+作成・編集フォームで別リソースの ID（`subject_id`, `room_id` など）を入力させる場合は、ID を直接入力させず、名前などで検索して選択できるようにする。
+
+- 理由: ID は人が覚えて入力できる値ではなく、入力ミスで存在しない ID や別のオブジェクトを参照してしまうため。
+- UI 仕様:
+  - shadcn/ui の Popover + Command による検索可能なコンボボックス（`ResourceReferenceField`）を使う。
+  - 選択肢には人が識別できる表示名（`name`, `title` など）を主に、ID を補足として表示する。検索は表示名と ID の両方にマッチさせる。
+  - 選択済みの値は表示名で表示し、選択を解除するボタンを用意する。選択肢の読み込み前でも、既存の ID はそのまま表示する。
+  - 読み込み中・取得エラー・該当なしの状態を表示する。
+  - フォームへは参照先の ID を送る（hidden input で `FormData` から取得できるようにする）。
+- 実装方針:
+  - 参照フィールドと参照先リソースの対応は `src/lib/admin/resources.ts` の `referenceTargets` に明示的に定義する。proto に参照情報が無いため、命名規約からの推測で済ませない。新しい参照フィールドが増えたらここに追加する。
+  - リソース自身の主キー（例: `routes` の `route_id`）は参照として扱わない。
+  - 表示名に使うフィールドは `getDisplayField` の候補順で決める。
+  - 選択肢の取得はコンテナ層（`useReferenceOptions`）で行い、UI コンポーネントには `options` / `loading` / `error` を props で渡す。
+  - List API に検索条件が無いため、参照先は上限付きで全件取得してクライアント側で絞り込む。API に検索が追加されたらサーバー側検索に切り替える。
+
 ## Storybook
 
 - `src/components/` 配下のコンポーネント（`ui/` を含む）には、同じディレクトリに `<ComponentName>.stories.tsx` を作成する。
