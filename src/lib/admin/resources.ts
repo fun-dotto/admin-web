@@ -1,4 +1,9 @@
-import type { DescMessage, DescMethod, DescService } from "@bufbuild/protobuf";
+import type {
+	DescField,
+	DescMessage,
+	DescMethod,
+	DescService,
+} from "@bufbuild/protobuf";
 import { AnnouncementService } from "#/api/admin/v1/announcement_pb";
 import { CalendarDateService } from "#/api/admin/v1/calendar_date_pb";
 import { CalendarService } from "#/api/admin/v1/calendar_pb";
@@ -186,4 +191,58 @@ export function getEntityMessage(resource: Resource): DescMessage | undefined {
 	return field?.fieldKind === "list" && field.listKind === "message"
 		? field.message
 		: undefined;
+}
+
+/**
+ * 別リソースの ID を持つフィールド名と参照先リソースの対応。
+ * proto に参照情報が無いため、フィールド名の命名規約から明示的に定義する。
+ */
+const referenceTargets: Record<string, string> = {
+	faculty_id: "faculties",
+	fare_id: "fare-attributes",
+	room_id: "rooms",
+	original_room_id: "rooms",
+	new_room_id: "rooms",
+	notification_id: "notifications",
+	route_id: "routes",
+	service_id: "calendars",
+	stop_id: "stops",
+	subject_id: "subjects",
+	syllabus_id: "syllabi",
+	trip_id: "trips",
+	user_id: "users",
+	zone_id: "zones",
+	origin_id: "zones",
+	destination_id: "zones",
+};
+
+/** 自分自身の主キーは参照として扱わない */
+export function findReferenceTarget(
+	resource: Resource,
+	fieldName: string,
+): Resource | undefined {
+	const slug = referenceTargets[fieldName];
+	return slug && slug !== resource.slug ? findResource(slug) : undefined;
+}
+
+/** Get リクエストのフィールドをリソースの主キーとみなす (複合キーを含む) */
+export function getKeyFields(resource: Resource): DescField[] {
+	return findMethod(resource, "get")?.input.fields ?? [];
+}
+
+/** 参照の選択肢に表示する名前のフィールド候補 (優先順) */
+const displayFieldNames = [
+	"name",
+	"title",
+	"stop_name",
+	"route_long_name",
+	"route_short_name",
+	"email",
+];
+
+export function getDisplayField(resource: Resource): DescField | undefined {
+	const entity = getEntityMessage(resource);
+	return displayFieldNames
+		.map((name) => entity?.fields.find((field) => field.name === name))
+		.find((field) => field !== undefined);
 }

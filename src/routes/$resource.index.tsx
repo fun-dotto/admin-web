@@ -7,13 +7,22 @@ import { ResourcePageHeader } from "#/components/admin/ResourcePageHeader";
 import { ResourcePagination } from "#/components/admin/ResourcePagination";
 import { ResourceTable } from "#/components/admin/ResourceTable";
 import { callAdminApi } from "#/lib/admin/api";
+import { type FormValues, toFormValues } from "#/lib/admin/fields";
+import { useReferenceOptions } from "#/lib/admin/references";
 import {
-	type FormValues,
-	fromFormValues,
-	toFormValues,
-} from "#/lib/admin/fields";
+	createResource,
+	deleteResource,
+	errorMessage,
+	updateResource,
+} from "#/lib/admin/requests";
 import { findResource } from "#/lib/admin/resources";
-import { getItems, getResourceView, toRow } from "#/lib/admin/view";
+import {
+	decodeKey,
+	getItemKey,
+	getItems,
+	getResourceView,
+	toRow,
+} from "#/lib/admin/view";
 
 const PAGE_SIZE = 50;
 
@@ -28,7 +37,7 @@ type DialogState =
 	| { type: "edit"; item: JsonObject }
 	| { type: "delete"; id: string };
 
-export const Route = createFileRoute("/$resource")({
+export const Route = createFileRoute("/$resource/")({
 	validateSearch: (search: Record<string, unknown>): ResourceSearch => ({
 		pageTokens: Array.isArray(search.pageTokens)
 			? search.pageTokens.filter(
@@ -66,10 +75,6 @@ export const Route = createFileRoute("/$resource")({
 	),
 });
 
-function errorMessage(error: unknown) {
-	return error instanceof Error ? error.message : String(error);
-}
-
 function ResourcePage() {
 	const { resource: slug } = Route.useParams();
 	const { pageTokens = [] } = Route.useSearch();
@@ -83,8 +88,16 @@ function ResourcePage() {
 
 	// loader で存在確認済み
 	const resource = findResource(slug);
-	if (!resource) return null;
-	const view = getResourceView(resource);
+	const view = resource && getResourceView(resource);
+	const createReferences = useReferenceOptions(
+		view?.createFields,
+		dialog.type === "create",
+	);
+	const updateReferences = useReferenceOptions(
+		view?.updateFields,
+		dialog.type === "edit",
+	);
+	if (!resource || !view) return null;
 	const items = getItems(response, view.listKey);
 	const nextPageToken =
 		typeof response.nextPageToken === "string" ? response.nextPageToken : "";
@@ -110,37 +123,20 @@ function ResourcePage() {
 	};
 
 	const handleCreate = (values: FormValues) =>
-		mutate(() =>
-			callAdminApi({
-				data: {
-					slug,
-					operation: "create",
-					request: fromFormValues(view.createFields ?? [], values),
-				},
-			}),
-		);
+		mutate(() => createResource(slug, view.createFields ?? [], values));
 
-	const handleUpdate = (item: JsonObject, values: FormValues) => {
-		const fields = view.updateFields ?? [];
-		return mutate(() =>
-			callAdminApi({
-				data: {
-					slug,
-					operation: "update",
-					request: {
-						...fromFormValues(fields, values),
-						id: item.id ?? "",
-						updateMask: fields.map((field) => field.name).join(","),
-					},
-				},
-			}),
+	const handleUpdate = (item: JsonObject, values: FormValues) =>
+		mutate(() =>
+			updateResource(
+				slug,
+				getItemKey(view.keyNames, item),
+				view.updateFields ?? [],
+				values,
+			),
 		);
-	};
 
 	const handleDelete = (id: string) =>
-		mutate(() =>
-			callAdminApi({ data: { slug, operation: "delete", request: { id } } }),
-		);
+		mutate(() => deleteResource(slug, decodeKey(view.keyNames, id)));
 
 	return (
 		<div className="flex flex-col gap-6">
@@ -156,12 +152,15 @@ function ResourcePage() {
 					key: column.name,
 					label: column.label,
 				}))}
-				rows={items.map((item) => toRow(view.columns, item))}
+				resourceSlug={slug}
+				rows={items.map((item) => toRow(view, item))}
 				error={error}
 				onEdit={
 					view.updateFields
 						? (id) => {
-								const item = items.find((candidate) => candidate.id === id);
+								const item = items.find(
+									(candidate) => toRow(view, candidate).id === id,
+								);
 								if (item) openDialog({ type: "edit", item });
 							}
 						: undefined
@@ -190,6 +189,7 @@ function ResourcePage() {
 					title={`${resource.label}を作成`}
 					fields={view.createFields}
 					submitLabel="作成"
+					references={createReferences}
 					submitting={submitting}
 					error={mutationError}
 					onSubmit={handleCreate}
@@ -197,11 +197,12 @@ function ResourcePage() {
 			)}
 			{view.updateFields && dialog.type === "edit" && (
 				<ResourceFormDialog
-					key={String(dialog.item.id)}
+					key={toRow(view, dialog.item).id}
 					open
 					onOpenChange={(open) => !open && closeDialog()}
 					title={`${resource.label}を編集`}
-					description={`ID: ${dialog.item.id}`}
+					description={`ID: ${toRow(view, dialog.item).id}`}
+					references={updateReferences}
 					fields={view.updateFields}
 					defaultValues={toFormValues(view.updateFields, dialog.item)}
 					submitting={submitting}
