@@ -17,6 +17,9 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@bufbuild/protobuf": "^2.16.0",
+    "@connectrpc/connect": "^2.2.0",
+    "@connectrpc/connect-node": "^2.2.0",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "0.10.13",
     "@tanstack/react-router": "1.170.41",
