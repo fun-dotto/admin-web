@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
+import { expect, fn, userEvent, within } from "storybook/test";
 import { AdminShell } from "./AdminShell";
 
 const meta = {
@@ -9,6 +10,7 @@ const meta = {
 	args: {
 		nav: <p className="px-2 text-body">ナビゲーション</p>,
 		children: <p className="text-body">コンテンツ</p>,
+		onCollapsedChange: fn(),
 	},
 } satisfies Meta<typeof AdminShell>;
 
@@ -16,6 +18,24 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const Collapsed: Story = { args: { defaultCollapsed: true } };
+
+export const ToggleCollapse: Story = {
+	play: async ({ args, canvasElement }) => {
+		const canvas = within(canvasElement);
+		await userEvent.click(
+			canvas.getByRole("button", { name: "サイドバーを折りたたむ" }),
+		);
+		await expect(args.onCollapsedChange).toHaveBeenCalledWith(true);
+		await expect(canvas.queryByText("ナビゲーション")).not.toBeVisible();
+		await userEvent.click(
+			canvas.getByRole("button", { name: "サイドバーを開く" }),
+		);
+		await expect(args.onCollapsedChange).toHaveBeenLastCalledWith(false);
+		await expect(canvas.getByText("ナビゲーション")).toBeVisible();
+	},
+};
 
 export const EmptyNav: Story = { args: { nav: null } };
 

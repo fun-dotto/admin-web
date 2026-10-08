@@ -1,33 +1,90 @@
 import { Link } from "@tanstack/react-router";
-import type * as React from "react";
+import { cva } from "class-variance-authority";
+import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import * as React from "react";
+import { Button } from "#/components/ui/button";
 import { cn } from "#/lib/utils";
+
+const asideVariants = cva(
+	"flex flex-col border-b bg-sidebar text-sidebar-foreground md:sticky md:top-0 md:h-screen md:shrink-0 md:border-r md:border-b-0",
+	{
+		variants: {
+			collapsed: {
+				false: "md:w-64",
+				true: "md:w-auto",
+			},
+		},
+	},
+);
 
 export type AdminShellProps = React.ComponentProps<"div"> & {
 	/** サイドバーに表示するナビゲーション */
 	nav: React.ReactNode;
+	/** サイドバーを折りたたんでいるか（controlled） */
+	collapsed?: boolean;
+	/** サイドバーの初期の折りたたみ状態（uncontrolled） */
+	defaultCollapsed?: boolean;
+	onCollapsedChange?: (collapsed: boolean) => void;
 };
 
 export function AdminShell({
 	nav,
+	collapsed: collapsedProp,
+	defaultCollapsed = false,
+	onCollapsedChange,
 	children,
 	className,
 	...props
 }: AdminShellProps) {
+	const [uncontrolledCollapsed, setUncontrolledCollapsed] =
+		React.useState(defaultCollapsed);
+	const collapsed = collapsedProp ?? uncontrolledCollapsed;
+	const navId = React.useId();
+
+	const toggle = () => {
+		const next = !collapsed;
+		if (collapsedProp === undefined) setUncontrolledCollapsed(next);
+		onCollapsedChange?.(next);
+	};
+
 	return (
 		<div
 			className={cn("flex min-h-screen flex-col md:flex-row", className)}
 			{...props}
 		>
-			<aside className="flex flex-col border-b bg-sidebar text-sidebar-foreground md:sticky md:top-0 md:h-screen md:w-64 md:shrink-0 md:border-r md:border-b-0">
-				<div className="px-4 py-4">
+			<aside
+				data-state={collapsed ? "collapsed" : "expanded"}
+				className={asideVariants({ collapsed })}
+			>
+				<div className="flex items-center justify-between gap-2 px-4 py-4 md:px-2">
 					<Link
 						to="/"
-						className="rounded-md text-title text-primary outline-none focus-visible:ring-[3px] focus-visible:ring-sidebar-ring/50"
+						className={cn(
+							"rounded-md text-title text-primary outline-none focus-visible:ring-[3px] focus-visible:ring-sidebar-ring/50 md:px-2",
+							collapsed && "md:hidden",
+						)}
 					>
 						Dotto Admin
 					</Link>
+					<Button
+						type="button"
+						variant="ghost"
+						size="icon"
+						aria-label={
+							collapsed ? "サイドバーを開く" : "サイドバーを折りたたむ"
+						}
+						aria-expanded={!collapsed}
+						aria-controls={navId}
+						onClick={toggle}
+					>
+						{collapsed ? <PanelLeftOpen /> : <PanelLeftClose />}
+					</Button>
 				</div>
-				<div className="max-h-64 overflow-y-auto px-2 pb-4 md:max-h-none md:flex-1">
+				<div
+					id={navId}
+					hidden={collapsed}
+					className="max-h-64 overflow-y-auto px-2 pb-4 md:max-h-none md:flex-1"
+				>
 					{nav}
 				</div>
 			</aside>
