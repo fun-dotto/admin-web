@@ -31,6 +31,8 @@ export const Route = createRootRoute({
 				rel: "stylesheet",
 				href: appCss,
 			},
+			{ rel: "icon", href: "/favicon.ico", sizes: "any" },
+			{ rel: "icon", href: "/icon.png", type: "image/png", sizes: "1024x1024" },
 		],
 	}),
 	shellComponent: RootDocument,
