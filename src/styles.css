@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
@@ -7,6 +8,17 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Design System 2026 (Figma) Color styles */
+  --label-primary: #252325;
+  --label-secondary: #6d676d;
+  --label-tertiary: #ffffff;
+  --background-primary: #f5f1f1;
+  --background-secondary: #ffffff;
+  --border-primary: #bcbcbc;
+  --border-secondary: #333131;
+  --accent-brand: #990000;
+  --accent-warning: #ff9500;
+  --accent-error: #f51f1f;
   --sea-ink: #173a40;
   --sea-ink-soft: #416166;
   --lagoon: #4fb8b2;
@@ -63,6 +75,17 @@
 }
 
 .dark {
+  /* Design System 2026 (Figma) Color styles: Figma にダークモードが未定義のためライトと同値 */
+  --label-primary: #252325;
+  --label-secondary: #6d676d;
+  --label-tertiary: #ffffff;
+  --background-primary: #f5f1f1;
+  --background-secondary: #ffffff;
+  --border-primary: #bcbcbc;
+  --border-secondary: #333131;
+  --accent-brand: #990000;
+  --accent-warning: #ff9500;
+  --accent-error: #f51f1f;
   --sea-ink: #d7ece8;
   --sea-ink-soft: #afcdc8;
   --lagoon: #60d7cf;
@@ -118,6 +141,41 @@
 }
 
 @theme inline {
+  /* Design System 2026 (Figma) Color styles */
+  --color-label-primary: var(--label-primary);
+  --color-label-secondary: var(--label-secondary);
+  --color-label-tertiary: var(--label-tertiary);
+  --color-background-primary: var(--background-primary);
+  --color-background-secondary: var(--background-secondary);
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+  --color-accent-brand: var(--accent-brand);
+  --color-accent-warning: var(--accent-warning);
+  --color-accent-error: var(--accent-error);
+
+  /* Design System 2026 (Figma) Text styles */
+  --font-noto-sans-jp: 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+  --text-large-title: 22px;
+  --text-large-title--line-height: normal;
+  --text-large-title--font-weight: 400;
+  --text-title: 20px;
+  --text-title--line-height: normal;
+  --text-title--font-weight: 500;
+  --text-subtitle-1: 16px;
+  --text-subtitle-1--line-height: normal;
+  --text-subtitle-1--font-weight: 500;
+  --text-subtitle-2: 14px;
+  --text-subtitle-2--line-height: normal;
+  --text-subtitle-2--font-weight: 500;
+  --text-body: 14px;
+  --text-body--line-height: normal;
+  --text-body--font-weight: 400;
+  --text-caption-1: 12px;
+  --text-caption-1--line-height: normal;
+  --text-caption-1--font-weight: 400;
+  --text-caption-2: 10px;
+  --text-caption-2--line-height: normal;
+  --text-caption-2--font-weight: 400;
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
