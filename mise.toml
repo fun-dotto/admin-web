@@ -2,17 +2,30 @@
 minimum_release_age = "7d"
 
 [tools]
-node = "26.10.0"
+buf = "1.73.0"
+bun = "1.4.2"
+"npm:portless" = "0.15.6"
 "npm:rulesync" = "24.0.0"
-pnpm = "12.8.2"
 
 [tasks.bootstrap]
 description = "依存関係をセットアップする"
 run = [
   { task = "rulesync" },
-  "pnpm install",
+  "bun install",
 ]
 
 [tasks.rulesync]
 description = "rulesyncの設定を生成する"
 run = "rulesync generate"
+
+[tasks."app:run:dev"]
+description = "portless経由で開発サーバーを起動する"
+run = "portless dotto-admin bun run dev"
+
+[tasks."docker:build"]
+description = "Dockerfileをビルドする"
+run = "docker build . -t dotto-admin-web"
+
+[tasks."docker:run"]
+description = "Docker Imageを実行する"
+run = "docker run --rm -p 8080:8080 --name dotto-admin-web dotto-admin-web"

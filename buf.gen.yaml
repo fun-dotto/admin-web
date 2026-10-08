@@ -1,0 +1,6 @@
+version: v2
+clean: true
+plugins:
+  - remote: buf.build/bufbuild/es:v2.16.0
+    out: src/api
+    include_imports: true
