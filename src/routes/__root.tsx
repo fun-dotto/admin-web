@@ -4,10 +4,19 @@ import {
 	HeadContent,
 	Outlet,
 	Scripts,
+	useRouter,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import * as React from "react";
 import { AdminShell } from "#/components/admin/AdminShell";
+import { EnvironmentSelect } from "#/components/admin/EnvironmentSelect";
 import { ResourceNav } from "#/components/admin/ResourceNav";
+import {
+	adminEnvironments,
+	getAdminEnvironment,
+	isAdminEnvironment,
+	setAdminEnvironment,
+} from "#/lib/admin/environments";
 import { getNavGroups } from "#/lib/admin/view";
 
 import appCss from "../styles.css?url";
@@ -35,13 +44,37 @@ export const Route = createRootRoute({
 			{ rel: "icon", href: "/icon.png", type: "image/png", sizes: "1024x1024" },
 		],
 	}),
+	loader: async () => ({ environment: await getAdminEnvironment() }),
 	shellComponent: RootDocument,
 	component: RootLayout,
 });
 
 function RootLayout() {
+	const { environment } = Route.useLoaderData();
+	const router = useRouter();
+	const [pending, startTransition] = React.useTransition();
+
+	const changeEnvironment = (value: string) => {
+		if (!isAdminEnvironment(value)) return;
+		startTransition(async () => {
+			await setAdminEnvironment({ data: value });
+			await router.invalidate();
+		});
+	};
+
 	return (
-		<AdminShell nav={<ResourceNav groups={getNavGroups()} />}>
+		<AdminShell
+			nav={<ResourceNav groups={getNavGroups()} />}
+			environment={environment}
+			sidebarHeader={
+				<EnvironmentSelect
+					options={adminEnvironments}
+					value={environment}
+					onValueChange={changeEnvironment}
+					loading={pending}
+				/>
+			}
+		>
 			<Outlet />
 		</AdminShell>
 	);
