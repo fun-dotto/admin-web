@@ -6,20 +6,33 @@ import { Button } from "#/components/ui/button";
 import { cn } from "#/lib/utils";
 
 const asideVariants = cva(
-	"flex flex-col border-b bg-sidebar text-sidebar-foreground md:sticky md:top-0 md:h-screen md:shrink-0 md:border-r md:border-b-0",
+	"flex flex-col border-b text-sidebar-foreground md:sticky md:top-0 md:h-screen md:shrink-0 md:border-r md:border-b-0",
 	{
 		variants: {
 			collapsed: {
 				false: "md:w-64",
 				true: "md:w-auto",
 			},
+			environment: {
+				none: "bg-sidebar",
+				production: "bg-environment-production-subtle",
+				staging: "bg-environment-staging-subtle",
+				development: "bg-environment-development-subtle",
+			},
 		},
+		defaultVariants: { environment: "none" },
 	},
 );
+
+export type AdminShellEnvironment = "production" | "staging" | "development";
 
 export type AdminShellProps = React.ComponentProps<"div"> & {
 	/** サイドバーに表示するナビゲーション */
 	nav: React.ReactNode;
+	/** サイドバーのナビゲーション上部に表示する要素（環境切り替えなど） */
+	sidebarHeader?: React.ReactNode;
+	/** 接続先環境。サイドバーを環境ごとの色で塗り分ける */
+	environment?: AdminShellEnvironment;
 	/** サイドバーを折りたたんでいるか（controlled） */
 	collapsed?: boolean;
 	/** サイドバーの初期の折りたたみ状態（uncontrolled） */
@@ -29,6 +42,8 @@ export type AdminShellProps = React.ComponentProps<"div"> & {
 
 export function AdminShell({
 	nav,
+	sidebarHeader,
+	environment,
 	collapsed: collapsedProp,
 	defaultCollapsed = false,
 	onCollapsedChange,
@@ -54,7 +69,8 @@ export function AdminShell({
 		>
 			<aside
 				data-state={collapsed ? "collapsed" : "expanded"}
-				className={asideVariants({ collapsed })}
+				data-environment={environment}
+				className={asideVariants({ collapsed, environment })}
 			>
 				<div className="flex items-center justify-between gap-2 px-4 py-4 md:px-2">
 					<Link
@@ -83,8 +99,9 @@ export function AdminShell({
 				<div
 					id={navId}
 					hidden={collapsed}
-					className="max-h-64 overflow-y-auto px-2 pb-4 md:max-h-none md:flex-1"
+					className="flex max-h-64 flex-col gap-4 overflow-y-auto px-2 pb-4 md:max-h-none md:flex-1"
 				>
+					{sidebarHeader && <div className="px-2">{sidebarHeader}</div>}
 					{nav}
 				</div>
 			</aside>

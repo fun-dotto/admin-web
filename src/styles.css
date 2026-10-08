@@ -18,6 +18,10 @@
   --accent-brand: #990000;
   --accent-warning: #ff9500;
   --accent-error: #f51f1f;
+  /* 接続先環境ごとのサイドバー色（デザインシステム外の管理画面専用色） */
+  --environment-production-subtle: #fde3e3;
+  --environment-staging-subtle: #ffe6c2;
+  --environment-development-subtle: #dfeafb;
 
   /* shadcn/ui のセマンティックトークン: デザインシステムの色に割り当てる */
   --background: var(--background-primary);
@@ -63,6 +67,10 @@
   --accent-brand: #990000;
   --accent-warning: #ff9500;
   --accent-error: #f51f1f;
+  /* 接続先環境ごとのサイドバー色（デザインシステム外の管理画面専用色） */
+  --environment-production-subtle: #fde3e3;
+  --environment-staging-subtle: #ffe6c2;
+  --environment-development-subtle: #dfeafb;
 }
 
 @theme {
@@ -114,6 +122,9 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-environment-production-subtle: var(--environment-production-subtle);
+  --color-environment-staging-subtle: var(--environment-staging-subtle);
+  --color-environment-development-subtle: var(--environment-development-subtle);
 
   /* Design System 2026 (Figma) Text styles */
   --font-sans: 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;

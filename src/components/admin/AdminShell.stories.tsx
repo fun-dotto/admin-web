@@ -37,6 +37,22 @@ export const ToggleCollapse: Story = {
 	},
 };
 
+export const WithSidebarHeader: Story = {
+	args: {
+		sidebarHeader: <p className="text-caption-1">サイドバーヘッダー</p>,
+	},
+};
+
+export const Production: Story = { args: { environment: "production" } };
+
+export const Staging: Story = { args: { environment: "staging" } };
+
+export const Development: Story = { args: { environment: "development" } };
+
+export const CollapsedProduction: Story = {
+	args: { environment: "production", defaultCollapsed: true },
+};
+
 export const EmptyNav: Story = { args: { nav: null } };
 
 export const LongContent: Story = {
