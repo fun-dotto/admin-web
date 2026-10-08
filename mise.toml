@@ -1,4 +1,18 @@
+[settings]
+minimum_release_age = "7d"
+
 [tools]
 node = "26.10.0"
 "npm:rulesync" = "24.0.0"
 pnpm = "12.8.2"
+
+[tasks.bootstrap]
+description = "依存関係をセットアップする"
+run = [
+  { task = "rulesync" },
+  "pnpm install",
+]
+
+[tasks.rulesync]
+description = "rulesyncの設定を生成する"
+run = "rulesync generate"
