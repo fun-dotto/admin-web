@@ -125,5 +125,7 @@ jobs:
           image: ${{ env.IMAGE_TAG }}
           region: ${{ vars._DEPLOY_REGION }}
           env_vars: |
-            ADMIN_API_BASE_URL=${{ vars.ADMIN_API_BASE_URL }}
+            ADMIN_API_BASE_URL_PRODUCTION=${{ vars.ADMIN_API_BASE_URL_PRODUCTION }}
+            ADMIN_API_BASE_URL_STAGING=${{ vars.ADMIN_API_BASE_URL_STAGING }}
+            ADMIN_API_BASE_URL_DEVELOPMENT=${{ vars.ADMIN_API_BASE_URL_DEVELOPMENT }}
           env_vars_update_strategy: overwrite
