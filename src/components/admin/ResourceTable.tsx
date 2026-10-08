@@ -23,6 +23,8 @@ export type ResourceTableProps = React.ComponentProps<"div"> & {
 	error?: string;
 	/** 指定しない場合は編集ボタンを表示しない */
 	onEdit?: (id: string) => void;
+	/** 指定すると各行が詳細画面へのリンクになる */
+	resourceSlug?: string;
 	onDelete?: (id: string) => void;
 };
 
@@ -34,6 +36,7 @@ export function ResourceTable({
 	loading,
 	error,
 	onEdit,
+	resourceSlug,
 	onDelete,
 	className,
 	...props
@@ -85,6 +88,7 @@ export function ResourceTable({
 								key={row.id}
 								columns={columns}
 								row={row}
+								resourceSlug={resourceSlug}
 								onEdit={onEdit}
 								onDelete={onDelete}
 							/>

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
 import { expect, fn, userEvent, within } from "storybook/test";
+import { Button } from "#/components/ui/button";
 import { longText } from "./fixtures";
 import { ResourcePageHeader } from "./ResourcePageHeader";
 
@@ -23,6 +24,13 @@ export const Default: Story = {
 			within(canvasElement).getByRole("button", { name: "新規作成" }),
 		);
 		await expect(args.onCreate).toHaveBeenCalled();
+	},
+};
+
+export const WithActions: Story = {
+	args: {
+		onCreate: undefined,
+		actions: <Button variant="outline">編集</Button>,
 	},
 };
 

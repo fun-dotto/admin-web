@@ -75,6 +75,18 @@ export const LongText: Story = {
 	},
 };
 
+export const WithDetailLink: Story = {
+	args: { resourceSlug: "announcements" },
+	play: async ({ args, canvasElement }) => {
+		const canvas = within(canvasElement);
+		await expect(
+			canvas.getByRole("link", { name: "id-1" }),
+		).toBeInTheDocument();
+		await userEvent.click(canvas.getByRole("button", { name: "id-1 を編集" }));
+		await expect(args.onEdit).toHaveBeenCalledWith("id-1");
+	},
+};
+
 export const ReadOnly: Story = {
 	args: { onEdit: undefined, onDelete: undefined },
 };

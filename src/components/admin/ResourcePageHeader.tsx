@@ -8,12 +8,15 @@ export type ResourcePageHeaderProps = React.ComponentProps<"header"> & {
 	description?: string;
 	/** 指定しない場合は新規作成ボタンを表示しない */
 	onCreate?: () => void;
+	/** 右側に表示する任意の操作 */
+	actions?: React.ReactNode;
 };
 
 export function ResourcePageHeader({
 	title,
 	description,
 	onCreate,
+	actions,
 	className,
 	...props
 }: ResourcePageHeaderProps) {
@@ -33,6 +36,9 @@ export function ResourcePageHeader({
 					</p>
 				)}
 			</div>
+			{actions && (
+				<div className="flex gap-2 self-start sm:self-auto">{actions}</div>
+			)}
 			{onCreate && (
 				<Button onClick={onCreate} className="self-start sm:self-auto">
 					<Plus />

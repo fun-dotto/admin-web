@@ -33,6 +33,10 @@ export const Default: Story = {};
 
 export const EditOnly: Story = { args: { onDelete: undefined } };
 
+export const WithDetailLink: Story = {
+	args: { resourceSlug: "announcements" },
+};
+
 export const ReadOnly: Story = {
 	args: { onEdit: undefined, onDelete: undefined },
 };

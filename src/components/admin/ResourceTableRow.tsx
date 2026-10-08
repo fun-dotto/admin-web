@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Pencil, Trash2 } from "lucide-react";
 import { Button } from "#/components/ui/button";
 import { TableCell, TableRow } from "#/components/ui/table";
@@ -11,6 +12,8 @@ export type ResourceTableRowData = {
 export type ResourceTableRowProps = {
 	columns: ResourceTableColumn[];
 	row: ResourceTableRowData;
+	/** 指定すると行全体が詳細画面 (/$resource/$id) へのリンクになる */
+	resourceSlug?: string;
 	onEdit?: (id: string) => void;
 	onDelete?: (id: string) => void;
 };
@@ -18,23 +21,35 @@ export type ResourceTableRowProps = {
 export function ResourceTableRow({
 	columns,
 	row,
+	resourceSlug,
 	onEdit,
 	onDelete,
 }: ResourceTableRowProps) {
 	return (
-		<TableRow>
-			{columns.map((column) => (
+		<TableRow className="relative">
+			{columns.map((column, index) => (
 				<TableCell
 					key={column.key}
 					className="max-w-xs truncate"
 					title={row.cells[column.key]}
 				>
-					{row.cells[column.key]}
+					{/* 行全体をクリック可能にするため、先頭列のリンクを stretched link にする */}
+					{resourceSlug && index === 0 ? (
+						<Link
+							to="/$resource/$id"
+							params={{ resource: resourceSlug, id: row.id }}
+							className="outline-none after:absolute after:inset-0 hover:underline focus-visible:after:ring-[3px] focus-visible:after:ring-ring/50 focus-visible:after:ring-inset"
+						>
+							{row.cells[column.key]}
+						</Link>
+					) : (
+						row.cells[column.key]
+					)}
 				</TableCell>
 			))}
 			{(onEdit || onDelete) && (
 				<TableCell className="text-right">
-					<div className="flex justify-end gap-1">
+					<div className="relative z-10 flex justify-end gap-1">
 						{onEdit && (
 							<Button
 								variant="ghost"
