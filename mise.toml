@@ -5,7 +5,7 @@ minimum_release_age = "24h"
 buf = "1.75.0"
 bun = "1.4.4"
 "npm:portless" = "0.15.12"
-"npm:rulesync" = "43.4.0"
+"npm:rulesync" = "43.4.1"
 
 [tasks.bootstrap]
 description = "依存関係をセットアップする"
