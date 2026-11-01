@@ -5,7 +5,6 @@ import {
 	toJson,
 } from "@bufbuild/protobuf";
 import { createServerFn } from "@tanstack/react-start";
-import { baseUrlEnvName, readAdminEnvironment } from "./environments";
 import { findMethod, findResource, type ResourceOperation } from "./resources";
 
 export type AdminRequest = {
@@ -16,7 +15,7 @@ export type AdminRequest = {
 
 /**
  * Admin API を呼び出すサーバー関数。
- * 接続先は Cookie で選択中の環境の ADMIN_API_BASE_URL_<ENV>（サーバー側の環境変数）で決まるので、
+ * 接続先は ADMIN_API_URL（サーバー側の環境変数）で決まるので、
  * ブラウザからは直接呼ばずにここを経由する。
  */
 export const callAdminApi = createServerFn({ method: "POST" })
@@ -30,10 +29,9 @@ export const callAdminApi = createServerFn({ method: "POST" })
 		if (!method || method.methodKind !== "unary") {
 			throw new Error(`未対応の操作です: ${data.slug}.${data.operation}`);
 		}
-		const envName = baseUrlEnvName(await readAdminEnvironment());
-		const baseUrl = process.env[envName];
+		const baseUrl = process.env.ADMIN_API_URL;
 		if (!baseUrl) {
-			throw new Error(`${envName} が設定されていません`);
+			throw new Error("ADMIN_API_URL が設定されていません");
 		}
 
 		// methodKind は上で検証済み
