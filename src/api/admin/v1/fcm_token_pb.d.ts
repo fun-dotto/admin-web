@@ -2,7 +2,11 @@
 // @generated from file admin/v1/fcm_token.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import type {
+	GenFile,
+	GenMessage,
+	GenService,
+} from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 
@@ -15,25 +19,25 @@ export declare const file_admin_v1_fcm_token: GenFile;
  * @generated from message admin.v1.FcmToken
  */
 export declare type FcmToken = Message<"admin.v1.FcmToken"> & {
-  /**
-   * @generated from field: string token = 1;
-   */
-  token: string;
+	/**
+	 * @generated from field: string token = 1;
+	 */
+	token: string;
 
-  /**
-   * @generated from field: string user_id = 2;
-   */
-  userId: string;
+	/**
+	 * @generated from field: string user_id = 2;
+	 */
+	userId: string;
 
-  /**
-   * @generated from field: google.protobuf.Timestamp created_at = 3;
-   */
-  createdAt?: Timestamp | undefined;
+	/**
+	 * @generated from field: google.protobuf.Timestamp created_at = 3;
+	 */
+	createdAt?: Timestamp | undefined;
 
-  /**
-   * @generated from field: google.protobuf.Timestamp updated_at = 4;
-   */
-  updatedAt?: Timestamp | undefined;
+	/**
+	 * @generated from field: google.protobuf.Timestamp updated_at = 4;
+	 */
+	updatedAt?: Timestamp | undefined;
 };
 
 /**
@@ -45,17 +49,18 @@ export declare const FcmTokenSchema: GenMessage<FcmToken>;
 /**
  * @generated from message admin.v1.ListFcmTokensRequest
  */
-export declare type ListFcmTokensRequest = Message<"admin.v1.ListFcmTokensRequest"> & {
-  /**
-   * @generated from field: int32 page_size = 1;
-   */
-  pageSize: number;
+export declare type ListFcmTokensRequest =
+	Message<"admin.v1.ListFcmTokensRequest"> & {
+		/**
+		 * @generated from field: int32 page_size = 1;
+		 */
+		pageSize: number;
 
-  /**
-   * @generated from field: string page_token = 2;
-   */
-  pageToken: string;
-};
+		/**
+		 * @generated from field: string page_token = 2;
+		 */
+		pageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListFcmTokensRequest.
@@ -66,17 +71,18 @@ export declare const ListFcmTokensRequestSchema: GenMessage<ListFcmTokensRequest
 /**
  * @generated from message admin.v1.ListFcmTokensResponse
  */
-export declare type ListFcmTokensResponse = Message<"admin.v1.ListFcmTokensResponse"> & {
-  /**
-   * @generated from field: repeated admin.v1.FcmToken fcm_tokens = 1;
-   */
-  fcmTokens: FcmToken[];
+export declare type ListFcmTokensResponse =
+	Message<"admin.v1.ListFcmTokensResponse"> & {
+		/**
+		 * @generated from field: repeated admin.v1.FcmToken fcm_tokens = 1;
+		 */
+		fcmTokens: FcmToken[];
 
-  /**
-   * @generated from field: string next_page_token = 2;
-   */
-  nextPageToken: string;
-};
+		/**
+		 * @generated from field: string next_page_token = 2;
+		 */
+		nextPageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListFcmTokensResponse.
@@ -87,12 +93,13 @@ export declare const ListFcmTokensResponseSchema: GenMessage<ListFcmTokensRespon
 /**
  * @generated from message admin.v1.GetFcmTokenRequest
  */
-export declare type GetFcmTokenRequest = Message<"admin.v1.GetFcmTokenRequest"> & {
-  /**
-   * @generated from field: string token = 1;
-   */
-  token: string;
-};
+export declare type GetFcmTokenRequest =
+	Message<"admin.v1.GetFcmTokenRequest"> & {
+		/**
+		 * @generated from field: string token = 1;
+		 */
+		token: string;
+	};
 
 /**
  * Describes the message admin.v1.GetFcmTokenRequest.
@@ -103,12 +110,13 @@ export declare const GetFcmTokenRequestSchema: GenMessage<GetFcmTokenRequest>;
 /**
  * @generated from message admin.v1.GetFcmTokenResponse
  */
-export declare type GetFcmTokenResponse = Message<"admin.v1.GetFcmTokenResponse"> & {
-  /**
-   * @generated from field: admin.v1.FcmToken fcm_token = 1;
-   */
-  fcmToken?: FcmToken | undefined;
-};
+export declare type GetFcmTokenResponse =
+	Message<"admin.v1.GetFcmTokenResponse"> & {
+		/**
+		 * @generated from field: admin.v1.FcmToken fcm_token = 1;
+		 */
+		fcmToken?: FcmToken | undefined;
+	};
 
 /**
  * Describes the message admin.v1.GetFcmTokenResponse.
@@ -119,17 +127,18 @@ export declare const GetFcmTokenResponseSchema: GenMessage<GetFcmTokenResponse>;
 /**
  * @generated from message admin.v1.CreateFcmTokenRequest
  */
-export declare type CreateFcmTokenRequest = Message<"admin.v1.CreateFcmTokenRequest"> & {
-  /**
-   * @generated from field: string token = 1;
-   */
-  token: string;
+export declare type CreateFcmTokenRequest =
+	Message<"admin.v1.CreateFcmTokenRequest"> & {
+		/**
+		 * @generated from field: string token = 1;
+		 */
+		token: string;
 
-  /**
-   * @generated from field: string user_id = 2;
-   */
-  userId: string;
-};
+		/**
+		 * @generated from field: string user_id = 2;
+		 */
+		userId: string;
+	};
 
 /**
  * Describes the message admin.v1.CreateFcmTokenRequest.
@@ -140,12 +149,13 @@ export declare const CreateFcmTokenRequestSchema: GenMessage<CreateFcmTokenReque
 /**
  * @generated from message admin.v1.CreateFcmTokenResponse
  */
-export declare type CreateFcmTokenResponse = Message<"admin.v1.CreateFcmTokenResponse"> & {
-  /**
-   * @generated from field: admin.v1.FcmToken fcm_token = 1;
-   */
-  fcmToken?: FcmToken | undefined;
-};
+export declare type CreateFcmTokenResponse =
+	Message<"admin.v1.CreateFcmTokenResponse"> & {
+		/**
+		 * @generated from field: admin.v1.FcmToken fcm_token = 1;
+		 */
+		fcmToken?: FcmToken | undefined;
+	};
 
 /**
  * Describes the message admin.v1.CreateFcmTokenResponse.
@@ -156,22 +166,23 @@ export declare const CreateFcmTokenResponseSchema: GenMessage<CreateFcmTokenResp
 /**
  * @generated from message admin.v1.UpdateFcmTokenRequest
  */
-export declare type UpdateFcmTokenRequest = Message<"admin.v1.UpdateFcmTokenRequest"> & {
-  /**
-   * @generated from field: string token = 1;
-   */
-  token: string;
+export declare type UpdateFcmTokenRequest =
+	Message<"admin.v1.UpdateFcmTokenRequest"> & {
+		/**
+		 * @generated from field: string token = 1;
+		 */
+		token: string;
 
-  /**
-   * @generated from field: string user_id = 2;
-   */
-  userId: string;
+		/**
+		 * @generated from field: string user_id = 2;
+		 */
+		userId: string;
 
-  /**
-   * @generated from field: google.protobuf.FieldMask update_mask = 99;
-   */
-  updateMask?: FieldMask | undefined;
-};
+		/**
+		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
+		 */
+		updateMask?: FieldMask | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateFcmTokenRequest.
@@ -182,12 +193,13 @@ export declare const UpdateFcmTokenRequestSchema: GenMessage<UpdateFcmTokenReque
 /**
  * @generated from message admin.v1.UpdateFcmTokenResponse
  */
-export declare type UpdateFcmTokenResponse = Message<"admin.v1.UpdateFcmTokenResponse"> & {
-  /**
-   * @generated from field: admin.v1.FcmToken fcm_token = 1;
-   */
-  fcmToken?: FcmToken | undefined;
-};
+export declare type UpdateFcmTokenResponse =
+	Message<"admin.v1.UpdateFcmTokenResponse"> & {
+		/**
+		 * @generated from field: admin.v1.FcmToken fcm_token = 1;
+		 */
+		fcmToken?: FcmToken | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateFcmTokenResponse.
@@ -198,12 +210,13 @@ export declare const UpdateFcmTokenResponseSchema: GenMessage<UpdateFcmTokenResp
 /**
  * @generated from message admin.v1.DeleteFcmTokenRequest
  */
-export declare type DeleteFcmTokenRequest = Message<"admin.v1.DeleteFcmTokenRequest"> & {
-  /**
-   * @generated from field: string token = 1;
-   */
-  token: string;
-};
+export declare type DeleteFcmTokenRequest =
+	Message<"admin.v1.DeleteFcmTokenRequest"> & {
+		/**
+		 * @generated from field: string token = 1;
+		 */
+		token: string;
+	};
 
 /**
  * Describes the message admin.v1.DeleteFcmTokenRequest.
@@ -214,8 +227,8 @@ export declare const DeleteFcmTokenRequestSchema: GenMessage<DeleteFcmTokenReque
 /**
  * @generated from message admin.v1.DeleteFcmTokenResponse
  */
-export declare type DeleteFcmTokenResponse = Message<"admin.v1.DeleteFcmTokenResponse"> & {
-};
+export declare type DeleteFcmTokenResponse =
+	Message<"admin.v1.DeleteFcmTokenResponse"> & {};
 
 /**
  * Describes the message admin.v1.DeleteFcmTokenResponse.
@@ -227,45 +240,44 @@ export declare const DeleteFcmTokenResponseSchema: GenMessage<DeleteFcmTokenResp
  * @generated from service admin.v1.FcmTokenService
  */
 export declare const FcmTokenService: GenService<{
-  /**
-   * @generated from rpc admin.v1.FcmTokenService.ListFcmTokens
-   */
-  listFcmTokens: {
-    methodKind: "unary";
-    input: typeof ListFcmTokensRequestSchema;
-    output: typeof ListFcmTokensResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.FcmTokenService.GetFcmToken
-   */
-  getFcmToken: {
-    methodKind: "unary";
-    input: typeof GetFcmTokenRequestSchema;
-    output: typeof GetFcmTokenResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.FcmTokenService.CreateFcmToken
-   */
-  createFcmToken: {
-    methodKind: "unary";
-    input: typeof CreateFcmTokenRequestSchema;
-    output: typeof CreateFcmTokenResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.FcmTokenService.UpdateFcmToken
-   */
-  updateFcmToken: {
-    methodKind: "unary";
-    input: typeof UpdateFcmTokenRequestSchema;
-    output: typeof UpdateFcmTokenResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.FcmTokenService.DeleteFcmToken
-   */
-  deleteFcmToken: {
-    methodKind: "unary";
-    input: typeof DeleteFcmTokenRequestSchema;
-    output: typeof DeleteFcmTokenResponseSchema;
-  },
+	/**
+	 * @generated from rpc admin.v1.FcmTokenService.ListFcmTokens
+	 */
+	listFcmTokens: {
+		methodKind: "unary";
+		input: typeof ListFcmTokensRequestSchema;
+		output: typeof ListFcmTokensResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.FcmTokenService.GetFcmToken
+	 */
+	getFcmToken: {
+		methodKind: "unary";
+		input: typeof GetFcmTokenRequestSchema;
+		output: typeof GetFcmTokenResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.FcmTokenService.CreateFcmToken
+	 */
+	createFcmToken: {
+		methodKind: "unary";
+		input: typeof CreateFcmTokenRequestSchema;
+		output: typeof CreateFcmTokenResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.FcmTokenService.UpdateFcmToken
+	 */
+	updateFcmToken: {
+		methodKind: "unary";
+		input: typeof UpdateFcmTokenRequestSchema;
+		output: typeof UpdateFcmTokenResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.FcmTokenService.DeleteFcmToken
+	 */
+	deleteFcmToken: {
+		methodKind: "unary";
+		input: typeof DeleteFcmTokenRequestSchema;
+		output: typeof DeleteFcmTokenResponseSchema;
+	};
 }>;
-

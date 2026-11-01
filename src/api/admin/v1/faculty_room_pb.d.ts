@@ -2,7 +2,11 @@
 // @generated from file admin/v1/faculty_room.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import type {
+	GenFile,
+	GenMessage,
+	GenService,
+} from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 
@@ -15,30 +19,30 @@ export declare const file_admin_v1_faculty_room: GenFile;
  * @generated from message admin.v1.FacultyRoom
  */
 export declare type FacultyRoom = Message<"admin.v1.FacultyRoom"> & {
-  /**
-   * @generated from field: string faculty_id = 1;
-   */
-  facultyId: string;
+	/**
+	 * @generated from field: string faculty_id = 1;
+	 */
+	facultyId: string;
 
-  /**
-   * @generated from field: string room_id = 2;
-   */
-  roomId: string;
+	/**
+	 * @generated from field: string room_id = 2;
+	 */
+	roomId: string;
 
-  /**
-   * @generated from field: int32 year = 3;
-   */
-  year: number;
+	/**
+	 * @generated from field: int32 year = 3;
+	 */
+	year: number;
 
-  /**
-   * @generated from field: google.protobuf.Timestamp created_at = 4;
-   */
-  createdAt?: Timestamp | undefined;
+	/**
+	 * @generated from field: google.protobuf.Timestamp created_at = 4;
+	 */
+	createdAt?: Timestamp | undefined;
 
-  /**
-   * @generated from field: google.protobuf.Timestamp updated_at = 5;
-   */
-  updatedAt?: Timestamp | undefined;
+	/**
+	 * @generated from field: google.protobuf.Timestamp updated_at = 5;
+	 */
+	updatedAt?: Timestamp | undefined;
 };
 
 /**
@@ -50,17 +54,18 @@ export declare const FacultyRoomSchema: GenMessage<FacultyRoom>;
 /**
  * @generated from message admin.v1.ListFacultyRoomsRequest
  */
-export declare type ListFacultyRoomsRequest = Message<"admin.v1.ListFacultyRoomsRequest"> & {
-  /**
-   * @generated from field: int32 page_size = 1;
-   */
-  pageSize: number;
+export declare type ListFacultyRoomsRequest =
+	Message<"admin.v1.ListFacultyRoomsRequest"> & {
+		/**
+		 * @generated from field: int32 page_size = 1;
+		 */
+		pageSize: number;
 
-  /**
-   * @generated from field: string page_token = 2;
-   */
-  pageToken: string;
-};
+		/**
+		 * @generated from field: string page_token = 2;
+		 */
+		pageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListFacultyRoomsRequest.
@@ -71,17 +76,18 @@ export declare const ListFacultyRoomsRequestSchema: GenMessage<ListFacultyRoomsR
 /**
  * @generated from message admin.v1.ListFacultyRoomsResponse
  */
-export declare type ListFacultyRoomsResponse = Message<"admin.v1.ListFacultyRoomsResponse"> & {
-  /**
-   * @generated from field: repeated admin.v1.FacultyRoom faculty_rooms = 1;
-   */
-  facultyRooms: FacultyRoom[];
+export declare type ListFacultyRoomsResponse =
+	Message<"admin.v1.ListFacultyRoomsResponse"> & {
+		/**
+		 * @generated from field: repeated admin.v1.FacultyRoom faculty_rooms = 1;
+		 */
+		facultyRooms: FacultyRoom[];
 
-  /**
-   * @generated from field: string next_page_token = 2;
-   */
-  nextPageToken: string;
-};
+		/**
+		 * @generated from field: string next_page_token = 2;
+		 */
+		nextPageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListFacultyRoomsResponse.
@@ -92,22 +98,23 @@ export declare const ListFacultyRoomsResponseSchema: GenMessage<ListFacultyRooms
 /**
  * @generated from message admin.v1.GetFacultyRoomRequest
  */
-export declare type GetFacultyRoomRequest = Message<"admin.v1.GetFacultyRoomRequest"> & {
-  /**
-   * @generated from field: string faculty_id = 1;
-   */
-  facultyId: string;
+export declare type GetFacultyRoomRequest =
+	Message<"admin.v1.GetFacultyRoomRequest"> & {
+		/**
+		 * @generated from field: string faculty_id = 1;
+		 */
+		facultyId: string;
 
-  /**
-   * @generated from field: string room_id = 2;
-   */
-  roomId: string;
+		/**
+		 * @generated from field: string room_id = 2;
+		 */
+		roomId: string;
 
-  /**
-   * @generated from field: int32 year = 3;
-   */
-  year: number;
-};
+		/**
+		 * @generated from field: int32 year = 3;
+		 */
+		year: number;
+	};
 
 /**
  * Describes the message admin.v1.GetFacultyRoomRequest.
@@ -118,12 +125,13 @@ export declare const GetFacultyRoomRequestSchema: GenMessage<GetFacultyRoomReque
 /**
  * @generated from message admin.v1.GetFacultyRoomResponse
  */
-export declare type GetFacultyRoomResponse = Message<"admin.v1.GetFacultyRoomResponse"> & {
-  /**
-   * @generated from field: admin.v1.FacultyRoom faculty_room = 1;
-   */
-  facultyRoom?: FacultyRoom | undefined;
-};
+export declare type GetFacultyRoomResponse =
+	Message<"admin.v1.GetFacultyRoomResponse"> & {
+		/**
+		 * @generated from field: admin.v1.FacultyRoom faculty_room = 1;
+		 */
+		facultyRoom?: FacultyRoom | undefined;
+	};
 
 /**
  * Describes the message admin.v1.GetFacultyRoomResponse.
@@ -134,22 +142,23 @@ export declare const GetFacultyRoomResponseSchema: GenMessage<GetFacultyRoomResp
 /**
  * @generated from message admin.v1.CreateFacultyRoomRequest
  */
-export declare type CreateFacultyRoomRequest = Message<"admin.v1.CreateFacultyRoomRequest"> & {
-  /**
-   * @generated from field: string faculty_id = 1;
-   */
-  facultyId: string;
+export declare type CreateFacultyRoomRequest =
+	Message<"admin.v1.CreateFacultyRoomRequest"> & {
+		/**
+		 * @generated from field: string faculty_id = 1;
+		 */
+		facultyId: string;
 
-  /**
-   * @generated from field: string room_id = 2;
-   */
-  roomId: string;
+		/**
+		 * @generated from field: string room_id = 2;
+		 */
+		roomId: string;
 
-  /**
-   * @generated from field: int32 year = 3;
-   */
-  year: number;
-};
+		/**
+		 * @generated from field: int32 year = 3;
+		 */
+		year: number;
+	};
 
 /**
  * Describes the message admin.v1.CreateFacultyRoomRequest.
@@ -160,12 +169,13 @@ export declare const CreateFacultyRoomRequestSchema: GenMessage<CreateFacultyRoo
 /**
  * @generated from message admin.v1.CreateFacultyRoomResponse
  */
-export declare type CreateFacultyRoomResponse = Message<"admin.v1.CreateFacultyRoomResponse"> & {
-  /**
-   * @generated from field: admin.v1.FacultyRoom faculty_room = 1;
-   */
-  facultyRoom?: FacultyRoom | undefined;
-};
+export declare type CreateFacultyRoomResponse =
+	Message<"admin.v1.CreateFacultyRoomResponse"> & {
+		/**
+		 * @generated from field: admin.v1.FacultyRoom faculty_room = 1;
+		 */
+		facultyRoom?: FacultyRoom | undefined;
+	};
 
 /**
  * Describes the message admin.v1.CreateFacultyRoomResponse.
@@ -176,22 +186,23 @@ export declare const CreateFacultyRoomResponseSchema: GenMessage<CreateFacultyRo
 /**
  * @generated from message admin.v1.DeleteFacultyRoomRequest
  */
-export declare type DeleteFacultyRoomRequest = Message<"admin.v1.DeleteFacultyRoomRequest"> & {
-  /**
-   * @generated from field: string faculty_id = 1;
-   */
-  facultyId: string;
+export declare type DeleteFacultyRoomRequest =
+	Message<"admin.v1.DeleteFacultyRoomRequest"> & {
+		/**
+		 * @generated from field: string faculty_id = 1;
+		 */
+		facultyId: string;
 
-  /**
-   * @generated from field: string room_id = 2;
-   */
-  roomId: string;
+		/**
+		 * @generated from field: string room_id = 2;
+		 */
+		roomId: string;
 
-  /**
-   * @generated from field: int32 year = 3;
-   */
-  year: number;
-};
+		/**
+		 * @generated from field: int32 year = 3;
+		 */
+		year: number;
+	};
 
 /**
  * Describes the message admin.v1.DeleteFacultyRoomRequest.
@@ -202,8 +213,8 @@ export declare const DeleteFacultyRoomRequestSchema: GenMessage<DeleteFacultyRoo
 /**
  * @generated from message admin.v1.DeleteFacultyRoomResponse
  */
-export declare type DeleteFacultyRoomResponse = Message<"admin.v1.DeleteFacultyRoomResponse"> & {
-};
+export declare type DeleteFacultyRoomResponse =
+	Message<"admin.v1.DeleteFacultyRoomResponse"> & {};
 
 /**
  * Describes the message admin.v1.DeleteFacultyRoomResponse.
@@ -215,37 +226,36 @@ export declare const DeleteFacultyRoomResponseSchema: GenMessage<DeleteFacultyRo
  * @generated from service admin.v1.FacultyRoomService
  */
 export declare const FacultyRoomService: GenService<{
-  /**
-   * @generated from rpc admin.v1.FacultyRoomService.ListFacultyRooms
-   */
-  listFacultyRooms: {
-    methodKind: "unary";
-    input: typeof ListFacultyRoomsRequestSchema;
-    output: typeof ListFacultyRoomsResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.FacultyRoomService.GetFacultyRoom
-   */
-  getFacultyRoom: {
-    methodKind: "unary";
-    input: typeof GetFacultyRoomRequestSchema;
-    output: typeof GetFacultyRoomResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.FacultyRoomService.CreateFacultyRoom
-   */
-  createFacultyRoom: {
-    methodKind: "unary";
-    input: typeof CreateFacultyRoomRequestSchema;
-    output: typeof CreateFacultyRoomResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.FacultyRoomService.DeleteFacultyRoom
-   */
-  deleteFacultyRoom: {
-    methodKind: "unary";
-    input: typeof DeleteFacultyRoomRequestSchema;
-    output: typeof DeleteFacultyRoomResponseSchema;
-  },
+	/**
+	 * @generated from rpc admin.v1.FacultyRoomService.ListFacultyRooms
+	 */
+	listFacultyRooms: {
+		methodKind: "unary";
+		input: typeof ListFacultyRoomsRequestSchema;
+		output: typeof ListFacultyRoomsResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.FacultyRoomService.GetFacultyRoom
+	 */
+	getFacultyRoom: {
+		methodKind: "unary";
+		input: typeof GetFacultyRoomRequestSchema;
+		output: typeof GetFacultyRoomResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.FacultyRoomService.CreateFacultyRoom
+	 */
+	createFacultyRoom: {
+		methodKind: "unary";
+		input: typeof CreateFacultyRoomRequestSchema;
+		output: typeof CreateFacultyRoomResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.FacultyRoomService.DeleteFacultyRoom
+	 */
+	deleteFacultyRoom: {
+		methodKind: "unary";
+		input: typeof DeleteFacultyRoomRequestSchema;
+		output: typeof DeleteFacultyRoomResponseSchema;
+	};
 }>;
-

@@ -14,20 +14,20 @@ export declare const file_google_type_date: GenFile;
  * @generated from message google.type.Date
  */
 export declare type Date = Message<"google.type.Date"> & {
-  /**
-   * @generated from field: int32 year = 1;
-   */
-  year: number;
+	/**
+	 * @generated from field: int32 year = 1;
+	 */
+	year: number;
 
-  /**
-   * @generated from field: int32 month = 2;
-   */
-  month: number;
+	/**
+	 * @generated from field: int32 month = 2;
+	 */
+	month: number;
 
-  /**
-   * @generated from field: int32 day = 3;
-   */
-  day: number;
+	/**
+	 * @generated from field: int32 day = 3;
+	 */
+	day: number;
 };
 
 /**
@@ -35,4 +35,3 @@ export declare type Date = Message<"google.type.Date"> & {
  * Use `create(DateSchema)` to create a new message.
  */
 export declare const DateSchema: GenMessage<Date>;
-

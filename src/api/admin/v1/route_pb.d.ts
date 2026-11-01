@@ -2,7 +2,11 @@
 // @generated from file admin/v1/route.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import type {
+	GenFile,
+	GenMessage,
+	GenService,
+} from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { FieldMask } from "@bufbuild/protobuf/wkt";
 
@@ -15,15 +19,15 @@ export declare const file_admin_v1_route: GenFile;
  * @generated from message admin.v1.Route
  */
 export declare type Route = Message<"admin.v1.Route"> & {
-  /**
-   * @generated from field: string route_id = 1;
-   */
-  routeId: string;
+	/**
+	 * @generated from field: string route_id = 1;
+	 */
+	routeId: string;
 
-  /**
-   * @generated from field: string route_short_name = 2;
-   */
-  routeShortName: string;
+	/**
+	 * @generated from field: string route_short_name = 2;
+	 */
+	routeShortName: string;
 };
 
 /**
@@ -35,17 +39,18 @@ export declare const RouteSchema: GenMessage<Route>;
 /**
  * @generated from message admin.v1.ListRoutesRequest
  */
-export declare type ListRoutesRequest = Message<"admin.v1.ListRoutesRequest"> & {
-  /**
-   * @generated from field: int32 page_size = 1;
-   */
-  pageSize: number;
+export declare type ListRoutesRequest =
+	Message<"admin.v1.ListRoutesRequest"> & {
+		/**
+		 * @generated from field: int32 page_size = 1;
+		 */
+		pageSize: number;
 
-  /**
-   * @generated from field: string page_token = 2;
-   */
-  pageToken: string;
-};
+		/**
+		 * @generated from field: string page_token = 2;
+		 */
+		pageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListRoutesRequest.
@@ -56,17 +61,18 @@ export declare const ListRoutesRequestSchema: GenMessage<ListRoutesRequest>;
 /**
  * @generated from message admin.v1.ListRoutesResponse
  */
-export declare type ListRoutesResponse = Message<"admin.v1.ListRoutesResponse"> & {
-  /**
-   * @generated from field: repeated admin.v1.Route routes = 1;
-   */
-  routes: Route[];
+export declare type ListRoutesResponse =
+	Message<"admin.v1.ListRoutesResponse"> & {
+		/**
+		 * @generated from field: repeated admin.v1.Route routes = 1;
+		 */
+		routes: Route[];
 
-  /**
-   * @generated from field: string next_page_token = 2;
-   */
-  nextPageToken: string;
-};
+		/**
+		 * @generated from field: string next_page_token = 2;
+		 */
+		nextPageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListRoutesResponse.
@@ -78,10 +84,10 @@ export declare const ListRoutesResponseSchema: GenMessage<ListRoutesResponse>;
  * @generated from message admin.v1.GetRouteRequest
  */
 export declare type GetRouteRequest = Message<"admin.v1.GetRouteRequest"> & {
-  /**
-   * @generated from field: string route_id = 1;
-   */
-  routeId: string;
+	/**
+	 * @generated from field: string route_id = 1;
+	 */
+	routeId: string;
 };
 
 /**
@@ -94,10 +100,10 @@ export declare const GetRouteRequestSchema: GenMessage<GetRouteRequest>;
  * @generated from message admin.v1.GetRouteResponse
  */
 export declare type GetRouteResponse = Message<"admin.v1.GetRouteResponse"> & {
-  /**
-   * @generated from field: admin.v1.Route route = 1;
-   */
-  route?: Route | undefined;
+	/**
+	 * @generated from field: admin.v1.Route route = 1;
+	 */
+	route?: Route | undefined;
 };
 
 /**
@@ -109,17 +115,18 @@ export declare const GetRouteResponseSchema: GenMessage<GetRouteResponse>;
 /**
  * @generated from message admin.v1.CreateRouteRequest
  */
-export declare type CreateRouteRequest = Message<"admin.v1.CreateRouteRequest"> & {
-  /**
-   * @generated from field: string route_id = 1;
-   */
-  routeId: string;
+export declare type CreateRouteRequest =
+	Message<"admin.v1.CreateRouteRequest"> & {
+		/**
+		 * @generated from field: string route_id = 1;
+		 */
+		routeId: string;
 
-  /**
-   * @generated from field: string route_short_name = 2;
-   */
-  routeShortName: string;
-};
+		/**
+		 * @generated from field: string route_short_name = 2;
+		 */
+		routeShortName: string;
+	};
 
 /**
  * Describes the message admin.v1.CreateRouteRequest.
@@ -130,12 +137,13 @@ export declare const CreateRouteRequestSchema: GenMessage<CreateRouteRequest>;
 /**
  * @generated from message admin.v1.CreateRouteResponse
  */
-export declare type CreateRouteResponse = Message<"admin.v1.CreateRouteResponse"> & {
-  /**
-   * @generated from field: admin.v1.Route route = 1;
-   */
-  route?: Route | undefined;
-};
+export declare type CreateRouteResponse =
+	Message<"admin.v1.CreateRouteResponse"> & {
+		/**
+		 * @generated from field: admin.v1.Route route = 1;
+		 */
+		route?: Route | undefined;
+	};
 
 /**
  * Describes the message admin.v1.CreateRouteResponse.
@@ -146,22 +154,23 @@ export declare const CreateRouteResponseSchema: GenMessage<CreateRouteResponse>;
 /**
  * @generated from message admin.v1.UpdateRouteRequest
  */
-export declare type UpdateRouteRequest = Message<"admin.v1.UpdateRouteRequest"> & {
-  /**
-   * @generated from field: string route_id = 1;
-   */
-  routeId: string;
+export declare type UpdateRouteRequest =
+	Message<"admin.v1.UpdateRouteRequest"> & {
+		/**
+		 * @generated from field: string route_id = 1;
+		 */
+		routeId: string;
 
-  /**
-   * @generated from field: string route_short_name = 2;
-   */
-  routeShortName: string;
+		/**
+		 * @generated from field: string route_short_name = 2;
+		 */
+		routeShortName: string;
 
-  /**
-   * @generated from field: google.protobuf.FieldMask update_mask = 99;
-   */
-  updateMask?: FieldMask | undefined;
-};
+		/**
+		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
+		 */
+		updateMask?: FieldMask | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateRouteRequest.
@@ -172,12 +181,13 @@ export declare const UpdateRouteRequestSchema: GenMessage<UpdateRouteRequest>;
 /**
  * @generated from message admin.v1.UpdateRouteResponse
  */
-export declare type UpdateRouteResponse = Message<"admin.v1.UpdateRouteResponse"> & {
-  /**
-   * @generated from field: admin.v1.Route route = 1;
-   */
-  route?: Route | undefined;
-};
+export declare type UpdateRouteResponse =
+	Message<"admin.v1.UpdateRouteResponse"> & {
+		/**
+		 * @generated from field: admin.v1.Route route = 1;
+		 */
+		route?: Route | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateRouteResponse.
@@ -188,12 +198,13 @@ export declare const UpdateRouteResponseSchema: GenMessage<UpdateRouteResponse>;
 /**
  * @generated from message admin.v1.DeleteRouteRequest
  */
-export declare type DeleteRouteRequest = Message<"admin.v1.DeleteRouteRequest"> & {
-  /**
-   * @generated from field: string route_id = 1;
-   */
-  routeId: string;
-};
+export declare type DeleteRouteRequest =
+	Message<"admin.v1.DeleteRouteRequest"> & {
+		/**
+		 * @generated from field: string route_id = 1;
+		 */
+		routeId: string;
+	};
 
 /**
  * Describes the message admin.v1.DeleteRouteRequest.
@@ -204,8 +215,8 @@ export declare const DeleteRouteRequestSchema: GenMessage<DeleteRouteRequest>;
 /**
  * @generated from message admin.v1.DeleteRouteResponse
  */
-export declare type DeleteRouteResponse = Message<"admin.v1.DeleteRouteResponse"> & {
-};
+export declare type DeleteRouteResponse =
+	Message<"admin.v1.DeleteRouteResponse"> & {};
 
 /**
  * Describes the message admin.v1.DeleteRouteResponse.
@@ -217,45 +228,44 @@ export declare const DeleteRouteResponseSchema: GenMessage<DeleteRouteResponse>;
  * @generated from service admin.v1.RouteService
  */
 export declare const RouteService: GenService<{
-  /**
-   * @generated from rpc admin.v1.RouteService.ListRoutes
-   */
-  listRoutes: {
-    methodKind: "unary";
-    input: typeof ListRoutesRequestSchema;
-    output: typeof ListRoutesResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.RouteService.GetRoute
-   */
-  getRoute: {
-    methodKind: "unary";
-    input: typeof GetRouteRequestSchema;
-    output: typeof GetRouteResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.RouteService.CreateRoute
-   */
-  createRoute: {
-    methodKind: "unary";
-    input: typeof CreateRouteRequestSchema;
-    output: typeof CreateRouteResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.RouteService.UpdateRoute
-   */
-  updateRoute: {
-    methodKind: "unary";
-    input: typeof UpdateRouteRequestSchema;
-    output: typeof UpdateRouteResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.RouteService.DeleteRoute
-   */
-  deleteRoute: {
-    methodKind: "unary";
-    input: typeof DeleteRouteRequestSchema;
-    output: typeof DeleteRouteResponseSchema;
-  },
+	/**
+	 * @generated from rpc admin.v1.RouteService.ListRoutes
+	 */
+	listRoutes: {
+		methodKind: "unary";
+		input: typeof ListRoutesRequestSchema;
+		output: typeof ListRoutesResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.RouteService.GetRoute
+	 */
+	getRoute: {
+		methodKind: "unary";
+		input: typeof GetRouteRequestSchema;
+		output: typeof GetRouteResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.RouteService.CreateRoute
+	 */
+	createRoute: {
+		methodKind: "unary";
+		input: typeof CreateRouteRequestSchema;
+		output: typeof CreateRouteResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.RouteService.UpdateRoute
+	 */
+	updateRoute: {
+		methodKind: "unary";
+		input: typeof UpdateRouteRequestSchema;
+		output: typeof UpdateRouteResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.RouteService.DeleteRoute
+	 */
+	deleteRoute: {
+		methodKind: "unary";
+		input: typeof DeleteRouteRequestSchema;
+		output: typeof DeleteRouteResponseSchema;
+	};
 }>;
-

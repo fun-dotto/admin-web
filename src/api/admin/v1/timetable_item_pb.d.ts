@@ -2,7 +2,11 @@
 // @generated from file admin/v1/timetable_item.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import type {
+	GenFile,
+	GenMessage,
+	GenService,
+} from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { DayOfWeek } from "../../google/type/dayofweek_pb";
 import type { Period } from "./common_pb";
@@ -17,40 +21,40 @@ export declare const file_admin_v1_timetable_item: GenFile;
  * @generated from message admin.v1.TimetableItem
  */
 export declare type TimetableItem = Message<"admin.v1.TimetableItem"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
+	/**
+	 * @generated from field: string id = 1;
+	 */
+	id: string;
 
-  /**
-   * @generated from field: string subject_id = 2;
-   */
-  subjectId: string;
+	/**
+	 * @generated from field: string subject_id = 2;
+	 */
+	subjectId: string;
 
-  /**
-   * @generated from field: optional google.type.DayOfWeek day_of_week = 3;
-   */
-  dayOfWeek?: DayOfWeek | undefined;
+	/**
+	 * @generated from field: optional google.type.DayOfWeek day_of_week = 3;
+	 */
+	dayOfWeek?: DayOfWeek | undefined;
 
-  /**
-   * @generated from field: optional admin.v1.Period period = 4;
-   */
-  period?: Period | undefined;
+	/**
+	 * @generated from field: optional admin.v1.Period period = 4;
+	 */
+	period?: Period | undefined;
 
-  /**
-   * @generated from field: repeated string room_ids = 5;
-   */
-  roomIds: string[];
+	/**
+	 * @generated from field: repeated string room_ids = 5;
+	 */
+	roomIds: string[];
 
-  /**
-   * @generated from field: google.protobuf.Timestamp created_at = 6;
-   */
-  createdAt?: Timestamp | undefined;
+	/**
+	 * @generated from field: google.protobuf.Timestamp created_at = 6;
+	 */
+	createdAt?: Timestamp | undefined;
 
-  /**
-   * @generated from field: google.protobuf.Timestamp updated_at = 7;
-   */
-  updatedAt?: Timestamp | undefined;
+	/**
+	 * @generated from field: google.protobuf.Timestamp updated_at = 7;
+	 */
+	updatedAt?: Timestamp | undefined;
 };
 
 /**
@@ -62,17 +66,18 @@ export declare const TimetableItemSchema: GenMessage<TimetableItem>;
 /**
  * @generated from message admin.v1.ListTimetableItemsRequest
  */
-export declare type ListTimetableItemsRequest = Message<"admin.v1.ListTimetableItemsRequest"> & {
-  /**
-   * @generated from field: int32 page_size = 1;
-   */
-  pageSize: number;
+export declare type ListTimetableItemsRequest =
+	Message<"admin.v1.ListTimetableItemsRequest"> & {
+		/**
+		 * @generated from field: int32 page_size = 1;
+		 */
+		pageSize: number;
 
-  /**
-   * @generated from field: string page_token = 2;
-   */
-  pageToken: string;
-};
+		/**
+		 * @generated from field: string page_token = 2;
+		 */
+		pageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListTimetableItemsRequest.
@@ -83,17 +88,18 @@ export declare const ListTimetableItemsRequestSchema: GenMessage<ListTimetableIt
 /**
  * @generated from message admin.v1.ListTimetableItemsResponse
  */
-export declare type ListTimetableItemsResponse = Message<"admin.v1.ListTimetableItemsResponse"> & {
-  /**
-   * @generated from field: repeated admin.v1.TimetableItem timetable_items = 1;
-   */
-  timetableItems: TimetableItem[];
+export declare type ListTimetableItemsResponse =
+	Message<"admin.v1.ListTimetableItemsResponse"> & {
+		/**
+		 * @generated from field: repeated admin.v1.TimetableItem timetable_items = 1;
+		 */
+		timetableItems: TimetableItem[];
 
-  /**
-   * @generated from field: string next_page_token = 2;
-   */
-  nextPageToken: string;
-};
+		/**
+		 * @generated from field: string next_page_token = 2;
+		 */
+		nextPageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListTimetableItemsResponse.
@@ -104,12 +110,13 @@ export declare const ListTimetableItemsResponseSchema: GenMessage<ListTimetableI
 /**
  * @generated from message admin.v1.GetTimetableItemRequest
  */
-export declare type GetTimetableItemRequest = Message<"admin.v1.GetTimetableItemRequest"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
-};
+export declare type GetTimetableItemRequest =
+	Message<"admin.v1.GetTimetableItemRequest"> & {
+		/**
+		 * @generated from field: string id = 1;
+		 */
+		id: string;
+	};
 
 /**
  * Describes the message admin.v1.GetTimetableItemRequest.
@@ -120,12 +127,13 @@ export declare const GetTimetableItemRequestSchema: GenMessage<GetTimetableItemR
 /**
  * @generated from message admin.v1.GetTimetableItemResponse
  */
-export declare type GetTimetableItemResponse = Message<"admin.v1.GetTimetableItemResponse"> & {
-  /**
-   * @generated from field: admin.v1.TimetableItem timetable_item = 1;
-   */
-  timetableItem?: TimetableItem | undefined;
-};
+export declare type GetTimetableItemResponse =
+	Message<"admin.v1.GetTimetableItemResponse"> & {
+		/**
+		 * @generated from field: admin.v1.TimetableItem timetable_item = 1;
+		 */
+		timetableItem?: TimetableItem | undefined;
+	};
 
 /**
  * Describes the message admin.v1.GetTimetableItemResponse.
@@ -136,27 +144,28 @@ export declare const GetTimetableItemResponseSchema: GenMessage<GetTimetableItem
 /**
  * @generated from message admin.v1.CreateTimetableItemRequest
  */
-export declare type CreateTimetableItemRequest = Message<"admin.v1.CreateTimetableItemRequest"> & {
-  /**
-   * @generated from field: string subject_id = 1;
-   */
-  subjectId: string;
+export declare type CreateTimetableItemRequest =
+	Message<"admin.v1.CreateTimetableItemRequest"> & {
+		/**
+		 * @generated from field: string subject_id = 1;
+		 */
+		subjectId: string;
 
-  /**
-   * @generated from field: optional google.type.DayOfWeek day_of_week = 2;
-   */
-  dayOfWeek?: DayOfWeek | undefined;
+		/**
+		 * @generated from field: optional google.type.DayOfWeek day_of_week = 2;
+		 */
+		dayOfWeek?: DayOfWeek | undefined;
 
-  /**
-   * @generated from field: optional admin.v1.Period period = 3;
-   */
-  period?: Period | undefined;
+		/**
+		 * @generated from field: optional admin.v1.Period period = 3;
+		 */
+		period?: Period | undefined;
 
-  /**
-   * @generated from field: repeated string room_ids = 4;
-   */
-  roomIds: string[];
-};
+		/**
+		 * @generated from field: repeated string room_ids = 4;
+		 */
+		roomIds: string[];
+	};
 
 /**
  * Describes the message admin.v1.CreateTimetableItemRequest.
@@ -167,12 +176,13 @@ export declare const CreateTimetableItemRequestSchema: GenMessage<CreateTimetabl
 /**
  * @generated from message admin.v1.CreateTimetableItemResponse
  */
-export declare type CreateTimetableItemResponse = Message<"admin.v1.CreateTimetableItemResponse"> & {
-  /**
-   * @generated from field: admin.v1.TimetableItem timetable_item = 1;
-   */
-  timetableItem?: TimetableItem | undefined;
-};
+export declare type CreateTimetableItemResponse =
+	Message<"admin.v1.CreateTimetableItemResponse"> & {
+		/**
+		 * @generated from field: admin.v1.TimetableItem timetable_item = 1;
+		 */
+		timetableItem?: TimetableItem | undefined;
+	};
 
 /**
  * Describes the message admin.v1.CreateTimetableItemResponse.
@@ -183,37 +193,38 @@ export declare const CreateTimetableItemResponseSchema: GenMessage<CreateTimetab
 /**
  * @generated from message admin.v1.UpdateTimetableItemRequest
  */
-export declare type UpdateTimetableItemRequest = Message<"admin.v1.UpdateTimetableItemRequest"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
+export declare type UpdateTimetableItemRequest =
+	Message<"admin.v1.UpdateTimetableItemRequest"> & {
+		/**
+		 * @generated from field: string id = 1;
+		 */
+		id: string;
 
-  /**
-   * @generated from field: string subject_id = 2;
-   */
-  subjectId: string;
+		/**
+		 * @generated from field: string subject_id = 2;
+		 */
+		subjectId: string;
 
-  /**
-   * @generated from field: optional google.type.DayOfWeek day_of_week = 3;
-   */
-  dayOfWeek?: DayOfWeek | undefined;
+		/**
+		 * @generated from field: optional google.type.DayOfWeek day_of_week = 3;
+		 */
+		dayOfWeek?: DayOfWeek | undefined;
 
-  /**
-   * @generated from field: optional admin.v1.Period period = 4;
-   */
-  period?: Period | undefined;
+		/**
+		 * @generated from field: optional admin.v1.Period period = 4;
+		 */
+		period?: Period | undefined;
 
-  /**
-   * @generated from field: repeated string room_ids = 5;
-   */
-  roomIds: string[];
+		/**
+		 * @generated from field: repeated string room_ids = 5;
+		 */
+		roomIds: string[];
 
-  /**
-   * @generated from field: google.protobuf.FieldMask update_mask = 99;
-   */
-  updateMask?: FieldMask | undefined;
-};
+		/**
+		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
+		 */
+		updateMask?: FieldMask | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateTimetableItemRequest.
@@ -224,12 +235,13 @@ export declare const UpdateTimetableItemRequestSchema: GenMessage<UpdateTimetabl
 /**
  * @generated from message admin.v1.UpdateTimetableItemResponse
  */
-export declare type UpdateTimetableItemResponse = Message<"admin.v1.UpdateTimetableItemResponse"> & {
-  /**
-   * @generated from field: admin.v1.TimetableItem timetable_item = 1;
-   */
-  timetableItem?: TimetableItem | undefined;
-};
+export declare type UpdateTimetableItemResponse =
+	Message<"admin.v1.UpdateTimetableItemResponse"> & {
+		/**
+		 * @generated from field: admin.v1.TimetableItem timetable_item = 1;
+		 */
+		timetableItem?: TimetableItem | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateTimetableItemResponse.
@@ -240,12 +252,13 @@ export declare const UpdateTimetableItemResponseSchema: GenMessage<UpdateTimetab
 /**
  * @generated from message admin.v1.DeleteTimetableItemRequest
  */
-export declare type DeleteTimetableItemRequest = Message<"admin.v1.DeleteTimetableItemRequest"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
-};
+export declare type DeleteTimetableItemRequest =
+	Message<"admin.v1.DeleteTimetableItemRequest"> & {
+		/**
+		 * @generated from field: string id = 1;
+		 */
+		id: string;
+	};
 
 /**
  * Describes the message admin.v1.DeleteTimetableItemRequest.
@@ -256,8 +269,8 @@ export declare const DeleteTimetableItemRequestSchema: GenMessage<DeleteTimetabl
 /**
  * @generated from message admin.v1.DeleteTimetableItemResponse
  */
-export declare type DeleteTimetableItemResponse = Message<"admin.v1.DeleteTimetableItemResponse"> & {
-};
+export declare type DeleteTimetableItemResponse =
+	Message<"admin.v1.DeleteTimetableItemResponse"> & {};
 
 /**
  * Describes the message admin.v1.DeleteTimetableItemResponse.
@@ -269,45 +282,44 @@ export declare const DeleteTimetableItemResponseSchema: GenMessage<DeleteTimetab
  * @generated from service admin.v1.TimetableItemService
  */
 export declare const TimetableItemService: GenService<{
-  /**
-   * @generated from rpc admin.v1.TimetableItemService.ListTimetableItems
-   */
-  listTimetableItems: {
-    methodKind: "unary";
-    input: typeof ListTimetableItemsRequestSchema;
-    output: typeof ListTimetableItemsResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.TimetableItemService.GetTimetableItem
-   */
-  getTimetableItem: {
-    methodKind: "unary";
-    input: typeof GetTimetableItemRequestSchema;
-    output: typeof GetTimetableItemResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.TimetableItemService.CreateTimetableItem
-   */
-  createTimetableItem: {
-    methodKind: "unary";
-    input: typeof CreateTimetableItemRequestSchema;
-    output: typeof CreateTimetableItemResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.TimetableItemService.UpdateTimetableItem
-   */
-  updateTimetableItem: {
-    methodKind: "unary";
-    input: typeof UpdateTimetableItemRequestSchema;
-    output: typeof UpdateTimetableItemResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.TimetableItemService.DeleteTimetableItem
-   */
-  deleteTimetableItem: {
-    methodKind: "unary";
-    input: typeof DeleteTimetableItemRequestSchema;
-    output: typeof DeleteTimetableItemResponseSchema;
-  },
+	/**
+	 * @generated from rpc admin.v1.TimetableItemService.ListTimetableItems
+	 */
+	listTimetableItems: {
+		methodKind: "unary";
+		input: typeof ListTimetableItemsRequestSchema;
+		output: typeof ListTimetableItemsResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.TimetableItemService.GetTimetableItem
+	 */
+	getTimetableItem: {
+		methodKind: "unary";
+		input: typeof GetTimetableItemRequestSchema;
+		output: typeof GetTimetableItemResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.TimetableItemService.CreateTimetableItem
+	 */
+	createTimetableItem: {
+		methodKind: "unary";
+		input: typeof CreateTimetableItemRequestSchema;
+		output: typeof CreateTimetableItemResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.TimetableItemService.UpdateTimetableItem
+	 */
+	updateTimetableItem: {
+		methodKind: "unary";
+		input: typeof UpdateTimetableItemRequestSchema;
+		output: typeof UpdateTimetableItemResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.TimetableItemService.DeleteTimetableItem
+	 */
+	deleteTimetableItem: {
+		methodKind: "unary";
+		input: typeof DeleteTimetableItemRequestSchema;
+		output: typeof DeleteTimetableItemResponseSchema;
+	};
 }>;
-

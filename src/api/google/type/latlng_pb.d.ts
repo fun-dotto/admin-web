@@ -14,15 +14,15 @@ export declare const file_google_type_latlng: GenFile;
  * @generated from message google.type.LatLng
  */
 export declare type LatLng = Message<"google.type.LatLng"> & {
-  /**
-   * @generated from field: double latitude = 1;
-   */
-  latitude: number;
+	/**
+	 * @generated from field: double latitude = 1;
+	 */
+	latitude: number;
 
-  /**
-   * @generated from field: double longitude = 2;
-   */
-  longitude: number;
+	/**
+	 * @generated from field: double longitude = 2;
+	 */
+	longitude: number;
 };
 
 /**
@@ -30,4 +30,3 @@ export declare type LatLng = Message<"google.type.LatLng"> & {
  * Use `create(LatLngSchema)` to create a new message.
  */
 export declare const LatLngSchema: GenMessage<LatLng>;
-

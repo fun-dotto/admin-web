@@ -7,13 +7,14 @@ import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 /**
  * Describes the file google/type/date.proto.
  */
-export const file_google_type_date = /*@__PURE__*/
-  fileDesc("ChZnb29nbGUvdHlwZS9kYXRlLnByb3RvEgtnb29nbGUudHlwZSIwCgREYXRlEgwKBHllYXIYASABKAUSDQoFbW9udGgYAiABKAUSCwoDZGF5GAMgASgFQjZaNGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvdHlwZS9kYXRlO2RhdGViBnByb3RvMw");
+export const file_google_type_date =
+	/*@__PURE__*/
+	fileDesc(
+		"ChZnb29nbGUvdHlwZS9kYXRlLnByb3RvEgtnb29nbGUudHlwZSIwCgREYXRlEgwKBHllYXIYASABKAUSDQoFbW9udGgYAiABKAUSCwoDZGF5GAMgASgFQjZaNGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvdHlwZS9kYXRlO2RhdGViBnByb3RvMw",
+	);
 
 /**
  * Describes the message google.type.Date.
  * Use `create(DateSchema)` to create a new message.
  */
-export const DateSchema = /*@__PURE__*/
-  messageDesc(file_google_type_date, 0);
-
+export const DateSchema = /*@__PURE__*/ messageDesc(file_google_type_date, 0);

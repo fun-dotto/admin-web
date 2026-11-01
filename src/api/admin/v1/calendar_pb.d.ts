@@ -2,7 +2,11 @@
 // @generated from file admin/v1/calendar.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import type {
+	GenFile,
+	GenMessage,
+	GenService,
+} from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Date } from "../../google/type/date_pb";
 import type { FieldMask } from "@bufbuild/protobuf/wkt";
@@ -16,55 +20,55 @@ export declare const file_admin_v1_calendar: GenFile;
  * @generated from message admin.v1.Calendar
  */
 export declare type Calendar = Message<"admin.v1.Calendar"> & {
-  /**
-   * @generated from field: string service_id = 1;
-   */
-  serviceId: string;
+	/**
+	 * @generated from field: string service_id = 1;
+	 */
+	serviceId: string;
 
-  /**
-   * @generated from field: bool monday = 2;
-   */
-  monday: boolean;
+	/**
+	 * @generated from field: bool monday = 2;
+	 */
+	monday: boolean;
 
-  /**
-   * @generated from field: bool tuesday = 3;
-   */
-  tuesday: boolean;
+	/**
+	 * @generated from field: bool tuesday = 3;
+	 */
+	tuesday: boolean;
 
-  /**
-   * @generated from field: bool wednesday = 4;
-   */
-  wednesday: boolean;
+	/**
+	 * @generated from field: bool wednesday = 4;
+	 */
+	wednesday: boolean;
 
-  /**
-   * @generated from field: bool thursday = 5;
-   */
-  thursday: boolean;
+	/**
+	 * @generated from field: bool thursday = 5;
+	 */
+	thursday: boolean;
 
-  /**
-   * @generated from field: bool friday = 6;
-   */
-  friday: boolean;
+	/**
+	 * @generated from field: bool friday = 6;
+	 */
+	friday: boolean;
 
-  /**
-   * @generated from field: bool saturday = 7;
-   */
-  saturday: boolean;
+	/**
+	 * @generated from field: bool saturday = 7;
+	 */
+	saturday: boolean;
 
-  /**
-   * @generated from field: bool sunday = 8;
-   */
-  sunday: boolean;
+	/**
+	 * @generated from field: bool sunday = 8;
+	 */
+	sunday: boolean;
 
-  /**
-   * @generated from field: google.type.Date start_date = 9;
-   */
-  startDate?: Date | undefined;
+	/**
+	 * @generated from field: google.type.Date start_date = 9;
+	 */
+	startDate?: Date | undefined;
 
-  /**
-   * @generated from field: google.type.Date end_date = 10;
-   */
-  endDate?: Date | undefined;
+	/**
+	 * @generated from field: google.type.Date end_date = 10;
+	 */
+	endDate?: Date | undefined;
 };
 
 /**
@@ -76,17 +80,18 @@ export declare const CalendarSchema: GenMessage<Calendar>;
 /**
  * @generated from message admin.v1.ListCalendarsRequest
  */
-export declare type ListCalendarsRequest = Message<"admin.v1.ListCalendarsRequest"> & {
-  /**
-   * @generated from field: int32 page_size = 1;
-   */
-  pageSize: number;
+export declare type ListCalendarsRequest =
+	Message<"admin.v1.ListCalendarsRequest"> & {
+		/**
+		 * @generated from field: int32 page_size = 1;
+		 */
+		pageSize: number;
 
-  /**
-   * @generated from field: string page_token = 2;
-   */
-  pageToken: string;
-};
+		/**
+		 * @generated from field: string page_token = 2;
+		 */
+		pageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListCalendarsRequest.
@@ -97,17 +102,18 @@ export declare const ListCalendarsRequestSchema: GenMessage<ListCalendarsRequest
 /**
  * @generated from message admin.v1.ListCalendarsResponse
  */
-export declare type ListCalendarsResponse = Message<"admin.v1.ListCalendarsResponse"> & {
-  /**
-   * @generated from field: repeated admin.v1.Calendar calendars = 1;
-   */
-  calendars: Calendar[];
+export declare type ListCalendarsResponse =
+	Message<"admin.v1.ListCalendarsResponse"> & {
+		/**
+		 * @generated from field: repeated admin.v1.Calendar calendars = 1;
+		 */
+		calendars: Calendar[];
 
-  /**
-   * @generated from field: string next_page_token = 2;
-   */
-  nextPageToken: string;
-};
+		/**
+		 * @generated from field: string next_page_token = 2;
+		 */
+		nextPageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListCalendarsResponse.
@@ -118,12 +124,13 @@ export declare const ListCalendarsResponseSchema: GenMessage<ListCalendarsRespon
 /**
  * @generated from message admin.v1.GetCalendarRequest
  */
-export declare type GetCalendarRequest = Message<"admin.v1.GetCalendarRequest"> & {
-  /**
-   * @generated from field: string service_id = 1;
-   */
-  serviceId: string;
-};
+export declare type GetCalendarRequest =
+	Message<"admin.v1.GetCalendarRequest"> & {
+		/**
+		 * @generated from field: string service_id = 1;
+		 */
+		serviceId: string;
+	};
 
 /**
  * Describes the message admin.v1.GetCalendarRequest.
@@ -134,12 +141,13 @@ export declare const GetCalendarRequestSchema: GenMessage<GetCalendarRequest>;
 /**
  * @generated from message admin.v1.GetCalendarResponse
  */
-export declare type GetCalendarResponse = Message<"admin.v1.GetCalendarResponse"> & {
-  /**
-   * @generated from field: admin.v1.Calendar calendar = 1;
-   */
-  calendar?: Calendar | undefined;
-};
+export declare type GetCalendarResponse =
+	Message<"admin.v1.GetCalendarResponse"> & {
+		/**
+		 * @generated from field: admin.v1.Calendar calendar = 1;
+		 */
+		calendar?: Calendar | undefined;
+	};
 
 /**
  * Describes the message admin.v1.GetCalendarResponse.
@@ -150,57 +158,58 @@ export declare const GetCalendarResponseSchema: GenMessage<GetCalendarResponse>;
 /**
  * @generated from message admin.v1.CreateCalendarRequest
  */
-export declare type CreateCalendarRequest = Message<"admin.v1.CreateCalendarRequest"> & {
-  /**
-   * @generated from field: string service_id = 1;
-   */
-  serviceId: string;
+export declare type CreateCalendarRequest =
+	Message<"admin.v1.CreateCalendarRequest"> & {
+		/**
+		 * @generated from field: string service_id = 1;
+		 */
+		serviceId: string;
 
-  /**
-   * @generated from field: bool monday = 2;
-   */
-  monday: boolean;
+		/**
+		 * @generated from field: bool monday = 2;
+		 */
+		monday: boolean;
 
-  /**
-   * @generated from field: bool tuesday = 3;
-   */
-  tuesday: boolean;
+		/**
+		 * @generated from field: bool tuesday = 3;
+		 */
+		tuesday: boolean;
 
-  /**
-   * @generated from field: bool wednesday = 4;
-   */
-  wednesday: boolean;
+		/**
+		 * @generated from field: bool wednesday = 4;
+		 */
+		wednesday: boolean;
 
-  /**
-   * @generated from field: bool thursday = 5;
-   */
-  thursday: boolean;
+		/**
+		 * @generated from field: bool thursday = 5;
+		 */
+		thursday: boolean;
 
-  /**
-   * @generated from field: bool friday = 6;
-   */
-  friday: boolean;
+		/**
+		 * @generated from field: bool friday = 6;
+		 */
+		friday: boolean;
 
-  /**
-   * @generated from field: bool saturday = 7;
-   */
-  saturday: boolean;
+		/**
+		 * @generated from field: bool saturday = 7;
+		 */
+		saturday: boolean;
 
-  /**
-   * @generated from field: bool sunday = 8;
-   */
-  sunday: boolean;
+		/**
+		 * @generated from field: bool sunday = 8;
+		 */
+		sunday: boolean;
 
-  /**
-   * @generated from field: google.type.Date start_date = 9;
-   */
-  startDate?: Date | undefined;
+		/**
+		 * @generated from field: google.type.Date start_date = 9;
+		 */
+		startDate?: Date | undefined;
 
-  /**
-   * @generated from field: google.type.Date end_date = 10;
-   */
-  endDate?: Date | undefined;
-};
+		/**
+		 * @generated from field: google.type.Date end_date = 10;
+		 */
+		endDate?: Date | undefined;
+	};
 
 /**
  * Describes the message admin.v1.CreateCalendarRequest.
@@ -211,12 +220,13 @@ export declare const CreateCalendarRequestSchema: GenMessage<CreateCalendarReque
 /**
  * @generated from message admin.v1.CreateCalendarResponse
  */
-export declare type CreateCalendarResponse = Message<"admin.v1.CreateCalendarResponse"> & {
-  /**
-   * @generated from field: admin.v1.Calendar calendar = 1;
-   */
-  calendar?: Calendar | undefined;
-};
+export declare type CreateCalendarResponse =
+	Message<"admin.v1.CreateCalendarResponse"> & {
+		/**
+		 * @generated from field: admin.v1.Calendar calendar = 1;
+		 */
+		calendar?: Calendar | undefined;
+	};
 
 /**
  * Describes the message admin.v1.CreateCalendarResponse.
@@ -227,62 +237,63 @@ export declare const CreateCalendarResponseSchema: GenMessage<CreateCalendarResp
 /**
  * @generated from message admin.v1.UpdateCalendarRequest
  */
-export declare type UpdateCalendarRequest = Message<"admin.v1.UpdateCalendarRequest"> & {
-  /**
-   * @generated from field: string service_id = 1;
-   */
-  serviceId: string;
+export declare type UpdateCalendarRequest =
+	Message<"admin.v1.UpdateCalendarRequest"> & {
+		/**
+		 * @generated from field: string service_id = 1;
+		 */
+		serviceId: string;
 
-  /**
-   * @generated from field: bool monday = 2;
-   */
-  monday: boolean;
+		/**
+		 * @generated from field: bool monday = 2;
+		 */
+		monday: boolean;
 
-  /**
-   * @generated from field: bool tuesday = 3;
-   */
-  tuesday: boolean;
+		/**
+		 * @generated from field: bool tuesday = 3;
+		 */
+		tuesday: boolean;
 
-  /**
-   * @generated from field: bool wednesday = 4;
-   */
-  wednesday: boolean;
+		/**
+		 * @generated from field: bool wednesday = 4;
+		 */
+		wednesday: boolean;
 
-  /**
-   * @generated from field: bool thursday = 5;
-   */
-  thursday: boolean;
+		/**
+		 * @generated from field: bool thursday = 5;
+		 */
+		thursday: boolean;
 
-  /**
-   * @generated from field: bool friday = 6;
-   */
-  friday: boolean;
+		/**
+		 * @generated from field: bool friday = 6;
+		 */
+		friday: boolean;
 
-  /**
-   * @generated from field: bool saturday = 7;
-   */
-  saturday: boolean;
+		/**
+		 * @generated from field: bool saturday = 7;
+		 */
+		saturday: boolean;
 
-  /**
-   * @generated from field: bool sunday = 8;
-   */
-  sunday: boolean;
+		/**
+		 * @generated from field: bool sunday = 8;
+		 */
+		sunday: boolean;
 
-  /**
-   * @generated from field: google.type.Date start_date = 9;
-   */
-  startDate?: Date | undefined;
+		/**
+		 * @generated from field: google.type.Date start_date = 9;
+		 */
+		startDate?: Date | undefined;
 
-  /**
-   * @generated from field: google.type.Date end_date = 10;
-   */
-  endDate?: Date | undefined;
+		/**
+		 * @generated from field: google.type.Date end_date = 10;
+		 */
+		endDate?: Date | undefined;
 
-  /**
-   * @generated from field: google.protobuf.FieldMask update_mask = 99;
-   */
-  updateMask?: FieldMask | undefined;
-};
+		/**
+		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
+		 */
+		updateMask?: FieldMask | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateCalendarRequest.
@@ -293,12 +304,13 @@ export declare const UpdateCalendarRequestSchema: GenMessage<UpdateCalendarReque
 /**
  * @generated from message admin.v1.UpdateCalendarResponse
  */
-export declare type UpdateCalendarResponse = Message<"admin.v1.UpdateCalendarResponse"> & {
-  /**
-   * @generated from field: admin.v1.Calendar calendar = 1;
-   */
-  calendar?: Calendar | undefined;
-};
+export declare type UpdateCalendarResponse =
+	Message<"admin.v1.UpdateCalendarResponse"> & {
+		/**
+		 * @generated from field: admin.v1.Calendar calendar = 1;
+		 */
+		calendar?: Calendar | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateCalendarResponse.
@@ -309,12 +321,13 @@ export declare const UpdateCalendarResponseSchema: GenMessage<UpdateCalendarResp
 /**
  * @generated from message admin.v1.DeleteCalendarRequest
  */
-export declare type DeleteCalendarRequest = Message<"admin.v1.DeleteCalendarRequest"> & {
-  /**
-   * @generated from field: string service_id = 1;
-   */
-  serviceId: string;
-};
+export declare type DeleteCalendarRequest =
+	Message<"admin.v1.DeleteCalendarRequest"> & {
+		/**
+		 * @generated from field: string service_id = 1;
+		 */
+		serviceId: string;
+	};
 
 /**
  * Describes the message admin.v1.DeleteCalendarRequest.
@@ -325,8 +338,8 @@ export declare const DeleteCalendarRequestSchema: GenMessage<DeleteCalendarReque
 /**
  * @generated from message admin.v1.DeleteCalendarResponse
  */
-export declare type DeleteCalendarResponse = Message<"admin.v1.DeleteCalendarResponse"> & {
-};
+export declare type DeleteCalendarResponse =
+	Message<"admin.v1.DeleteCalendarResponse"> & {};
 
 /**
  * Describes the message admin.v1.DeleteCalendarResponse.
@@ -338,45 +351,44 @@ export declare const DeleteCalendarResponseSchema: GenMessage<DeleteCalendarResp
  * @generated from service admin.v1.CalendarService
  */
 export declare const CalendarService: GenService<{
-  /**
-   * @generated from rpc admin.v1.CalendarService.ListCalendars
-   */
-  listCalendars: {
-    methodKind: "unary";
-    input: typeof ListCalendarsRequestSchema;
-    output: typeof ListCalendarsResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.CalendarService.GetCalendar
-   */
-  getCalendar: {
-    methodKind: "unary";
-    input: typeof GetCalendarRequestSchema;
-    output: typeof GetCalendarResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.CalendarService.CreateCalendar
-   */
-  createCalendar: {
-    methodKind: "unary";
-    input: typeof CreateCalendarRequestSchema;
-    output: typeof CreateCalendarResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.CalendarService.UpdateCalendar
-   */
-  updateCalendar: {
-    methodKind: "unary";
-    input: typeof UpdateCalendarRequestSchema;
-    output: typeof UpdateCalendarResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.CalendarService.DeleteCalendar
-   */
-  deleteCalendar: {
-    methodKind: "unary";
-    input: typeof DeleteCalendarRequestSchema;
-    output: typeof DeleteCalendarResponseSchema;
-  },
+	/**
+	 * @generated from rpc admin.v1.CalendarService.ListCalendars
+	 */
+	listCalendars: {
+		methodKind: "unary";
+		input: typeof ListCalendarsRequestSchema;
+		output: typeof ListCalendarsResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.CalendarService.GetCalendar
+	 */
+	getCalendar: {
+		methodKind: "unary";
+		input: typeof GetCalendarRequestSchema;
+		output: typeof GetCalendarResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.CalendarService.CreateCalendar
+	 */
+	createCalendar: {
+		methodKind: "unary";
+		input: typeof CreateCalendarRequestSchema;
+		output: typeof CreateCalendarResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.CalendarService.UpdateCalendar
+	 */
+	updateCalendar: {
+		methodKind: "unary";
+		input: typeof UpdateCalendarRequestSchema;
+		output: typeof UpdateCalendarResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.CalendarService.DeleteCalendar
+	 */
+	deleteCalendar: {
+		methodKind: "unary";
+		input: typeof DeleteCalendarRequestSchema;
+		output: typeof DeleteCalendarResponseSchema;
+	};
 }>;
-

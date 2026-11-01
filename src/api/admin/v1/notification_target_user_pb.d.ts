@@ -2,7 +2,11 @@
 // @generated from file admin/v1/notification_target_user.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import type {
+	GenFile,
+	GenMessage,
+	GenService,
+} from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 
@@ -14,22 +18,23 @@ export declare const file_admin_v1_notification_target_user: GenFile;
 /**
  * @generated from message admin.v1.NotificationTargetUser
  */
-export declare type NotificationTargetUser = Message<"admin.v1.NotificationTargetUser"> & {
-  /**
-   * @generated from field: string notification_id = 1;
-   */
-  notificationId: string;
+export declare type NotificationTargetUser =
+	Message<"admin.v1.NotificationTargetUser"> & {
+		/**
+		 * @generated from field: string notification_id = 1;
+		 */
+		notificationId: string;
 
-  /**
-   * @generated from field: string user_id = 2;
-   */
-  userId: string;
+		/**
+		 * @generated from field: string user_id = 2;
+		 */
+		userId: string;
 
-  /**
-   * @generated from field: optional google.protobuf.Timestamp notified_at = 3;
-   */
-  notifiedAt?: Timestamp | undefined;
-};
+		/**
+		 * @generated from field: optional google.protobuf.Timestamp notified_at = 3;
+		 */
+		notifiedAt?: Timestamp | undefined;
+	};
 
 /**
  * Describes the message admin.v1.NotificationTargetUser.
@@ -40,17 +45,18 @@ export declare const NotificationTargetUserSchema: GenMessage<NotificationTarget
 /**
  * @generated from message admin.v1.ListNotificationTargetUsersRequest
  */
-export declare type ListNotificationTargetUsersRequest = Message<"admin.v1.ListNotificationTargetUsersRequest"> & {
-  /**
-   * @generated from field: int32 page_size = 1;
-   */
-  pageSize: number;
+export declare type ListNotificationTargetUsersRequest =
+	Message<"admin.v1.ListNotificationTargetUsersRequest"> & {
+		/**
+		 * @generated from field: int32 page_size = 1;
+		 */
+		pageSize: number;
 
-  /**
-   * @generated from field: string page_token = 2;
-   */
-  pageToken: string;
-};
+		/**
+		 * @generated from field: string page_token = 2;
+		 */
+		pageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListNotificationTargetUsersRequest.
@@ -61,17 +67,18 @@ export declare const ListNotificationTargetUsersRequestSchema: GenMessage<ListNo
 /**
  * @generated from message admin.v1.ListNotificationTargetUsersResponse
  */
-export declare type ListNotificationTargetUsersResponse = Message<"admin.v1.ListNotificationTargetUsersResponse"> & {
-  /**
-   * @generated from field: repeated admin.v1.NotificationTargetUser notification_target_users = 1;
-   */
-  notificationTargetUsers: NotificationTargetUser[];
+export declare type ListNotificationTargetUsersResponse =
+	Message<"admin.v1.ListNotificationTargetUsersResponse"> & {
+		/**
+		 * @generated from field: repeated admin.v1.NotificationTargetUser notification_target_users = 1;
+		 */
+		notificationTargetUsers: NotificationTargetUser[];
 
-  /**
-   * @generated from field: string next_page_token = 2;
-   */
-  nextPageToken: string;
-};
+		/**
+		 * @generated from field: string next_page_token = 2;
+		 */
+		nextPageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListNotificationTargetUsersResponse.
@@ -82,17 +89,18 @@ export declare const ListNotificationTargetUsersResponseSchema: GenMessage<ListN
 /**
  * @generated from message admin.v1.GetNotificationTargetUserRequest
  */
-export declare type GetNotificationTargetUserRequest = Message<"admin.v1.GetNotificationTargetUserRequest"> & {
-  /**
-   * @generated from field: string notification_id = 1;
-   */
-  notificationId: string;
+export declare type GetNotificationTargetUserRequest =
+	Message<"admin.v1.GetNotificationTargetUserRequest"> & {
+		/**
+		 * @generated from field: string notification_id = 1;
+		 */
+		notificationId: string;
 
-  /**
-   * @generated from field: string user_id = 2;
-   */
-  userId: string;
-};
+		/**
+		 * @generated from field: string user_id = 2;
+		 */
+		userId: string;
+	};
 
 /**
  * Describes the message admin.v1.GetNotificationTargetUserRequest.
@@ -103,12 +111,13 @@ export declare const GetNotificationTargetUserRequestSchema: GenMessage<GetNotif
 /**
  * @generated from message admin.v1.GetNotificationTargetUserResponse
  */
-export declare type GetNotificationTargetUserResponse = Message<"admin.v1.GetNotificationTargetUserResponse"> & {
-  /**
-   * @generated from field: admin.v1.NotificationTargetUser notification_target_user = 1;
-   */
-  notificationTargetUser?: NotificationTargetUser | undefined;
-};
+export declare type GetNotificationTargetUserResponse =
+	Message<"admin.v1.GetNotificationTargetUserResponse"> & {
+		/**
+		 * @generated from field: admin.v1.NotificationTargetUser notification_target_user = 1;
+		 */
+		notificationTargetUser?: NotificationTargetUser | undefined;
+	};
 
 /**
  * Describes the message admin.v1.GetNotificationTargetUserResponse.
@@ -119,22 +128,23 @@ export declare const GetNotificationTargetUserResponseSchema: GenMessage<GetNoti
 /**
  * @generated from message admin.v1.CreateNotificationTargetUserRequest
  */
-export declare type CreateNotificationTargetUserRequest = Message<"admin.v1.CreateNotificationTargetUserRequest"> & {
-  /**
-   * @generated from field: string notification_id = 1;
-   */
-  notificationId: string;
+export declare type CreateNotificationTargetUserRequest =
+	Message<"admin.v1.CreateNotificationTargetUserRequest"> & {
+		/**
+		 * @generated from field: string notification_id = 1;
+		 */
+		notificationId: string;
 
-  /**
-   * @generated from field: string user_id = 2;
-   */
-  userId: string;
+		/**
+		 * @generated from field: string user_id = 2;
+		 */
+		userId: string;
 
-  /**
-   * @generated from field: optional google.protobuf.Timestamp notified_at = 3;
-   */
-  notifiedAt?: Timestamp | undefined;
-};
+		/**
+		 * @generated from field: optional google.protobuf.Timestamp notified_at = 3;
+		 */
+		notifiedAt?: Timestamp | undefined;
+	};
 
 /**
  * Describes the message admin.v1.CreateNotificationTargetUserRequest.
@@ -145,12 +155,13 @@ export declare const CreateNotificationTargetUserRequestSchema: GenMessage<Creat
 /**
  * @generated from message admin.v1.CreateNotificationTargetUserResponse
  */
-export declare type CreateNotificationTargetUserResponse = Message<"admin.v1.CreateNotificationTargetUserResponse"> & {
-  /**
-   * @generated from field: admin.v1.NotificationTargetUser notification_target_user = 1;
-   */
-  notificationTargetUser?: NotificationTargetUser | undefined;
-};
+export declare type CreateNotificationTargetUserResponse =
+	Message<"admin.v1.CreateNotificationTargetUserResponse"> & {
+		/**
+		 * @generated from field: admin.v1.NotificationTargetUser notification_target_user = 1;
+		 */
+		notificationTargetUser?: NotificationTargetUser | undefined;
+	};
 
 /**
  * Describes the message admin.v1.CreateNotificationTargetUserResponse.
@@ -161,27 +172,28 @@ export declare const CreateNotificationTargetUserResponseSchema: GenMessage<Crea
 /**
  * @generated from message admin.v1.UpdateNotificationTargetUserRequest
  */
-export declare type UpdateNotificationTargetUserRequest = Message<"admin.v1.UpdateNotificationTargetUserRequest"> & {
-  /**
-   * @generated from field: string notification_id = 1;
-   */
-  notificationId: string;
+export declare type UpdateNotificationTargetUserRequest =
+	Message<"admin.v1.UpdateNotificationTargetUserRequest"> & {
+		/**
+		 * @generated from field: string notification_id = 1;
+		 */
+		notificationId: string;
 
-  /**
-   * @generated from field: string user_id = 2;
-   */
-  userId: string;
+		/**
+		 * @generated from field: string user_id = 2;
+		 */
+		userId: string;
 
-  /**
-   * @generated from field: optional google.protobuf.Timestamp notified_at = 3;
-   */
-  notifiedAt?: Timestamp | undefined;
+		/**
+		 * @generated from field: optional google.protobuf.Timestamp notified_at = 3;
+		 */
+		notifiedAt?: Timestamp | undefined;
 
-  /**
-   * @generated from field: google.protobuf.FieldMask update_mask = 99;
-   */
-  updateMask?: FieldMask | undefined;
-};
+		/**
+		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
+		 */
+		updateMask?: FieldMask | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateNotificationTargetUserRequest.
@@ -192,12 +204,13 @@ export declare const UpdateNotificationTargetUserRequestSchema: GenMessage<Updat
 /**
  * @generated from message admin.v1.UpdateNotificationTargetUserResponse
  */
-export declare type UpdateNotificationTargetUserResponse = Message<"admin.v1.UpdateNotificationTargetUserResponse"> & {
-  /**
-   * @generated from field: admin.v1.NotificationTargetUser notification_target_user = 1;
-   */
-  notificationTargetUser?: NotificationTargetUser | undefined;
-};
+export declare type UpdateNotificationTargetUserResponse =
+	Message<"admin.v1.UpdateNotificationTargetUserResponse"> & {
+		/**
+		 * @generated from field: admin.v1.NotificationTargetUser notification_target_user = 1;
+		 */
+		notificationTargetUser?: NotificationTargetUser | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateNotificationTargetUserResponse.
@@ -208,17 +221,18 @@ export declare const UpdateNotificationTargetUserResponseSchema: GenMessage<Upda
 /**
  * @generated from message admin.v1.DeleteNotificationTargetUserRequest
  */
-export declare type DeleteNotificationTargetUserRequest = Message<"admin.v1.DeleteNotificationTargetUserRequest"> & {
-  /**
-   * @generated from field: string notification_id = 1;
-   */
-  notificationId: string;
+export declare type DeleteNotificationTargetUserRequest =
+	Message<"admin.v1.DeleteNotificationTargetUserRequest"> & {
+		/**
+		 * @generated from field: string notification_id = 1;
+		 */
+		notificationId: string;
 
-  /**
-   * @generated from field: string user_id = 2;
-   */
-  userId: string;
-};
+		/**
+		 * @generated from field: string user_id = 2;
+		 */
+		userId: string;
+	};
 
 /**
  * Describes the message admin.v1.DeleteNotificationTargetUserRequest.
@@ -229,8 +243,8 @@ export declare const DeleteNotificationTargetUserRequestSchema: GenMessage<Delet
 /**
  * @generated from message admin.v1.DeleteNotificationTargetUserResponse
  */
-export declare type DeleteNotificationTargetUserResponse = Message<"admin.v1.DeleteNotificationTargetUserResponse"> & {
-};
+export declare type DeleteNotificationTargetUserResponse =
+	Message<"admin.v1.DeleteNotificationTargetUserResponse"> & {};
 
 /**
  * Describes the message admin.v1.DeleteNotificationTargetUserResponse.
@@ -242,45 +256,44 @@ export declare const DeleteNotificationTargetUserResponseSchema: GenMessage<Dele
  * @generated from service admin.v1.NotificationTargetUserService
  */
 export declare const NotificationTargetUserService: GenService<{
-  /**
-   * @generated from rpc admin.v1.NotificationTargetUserService.ListNotificationTargetUsers
-   */
-  listNotificationTargetUsers: {
-    methodKind: "unary";
-    input: typeof ListNotificationTargetUsersRequestSchema;
-    output: typeof ListNotificationTargetUsersResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.NotificationTargetUserService.GetNotificationTargetUser
-   */
-  getNotificationTargetUser: {
-    methodKind: "unary";
-    input: typeof GetNotificationTargetUserRequestSchema;
-    output: typeof GetNotificationTargetUserResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.NotificationTargetUserService.CreateNotificationTargetUser
-   */
-  createNotificationTargetUser: {
-    methodKind: "unary";
-    input: typeof CreateNotificationTargetUserRequestSchema;
-    output: typeof CreateNotificationTargetUserResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.NotificationTargetUserService.UpdateNotificationTargetUser
-   */
-  updateNotificationTargetUser: {
-    methodKind: "unary";
-    input: typeof UpdateNotificationTargetUserRequestSchema;
-    output: typeof UpdateNotificationTargetUserResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.NotificationTargetUserService.DeleteNotificationTargetUser
-   */
-  deleteNotificationTargetUser: {
-    methodKind: "unary";
-    input: typeof DeleteNotificationTargetUserRequestSchema;
-    output: typeof DeleteNotificationTargetUserResponseSchema;
-  },
+	/**
+	 * @generated from rpc admin.v1.NotificationTargetUserService.ListNotificationTargetUsers
+	 */
+	listNotificationTargetUsers: {
+		methodKind: "unary";
+		input: typeof ListNotificationTargetUsersRequestSchema;
+		output: typeof ListNotificationTargetUsersResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.NotificationTargetUserService.GetNotificationTargetUser
+	 */
+	getNotificationTargetUser: {
+		methodKind: "unary";
+		input: typeof GetNotificationTargetUserRequestSchema;
+		output: typeof GetNotificationTargetUserResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.NotificationTargetUserService.CreateNotificationTargetUser
+	 */
+	createNotificationTargetUser: {
+		methodKind: "unary";
+		input: typeof CreateNotificationTargetUserRequestSchema;
+		output: typeof CreateNotificationTargetUserResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.NotificationTargetUserService.UpdateNotificationTargetUser
+	 */
+	updateNotificationTargetUser: {
+		methodKind: "unary";
+		input: typeof UpdateNotificationTargetUserRequestSchema;
+		output: typeof UpdateNotificationTargetUserResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.NotificationTargetUserService.DeleteNotificationTargetUser
+	 */
+	deleteNotificationTargetUser: {
+		methodKind: "unary";
+		input: typeof DeleteNotificationTargetUserRequestSchema;
+		output: typeof DeleteNotificationTargetUserResponseSchema;
+	};
 }>;
-

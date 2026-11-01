@@ -2,7 +2,11 @@
 // @generated from file admin/v1/room_change.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import type {
+	GenFile,
+	GenMessage,
+	GenService,
+} from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Date } from "../../google/type/date_pb";
 import type { Period } from "./common_pb";
@@ -17,45 +21,45 @@ export declare const file_admin_v1_room_change: GenFile;
  * @generated from message admin.v1.RoomChange
  */
 export declare type RoomChange = Message<"admin.v1.RoomChange"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
+	/**
+	 * @generated from field: string id = 1;
+	 */
+	id: string;
 
-  /**
-   * @generated from field: string subject_id = 2;
-   */
-  subjectId: string;
+	/**
+	 * @generated from field: string subject_id = 2;
+	 */
+	subjectId: string;
 
-  /**
-   * @generated from field: google.type.Date date = 3;
-   */
-  date?: Date | undefined;
+	/**
+	 * @generated from field: google.type.Date date = 3;
+	 */
+	date?: Date | undefined;
 
-  /**
-   * @generated from field: admin.v1.Period period = 4;
-   */
-  period: Period;
+	/**
+	 * @generated from field: admin.v1.Period period = 4;
+	 */
+	period: Period;
 
-  /**
-   * @generated from field: string original_room_id = 5;
-   */
-  originalRoomId: string;
+	/**
+	 * @generated from field: string original_room_id = 5;
+	 */
+	originalRoomId: string;
 
-  /**
-   * @generated from field: string new_room_id = 6;
-   */
-  newRoomId: string;
+	/**
+	 * @generated from field: string new_room_id = 6;
+	 */
+	newRoomId: string;
 
-  /**
-   * @generated from field: google.protobuf.Timestamp created_at = 7;
-   */
-  createdAt?: Timestamp | undefined;
+	/**
+	 * @generated from field: google.protobuf.Timestamp created_at = 7;
+	 */
+	createdAt?: Timestamp | undefined;
 
-  /**
-   * @generated from field: google.protobuf.Timestamp updated_at = 8;
-   */
-  updatedAt?: Timestamp | undefined;
+	/**
+	 * @generated from field: google.protobuf.Timestamp updated_at = 8;
+	 */
+	updatedAt?: Timestamp | undefined;
 };
 
 /**
@@ -67,17 +71,18 @@ export declare const RoomChangeSchema: GenMessage<RoomChange>;
 /**
  * @generated from message admin.v1.ListRoomChangesRequest
  */
-export declare type ListRoomChangesRequest = Message<"admin.v1.ListRoomChangesRequest"> & {
-  /**
-   * @generated from field: int32 page_size = 1;
-   */
-  pageSize: number;
+export declare type ListRoomChangesRequest =
+	Message<"admin.v1.ListRoomChangesRequest"> & {
+		/**
+		 * @generated from field: int32 page_size = 1;
+		 */
+		pageSize: number;
 
-  /**
-   * @generated from field: string page_token = 2;
-   */
-  pageToken: string;
-};
+		/**
+		 * @generated from field: string page_token = 2;
+		 */
+		pageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListRoomChangesRequest.
@@ -88,17 +93,18 @@ export declare const ListRoomChangesRequestSchema: GenMessage<ListRoomChangesReq
 /**
  * @generated from message admin.v1.ListRoomChangesResponse
  */
-export declare type ListRoomChangesResponse = Message<"admin.v1.ListRoomChangesResponse"> & {
-  /**
-   * @generated from field: repeated admin.v1.RoomChange room_changes = 1;
-   */
-  roomChanges: RoomChange[];
+export declare type ListRoomChangesResponse =
+	Message<"admin.v1.ListRoomChangesResponse"> & {
+		/**
+		 * @generated from field: repeated admin.v1.RoomChange room_changes = 1;
+		 */
+		roomChanges: RoomChange[];
 
-  /**
-   * @generated from field: string next_page_token = 2;
-   */
-  nextPageToken: string;
-};
+		/**
+		 * @generated from field: string next_page_token = 2;
+		 */
+		nextPageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListRoomChangesResponse.
@@ -109,12 +115,13 @@ export declare const ListRoomChangesResponseSchema: GenMessage<ListRoomChangesRe
 /**
  * @generated from message admin.v1.GetRoomChangeRequest
  */
-export declare type GetRoomChangeRequest = Message<"admin.v1.GetRoomChangeRequest"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
-};
+export declare type GetRoomChangeRequest =
+	Message<"admin.v1.GetRoomChangeRequest"> & {
+		/**
+		 * @generated from field: string id = 1;
+		 */
+		id: string;
+	};
 
 /**
  * Describes the message admin.v1.GetRoomChangeRequest.
@@ -125,12 +132,13 @@ export declare const GetRoomChangeRequestSchema: GenMessage<GetRoomChangeRequest
 /**
  * @generated from message admin.v1.GetRoomChangeResponse
  */
-export declare type GetRoomChangeResponse = Message<"admin.v1.GetRoomChangeResponse"> & {
-  /**
-   * @generated from field: admin.v1.RoomChange room_change = 1;
-   */
-  roomChange?: RoomChange | undefined;
-};
+export declare type GetRoomChangeResponse =
+	Message<"admin.v1.GetRoomChangeResponse"> & {
+		/**
+		 * @generated from field: admin.v1.RoomChange room_change = 1;
+		 */
+		roomChange?: RoomChange | undefined;
+	};
 
 /**
  * Describes the message admin.v1.GetRoomChangeResponse.
@@ -141,32 +149,33 @@ export declare const GetRoomChangeResponseSchema: GenMessage<GetRoomChangeRespon
 /**
  * @generated from message admin.v1.CreateRoomChangeRequest
  */
-export declare type CreateRoomChangeRequest = Message<"admin.v1.CreateRoomChangeRequest"> & {
-  /**
-   * @generated from field: string subject_id = 1;
-   */
-  subjectId: string;
+export declare type CreateRoomChangeRequest =
+	Message<"admin.v1.CreateRoomChangeRequest"> & {
+		/**
+		 * @generated from field: string subject_id = 1;
+		 */
+		subjectId: string;
 
-  /**
-   * @generated from field: google.type.Date date = 2;
-   */
-  date?: Date | undefined;
+		/**
+		 * @generated from field: google.type.Date date = 2;
+		 */
+		date?: Date | undefined;
 
-  /**
-   * @generated from field: admin.v1.Period period = 3;
-   */
-  period: Period;
+		/**
+		 * @generated from field: admin.v1.Period period = 3;
+		 */
+		period: Period;
 
-  /**
-   * @generated from field: string original_room_id = 4;
-   */
-  originalRoomId: string;
+		/**
+		 * @generated from field: string original_room_id = 4;
+		 */
+		originalRoomId: string;
 
-  /**
-   * @generated from field: string new_room_id = 5;
-   */
-  newRoomId: string;
-};
+		/**
+		 * @generated from field: string new_room_id = 5;
+		 */
+		newRoomId: string;
+	};
 
 /**
  * Describes the message admin.v1.CreateRoomChangeRequest.
@@ -177,12 +186,13 @@ export declare const CreateRoomChangeRequestSchema: GenMessage<CreateRoomChangeR
 /**
  * @generated from message admin.v1.CreateRoomChangeResponse
  */
-export declare type CreateRoomChangeResponse = Message<"admin.v1.CreateRoomChangeResponse"> & {
-  /**
-   * @generated from field: admin.v1.RoomChange room_change = 1;
-   */
-  roomChange?: RoomChange | undefined;
-};
+export declare type CreateRoomChangeResponse =
+	Message<"admin.v1.CreateRoomChangeResponse"> & {
+		/**
+		 * @generated from field: admin.v1.RoomChange room_change = 1;
+		 */
+		roomChange?: RoomChange | undefined;
+	};
 
 /**
  * Describes the message admin.v1.CreateRoomChangeResponse.
@@ -193,42 +203,43 @@ export declare const CreateRoomChangeResponseSchema: GenMessage<CreateRoomChange
 /**
  * @generated from message admin.v1.UpdateRoomChangeRequest
  */
-export declare type UpdateRoomChangeRequest = Message<"admin.v1.UpdateRoomChangeRequest"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
+export declare type UpdateRoomChangeRequest =
+	Message<"admin.v1.UpdateRoomChangeRequest"> & {
+		/**
+		 * @generated from field: string id = 1;
+		 */
+		id: string;
 
-  /**
-   * @generated from field: string subject_id = 2;
-   */
-  subjectId: string;
+		/**
+		 * @generated from field: string subject_id = 2;
+		 */
+		subjectId: string;
 
-  /**
-   * @generated from field: google.type.Date date = 3;
-   */
-  date?: Date | undefined;
+		/**
+		 * @generated from field: google.type.Date date = 3;
+		 */
+		date?: Date | undefined;
 
-  /**
-   * @generated from field: admin.v1.Period period = 4;
-   */
-  period: Period;
+		/**
+		 * @generated from field: admin.v1.Period period = 4;
+		 */
+		period: Period;
 
-  /**
-   * @generated from field: string original_room_id = 5;
-   */
-  originalRoomId: string;
+		/**
+		 * @generated from field: string original_room_id = 5;
+		 */
+		originalRoomId: string;
 
-  /**
-   * @generated from field: string new_room_id = 6;
-   */
-  newRoomId: string;
+		/**
+		 * @generated from field: string new_room_id = 6;
+		 */
+		newRoomId: string;
 
-  /**
-   * @generated from field: google.protobuf.FieldMask update_mask = 99;
-   */
-  updateMask?: FieldMask | undefined;
-};
+		/**
+		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
+		 */
+		updateMask?: FieldMask | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateRoomChangeRequest.
@@ -239,12 +250,13 @@ export declare const UpdateRoomChangeRequestSchema: GenMessage<UpdateRoomChangeR
 /**
  * @generated from message admin.v1.UpdateRoomChangeResponse
  */
-export declare type UpdateRoomChangeResponse = Message<"admin.v1.UpdateRoomChangeResponse"> & {
-  /**
-   * @generated from field: admin.v1.RoomChange room_change = 1;
-   */
-  roomChange?: RoomChange | undefined;
-};
+export declare type UpdateRoomChangeResponse =
+	Message<"admin.v1.UpdateRoomChangeResponse"> & {
+		/**
+		 * @generated from field: admin.v1.RoomChange room_change = 1;
+		 */
+		roomChange?: RoomChange | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateRoomChangeResponse.
@@ -255,12 +267,13 @@ export declare const UpdateRoomChangeResponseSchema: GenMessage<UpdateRoomChange
 /**
  * @generated from message admin.v1.DeleteRoomChangeRequest
  */
-export declare type DeleteRoomChangeRequest = Message<"admin.v1.DeleteRoomChangeRequest"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
-};
+export declare type DeleteRoomChangeRequest =
+	Message<"admin.v1.DeleteRoomChangeRequest"> & {
+		/**
+		 * @generated from field: string id = 1;
+		 */
+		id: string;
+	};
 
 /**
  * Describes the message admin.v1.DeleteRoomChangeRequest.
@@ -271,8 +284,8 @@ export declare const DeleteRoomChangeRequestSchema: GenMessage<DeleteRoomChangeR
 /**
  * @generated from message admin.v1.DeleteRoomChangeResponse
  */
-export declare type DeleteRoomChangeResponse = Message<"admin.v1.DeleteRoomChangeResponse"> & {
-};
+export declare type DeleteRoomChangeResponse =
+	Message<"admin.v1.DeleteRoomChangeResponse"> & {};
 
 /**
  * Describes the message admin.v1.DeleteRoomChangeResponse.
@@ -284,45 +297,44 @@ export declare const DeleteRoomChangeResponseSchema: GenMessage<DeleteRoomChange
  * @generated from service admin.v1.RoomChangeService
  */
 export declare const RoomChangeService: GenService<{
-  /**
-   * @generated from rpc admin.v1.RoomChangeService.ListRoomChanges
-   */
-  listRoomChanges: {
-    methodKind: "unary";
-    input: typeof ListRoomChangesRequestSchema;
-    output: typeof ListRoomChangesResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.RoomChangeService.GetRoomChange
-   */
-  getRoomChange: {
-    methodKind: "unary";
-    input: typeof GetRoomChangeRequestSchema;
-    output: typeof GetRoomChangeResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.RoomChangeService.CreateRoomChange
-   */
-  createRoomChange: {
-    methodKind: "unary";
-    input: typeof CreateRoomChangeRequestSchema;
-    output: typeof CreateRoomChangeResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.RoomChangeService.UpdateRoomChange
-   */
-  updateRoomChange: {
-    methodKind: "unary";
-    input: typeof UpdateRoomChangeRequestSchema;
-    output: typeof UpdateRoomChangeResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.RoomChangeService.DeleteRoomChange
-   */
-  deleteRoomChange: {
-    methodKind: "unary";
-    input: typeof DeleteRoomChangeRequestSchema;
-    output: typeof DeleteRoomChangeResponseSchema;
-  },
+	/**
+	 * @generated from rpc admin.v1.RoomChangeService.ListRoomChanges
+	 */
+	listRoomChanges: {
+		methodKind: "unary";
+		input: typeof ListRoomChangesRequestSchema;
+		output: typeof ListRoomChangesResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.RoomChangeService.GetRoomChange
+	 */
+	getRoomChange: {
+		methodKind: "unary";
+		input: typeof GetRoomChangeRequestSchema;
+		output: typeof GetRoomChangeResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.RoomChangeService.CreateRoomChange
+	 */
+	createRoomChange: {
+		methodKind: "unary";
+		input: typeof CreateRoomChangeRequestSchema;
+		output: typeof CreateRoomChangeResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.RoomChangeService.UpdateRoomChange
+	 */
+	updateRoomChange: {
+		methodKind: "unary";
+		input: typeof UpdateRoomChangeRequestSchema;
+		output: typeof UpdateRoomChangeResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.RoomChangeService.DeleteRoomChange
+	 */
+	deleteRoomChange: {
+		methodKind: "unary";
+		input: typeof DeleteRoomChangeRequestSchema;
+		output: typeof DeleteRoomChangeResponseSchema;
+	};
 }>;
-

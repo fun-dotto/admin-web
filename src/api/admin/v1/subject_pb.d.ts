@@ -2,7 +2,12 @@
 // @generated from file admin/v1/subject.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import type {
+	GenEnum,
+	GenFile,
+	GenMessage,
+	GenService,
+} from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Class, Course, Grade } from "./common_pb";
 import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
@@ -16,15 +21,15 @@ export declare const file_admin_v1_subject: GenFile;
  * @generated from message admin.v1.SubjectFaculty
  */
 export declare type SubjectFaculty = Message<"admin.v1.SubjectFaculty"> & {
-  /**
-   * @generated from field: string faculty_id = 1;
-   */
-  facultyId: string;
+	/**
+	 * @generated from field: string faculty_id = 1;
+	 */
+	facultyId: string;
 
-  /**
-   * @generated from field: bool is_primary = 2;
-   */
-  isPrimary: boolean;
+	/**
+	 * @generated from field: bool is_primary = 2;
+	 */
+	isPrimary: boolean;
 };
 
 /**
@@ -36,17 +41,18 @@ export declare const SubjectFacultySchema: GenMessage<SubjectFaculty>;
 /**
  * @generated from message admin.v1.SubjectEligibleAttribute
  */
-export declare type SubjectEligibleAttribute = Message<"admin.v1.SubjectEligibleAttribute"> & {
-  /**
-   * @generated from field: admin.v1.Grade grade = 1;
-   */
-  grade: Grade;
+export declare type SubjectEligibleAttribute =
+	Message<"admin.v1.SubjectEligibleAttribute"> & {
+		/**
+		 * @generated from field: admin.v1.Grade grade = 1;
+		 */
+		grade: Grade;
 
-  /**
-   * @generated from field: optional admin.v1.Class class = 2;
-   */
-  class?: Class | undefined;
-};
+		/**
+		 * @generated from field: optional admin.v1.Class class = 2;
+		 */
+		class?: Class | undefined;
+	};
 
 /**
  * Describes the message admin.v1.SubjectEligibleAttribute.
@@ -57,17 +63,18 @@ export declare const SubjectEligibleAttributeSchema: GenMessage<SubjectEligibleA
 /**
  * @generated from message admin.v1.SubjectRequirement
  */
-export declare type SubjectRequirement = Message<"admin.v1.SubjectRequirement"> & {
-  /**
-   * @generated from field: admin.v1.Course course = 1;
-   */
-  course: Course;
+export declare type SubjectRequirement =
+	Message<"admin.v1.SubjectRequirement"> & {
+		/**
+		 * @generated from field: admin.v1.Course course = 1;
+		 */
+		course: Course;
 
-  /**
-   * @generated from field: admin.v1.SubjectRequirementType requirement_type = 2;
-   */
-  requirementType: SubjectRequirementType;
-};
+		/**
+		 * @generated from field: admin.v1.SubjectRequirementType requirement_type = 2;
+		 */
+		requirementType: SubjectRequirementType;
+	};
 
 /**
  * Describes the message admin.v1.SubjectRequirement.
@@ -79,70 +86,70 @@ export declare const SubjectRequirementSchema: GenMessage<SubjectRequirement>;
  * @generated from message admin.v1.Subject
  */
 export declare type Subject = Message<"admin.v1.Subject"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
+	/**
+	 * @generated from field: string id = 1;
+	 */
+	id: string;
 
-  /**
-   * @generated from field: string name = 2;
-   */
-  name: string;
+	/**
+	 * @generated from field: string name = 2;
+	 */
+	name: string;
 
-  /**
-   * @generated from field: int32 year = 3;
-   */
-  year: number;
+	/**
+	 * @generated from field: int32 year = 3;
+	 */
+	year: number;
 
-  /**
-   * @generated from field: admin.v1.SubjectSemester semester = 4;
-   */
-  semester: SubjectSemester;
+	/**
+	 * @generated from field: admin.v1.SubjectSemester semester = 4;
+	 */
+	semester: SubjectSemester;
 
-  /**
-   * @generated from field: int32 credit = 5;
-   */
-  credit: number;
+	/**
+	 * @generated from field: int32 credit = 5;
+	 */
+	credit: number;
 
-  /**
-   * @generated from field: admin.v1.SubjectClassification classification = 6;
-   */
-  classification: SubjectClassification;
+	/**
+	 * @generated from field: admin.v1.SubjectClassification classification = 6;
+	 */
+	classification: SubjectClassification;
 
-  /**
-   * @generated from field: admin.v1.SubjectCulturalSubjectCategory cultural_subject_category = 7;
-   */
-  culturalSubjectCategory: SubjectCulturalSubjectCategory;
+	/**
+	 * @generated from field: admin.v1.SubjectCulturalSubjectCategory cultural_subject_category = 7;
+	 */
+	culturalSubjectCategory: SubjectCulturalSubjectCategory;
 
-  /**
-   * @generated from field: string syllabus_id = 8;
-   */
-  syllabusId: string;
+	/**
+	 * @generated from field: string syllabus_id = 8;
+	 */
+	syllabusId: string;
 
-  /**
-   * @generated from field: repeated admin.v1.SubjectFaculty faculties = 9;
-   */
-  faculties: SubjectFaculty[];
+	/**
+	 * @generated from field: repeated admin.v1.SubjectFaculty faculties = 9;
+	 */
+	faculties: SubjectFaculty[];
 
-  /**
-   * @generated from field: repeated admin.v1.SubjectEligibleAttribute eligible_attributes = 10;
-   */
-  eligibleAttributes: SubjectEligibleAttribute[];
+	/**
+	 * @generated from field: repeated admin.v1.SubjectEligibleAttribute eligible_attributes = 10;
+	 */
+	eligibleAttributes: SubjectEligibleAttribute[];
 
-  /**
-   * @generated from field: repeated admin.v1.SubjectRequirement requirements = 11;
-   */
-  requirements: SubjectRequirement[];
+	/**
+	 * @generated from field: repeated admin.v1.SubjectRequirement requirements = 11;
+	 */
+	requirements: SubjectRequirement[];
 
-  /**
-   * @generated from field: google.protobuf.Timestamp created_at = 12;
-   */
-  createdAt?: Timestamp | undefined;
+	/**
+	 * @generated from field: google.protobuf.Timestamp created_at = 12;
+	 */
+	createdAt?: Timestamp | undefined;
 
-  /**
-   * @generated from field: google.protobuf.Timestamp updated_at = 13;
-   */
-  updatedAt?: Timestamp | undefined;
+	/**
+	 * @generated from field: google.protobuf.Timestamp updated_at = 13;
+	 */
+	updatedAt?: Timestamp | undefined;
 };
 
 /**
@@ -154,17 +161,18 @@ export declare const SubjectSchema: GenMessage<Subject>;
 /**
  * @generated from message admin.v1.ListSubjectsRequest
  */
-export declare type ListSubjectsRequest = Message<"admin.v1.ListSubjectsRequest"> & {
-  /**
-   * @generated from field: int32 page_size = 1;
-   */
-  pageSize: number;
+export declare type ListSubjectsRequest =
+	Message<"admin.v1.ListSubjectsRequest"> & {
+		/**
+		 * @generated from field: int32 page_size = 1;
+		 */
+		pageSize: number;
 
-  /**
-   * @generated from field: string page_token = 2;
-   */
-  pageToken: string;
-};
+		/**
+		 * @generated from field: string page_token = 2;
+		 */
+		pageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListSubjectsRequest.
@@ -175,17 +183,18 @@ export declare const ListSubjectsRequestSchema: GenMessage<ListSubjectsRequest>;
 /**
  * @generated from message admin.v1.ListSubjectsResponse
  */
-export declare type ListSubjectsResponse = Message<"admin.v1.ListSubjectsResponse"> & {
-  /**
-   * @generated from field: repeated admin.v1.Subject subjects = 1;
-   */
-  subjects: Subject[];
+export declare type ListSubjectsResponse =
+	Message<"admin.v1.ListSubjectsResponse"> & {
+		/**
+		 * @generated from field: repeated admin.v1.Subject subjects = 1;
+		 */
+		subjects: Subject[];
 
-  /**
-   * @generated from field: string next_page_token = 2;
-   */
-  nextPageToken: string;
-};
+		/**
+		 * @generated from field: string next_page_token = 2;
+		 */
+		nextPageToken: string;
+	};
 
 /**
  * Describes the message admin.v1.ListSubjectsResponse.
@@ -196,12 +205,13 @@ export declare const ListSubjectsResponseSchema: GenMessage<ListSubjectsResponse
 /**
  * @generated from message admin.v1.GetSubjectRequest
  */
-export declare type GetSubjectRequest = Message<"admin.v1.GetSubjectRequest"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
-};
+export declare type GetSubjectRequest =
+	Message<"admin.v1.GetSubjectRequest"> & {
+		/**
+		 * @generated from field: string id = 1;
+		 */
+		id: string;
+	};
 
 /**
  * Describes the message admin.v1.GetSubjectRequest.
@@ -212,12 +222,13 @@ export declare const GetSubjectRequestSchema: GenMessage<GetSubjectRequest>;
 /**
  * @generated from message admin.v1.GetSubjectResponse
  */
-export declare type GetSubjectResponse = Message<"admin.v1.GetSubjectResponse"> & {
-  /**
-   * @generated from field: admin.v1.Subject subject = 1;
-   */
-  subject?: Subject | undefined;
-};
+export declare type GetSubjectResponse =
+	Message<"admin.v1.GetSubjectResponse"> & {
+		/**
+		 * @generated from field: admin.v1.Subject subject = 1;
+		 */
+		subject?: Subject | undefined;
+	};
 
 /**
  * Describes the message admin.v1.GetSubjectResponse.
@@ -228,57 +239,58 @@ export declare const GetSubjectResponseSchema: GenMessage<GetSubjectResponse>;
 /**
  * @generated from message admin.v1.CreateSubjectRequest
  */
-export declare type CreateSubjectRequest = Message<"admin.v1.CreateSubjectRequest"> & {
-  /**
-   * @generated from field: string name = 1;
-   */
-  name: string;
+export declare type CreateSubjectRequest =
+	Message<"admin.v1.CreateSubjectRequest"> & {
+		/**
+		 * @generated from field: string name = 1;
+		 */
+		name: string;
 
-  /**
-   * @generated from field: int32 year = 2;
-   */
-  year: number;
+		/**
+		 * @generated from field: int32 year = 2;
+		 */
+		year: number;
 
-  /**
-   * @generated from field: admin.v1.SubjectSemester semester = 3;
-   */
-  semester: SubjectSemester;
+		/**
+		 * @generated from field: admin.v1.SubjectSemester semester = 3;
+		 */
+		semester: SubjectSemester;
 
-  /**
-   * @generated from field: int32 credit = 4;
-   */
-  credit: number;
+		/**
+		 * @generated from field: int32 credit = 4;
+		 */
+		credit: number;
 
-  /**
-   * @generated from field: admin.v1.SubjectClassification classification = 5;
-   */
-  classification: SubjectClassification;
+		/**
+		 * @generated from field: admin.v1.SubjectClassification classification = 5;
+		 */
+		classification: SubjectClassification;
 
-  /**
-   * @generated from field: admin.v1.SubjectCulturalSubjectCategory cultural_subject_category = 6;
-   */
-  culturalSubjectCategory: SubjectCulturalSubjectCategory;
+		/**
+		 * @generated from field: admin.v1.SubjectCulturalSubjectCategory cultural_subject_category = 6;
+		 */
+		culturalSubjectCategory: SubjectCulturalSubjectCategory;
 
-  /**
-   * @generated from field: string syllabus_id = 7;
-   */
-  syllabusId: string;
+		/**
+		 * @generated from field: string syllabus_id = 7;
+		 */
+		syllabusId: string;
 
-  /**
-   * @generated from field: repeated admin.v1.SubjectFaculty faculties = 8;
-   */
-  faculties: SubjectFaculty[];
+		/**
+		 * @generated from field: repeated admin.v1.SubjectFaculty faculties = 8;
+		 */
+		faculties: SubjectFaculty[];
 
-  /**
-   * @generated from field: repeated admin.v1.SubjectEligibleAttribute eligible_attributes = 9;
-   */
-  eligibleAttributes: SubjectEligibleAttribute[];
+		/**
+		 * @generated from field: repeated admin.v1.SubjectEligibleAttribute eligible_attributes = 9;
+		 */
+		eligibleAttributes: SubjectEligibleAttribute[];
 
-  /**
-   * @generated from field: repeated admin.v1.SubjectRequirement requirements = 10;
-   */
-  requirements: SubjectRequirement[];
-};
+		/**
+		 * @generated from field: repeated admin.v1.SubjectRequirement requirements = 10;
+		 */
+		requirements: SubjectRequirement[];
+	};
 
 /**
  * Describes the message admin.v1.CreateSubjectRequest.
@@ -289,12 +301,13 @@ export declare const CreateSubjectRequestSchema: GenMessage<CreateSubjectRequest
 /**
  * @generated from message admin.v1.CreateSubjectResponse
  */
-export declare type CreateSubjectResponse = Message<"admin.v1.CreateSubjectResponse"> & {
-  /**
-   * @generated from field: admin.v1.Subject subject = 1;
-   */
-  subject?: Subject | undefined;
-};
+export declare type CreateSubjectResponse =
+	Message<"admin.v1.CreateSubjectResponse"> & {
+		/**
+		 * @generated from field: admin.v1.Subject subject = 1;
+		 */
+		subject?: Subject | undefined;
+	};
 
 /**
  * Describes the message admin.v1.CreateSubjectResponse.
@@ -305,67 +318,68 @@ export declare const CreateSubjectResponseSchema: GenMessage<CreateSubjectRespon
 /**
  * @generated from message admin.v1.UpdateSubjectRequest
  */
-export declare type UpdateSubjectRequest = Message<"admin.v1.UpdateSubjectRequest"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
+export declare type UpdateSubjectRequest =
+	Message<"admin.v1.UpdateSubjectRequest"> & {
+		/**
+		 * @generated from field: string id = 1;
+		 */
+		id: string;
 
-  /**
-   * @generated from field: string name = 2;
-   */
-  name: string;
+		/**
+		 * @generated from field: string name = 2;
+		 */
+		name: string;
 
-  /**
-   * @generated from field: int32 year = 3;
-   */
-  year: number;
+		/**
+		 * @generated from field: int32 year = 3;
+		 */
+		year: number;
 
-  /**
-   * @generated from field: admin.v1.SubjectSemester semester = 4;
-   */
-  semester: SubjectSemester;
+		/**
+		 * @generated from field: admin.v1.SubjectSemester semester = 4;
+		 */
+		semester: SubjectSemester;
 
-  /**
-   * @generated from field: int32 credit = 5;
-   */
-  credit: number;
+		/**
+		 * @generated from field: int32 credit = 5;
+		 */
+		credit: number;
 
-  /**
-   * @generated from field: admin.v1.SubjectClassification classification = 6;
-   */
-  classification: SubjectClassification;
+		/**
+		 * @generated from field: admin.v1.SubjectClassification classification = 6;
+		 */
+		classification: SubjectClassification;
 
-  /**
-   * @generated from field: admin.v1.SubjectCulturalSubjectCategory cultural_subject_category = 7;
-   */
-  culturalSubjectCategory: SubjectCulturalSubjectCategory;
+		/**
+		 * @generated from field: admin.v1.SubjectCulturalSubjectCategory cultural_subject_category = 7;
+		 */
+		culturalSubjectCategory: SubjectCulturalSubjectCategory;
 
-  /**
-   * @generated from field: string syllabus_id = 8;
-   */
-  syllabusId: string;
+		/**
+		 * @generated from field: string syllabus_id = 8;
+		 */
+		syllabusId: string;
 
-  /**
-   * @generated from field: repeated admin.v1.SubjectFaculty faculties = 9;
-   */
-  faculties: SubjectFaculty[];
+		/**
+		 * @generated from field: repeated admin.v1.SubjectFaculty faculties = 9;
+		 */
+		faculties: SubjectFaculty[];
 
-  /**
-   * @generated from field: repeated admin.v1.SubjectEligibleAttribute eligible_attributes = 10;
-   */
-  eligibleAttributes: SubjectEligibleAttribute[];
+		/**
+		 * @generated from field: repeated admin.v1.SubjectEligibleAttribute eligible_attributes = 10;
+		 */
+		eligibleAttributes: SubjectEligibleAttribute[];
 
-  /**
-   * @generated from field: repeated admin.v1.SubjectRequirement requirements = 11;
-   */
-  requirements: SubjectRequirement[];
+		/**
+		 * @generated from field: repeated admin.v1.SubjectRequirement requirements = 11;
+		 */
+		requirements: SubjectRequirement[];
 
-  /**
-   * @generated from field: google.protobuf.FieldMask update_mask = 99;
-   */
-  updateMask?: FieldMask | undefined;
-};
+		/**
+		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
+		 */
+		updateMask?: FieldMask | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateSubjectRequest.
@@ -376,12 +390,13 @@ export declare const UpdateSubjectRequestSchema: GenMessage<UpdateSubjectRequest
 /**
  * @generated from message admin.v1.UpdateSubjectResponse
  */
-export declare type UpdateSubjectResponse = Message<"admin.v1.UpdateSubjectResponse"> & {
-  /**
-   * @generated from field: admin.v1.Subject subject = 1;
-   */
-  subject?: Subject | undefined;
-};
+export declare type UpdateSubjectResponse =
+	Message<"admin.v1.UpdateSubjectResponse"> & {
+		/**
+		 * @generated from field: admin.v1.Subject subject = 1;
+		 */
+		subject?: Subject | undefined;
+	};
 
 /**
  * Describes the message admin.v1.UpdateSubjectResponse.
@@ -392,12 +407,13 @@ export declare const UpdateSubjectResponseSchema: GenMessage<UpdateSubjectRespon
 /**
  * @generated from message admin.v1.DeleteSubjectRequest
  */
-export declare type DeleteSubjectRequest = Message<"admin.v1.DeleteSubjectRequest"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
-};
+export declare type DeleteSubjectRequest =
+	Message<"admin.v1.DeleteSubjectRequest"> & {
+		/**
+		 * @generated from field: string id = 1;
+		 */
+		id: string;
+	};
 
 /**
  * Describes the message admin.v1.DeleteSubjectRequest.
@@ -408,8 +424,8 @@ export declare const DeleteSubjectRequestSchema: GenMessage<DeleteSubjectRequest
 /**
  * @generated from message admin.v1.DeleteSubjectResponse
  */
-export declare type DeleteSubjectResponse = Message<"admin.v1.DeleteSubjectResponse"> & {
-};
+export declare type DeleteSubjectResponse =
+	Message<"admin.v1.DeleteSubjectResponse"> & {};
 
 /**
  * Describes the message admin.v1.DeleteSubjectResponse.
@@ -421,55 +437,55 @@ export declare const DeleteSubjectResponseSchema: GenMessage<DeleteSubjectRespon
  * @generated from enum admin.v1.SubjectSemester
  */
 export enum SubjectSemester {
-  /**
-   * @generated from enum value: SUBJECT_SEMESTER_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
+	/**
+	 * @generated from enum value: SUBJECT_SEMESTER_UNSPECIFIED = 0;
+	 */
+	UNSPECIFIED = 0,
 
-  /**
-   * @generated from enum value: SUBJECT_SEMESTER_ALL_YEAR = 1;
-   */
-  ALL_YEAR = 1,
+	/**
+	 * @generated from enum value: SUBJECT_SEMESTER_ALL_YEAR = 1;
+	 */
+	ALL_YEAR = 1,
 
-  /**
-   * @generated from enum value: SUBJECT_SEMESTER_H1 = 2;
-   */
-  H1 = 2,
+	/**
+	 * @generated from enum value: SUBJECT_SEMESTER_H1 = 2;
+	 */
+	H1 = 2,
 
-  /**
-   * @generated from enum value: SUBJECT_SEMESTER_H2 = 3;
-   */
-  H2 = 3,
+	/**
+	 * @generated from enum value: SUBJECT_SEMESTER_H2 = 3;
+	 */
+	H2 = 3,
 
-  /**
-   * @generated from enum value: SUBJECT_SEMESTER_Q1 = 4;
-   */
-  Q1 = 4,
+	/**
+	 * @generated from enum value: SUBJECT_SEMESTER_Q1 = 4;
+	 */
+	Q1 = 4,
 
-  /**
-   * @generated from enum value: SUBJECT_SEMESTER_Q2 = 5;
-   */
-  Q2 = 5,
+	/**
+	 * @generated from enum value: SUBJECT_SEMESTER_Q2 = 5;
+	 */
+	Q2 = 5,
 
-  /**
-   * @generated from enum value: SUBJECT_SEMESTER_Q3 = 6;
-   */
-  Q3 = 6,
+	/**
+	 * @generated from enum value: SUBJECT_SEMESTER_Q3 = 6;
+	 */
+	Q3 = 6,
 
-  /**
-   * @generated from enum value: SUBJECT_SEMESTER_Q4 = 7;
-   */
-  Q4 = 7,
+	/**
+	 * @generated from enum value: SUBJECT_SEMESTER_Q4 = 7;
+	 */
+	Q4 = 7,
 
-  /**
-   * @generated from enum value: SUBJECT_SEMESTER_SUMMER_INTENSIVE = 8;
-   */
-  SUMMER_INTENSIVE = 8,
+	/**
+	 * @generated from enum value: SUBJECT_SEMESTER_SUMMER_INTENSIVE = 8;
+	 */
+	SUMMER_INTENSIVE = 8,
 
-  /**
-   * @generated from enum value: SUBJECT_SEMESTER_WINTER_INTENSIVE = 9;
-   */
-  WINTER_INTENSIVE = 9,
+	/**
+	 * @generated from enum value: SUBJECT_SEMESTER_WINTER_INTENSIVE = 9;
+	 */
+	WINTER_INTENSIVE = 9,
 }
 
 /**
@@ -481,25 +497,25 @@ export declare const SubjectSemesterSchema: GenEnum<SubjectSemester>;
  * @generated from enum admin.v1.SubjectClassification
  */
 export enum SubjectClassification {
-  /**
-   * @generated from enum value: SUBJECT_CLASSIFICATION_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
+	/**
+	 * @generated from enum value: SUBJECT_CLASSIFICATION_UNSPECIFIED = 0;
+	 */
+	UNSPECIFIED = 0,
 
-  /**
-   * @generated from enum value: SUBJECT_CLASSIFICATION_SPECIALIZED = 1;
-   */
-  SPECIALIZED = 1,
+	/**
+	 * @generated from enum value: SUBJECT_CLASSIFICATION_SPECIALIZED = 1;
+	 */
+	SPECIALIZED = 1,
 
-  /**
-   * @generated from enum value: SUBJECT_CLASSIFICATION_CULTURAL = 2;
-   */
-  CULTURAL = 2,
+	/**
+	 * @generated from enum value: SUBJECT_CLASSIFICATION_CULTURAL = 2;
+	 */
+	CULTURAL = 2,
 
-  /**
-   * @generated from enum value: SUBJECT_CLASSIFICATION_RESEARCH_INSTRUCTION = 3;
-   */
-  RESEARCH_INSTRUCTION = 3,
+	/**
+	 * @generated from enum value: SUBJECT_CLASSIFICATION_RESEARCH_INSTRUCTION = 3;
+	 */
+	RESEARCH_INSTRUCTION = 3,
 }
 
 /**
@@ -511,35 +527,35 @@ export declare const SubjectClassificationSchema: GenEnum<SubjectClassification>
  * @generated from enum admin.v1.SubjectCulturalSubjectCategory
  */
 export enum SubjectCulturalSubjectCategory {
-  /**
-   * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
+	/**
+	 * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_UNSPECIFIED = 0;
+	 */
+	UNSPECIFIED = 0,
 
-  /**
-   * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_SOCIETY = 1;
-   */
-  SOCIETY = 1,
+	/**
+	 * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_SOCIETY = 1;
+	 */
+	SOCIETY = 1,
 
-  /**
-   * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_HUMAN = 2;
-   */
-  HUMAN = 2,
+	/**
+	 * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_HUMAN = 2;
+	 */
+	HUMAN = 2,
 
-  /**
-   * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_SCIENCE = 3;
-   */
-  SCIENCE = 3,
+	/**
+	 * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_SCIENCE = 3;
+	 */
+	SCIENCE = 3,
 
-  /**
-   * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_HEALTH = 4;
-   */
-  HEALTH = 4,
+	/**
+	 * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_HEALTH = 4;
+	 */
+	HEALTH = 4,
 
-  /**
-   * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_COMMUNICATION = 5;
-   */
-  COMMUNICATION = 5,
+	/**
+	 * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_COMMUNICATION = 5;
+	 */
+	COMMUNICATION = 5,
 }
 
 /**
@@ -551,25 +567,25 @@ export declare const SubjectCulturalSubjectCategorySchema: GenEnum<SubjectCultur
  * @generated from enum admin.v1.SubjectRequirementType
  */
 export enum SubjectRequirementType {
-  /**
-   * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
+	/**
+	 * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_UNSPECIFIED = 0;
+	 */
+	UNSPECIFIED = 0,
 
-  /**
-   * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_REQUIRED = 1;
-   */
-  REQUIRED = 1,
+	/**
+	 * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_REQUIRED = 1;
+	 */
+	REQUIRED = 1,
 
-  /**
-   * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_OPTIONAL = 2;
-   */
-  OPTIONAL = 2,
+	/**
+	 * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_OPTIONAL = 2;
+	 */
+	OPTIONAL = 2,
 
-  /**
-   * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_OPTIONAL_REQUIRED = 3;
-   */
-  OPTIONAL_REQUIRED = 3,
+	/**
+	 * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_OPTIONAL_REQUIRED = 3;
+	 */
+	OPTIONAL_REQUIRED = 3,
 }
 
 /**
@@ -581,45 +597,44 @@ export declare const SubjectRequirementTypeSchema: GenEnum<SubjectRequirementTyp
  * @generated from service admin.v1.SubjectService
  */
 export declare const SubjectService: GenService<{
-  /**
-   * @generated from rpc admin.v1.SubjectService.ListSubjects
-   */
-  listSubjects: {
-    methodKind: "unary";
-    input: typeof ListSubjectsRequestSchema;
-    output: typeof ListSubjectsResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.SubjectService.GetSubject
-   */
-  getSubject: {
-    methodKind: "unary";
-    input: typeof GetSubjectRequestSchema;
-    output: typeof GetSubjectResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.SubjectService.CreateSubject
-   */
-  createSubject: {
-    methodKind: "unary";
-    input: typeof CreateSubjectRequestSchema;
-    output: typeof CreateSubjectResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.SubjectService.UpdateSubject
-   */
-  updateSubject: {
-    methodKind: "unary";
-    input: typeof UpdateSubjectRequestSchema;
-    output: typeof UpdateSubjectResponseSchema;
-  },
-  /**
-   * @generated from rpc admin.v1.SubjectService.DeleteSubject
-   */
-  deleteSubject: {
-    methodKind: "unary";
-    input: typeof DeleteSubjectRequestSchema;
-    output: typeof DeleteSubjectResponseSchema;
-  },
+	/**
+	 * @generated from rpc admin.v1.SubjectService.ListSubjects
+	 */
+	listSubjects: {
+		methodKind: "unary";
+		input: typeof ListSubjectsRequestSchema;
+		output: typeof ListSubjectsResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.SubjectService.GetSubject
+	 */
+	getSubject: {
+		methodKind: "unary";
+		input: typeof GetSubjectRequestSchema;
+		output: typeof GetSubjectResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.SubjectService.CreateSubject
+	 */
+	createSubject: {
+		methodKind: "unary";
+		input: typeof CreateSubjectRequestSchema;
+		output: typeof CreateSubjectResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.SubjectService.UpdateSubject
+	 */
+	updateSubject: {
+		methodKind: "unary";
+		input: typeof UpdateSubjectRequestSchema;
+		output: typeof UpdateSubjectResponseSchema;
+	};
+	/**
+	 * @generated from rpc admin.v1.SubjectService.DeleteSubject
+	 */
+	deleteSubject: {
+		methodKind: "unary";
+		input: typeof DeleteSubjectRequestSchema;
+		output: typeof DeleteSubjectResponseSchema;
+	};
 }>;
-

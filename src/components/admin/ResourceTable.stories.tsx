@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
-import { expect, fn, userEvent, within } from "storybook/test";
+import { expect, within } from "storybook/test";
 import { longText } from "./fixtures";
 import { ResourceTable } from "./ResourceTable";
 
@@ -25,23 +25,13 @@ const meta = {
 	args: {
 		columns,
 		rows: [makeRow(1), makeRow(2), makeRow(3)],
-		onEdit: fn(),
-		onDelete: fn(),
 	},
 } satisfies Meta<typeof ResourceTable>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-	play: async ({ args, canvasElement }) => {
-		const canvas = within(canvasElement);
-		await userEvent.click(canvas.getByRole("button", { name: "id-1 を編集" }));
-		await expect(args.onEdit).toHaveBeenCalledWith("id-1");
-		await userEvent.click(canvas.getByRole("button", { name: "id-2 を削除" }));
-		await expect(args.onDelete).toHaveBeenCalledWith("id-2");
-	},
-};
+export const Default: Story = {};
 
 export const Loading: Story = { args: { loading: true } };
 
@@ -77,16 +67,9 @@ export const LongText: Story = {
 
 export const WithDetailLink: Story = {
 	args: { resourceSlug: "announcements" },
-	play: async ({ args, canvasElement }) => {
-		const canvas = within(canvasElement);
+	play: async ({ canvasElement }) => {
 		await expect(
-			canvas.getByRole("link", { name: "id-1" }),
+			within(canvasElement).getByRole("link", { name: "id-1" }),
 		).toBeInTheDocument();
-		await userEvent.click(canvas.getByRole("button", { name: "id-1 を編集" }));
-		await expect(args.onEdit).toHaveBeenCalledWith("id-1");
 	},
-};
-
-export const ReadOnly: Story = {
-	args: { onEdit: undefined, onDelete: undefined },
 };

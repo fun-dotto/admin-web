@@ -7,13 +7,16 @@ import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 /**
  * Describes the file google/type/latlng.proto.
  */
-export const file_google_type_latlng = /*@__PURE__*/
-  fileDesc("Chhnb29nbGUvdHlwZS9sYXRsbmcucHJvdG8SC2dvb2dsZS50eXBlIi0KBkxhdExuZxIQCghsYXRpdHVkZRgBIAEoARIRCglsb25naXR1ZGUYAiABKAFiBnByb3RvMw");
+export const file_google_type_latlng =
+	/*@__PURE__*/
+	fileDesc(
+		"Chhnb29nbGUvdHlwZS9sYXRsbmcucHJvdG8SC2dvb2dsZS50eXBlIi0KBkxhdExuZxIQCghsYXRpdHVkZRgBIAEoARIRCglsb25naXR1ZGUYAiABKAFiBnByb3RvMw",
+	);
 
 /**
  * Describes the message google.type.LatLng.
  * Use `create(LatLngSchema)` to create a new message.
  */
-export const LatLngSchema = /*@__PURE__*/
-  messageDesc(file_google_type_latlng, 0);
-
+export const LatLngSchema =
+	/*@__PURE__*/
+	messageDesc(file_google_type_latlng, 0);
