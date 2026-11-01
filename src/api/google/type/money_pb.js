@@ -7,14 +7,13 @@ import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 /**
  * Describes the file google/type/money.proto.
  */
-export const file_google_type_money =
-	/*@__PURE__*/
-	fileDesc(
-		"Chdnb29nbGUvdHlwZS9tb25leS5wcm90bxILZ29vZ2xlLnR5cGUiPAoFTW9uZXkSFQoNY3VycmVuY3lfY29kZRgBIAEoCRINCgV1bml0cxgCIAEoAxINCgVuYW5vcxgDIAEoBWIGcHJvdG8z",
-	);
+export const file_google_type_money = /*@__PURE__*/
+  fileDesc("Chdnb29nbGUvdHlwZS9tb25leS5wcm90bxILZ29vZ2xlLnR5cGUiPAoFTW9uZXkSFQoNY3VycmVuY3lfY29kZRgBIAEoCRINCgV1bml0cxgCIAEoAxINCgVuYW5vcxgDIAEoBWIGcHJvdG8z");
 
 /**
  * Describes the message google.type.Money.
  * Use `create(MoneySchema)` to create a new message.
  */
-export const MoneySchema = /*@__PURE__*/ messageDesc(file_google_type_money, 0);
+export const MoneySchema = /*@__PURE__*/
+  messageDesc(file_google_type_money, 0);
+

@@ -2,12 +2,7 @@
 // @generated from file admin/v1/trip.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenEnum,
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { FieldMask } from "@bufbuild/protobuf/wkt";
 
@@ -20,25 +15,25 @@ export declare const file_admin_v1_trip: GenFile;
  * @generated from message admin.v1.Trip
  */
 export declare type Trip = Message<"admin.v1.Trip"> & {
-	/**
-	 * @generated from field: string trip_id = 1;
-	 */
-	tripId: string;
+  /**
+   * @generated from field: string trip_id = 1;
+   */
+  tripId: string;
 
-	/**
-	 * @generated from field: string route_id = 2;
-	 */
-	routeId: string;
+  /**
+   * @generated from field: string route_id = 2;
+   */
+  routeId: string;
 
-	/**
-	 * @generated from field: string service_id = 3;
-	 */
-	serviceId: string;
+  /**
+   * @generated from field: string service_id = 3;
+   */
+  serviceId: string;
 
-	/**
-	 * @generated from field: optional admin.v1.TripDirection direction = 4;
-	 */
-	direction?: TripDirection | undefined;
+  /**
+   * @generated from field: optional admin.v1.TripDirection direction = 4;
+   */
+  direction?: TripDirection | undefined;
 };
 
 /**
@@ -51,15 +46,15 @@ export declare const TripSchema: GenMessage<Trip>;
  * @generated from message admin.v1.ListTripsRequest
  */
 export declare type ListTripsRequest = Message<"admin.v1.ListTripsRequest"> & {
-	/**
-	 * @generated from field: int32 page_size = 1;
-	 */
-	pageSize: number;
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-	/**
-	 * @generated from field: string page_token = 2;
-	 */
-	pageToken: string;
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
 };
 
 /**
@@ -71,18 +66,17 @@ export declare const ListTripsRequestSchema: GenMessage<ListTripsRequest>;
 /**
  * @generated from message admin.v1.ListTripsResponse
  */
-export declare type ListTripsResponse =
-	Message<"admin.v1.ListTripsResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.Trip trips = 1;
-		 */
-		trips: Trip[];
+export declare type ListTripsResponse = Message<"admin.v1.ListTripsResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.Trip trips = 1;
+   */
+  trips: Trip[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListTripsResponse.
@@ -94,10 +88,10 @@ export declare const ListTripsResponseSchema: GenMessage<ListTripsResponse>;
  * @generated from message admin.v1.GetTripRequest
  */
 export declare type GetTripRequest = Message<"admin.v1.GetTripRequest"> & {
-	/**
-	 * @generated from field: string trip_id = 1;
-	 */
-	tripId: string;
+  /**
+   * @generated from field: string trip_id = 1;
+   */
+  tripId: string;
 };
 
 /**
@@ -110,10 +104,10 @@ export declare const GetTripRequestSchema: GenMessage<GetTripRequest>;
  * @generated from message admin.v1.GetTripResponse
  */
 export declare type GetTripResponse = Message<"admin.v1.GetTripResponse"> & {
-	/**
-	 * @generated from field: admin.v1.Trip trip = 1;
-	 */
-	trip?: Trip | undefined;
+  /**
+   * @generated from field: admin.v1.Trip trip = 1;
+   */
+  trip?: Trip | undefined;
 };
 
 /**
@@ -125,28 +119,27 @@ export declare const GetTripResponseSchema: GenMessage<GetTripResponse>;
 /**
  * @generated from message admin.v1.CreateTripRequest
  */
-export declare type CreateTripRequest =
-	Message<"admin.v1.CreateTripRequest"> & {
-		/**
-		 * @generated from field: string trip_id = 1;
-		 */
-		tripId: string;
+export declare type CreateTripRequest = Message<"admin.v1.CreateTripRequest"> & {
+  /**
+   * @generated from field: string trip_id = 1;
+   */
+  tripId: string;
 
-		/**
-		 * @generated from field: string route_id = 2;
-		 */
-		routeId: string;
+  /**
+   * @generated from field: string route_id = 2;
+   */
+  routeId: string;
 
-		/**
-		 * @generated from field: string service_id = 3;
-		 */
-		serviceId: string;
+  /**
+   * @generated from field: string service_id = 3;
+   */
+  serviceId: string;
 
-		/**
-		 * @generated from field: optional admin.v1.TripDirection direction = 4;
-		 */
-		direction?: TripDirection | undefined;
-	};
+  /**
+   * @generated from field: optional admin.v1.TripDirection direction = 4;
+   */
+  direction?: TripDirection | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateTripRequest.
@@ -157,13 +150,12 @@ export declare const CreateTripRequestSchema: GenMessage<CreateTripRequest>;
 /**
  * @generated from message admin.v1.CreateTripResponse
  */
-export declare type CreateTripResponse =
-	Message<"admin.v1.CreateTripResponse"> & {
-		/**
-		 * @generated from field: admin.v1.Trip trip = 1;
-		 */
-		trip?: Trip | undefined;
-	};
+export declare type CreateTripResponse = Message<"admin.v1.CreateTripResponse"> & {
+  /**
+   * @generated from field: admin.v1.Trip trip = 1;
+   */
+  trip?: Trip | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateTripResponse.
@@ -174,33 +166,32 @@ export declare const CreateTripResponseSchema: GenMessage<CreateTripResponse>;
 /**
  * @generated from message admin.v1.UpdateTripRequest
  */
-export declare type UpdateTripRequest =
-	Message<"admin.v1.UpdateTripRequest"> & {
-		/**
-		 * @generated from field: string trip_id = 1;
-		 */
-		tripId: string;
+export declare type UpdateTripRequest = Message<"admin.v1.UpdateTripRequest"> & {
+  /**
+   * @generated from field: string trip_id = 1;
+   */
+  tripId: string;
 
-		/**
-		 * @generated from field: string route_id = 2;
-		 */
-		routeId: string;
+  /**
+   * @generated from field: string route_id = 2;
+   */
+  routeId: string;
 
-		/**
-		 * @generated from field: string service_id = 3;
-		 */
-		serviceId: string;
+  /**
+   * @generated from field: string service_id = 3;
+   */
+  serviceId: string;
 
-		/**
-		 * @generated from field: optional admin.v1.TripDirection direction = 4;
-		 */
-		direction?: TripDirection | undefined;
+  /**
+   * @generated from field: optional admin.v1.TripDirection direction = 4;
+   */
+  direction?: TripDirection | undefined;
 
-		/**
-		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
-		 */
-		updateMask?: FieldMask | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 99;
+   */
+  updateMask?: FieldMask | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateTripRequest.
@@ -211,13 +202,12 @@ export declare const UpdateTripRequestSchema: GenMessage<UpdateTripRequest>;
 /**
  * @generated from message admin.v1.UpdateTripResponse
  */
-export declare type UpdateTripResponse =
-	Message<"admin.v1.UpdateTripResponse"> & {
-		/**
-		 * @generated from field: admin.v1.Trip trip = 1;
-		 */
-		trip?: Trip | undefined;
-	};
+export declare type UpdateTripResponse = Message<"admin.v1.UpdateTripResponse"> & {
+  /**
+   * @generated from field: admin.v1.Trip trip = 1;
+   */
+  trip?: Trip | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateTripResponse.
@@ -228,13 +218,12 @@ export declare const UpdateTripResponseSchema: GenMessage<UpdateTripResponse>;
 /**
  * @generated from message admin.v1.DeleteTripRequest
  */
-export declare type DeleteTripRequest =
-	Message<"admin.v1.DeleteTripRequest"> & {
-		/**
-		 * @generated from field: string trip_id = 1;
-		 */
-		tripId: string;
-	};
+export declare type DeleteTripRequest = Message<"admin.v1.DeleteTripRequest"> & {
+  /**
+   * @generated from field: string trip_id = 1;
+   */
+  tripId: string;
+};
 
 /**
  * Describes the message admin.v1.DeleteTripRequest.
@@ -245,8 +234,8 @@ export declare const DeleteTripRequestSchema: GenMessage<DeleteTripRequest>;
 /**
  * @generated from message admin.v1.DeleteTripResponse
  */
-export declare type DeleteTripResponse =
-	Message<"admin.v1.DeleteTripResponse"> & {};
+export declare type DeleteTripResponse = Message<"admin.v1.DeleteTripResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteTripResponse.
@@ -258,20 +247,20 @@ export declare const DeleteTripResponseSchema: GenMessage<DeleteTripResponse>;
  * @generated from enum admin.v1.TripDirection
  */
 export enum TripDirection {
-	/**
-	 * @generated from enum value: TRIP_DIRECTION_UNSPECIFIED = 0;
-	 */
-	UNSPECIFIED = 0,
+  /**
+   * @generated from enum value: TRIP_DIRECTION_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
 
-	/**
-	 * @generated from enum value: TRIP_DIRECTION_OUTBOUND = 1;
-	 */
-	OUTBOUND = 1,
+  /**
+   * @generated from enum value: TRIP_DIRECTION_OUTBOUND = 1;
+   */
+  OUTBOUND = 1,
 
-	/**
-	 * @generated from enum value: TRIP_DIRECTION_INBOUND = 2;
-	 */
-	INBOUND = 2,
+  /**
+   * @generated from enum value: TRIP_DIRECTION_INBOUND = 2;
+   */
+  INBOUND = 2,
 }
 
 /**
@@ -283,44 +272,45 @@ export declare const TripDirectionSchema: GenEnum<TripDirection>;
  * @generated from service admin.v1.TripService
  */
 export declare const TripService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.TripService.ListTrips
-	 */
-	listTrips: {
-		methodKind: "unary";
-		input: typeof ListTripsRequestSchema;
-		output: typeof ListTripsResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.TripService.GetTrip
-	 */
-	getTrip: {
-		methodKind: "unary";
-		input: typeof GetTripRequestSchema;
-		output: typeof GetTripResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.TripService.CreateTrip
-	 */
-	createTrip: {
-		methodKind: "unary";
-		input: typeof CreateTripRequestSchema;
-		output: typeof CreateTripResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.TripService.UpdateTrip
-	 */
-	updateTrip: {
-		methodKind: "unary";
-		input: typeof UpdateTripRequestSchema;
-		output: typeof UpdateTripResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.TripService.DeleteTrip
-	 */
-	deleteTrip: {
-		methodKind: "unary";
-		input: typeof DeleteTripRequestSchema;
-		output: typeof DeleteTripResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.TripService.ListTrips
+   */
+  listTrips: {
+    methodKind: "unary";
+    input: typeof ListTripsRequestSchema;
+    output: typeof ListTripsResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.TripService.GetTrip
+   */
+  getTrip: {
+    methodKind: "unary";
+    input: typeof GetTripRequestSchema;
+    output: typeof GetTripResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.TripService.CreateTrip
+   */
+  createTrip: {
+    methodKind: "unary";
+    input: typeof CreateTripRequestSchema;
+    output: typeof CreateTripResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.TripService.UpdateTrip
+   */
+  updateTrip: {
+    methodKind: "unary";
+    input: typeof UpdateTripRequestSchema;
+    output: typeof UpdateTripResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.TripService.DeleteTrip
+   */
+  deleteTrip: {
+    methodKind: "unary";
+    input: typeof DeleteTripRequestSchema;
+    output: typeof DeleteTripResponseSchema;
+  },
 }>;
+

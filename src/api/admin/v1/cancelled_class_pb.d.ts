@@ -2,11 +2,7 @@
 // @generated from file admin/v1/cancelled_class.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Date } from "../../google/type/date_pb";
 import type { Period } from "./common_pb";
@@ -21,40 +17,40 @@ export declare const file_admin_v1_cancelled_class: GenFile;
  * @generated from message admin.v1.CancelledClass
  */
 export declare type CancelledClass = Message<"admin.v1.CancelledClass"> & {
-	/**
-	 * @generated from field: string id = 1;
-	 */
-	id: string;
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-	/**
-	 * @generated from field: string subject_id = 2;
-	 */
-	subjectId: string;
+  /**
+   * @generated from field: string subject_id = 2;
+   */
+  subjectId: string;
 
-	/**
-	 * @generated from field: google.type.Date date = 3;
-	 */
-	date?: Date | undefined;
+  /**
+   * @generated from field: google.type.Date date = 3;
+   */
+  date?: Date | undefined;
 
-	/**
-	 * @generated from field: admin.v1.Period period = 4;
-	 */
-	period: Period;
+  /**
+   * @generated from field: admin.v1.Period period = 4;
+   */
+  period: Period;
 
-	/**
-	 * @generated from field: optional string comment = 5;
-	 */
-	comment?: string | undefined;
+  /**
+   * @generated from field: optional string comment = 5;
+   */
+  comment?: string | undefined;
 
-	/**
-	 * @generated from field: google.protobuf.Timestamp created_at = 6;
-	 */
-	createdAt?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 6;
+   */
+  createdAt?: Timestamp | undefined;
 
-	/**
-	 * @generated from field: google.protobuf.Timestamp updated_at = 7;
-	 */
-	updatedAt?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 7;
+   */
+  updatedAt?: Timestamp | undefined;
 };
 
 /**
@@ -66,18 +62,17 @@ export declare const CancelledClassSchema: GenMessage<CancelledClass>;
 /**
  * @generated from message admin.v1.ListCancelledClassesRequest
  */
-export declare type ListCancelledClassesRequest =
-	Message<"admin.v1.ListCancelledClassesRequest"> & {
-		/**
-		 * @generated from field: int32 page_size = 1;
-		 */
-		pageSize: number;
+export declare type ListCancelledClassesRequest = Message<"admin.v1.ListCancelledClassesRequest"> & {
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-		/**
-		 * @generated from field: string page_token = 2;
-		 */
-		pageToken: string;
-	};
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListCancelledClassesRequest.
@@ -88,18 +83,17 @@ export declare const ListCancelledClassesRequestSchema: GenMessage<ListCancelled
 /**
  * @generated from message admin.v1.ListCancelledClassesResponse
  */
-export declare type ListCancelledClassesResponse =
-	Message<"admin.v1.ListCancelledClassesResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.CancelledClass cancelled_classes = 1;
-		 */
-		cancelledClasses: CancelledClass[];
+export declare type ListCancelledClassesResponse = Message<"admin.v1.ListCancelledClassesResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.CancelledClass cancelled_classes = 1;
+   */
+  cancelledClasses: CancelledClass[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListCancelledClassesResponse.
@@ -110,13 +104,12 @@ export declare const ListCancelledClassesResponseSchema: GenMessage<ListCancelle
 /**
  * @generated from message admin.v1.GetCancelledClassRequest
  */
-export declare type GetCancelledClassRequest =
-	Message<"admin.v1.GetCancelledClassRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
-	};
+export declare type GetCancelledClassRequest = Message<"admin.v1.GetCancelledClassRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
 
 /**
  * Describes the message admin.v1.GetCancelledClassRequest.
@@ -127,13 +120,12 @@ export declare const GetCancelledClassRequestSchema: GenMessage<GetCancelledClas
 /**
  * @generated from message admin.v1.GetCancelledClassResponse
  */
-export declare type GetCancelledClassResponse =
-	Message<"admin.v1.GetCancelledClassResponse"> & {
-		/**
-		 * @generated from field: admin.v1.CancelledClass cancelled_class = 1;
-		 */
-		cancelledClass?: CancelledClass | undefined;
-	};
+export declare type GetCancelledClassResponse = Message<"admin.v1.GetCancelledClassResponse"> & {
+  /**
+   * @generated from field: admin.v1.CancelledClass cancelled_class = 1;
+   */
+  cancelledClass?: CancelledClass | undefined;
+};
 
 /**
  * Describes the message admin.v1.GetCancelledClassResponse.
@@ -144,28 +136,27 @@ export declare const GetCancelledClassResponseSchema: GenMessage<GetCancelledCla
 /**
  * @generated from message admin.v1.CreateCancelledClassRequest
  */
-export declare type CreateCancelledClassRequest =
-	Message<"admin.v1.CreateCancelledClassRequest"> & {
-		/**
-		 * @generated from field: string subject_id = 1;
-		 */
-		subjectId: string;
+export declare type CreateCancelledClassRequest = Message<"admin.v1.CreateCancelledClassRequest"> & {
+  /**
+   * @generated from field: string subject_id = 1;
+   */
+  subjectId: string;
 
-		/**
-		 * @generated from field: google.type.Date date = 2;
-		 */
-		date?: Date | undefined;
+  /**
+   * @generated from field: google.type.Date date = 2;
+   */
+  date?: Date | undefined;
 
-		/**
-		 * @generated from field: admin.v1.Period period = 3;
-		 */
-		period: Period;
+  /**
+   * @generated from field: admin.v1.Period period = 3;
+   */
+  period: Period;
 
-		/**
-		 * @generated from field: optional string comment = 4;
-		 */
-		comment?: string | undefined;
-	};
+  /**
+   * @generated from field: optional string comment = 4;
+   */
+  comment?: string | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateCancelledClassRequest.
@@ -176,13 +167,12 @@ export declare const CreateCancelledClassRequestSchema: GenMessage<CreateCancell
 /**
  * @generated from message admin.v1.CreateCancelledClassResponse
  */
-export declare type CreateCancelledClassResponse =
-	Message<"admin.v1.CreateCancelledClassResponse"> & {
-		/**
-		 * @generated from field: admin.v1.CancelledClass cancelled_class = 1;
-		 */
-		cancelledClass?: CancelledClass | undefined;
-	};
+export declare type CreateCancelledClassResponse = Message<"admin.v1.CreateCancelledClassResponse"> & {
+  /**
+   * @generated from field: admin.v1.CancelledClass cancelled_class = 1;
+   */
+  cancelledClass?: CancelledClass | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateCancelledClassResponse.
@@ -193,38 +183,37 @@ export declare const CreateCancelledClassResponseSchema: GenMessage<CreateCancel
 /**
  * @generated from message admin.v1.UpdateCancelledClassRequest
  */
-export declare type UpdateCancelledClassRequest =
-	Message<"admin.v1.UpdateCancelledClassRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
+export declare type UpdateCancelledClassRequest = Message<"admin.v1.UpdateCancelledClassRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-		/**
-		 * @generated from field: string subject_id = 2;
-		 */
-		subjectId: string;
+  /**
+   * @generated from field: string subject_id = 2;
+   */
+  subjectId: string;
 
-		/**
-		 * @generated from field: google.type.Date date = 3;
-		 */
-		date?: Date | undefined;
+  /**
+   * @generated from field: google.type.Date date = 3;
+   */
+  date?: Date | undefined;
 
-		/**
-		 * @generated from field: admin.v1.Period period = 4;
-		 */
-		period: Period;
+  /**
+   * @generated from field: admin.v1.Period period = 4;
+   */
+  period: Period;
 
-		/**
-		 * @generated from field: optional string comment = 5;
-		 */
-		comment?: string | undefined;
+  /**
+   * @generated from field: optional string comment = 5;
+   */
+  comment?: string | undefined;
 
-		/**
-		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
-		 */
-		updateMask?: FieldMask | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 99;
+   */
+  updateMask?: FieldMask | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateCancelledClassRequest.
@@ -235,13 +224,12 @@ export declare const UpdateCancelledClassRequestSchema: GenMessage<UpdateCancell
 /**
  * @generated from message admin.v1.UpdateCancelledClassResponse
  */
-export declare type UpdateCancelledClassResponse =
-	Message<"admin.v1.UpdateCancelledClassResponse"> & {
-		/**
-		 * @generated from field: admin.v1.CancelledClass cancelled_class = 1;
-		 */
-		cancelledClass?: CancelledClass | undefined;
-	};
+export declare type UpdateCancelledClassResponse = Message<"admin.v1.UpdateCancelledClassResponse"> & {
+  /**
+   * @generated from field: admin.v1.CancelledClass cancelled_class = 1;
+   */
+  cancelledClass?: CancelledClass | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateCancelledClassResponse.
@@ -252,13 +240,12 @@ export declare const UpdateCancelledClassResponseSchema: GenMessage<UpdateCancel
 /**
  * @generated from message admin.v1.DeleteCancelledClassRequest
  */
-export declare type DeleteCancelledClassRequest =
-	Message<"admin.v1.DeleteCancelledClassRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
-	};
+export declare type DeleteCancelledClassRequest = Message<"admin.v1.DeleteCancelledClassRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
 
 /**
  * Describes the message admin.v1.DeleteCancelledClassRequest.
@@ -269,8 +256,8 @@ export declare const DeleteCancelledClassRequestSchema: GenMessage<DeleteCancell
 /**
  * @generated from message admin.v1.DeleteCancelledClassResponse
  */
-export declare type DeleteCancelledClassResponse =
-	Message<"admin.v1.DeleteCancelledClassResponse"> & {};
+export declare type DeleteCancelledClassResponse = Message<"admin.v1.DeleteCancelledClassResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteCancelledClassResponse.
@@ -282,44 +269,45 @@ export declare const DeleteCancelledClassResponseSchema: GenMessage<DeleteCancel
  * @generated from service admin.v1.CancelledClassService
  */
 export declare const CancelledClassService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.CancelledClassService.ListCancelledClasses
-	 */
-	listCancelledClasses: {
-		methodKind: "unary";
-		input: typeof ListCancelledClassesRequestSchema;
-		output: typeof ListCancelledClassesResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.CancelledClassService.GetCancelledClass
-	 */
-	getCancelledClass: {
-		methodKind: "unary";
-		input: typeof GetCancelledClassRequestSchema;
-		output: typeof GetCancelledClassResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.CancelledClassService.CreateCancelledClass
-	 */
-	createCancelledClass: {
-		methodKind: "unary";
-		input: typeof CreateCancelledClassRequestSchema;
-		output: typeof CreateCancelledClassResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.CancelledClassService.UpdateCancelledClass
-	 */
-	updateCancelledClass: {
-		methodKind: "unary";
-		input: typeof UpdateCancelledClassRequestSchema;
-		output: typeof UpdateCancelledClassResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.CancelledClassService.DeleteCancelledClass
-	 */
-	deleteCancelledClass: {
-		methodKind: "unary";
-		input: typeof DeleteCancelledClassRequestSchema;
-		output: typeof DeleteCancelledClassResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.CancelledClassService.ListCancelledClasses
+   */
+  listCancelledClasses: {
+    methodKind: "unary";
+    input: typeof ListCancelledClassesRequestSchema;
+    output: typeof ListCancelledClassesResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.CancelledClassService.GetCancelledClass
+   */
+  getCancelledClass: {
+    methodKind: "unary";
+    input: typeof GetCancelledClassRequestSchema;
+    output: typeof GetCancelledClassResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.CancelledClassService.CreateCancelledClass
+   */
+  createCancelledClass: {
+    methodKind: "unary";
+    input: typeof CreateCancelledClassRequestSchema;
+    output: typeof CreateCancelledClassResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.CancelledClassService.UpdateCancelledClass
+   */
+  updateCancelledClass: {
+    methodKind: "unary";
+    input: typeof UpdateCancelledClassRequestSchema;
+    output: typeof UpdateCancelledClassResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.CancelledClassService.DeleteCancelledClass
+   */
+  deleteCancelledClass: {
+    methodKind: "unary";
+    input: typeof DeleteCancelledClassRequestSchema;
+    output: typeof DeleteCancelledClassResponseSchema;
+  },
 }>;
+

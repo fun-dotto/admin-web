@@ -7,20 +7,18 @@ import { enumDesc, fileDesc, tsEnum } from "@bufbuild/protobuf/codegenv2";
 /**
  * Describes the file google/type/dayofweek.proto.
  */
-export const file_google_type_dayofweek =
-	/*@__PURE__*/
-	fileDesc(
-		"Chtnb29nbGUvdHlwZS9kYXlvZndlZWsucHJvdG8SC2dvb2dsZS50eXBlKoQBCglEYXlPZldlZWsSGwoXREFZX09GX1dFRUtfVU5TUEVDSUZJRUQQABIKCgZNT05EQVkQARILCgdUVUVTREFZEAISDQoJV0VETkVTREFZEAMSDAoIVEhVUlNEQVkQBBIKCgZGUklEQVkQBRIMCghTQVRVUkRBWRAGEgoKBlNVTkRBWRAHYgZwcm90bzM",
-	);
+export const file_google_type_dayofweek = /*@__PURE__*/
+  fileDesc("Chtnb29nbGUvdHlwZS9kYXlvZndlZWsucHJvdG8SC2dvb2dsZS50eXBlKoQBCglEYXlPZldlZWsSGwoXREFZX09GX1dFRUtfVU5TUEVDSUZJRUQQABIKCgZNT05EQVkQARILCgdUVUVTREFZEAISDQoJV0VETkVTREFZEAMSDAoIVEhVUlNEQVkQBBIKCgZGUklEQVkQBRIMCghTQVRVUkRBWRAGEgoKBlNVTkRBWRAHYgZwcm90bzM");
 
 /**
  * Describes the enum google.type.DayOfWeek.
  */
-export const DayOfWeekSchema =
-	/*@__PURE__*/
-	enumDesc(file_google_type_dayofweek, 0);
+export const DayOfWeekSchema = /*@__PURE__*/
+  enumDesc(file_google_type_dayofweek, 0);
 
 /**
  * @generated from enum google.type.DayOfWeek
  */
-export const DayOfWeek = /*@__PURE__*/ tsEnum(DayOfWeekSchema);
+export const DayOfWeek = /*@__PURE__*/
+  tsEnum(DayOfWeekSchema);
+

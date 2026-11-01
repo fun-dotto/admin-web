@@ -2,11 +2,7 @@
 // @generated from file admin/v1/announcement.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 
@@ -19,40 +15,40 @@ export declare const file_admin_v1_announcement: GenFile;
  * @generated from message admin.v1.Announcement
  */
 export declare type Announcement = Message<"admin.v1.Announcement"> & {
-	/**
-	 * @generated from field: string id = 1;
-	 */
-	id: string;
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-	/**
-	 * @generated from field: string title = 2;
-	 */
-	title: string;
+  /**
+   * @generated from field: string title = 2;
+   */
+  title: string;
 
-	/**
-	 * @generated from field: string url = 3;
-	 */
-	url: string;
+  /**
+   * @generated from field: string url = 3;
+   */
+  url: string;
 
-	/**
-	 * @generated from field: google.protobuf.Timestamp available_from = 4;
-	 */
-	availableFrom?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp available_from = 4;
+   */
+  availableFrom?: Timestamp | undefined;
 
-	/**
-	 * @generated from field: optional google.protobuf.Timestamp available_until = 5;
-	 */
-	availableUntil?: Timestamp | undefined;
+  /**
+   * @generated from field: optional google.protobuf.Timestamp available_until = 5;
+   */
+  availableUntil?: Timestamp | undefined;
 
-	/**
-	 * @generated from field: google.protobuf.Timestamp created_at = 6;
-	 */
-	createdAt?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 6;
+   */
+  createdAt?: Timestamp | undefined;
 
-	/**
-	 * @generated from field: google.protobuf.Timestamp updated_at = 7;
-	 */
-	updatedAt?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 7;
+   */
+  updatedAt?: Timestamp | undefined;
 };
 
 /**
@@ -64,18 +60,17 @@ export declare const AnnouncementSchema: GenMessage<Announcement>;
 /**
  * @generated from message admin.v1.ListAnnouncementsRequest
  */
-export declare type ListAnnouncementsRequest =
-	Message<"admin.v1.ListAnnouncementsRequest"> & {
-		/**
-		 * @generated from field: int32 page_size = 1;
-		 */
-		pageSize: number;
+export declare type ListAnnouncementsRequest = Message<"admin.v1.ListAnnouncementsRequest"> & {
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-		/**
-		 * @generated from field: string page_token = 2;
-		 */
-		pageToken: string;
-	};
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListAnnouncementsRequest.
@@ -86,18 +81,17 @@ export declare const ListAnnouncementsRequestSchema: GenMessage<ListAnnouncement
 /**
  * @generated from message admin.v1.ListAnnouncementsResponse
  */
-export declare type ListAnnouncementsResponse =
-	Message<"admin.v1.ListAnnouncementsResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.Announcement announcements = 1;
-		 */
-		announcements: Announcement[];
+export declare type ListAnnouncementsResponse = Message<"admin.v1.ListAnnouncementsResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.Announcement announcements = 1;
+   */
+  announcements: Announcement[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListAnnouncementsResponse.
@@ -108,13 +102,12 @@ export declare const ListAnnouncementsResponseSchema: GenMessage<ListAnnouncemen
 /**
  * @generated from message admin.v1.GetAnnouncementRequest
  */
-export declare type GetAnnouncementRequest =
-	Message<"admin.v1.GetAnnouncementRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
-	};
+export declare type GetAnnouncementRequest = Message<"admin.v1.GetAnnouncementRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
 
 /**
  * Describes the message admin.v1.GetAnnouncementRequest.
@@ -125,13 +118,12 @@ export declare const GetAnnouncementRequestSchema: GenMessage<GetAnnouncementReq
 /**
  * @generated from message admin.v1.GetAnnouncementResponse
  */
-export declare type GetAnnouncementResponse =
-	Message<"admin.v1.GetAnnouncementResponse"> & {
-		/**
-		 * @generated from field: admin.v1.Announcement announcement = 1;
-		 */
-		announcement?: Announcement | undefined;
-	};
+export declare type GetAnnouncementResponse = Message<"admin.v1.GetAnnouncementResponse"> & {
+  /**
+   * @generated from field: admin.v1.Announcement announcement = 1;
+   */
+  announcement?: Announcement | undefined;
+};
 
 /**
  * Describes the message admin.v1.GetAnnouncementResponse.
@@ -142,28 +134,27 @@ export declare const GetAnnouncementResponseSchema: GenMessage<GetAnnouncementRe
 /**
  * @generated from message admin.v1.CreateAnnouncementRequest
  */
-export declare type CreateAnnouncementRequest =
-	Message<"admin.v1.CreateAnnouncementRequest"> & {
-		/**
-		 * @generated from field: string title = 1;
-		 */
-		title: string;
+export declare type CreateAnnouncementRequest = Message<"admin.v1.CreateAnnouncementRequest"> & {
+  /**
+   * @generated from field: string title = 1;
+   */
+  title: string;
 
-		/**
-		 * @generated from field: string url = 2;
-		 */
-		url: string;
+  /**
+   * @generated from field: string url = 2;
+   */
+  url: string;
 
-		/**
-		 * @generated from field: google.protobuf.Timestamp available_from = 3;
-		 */
-		availableFrom?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp available_from = 3;
+   */
+  availableFrom?: Timestamp | undefined;
 
-		/**
-		 * @generated from field: optional google.protobuf.Timestamp available_until = 4;
-		 */
-		availableUntil?: Timestamp | undefined;
-	};
+  /**
+   * @generated from field: optional google.protobuf.Timestamp available_until = 4;
+   */
+  availableUntil?: Timestamp | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateAnnouncementRequest.
@@ -174,13 +165,12 @@ export declare const CreateAnnouncementRequestSchema: GenMessage<CreateAnnouncem
 /**
  * @generated from message admin.v1.CreateAnnouncementResponse
  */
-export declare type CreateAnnouncementResponse =
-	Message<"admin.v1.CreateAnnouncementResponse"> & {
-		/**
-		 * @generated from field: admin.v1.Announcement announcement = 1;
-		 */
-		announcement?: Announcement | undefined;
-	};
+export declare type CreateAnnouncementResponse = Message<"admin.v1.CreateAnnouncementResponse"> & {
+  /**
+   * @generated from field: admin.v1.Announcement announcement = 1;
+   */
+  announcement?: Announcement | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateAnnouncementResponse.
@@ -191,38 +181,37 @@ export declare const CreateAnnouncementResponseSchema: GenMessage<CreateAnnounce
 /**
  * @generated from message admin.v1.UpdateAnnouncementRequest
  */
-export declare type UpdateAnnouncementRequest =
-	Message<"admin.v1.UpdateAnnouncementRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
+export declare type UpdateAnnouncementRequest = Message<"admin.v1.UpdateAnnouncementRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-		/**
-		 * @generated from field: string title = 2;
-		 */
-		title: string;
+  /**
+   * @generated from field: string title = 2;
+   */
+  title: string;
 
-		/**
-		 * @generated from field: string url = 3;
-		 */
-		url: string;
+  /**
+   * @generated from field: string url = 3;
+   */
+  url: string;
 
-		/**
-		 * @generated from field: google.protobuf.Timestamp available_from = 4;
-		 */
-		availableFrom?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp available_from = 4;
+   */
+  availableFrom?: Timestamp | undefined;
 
-		/**
-		 * @generated from field: optional google.protobuf.Timestamp available_until = 5;
-		 */
-		availableUntil?: Timestamp | undefined;
+  /**
+   * @generated from field: optional google.protobuf.Timestamp available_until = 5;
+   */
+  availableUntil?: Timestamp | undefined;
 
-		/**
-		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
-		 */
-		updateMask?: FieldMask | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 99;
+   */
+  updateMask?: FieldMask | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateAnnouncementRequest.
@@ -233,13 +222,12 @@ export declare const UpdateAnnouncementRequestSchema: GenMessage<UpdateAnnouncem
 /**
  * @generated from message admin.v1.UpdateAnnouncementResponse
  */
-export declare type UpdateAnnouncementResponse =
-	Message<"admin.v1.UpdateAnnouncementResponse"> & {
-		/**
-		 * @generated from field: admin.v1.Announcement announcement = 1;
-		 */
-		announcement?: Announcement | undefined;
-	};
+export declare type UpdateAnnouncementResponse = Message<"admin.v1.UpdateAnnouncementResponse"> & {
+  /**
+   * @generated from field: admin.v1.Announcement announcement = 1;
+   */
+  announcement?: Announcement | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateAnnouncementResponse.
@@ -250,13 +238,12 @@ export declare const UpdateAnnouncementResponseSchema: GenMessage<UpdateAnnounce
 /**
  * @generated from message admin.v1.DeleteAnnouncementRequest
  */
-export declare type DeleteAnnouncementRequest =
-	Message<"admin.v1.DeleteAnnouncementRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
-	};
+export declare type DeleteAnnouncementRequest = Message<"admin.v1.DeleteAnnouncementRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
 
 /**
  * Describes the message admin.v1.DeleteAnnouncementRequest.
@@ -267,8 +254,8 @@ export declare const DeleteAnnouncementRequestSchema: GenMessage<DeleteAnnouncem
 /**
  * @generated from message admin.v1.DeleteAnnouncementResponse
  */
-export declare type DeleteAnnouncementResponse =
-	Message<"admin.v1.DeleteAnnouncementResponse"> & {};
+export declare type DeleteAnnouncementResponse = Message<"admin.v1.DeleteAnnouncementResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteAnnouncementResponse.
@@ -280,44 +267,45 @@ export declare const DeleteAnnouncementResponseSchema: GenMessage<DeleteAnnounce
  * @generated from service admin.v1.AnnouncementService
  */
 export declare const AnnouncementService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.AnnouncementService.ListAnnouncements
-	 */
-	listAnnouncements: {
-		methodKind: "unary";
-		input: typeof ListAnnouncementsRequestSchema;
-		output: typeof ListAnnouncementsResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.AnnouncementService.GetAnnouncement
-	 */
-	getAnnouncement: {
-		methodKind: "unary";
-		input: typeof GetAnnouncementRequestSchema;
-		output: typeof GetAnnouncementResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.AnnouncementService.CreateAnnouncement
-	 */
-	createAnnouncement: {
-		methodKind: "unary";
-		input: typeof CreateAnnouncementRequestSchema;
-		output: typeof CreateAnnouncementResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.AnnouncementService.UpdateAnnouncement
-	 */
-	updateAnnouncement: {
-		methodKind: "unary";
-		input: typeof UpdateAnnouncementRequestSchema;
-		output: typeof UpdateAnnouncementResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.AnnouncementService.DeleteAnnouncement
-	 */
-	deleteAnnouncement: {
-		methodKind: "unary";
-		input: typeof DeleteAnnouncementRequestSchema;
-		output: typeof DeleteAnnouncementResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.AnnouncementService.ListAnnouncements
+   */
+  listAnnouncements: {
+    methodKind: "unary";
+    input: typeof ListAnnouncementsRequestSchema;
+    output: typeof ListAnnouncementsResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.AnnouncementService.GetAnnouncement
+   */
+  getAnnouncement: {
+    methodKind: "unary";
+    input: typeof GetAnnouncementRequestSchema;
+    output: typeof GetAnnouncementResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.AnnouncementService.CreateAnnouncement
+   */
+  createAnnouncement: {
+    methodKind: "unary";
+    input: typeof CreateAnnouncementRequestSchema;
+    output: typeof CreateAnnouncementResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.AnnouncementService.UpdateAnnouncement
+   */
+  updateAnnouncement: {
+    methodKind: "unary";
+    input: typeof UpdateAnnouncementRequestSchema;
+    output: typeof UpdateAnnouncementResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.AnnouncementService.DeleteAnnouncement
+   */
+  deleteAnnouncement: {
+    methodKind: "unary";
+    input: typeof DeleteAnnouncementRequestSchema;
+    output: typeof DeleteAnnouncementResponseSchema;
+  },
 }>;
+

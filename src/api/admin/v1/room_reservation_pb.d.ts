@@ -2,11 +2,7 @@
 // @generated from file admin/v1/room_reservation.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 
@@ -19,40 +15,40 @@ export declare const file_admin_v1_room_reservation: GenFile;
  * @generated from message admin.v1.RoomReservation
  */
 export declare type RoomReservation = Message<"admin.v1.RoomReservation"> & {
-	/**
-	 * @generated from field: string id = 1;
-	 */
-	id: string;
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-	/**
-	 * @generated from field: string title = 2;
-	 */
-	title: string;
+  /**
+   * @generated from field: string title = 2;
+   */
+  title: string;
 
-	/**
-	 * @generated from field: string room_id = 3;
-	 */
-	roomId: string;
+  /**
+   * @generated from field: string room_id = 3;
+   */
+  roomId: string;
 
-	/**
-	 * @generated from field: google.protobuf.Timestamp start_time = 4;
-	 */
-	startTime?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp start_time = 4;
+   */
+  startTime?: Timestamp | undefined;
 
-	/**
-	 * @generated from field: google.protobuf.Timestamp end_time = 5;
-	 */
-	endTime?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp end_time = 5;
+   */
+  endTime?: Timestamp | undefined;
 
-	/**
-	 * @generated from field: google.protobuf.Timestamp created_at = 6;
-	 */
-	createdAt?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 6;
+   */
+  createdAt?: Timestamp | undefined;
 
-	/**
-	 * @generated from field: google.protobuf.Timestamp updated_at = 7;
-	 */
-	updatedAt?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 7;
+   */
+  updatedAt?: Timestamp | undefined;
 };
 
 /**
@@ -64,18 +60,17 @@ export declare const RoomReservationSchema: GenMessage<RoomReservation>;
 /**
  * @generated from message admin.v1.ListRoomReservationsRequest
  */
-export declare type ListRoomReservationsRequest =
-	Message<"admin.v1.ListRoomReservationsRequest"> & {
-		/**
-		 * @generated from field: int32 page_size = 1;
-		 */
-		pageSize: number;
+export declare type ListRoomReservationsRequest = Message<"admin.v1.ListRoomReservationsRequest"> & {
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-		/**
-		 * @generated from field: string page_token = 2;
-		 */
-		pageToken: string;
-	};
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListRoomReservationsRequest.
@@ -86,18 +81,17 @@ export declare const ListRoomReservationsRequestSchema: GenMessage<ListRoomReser
 /**
  * @generated from message admin.v1.ListRoomReservationsResponse
  */
-export declare type ListRoomReservationsResponse =
-	Message<"admin.v1.ListRoomReservationsResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.RoomReservation room_reservations = 1;
-		 */
-		roomReservations: RoomReservation[];
+export declare type ListRoomReservationsResponse = Message<"admin.v1.ListRoomReservationsResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.RoomReservation room_reservations = 1;
+   */
+  roomReservations: RoomReservation[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListRoomReservationsResponse.
@@ -108,13 +102,12 @@ export declare const ListRoomReservationsResponseSchema: GenMessage<ListRoomRese
 /**
  * @generated from message admin.v1.GetRoomReservationRequest
  */
-export declare type GetRoomReservationRequest =
-	Message<"admin.v1.GetRoomReservationRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
-	};
+export declare type GetRoomReservationRequest = Message<"admin.v1.GetRoomReservationRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
 
 /**
  * Describes the message admin.v1.GetRoomReservationRequest.
@@ -125,13 +118,12 @@ export declare const GetRoomReservationRequestSchema: GenMessage<GetRoomReservat
 /**
  * @generated from message admin.v1.GetRoomReservationResponse
  */
-export declare type GetRoomReservationResponse =
-	Message<"admin.v1.GetRoomReservationResponse"> & {
-		/**
-		 * @generated from field: admin.v1.RoomReservation room_reservation = 1;
-		 */
-		roomReservation?: RoomReservation | undefined;
-	};
+export declare type GetRoomReservationResponse = Message<"admin.v1.GetRoomReservationResponse"> & {
+  /**
+   * @generated from field: admin.v1.RoomReservation room_reservation = 1;
+   */
+  roomReservation?: RoomReservation | undefined;
+};
 
 /**
  * Describes the message admin.v1.GetRoomReservationResponse.
@@ -142,28 +134,27 @@ export declare const GetRoomReservationResponseSchema: GenMessage<GetRoomReserva
 /**
  * @generated from message admin.v1.CreateRoomReservationRequest
  */
-export declare type CreateRoomReservationRequest =
-	Message<"admin.v1.CreateRoomReservationRequest"> & {
-		/**
-		 * @generated from field: string title = 1;
-		 */
-		title: string;
+export declare type CreateRoomReservationRequest = Message<"admin.v1.CreateRoomReservationRequest"> & {
+  /**
+   * @generated from field: string title = 1;
+   */
+  title: string;
 
-		/**
-		 * @generated from field: string room_id = 2;
-		 */
-		roomId: string;
+  /**
+   * @generated from field: string room_id = 2;
+   */
+  roomId: string;
 
-		/**
-		 * @generated from field: google.protobuf.Timestamp start_time = 3;
-		 */
-		startTime?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp start_time = 3;
+   */
+  startTime?: Timestamp | undefined;
 
-		/**
-		 * @generated from field: google.protobuf.Timestamp end_time = 4;
-		 */
-		endTime?: Timestamp | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.Timestamp end_time = 4;
+   */
+  endTime?: Timestamp | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateRoomReservationRequest.
@@ -174,13 +165,12 @@ export declare const CreateRoomReservationRequestSchema: GenMessage<CreateRoomRe
 /**
  * @generated from message admin.v1.CreateRoomReservationResponse
  */
-export declare type CreateRoomReservationResponse =
-	Message<"admin.v1.CreateRoomReservationResponse"> & {
-		/**
-		 * @generated from field: admin.v1.RoomReservation room_reservation = 1;
-		 */
-		roomReservation?: RoomReservation | undefined;
-	};
+export declare type CreateRoomReservationResponse = Message<"admin.v1.CreateRoomReservationResponse"> & {
+  /**
+   * @generated from field: admin.v1.RoomReservation room_reservation = 1;
+   */
+  roomReservation?: RoomReservation | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateRoomReservationResponse.
@@ -191,38 +181,37 @@ export declare const CreateRoomReservationResponseSchema: GenMessage<CreateRoomR
 /**
  * @generated from message admin.v1.UpdateRoomReservationRequest
  */
-export declare type UpdateRoomReservationRequest =
-	Message<"admin.v1.UpdateRoomReservationRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
+export declare type UpdateRoomReservationRequest = Message<"admin.v1.UpdateRoomReservationRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-		/**
-		 * @generated from field: string title = 2;
-		 */
-		title: string;
+  /**
+   * @generated from field: string title = 2;
+   */
+  title: string;
 
-		/**
-		 * @generated from field: string room_id = 3;
-		 */
-		roomId: string;
+  /**
+   * @generated from field: string room_id = 3;
+   */
+  roomId: string;
 
-		/**
-		 * @generated from field: google.protobuf.Timestamp start_time = 4;
-		 */
-		startTime?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp start_time = 4;
+   */
+  startTime?: Timestamp | undefined;
 
-		/**
-		 * @generated from field: google.protobuf.Timestamp end_time = 5;
-		 */
-		endTime?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp end_time = 5;
+   */
+  endTime?: Timestamp | undefined;
 
-		/**
-		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
-		 */
-		updateMask?: FieldMask | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 99;
+   */
+  updateMask?: FieldMask | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateRoomReservationRequest.
@@ -233,13 +222,12 @@ export declare const UpdateRoomReservationRequestSchema: GenMessage<UpdateRoomRe
 /**
  * @generated from message admin.v1.UpdateRoomReservationResponse
  */
-export declare type UpdateRoomReservationResponse =
-	Message<"admin.v1.UpdateRoomReservationResponse"> & {
-		/**
-		 * @generated from field: admin.v1.RoomReservation room_reservation = 1;
-		 */
-		roomReservation?: RoomReservation | undefined;
-	};
+export declare type UpdateRoomReservationResponse = Message<"admin.v1.UpdateRoomReservationResponse"> & {
+  /**
+   * @generated from field: admin.v1.RoomReservation room_reservation = 1;
+   */
+  roomReservation?: RoomReservation | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateRoomReservationResponse.
@@ -250,13 +238,12 @@ export declare const UpdateRoomReservationResponseSchema: GenMessage<UpdateRoomR
 /**
  * @generated from message admin.v1.DeleteRoomReservationRequest
  */
-export declare type DeleteRoomReservationRequest =
-	Message<"admin.v1.DeleteRoomReservationRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
-	};
+export declare type DeleteRoomReservationRequest = Message<"admin.v1.DeleteRoomReservationRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
 
 /**
  * Describes the message admin.v1.DeleteRoomReservationRequest.
@@ -267,8 +254,8 @@ export declare const DeleteRoomReservationRequestSchema: GenMessage<DeleteRoomRe
 /**
  * @generated from message admin.v1.DeleteRoomReservationResponse
  */
-export declare type DeleteRoomReservationResponse =
-	Message<"admin.v1.DeleteRoomReservationResponse"> & {};
+export declare type DeleteRoomReservationResponse = Message<"admin.v1.DeleteRoomReservationResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteRoomReservationResponse.
@@ -280,44 +267,45 @@ export declare const DeleteRoomReservationResponseSchema: GenMessage<DeleteRoomR
  * @generated from service admin.v1.RoomReservationService
  */
 export declare const RoomReservationService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.RoomReservationService.ListRoomReservations
-	 */
-	listRoomReservations: {
-		methodKind: "unary";
-		input: typeof ListRoomReservationsRequestSchema;
-		output: typeof ListRoomReservationsResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.RoomReservationService.GetRoomReservation
-	 */
-	getRoomReservation: {
-		methodKind: "unary";
-		input: typeof GetRoomReservationRequestSchema;
-		output: typeof GetRoomReservationResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.RoomReservationService.CreateRoomReservation
-	 */
-	createRoomReservation: {
-		methodKind: "unary";
-		input: typeof CreateRoomReservationRequestSchema;
-		output: typeof CreateRoomReservationResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.RoomReservationService.UpdateRoomReservation
-	 */
-	updateRoomReservation: {
-		methodKind: "unary";
-		input: typeof UpdateRoomReservationRequestSchema;
-		output: typeof UpdateRoomReservationResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.RoomReservationService.DeleteRoomReservation
-	 */
-	deleteRoomReservation: {
-		methodKind: "unary";
-		input: typeof DeleteRoomReservationRequestSchema;
-		output: typeof DeleteRoomReservationResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.RoomReservationService.ListRoomReservations
+   */
+  listRoomReservations: {
+    methodKind: "unary";
+    input: typeof ListRoomReservationsRequestSchema;
+    output: typeof ListRoomReservationsResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.RoomReservationService.GetRoomReservation
+   */
+  getRoomReservation: {
+    methodKind: "unary";
+    input: typeof GetRoomReservationRequestSchema;
+    output: typeof GetRoomReservationResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.RoomReservationService.CreateRoomReservation
+   */
+  createRoomReservation: {
+    methodKind: "unary";
+    input: typeof CreateRoomReservationRequestSchema;
+    output: typeof CreateRoomReservationResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.RoomReservationService.UpdateRoomReservation
+   */
+  updateRoomReservation: {
+    methodKind: "unary";
+    input: typeof UpdateRoomReservationRequestSchema;
+    output: typeof UpdateRoomReservationResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.RoomReservationService.DeleteRoomReservation
+   */
+  deleteRoomReservation: {
+    methodKind: "unary";
+    input: typeof DeleteRoomReservationRequestSchema;
+    output: typeof DeleteRoomReservationResponseSchema;
+  },
 }>;
+

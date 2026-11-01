@@ -2,12 +2,7 @@
 // @generated from file admin/v1/calendar_date.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenEnum,
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Date } from "../../google/type/date_pb";
 import type { FieldMask } from "@bufbuild/protobuf/wkt";
@@ -21,20 +16,20 @@ export declare const file_admin_v1_calendar_date: GenFile;
  * @generated from message admin.v1.CalendarDate
  */
 export declare type CalendarDate = Message<"admin.v1.CalendarDate"> & {
-	/**
-	 * @generated from field: string service_id = 1;
-	 */
-	serviceId: string;
+  /**
+   * @generated from field: string service_id = 1;
+   */
+  serviceId: string;
 
-	/**
-	 * @generated from field: google.type.Date date = 2;
-	 */
-	date?: Date | undefined;
+  /**
+   * @generated from field: google.type.Date date = 2;
+   */
+  date?: Date | undefined;
 
-	/**
-	 * @generated from field: admin.v1.CalendarDateExceptionType exception_type = 3;
-	 */
-	exceptionType: CalendarDateExceptionType;
+  /**
+   * @generated from field: admin.v1.CalendarDateExceptionType exception_type = 3;
+   */
+  exceptionType: CalendarDateExceptionType;
 };
 
 /**
@@ -46,18 +41,17 @@ export declare const CalendarDateSchema: GenMessage<CalendarDate>;
 /**
  * @generated from message admin.v1.ListCalendarDatesRequest
  */
-export declare type ListCalendarDatesRequest =
-	Message<"admin.v1.ListCalendarDatesRequest"> & {
-		/**
-		 * @generated from field: int32 page_size = 1;
-		 */
-		pageSize: number;
+export declare type ListCalendarDatesRequest = Message<"admin.v1.ListCalendarDatesRequest"> & {
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-		/**
-		 * @generated from field: string page_token = 2;
-		 */
-		pageToken: string;
-	};
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListCalendarDatesRequest.
@@ -68,18 +62,17 @@ export declare const ListCalendarDatesRequestSchema: GenMessage<ListCalendarDate
 /**
  * @generated from message admin.v1.ListCalendarDatesResponse
  */
-export declare type ListCalendarDatesResponse =
-	Message<"admin.v1.ListCalendarDatesResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.CalendarDate calendar_dates = 1;
-		 */
-		calendarDates: CalendarDate[];
+export declare type ListCalendarDatesResponse = Message<"admin.v1.ListCalendarDatesResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.CalendarDate calendar_dates = 1;
+   */
+  calendarDates: CalendarDate[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListCalendarDatesResponse.
@@ -90,18 +83,17 @@ export declare const ListCalendarDatesResponseSchema: GenMessage<ListCalendarDat
 /**
  * @generated from message admin.v1.GetCalendarDateRequest
  */
-export declare type GetCalendarDateRequest =
-	Message<"admin.v1.GetCalendarDateRequest"> & {
-		/**
-		 * @generated from field: string service_id = 1;
-		 */
-		serviceId: string;
+export declare type GetCalendarDateRequest = Message<"admin.v1.GetCalendarDateRequest"> & {
+  /**
+   * @generated from field: string service_id = 1;
+   */
+  serviceId: string;
 
-		/**
-		 * @generated from field: google.type.Date date = 2;
-		 */
-		date?: Date | undefined;
-	};
+  /**
+   * @generated from field: google.type.Date date = 2;
+   */
+  date?: Date | undefined;
+};
 
 /**
  * Describes the message admin.v1.GetCalendarDateRequest.
@@ -112,13 +104,12 @@ export declare const GetCalendarDateRequestSchema: GenMessage<GetCalendarDateReq
 /**
  * @generated from message admin.v1.GetCalendarDateResponse
  */
-export declare type GetCalendarDateResponse =
-	Message<"admin.v1.GetCalendarDateResponse"> & {
-		/**
-		 * @generated from field: admin.v1.CalendarDate calendar_date = 1;
-		 */
-		calendarDate?: CalendarDate | undefined;
-	};
+export declare type GetCalendarDateResponse = Message<"admin.v1.GetCalendarDateResponse"> & {
+  /**
+   * @generated from field: admin.v1.CalendarDate calendar_date = 1;
+   */
+  calendarDate?: CalendarDate | undefined;
+};
 
 /**
  * Describes the message admin.v1.GetCalendarDateResponse.
@@ -129,23 +120,22 @@ export declare const GetCalendarDateResponseSchema: GenMessage<GetCalendarDateRe
 /**
  * @generated from message admin.v1.CreateCalendarDateRequest
  */
-export declare type CreateCalendarDateRequest =
-	Message<"admin.v1.CreateCalendarDateRequest"> & {
-		/**
-		 * @generated from field: string service_id = 1;
-		 */
-		serviceId: string;
+export declare type CreateCalendarDateRequest = Message<"admin.v1.CreateCalendarDateRequest"> & {
+  /**
+   * @generated from field: string service_id = 1;
+   */
+  serviceId: string;
 
-		/**
-		 * @generated from field: google.type.Date date = 2;
-		 */
-		date?: Date | undefined;
+  /**
+   * @generated from field: google.type.Date date = 2;
+   */
+  date?: Date | undefined;
 
-		/**
-		 * @generated from field: admin.v1.CalendarDateExceptionType exception_type = 3;
-		 */
-		exceptionType: CalendarDateExceptionType;
-	};
+  /**
+   * @generated from field: admin.v1.CalendarDateExceptionType exception_type = 3;
+   */
+  exceptionType: CalendarDateExceptionType;
+};
 
 /**
  * Describes the message admin.v1.CreateCalendarDateRequest.
@@ -156,13 +146,12 @@ export declare const CreateCalendarDateRequestSchema: GenMessage<CreateCalendarD
 /**
  * @generated from message admin.v1.CreateCalendarDateResponse
  */
-export declare type CreateCalendarDateResponse =
-	Message<"admin.v1.CreateCalendarDateResponse"> & {
-		/**
-		 * @generated from field: admin.v1.CalendarDate calendar_date = 1;
-		 */
-		calendarDate?: CalendarDate | undefined;
-	};
+export declare type CreateCalendarDateResponse = Message<"admin.v1.CreateCalendarDateResponse"> & {
+  /**
+   * @generated from field: admin.v1.CalendarDate calendar_date = 1;
+   */
+  calendarDate?: CalendarDate | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateCalendarDateResponse.
@@ -173,28 +162,27 @@ export declare const CreateCalendarDateResponseSchema: GenMessage<CreateCalendar
 /**
  * @generated from message admin.v1.UpdateCalendarDateRequest
  */
-export declare type UpdateCalendarDateRequest =
-	Message<"admin.v1.UpdateCalendarDateRequest"> & {
-		/**
-		 * @generated from field: string service_id = 1;
-		 */
-		serviceId: string;
+export declare type UpdateCalendarDateRequest = Message<"admin.v1.UpdateCalendarDateRequest"> & {
+  /**
+   * @generated from field: string service_id = 1;
+   */
+  serviceId: string;
 
-		/**
-		 * @generated from field: google.type.Date date = 2;
-		 */
-		date?: Date | undefined;
+  /**
+   * @generated from field: google.type.Date date = 2;
+   */
+  date?: Date | undefined;
 
-		/**
-		 * @generated from field: admin.v1.CalendarDateExceptionType exception_type = 3;
-		 */
-		exceptionType: CalendarDateExceptionType;
+  /**
+   * @generated from field: admin.v1.CalendarDateExceptionType exception_type = 3;
+   */
+  exceptionType: CalendarDateExceptionType;
 
-		/**
-		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
-		 */
-		updateMask?: FieldMask | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 99;
+   */
+  updateMask?: FieldMask | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateCalendarDateRequest.
@@ -205,13 +193,12 @@ export declare const UpdateCalendarDateRequestSchema: GenMessage<UpdateCalendarD
 /**
  * @generated from message admin.v1.UpdateCalendarDateResponse
  */
-export declare type UpdateCalendarDateResponse =
-	Message<"admin.v1.UpdateCalendarDateResponse"> & {
-		/**
-		 * @generated from field: admin.v1.CalendarDate calendar_date = 1;
-		 */
-		calendarDate?: CalendarDate | undefined;
-	};
+export declare type UpdateCalendarDateResponse = Message<"admin.v1.UpdateCalendarDateResponse"> & {
+  /**
+   * @generated from field: admin.v1.CalendarDate calendar_date = 1;
+   */
+  calendarDate?: CalendarDate | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateCalendarDateResponse.
@@ -222,18 +209,17 @@ export declare const UpdateCalendarDateResponseSchema: GenMessage<UpdateCalendar
 /**
  * @generated from message admin.v1.DeleteCalendarDateRequest
  */
-export declare type DeleteCalendarDateRequest =
-	Message<"admin.v1.DeleteCalendarDateRequest"> & {
-		/**
-		 * @generated from field: string service_id = 1;
-		 */
-		serviceId: string;
+export declare type DeleteCalendarDateRequest = Message<"admin.v1.DeleteCalendarDateRequest"> & {
+  /**
+   * @generated from field: string service_id = 1;
+   */
+  serviceId: string;
 
-		/**
-		 * @generated from field: google.type.Date date = 2;
-		 */
-		date?: Date | undefined;
-	};
+  /**
+   * @generated from field: google.type.Date date = 2;
+   */
+  date?: Date | undefined;
+};
 
 /**
  * Describes the message admin.v1.DeleteCalendarDateRequest.
@@ -244,8 +230,8 @@ export declare const DeleteCalendarDateRequestSchema: GenMessage<DeleteCalendarD
 /**
  * @generated from message admin.v1.DeleteCalendarDateResponse
  */
-export declare type DeleteCalendarDateResponse =
-	Message<"admin.v1.DeleteCalendarDateResponse"> & {};
+export declare type DeleteCalendarDateResponse = Message<"admin.v1.DeleteCalendarDateResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteCalendarDateResponse.
@@ -257,20 +243,20 @@ export declare const DeleteCalendarDateResponseSchema: GenMessage<DeleteCalendar
  * @generated from enum admin.v1.CalendarDateExceptionType
  */
 export enum CalendarDateExceptionType {
-	/**
-	 * @generated from enum value: CALENDAR_DATE_EXCEPTION_TYPE_UNSPECIFIED = 0;
-	 */
-	UNSPECIFIED = 0,
+  /**
+   * @generated from enum value: CALENDAR_DATE_EXCEPTION_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
 
-	/**
-	 * @generated from enum value: CALENDAR_DATE_EXCEPTION_TYPE_ADDED = 1;
-	 */
-	ADDED = 1,
+  /**
+   * @generated from enum value: CALENDAR_DATE_EXCEPTION_TYPE_ADDED = 1;
+   */
+  ADDED = 1,
 
-	/**
-	 * @generated from enum value: CALENDAR_DATE_EXCEPTION_TYPE_REMOVED = 2;
-	 */
-	REMOVED = 2,
+  /**
+   * @generated from enum value: CALENDAR_DATE_EXCEPTION_TYPE_REMOVED = 2;
+   */
+  REMOVED = 2,
 }
 
 /**
@@ -282,44 +268,45 @@ export declare const CalendarDateExceptionTypeSchema: GenEnum<CalendarDateExcept
  * @generated from service admin.v1.CalendarDateService
  */
 export declare const CalendarDateService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.CalendarDateService.ListCalendarDates
-	 */
-	listCalendarDates: {
-		methodKind: "unary";
-		input: typeof ListCalendarDatesRequestSchema;
-		output: typeof ListCalendarDatesResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.CalendarDateService.GetCalendarDate
-	 */
-	getCalendarDate: {
-		methodKind: "unary";
-		input: typeof GetCalendarDateRequestSchema;
-		output: typeof GetCalendarDateResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.CalendarDateService.CreateCalendarDate
-	 */
-	createCalendarDate: {
-		methodKind: "unary";
-		input: typeof CreateCalendarDateRequestSchema;
-		output: typeof CreateCalendarDateResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.CalendarDateService.UpdateCalendarDate
-	 */
-	updateCalendarDate: {
-		methodKind: "unary";
-		input: typeof UpdateCalendarDateRequestSchema;
-		output: typeof UpdateCalendarDateResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.CalendarDateService.DeleteCalendarDate
-	 */
-	deleteCalendarDate: {
-		methodKind: "unary";
-		input: typeof DeleteCalendarDateRequestSchema;
-		output: typeof DeleteCalendarDateResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.CalendarDateService.ListCalendarDates
+   */
+  listCalendarDates: {
+    methodKind: "unary";
+    input: typeof ListCalendarDatesRequestSchema;
+    output: typeof ListCalendarDatesResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.CalendarDateService.GetCalendarDate
+   */
+  getCalendarDate: {
+    methodKind: "unary";
+    input: typeof GetCalendarDateRequestSchema;
+    output: typeof GetCalendarDateResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.CalendarDateService.CreateCalendarDate
+   */
+  createCalendarDate: {
+    methodKind: "unary";
+    input: typeof CreateCalendarDateRequestSchema;
+    output: typeof CreateCalendarDateResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.CalendarDateService.UpdateCalendarDate
+   */
+  updateCalendarDate: {
+    methodKind: "unary";
+    input: typeof UpdateCalendarDateRequestSchema;
+    output: typeof UpdateCalendarDateResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.CalendarDateService.DeleteCalendarDate
+   */
+  deleteCalendarDate: {
+    methodKind: "unary";
+    input: typeof DeleteCalendarDateRequestSchema;
+    output: typeof DeleteCalendarDateResponseSchema;
+  },
 }>;
+

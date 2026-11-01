@@ -14,20 +14,20 @@ export declare const file_google_type_money: GenFile;
  * @generated from message google.type.Money
  */
 export declare type Money = Message<"google.type.Money"> & {
-	/**
-	 * @generated from field: string currency_code = 1;
-	 */
-	currencyCode: string;
+  /**
+   * @generated from field: string currency_code = 1;
+   */
+  currencyCode: string;
 
-	/**
-	 * @generated from field: int64 units = 2;
-	 */
-	units: bigint;
+  /**
+   * @generated from field: int64 units = 2;
+   */
+  units: bigint;
 
-	/**
-	 * @generated from field: int32 nanos = 3;
-	 */
-	nanos: number;
+  /**
+   * @generated from field: int32 nanos = 3;
+   */
+  nanos: number;
 };
 
 /**
@@ -35,3 +35,4 @@ export declare type Money = Message<"google.type.Money"> & {
  * Use `create(MoneySchema)` to create a new message.
  */
 export declare const MoneySchema: GenMessage<Money>;
+

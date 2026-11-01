@@ -2,12 +2,7 @@
 // @generated from file admin/v1/fare_attribute.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenEnum,
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Money } from "../../google/type/money_pb";
 import type { FieldMask } from "@bufbuild/protobuf/wkt";
@@ -21,20 +16,20 @@ export declare const file_admin_v1_fare_attribute: GenFile;
  * @generated from message admin.v1.FareAttribute
  */
 export declare type FareAttribute = Message<"admin.v1.FareAttribute"> & {
-	/**
-	 * @generated from field: string fare_id = 1;
-	 */
-	fareId: string;
+  /**
+   * @generated from field: string fare_id = 1;
+   */
+  fareId: string;
 
-	/**
-	 * @generated from field: admin.v1.FareAttributeRiderCategory rider_category = 2;
-	 */
-	riderCategory: FareAttributeRiderCategory;
+  /**
+   * @generated from field: admin.v1.FareAttributeRiderCategory rider_category = 2;
+   */
+  riderCategory: FareAttributeRiderCategory;
 
-	/**
-	 * @generated from field: google.type.Money price = 3;
-	 */
-	price?: Money | undefined;
+  /**
+   * @generated from field: google.type.Money price = 3;
+   */
+  price?: Money | undefined;
 };
 
 /**
@@ -46,18 +41,17 @@ export declare const FareAttributeSchema: GenMessage<FareAttribute>;
 /**
  * @generated from message admin.v1.ListFareAttributesRequest
  */
-export declare type ListFareAttributesRequest =
-	Message<"admin.v1.ListFareAttributesRequest"> & {
-		/**
-		 * @generated from field: int32 page_size = 1;
-		 */
-		pageSize: number;
+export declare type ListFareAttributesRequest = Message<"admin.v1.ListFareAttributesRequest"> & {
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-		/**
-		 * @generated from field: string page_token = 2;
-		 */
-		pageToken: string;
-	};
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListFareAttributesRequest.
@@ -68,18 +62,17 @@ export declare const ListFareAttributesRequestSchema: GenMessage<ListFareAttribu
 /**
  * @generated from message admin.v1.ListFareAttributesResponse
  */
-export declare type ListFareAttributesResponse =
-	Message<"admin.v1.ListFareAttributesResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.FareAttribute fare_attributes = 1;
-		 */
-		fareAttributes: FareAttribute[];
+export declare type ListFareAttributesResponse = Message<"admin.v1.ListFareAttributesResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.FareAttribute fare_attributes = 1;
+   */
+  fareAttributes: FareAttribute[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListFareAttributesResponse.
@@ -90,13 +83,12 @@ export declare const ListFareAttributesResponseSchema: GenMessage<ListFareAttrib
 /**
  * @generated from message admin.v1.GetFareAttributeRequest
  */
-export declare type GetFareAttributeRequest =
-	Message<"admin.v1.GetFareAttributeRequest"> & {
-		/**
-		 * @generated from field: string fare_id = 1;
-		 */
-		fareId: string;
-	};
+export declare type GetFareAttributeRequest = Message<"admin.v1.GetFareAttributeRequest"> & {
+  /**
+   * @generated from field: string fare_id = 1;
+   */
+  fareId: string;
+};
 
 /**
  * Describes the message admin.v1.GetFareAttributeRequest.
@@ -107,13 +99,12 @@ export declare const GetFareAttributeRequestSchema: GenMessage<GetFareAttributeR
 /**
  * @generated from message admin.v1.GetFareAttributeResponse
  */
-export declare type GetFareAttributeResponse =
-	Message<"admin.v1.GetFareAttributeResponse"> & {
-		/**
-		 * @generated from field: admin.v1.FareAttribute fare_attribute = 1;
-		 */
-		fareAttribute?: FareAttribute | undefined;
-	};
+export declare type GetFareAttributeResponse = Message<"admin.v1.GetFareAttributeResponse"> & {
+  /**
+   * @generated from field: admin.v1.FareAttribute fare_attribute = 1;
+   */
+  fareAttribute?: FareAttribute | undefined;
+};
 
 /**
  * Describes the message admin.v1.GetFareAttributeResponse.
@@ -124,23 +115,22 @@ export declare const GetFareAttributeResponseSchema: GenMessage<GetFareAttribute
 /**
  * @generated from message admin.v1.CreateFareAttributeRequest
  */
-export declare type CreateFareAttributeRequest =
-	Message<"admin.v1.CreateFareAttributeRequest"> & {
-		/**
-		 * @generated from field: string fare_id = 1;
-		 */
-		fareId: string;
+export declare type CreateFareAttributeRequest = Message<"admin.v1.CreateFareAttributeRequest"> & {
+  /**
+   * @generated from field: string fare_id = 1;
+   */
+  fareId: string;
 
-		/**
-		 * @generated from field: admin.v1.FareAttributeRiderCategory rider_category = 2;
-		 */
-		riderCategory: FareAttributeRiderCategory;
+  /**
+   * @generated from field: admin.v1.FareAttributeRiderCategory rider_category = 2;
+   */
+  riderCategory: FareAttributeRiderCategory;
 
-		/**
-		 * @generated from field: google.type.Money price = 3;
-		 */
-		price?: Money | undefined;
-	};
+  /**
+   * @generated from field: google.type.Money price = 3;
+   */
+  price?: Money | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateFareAttributeRequest.
@@ -151,13 +141,12 @@ export declare const CreateFareAttributeRequestSchema: GenMessage<CreateFareAttr
 /**
  * @generated from message admin.v1.CreateFareAttributeResponse
  */
-export declare type CreateFareAttributeResponse =
-	Message<"admin.v1.CreateFareAttributeResponse"> & {
-		/**
-		 * @generated from field: admin.v1.FareAttribute fare_attribute = 1;
-		 */
-		fareAttribute?: FareAttribute | undefined;
-	};
+export declare type CreateFareAttributeResponse = Message<"admin.v1.CreateFareAttributeResponse"> & {
+  /**
+   * @generated from field: admin.v1.FareAttribute fare_attribute = 1;
+   */
+  fareAttribute?: FareAttribute | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateFareAttributeResponse.
@@ -168,28 +157,27 @@ export declare const CreateFareAttributeResponseSchema: GenMessage<CreateFareAtt
 /**
  * @generated from message admin.v1.UpdateFareAttributeRequest
  */
-export declare type UpdateFareAttributeRequest =
-	Message<"admin.v1.UpdateFareAttributeRequest"> & {
-		/**
-		 * @generated from field: string fare_id = 1;
-		 */
-		fareId: string;
+export declare type UpdateFareAttributeRequest = Message<"admin.v1.UpdateFareAttributeRequest"> & {
+  /**
+   * @generated from field: string fare_id = 1;
+   */
+  fareId: string;
 
-		/**
-		 * @generated from field: admin.v1.FareAttributeRiderCategory rider_category = 2;
-		 */
-		riderCategory: FareAttributeRiderCategory;
+  /**
+   * @generated from field: admin.v1.FareAttributeRiderCategory rider_category = 2;
+   */
+  riderCategory: FareAttributeRiderCategory;
 
-		/**
-		 * @generated from field: google.type.Money price = 3;
-		 */
-		price?: Money | undefined;
+  /**
+   * @generated from field: google.type.Money price = 3;
+   */
+  price?: Money | undefined;
 
-		/**
-		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
-		 */
-		updateMask?: FieldMask | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 99;
+   */
+  updateMask?: FieldMask | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateFareAttributeRequest.
@@ -200,13 +188,12 @@ export declare const UpdateFareAttributeRequestSchema: GenMessage<UpdateFareAttr
 /**
  * @generated from message admin.v1.UpdateFareAttributeResponse
  */
-export declare type UpdateFareAttributeResponse =
-	Message<"admin.v1.UpdateFareAttributeResponse"> & {
-		/**
-		 * @generated from field: admin.v1.FareAttribute fare_attribute = 1;
-		 */
-		fareAttribute?: FareAttribute | undefined;
-	};
+export declare type UpdateFareAttributeResponse = Message<"admin.v1.UpdateFareAttributeResponse"> & {
+  /**
+   * @generated from field: admin.v1.FareAttribute fare_attribute = 1;
+   */
+  fareAttribute?: FareAttribute | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateFareAttributeResponse.
@@ -217,13 +204,12 @@ export declare const UpdateFareAttributeResponseSchema: GenMessage<UpdateFareAtt
 /**
  * @generated from message admin.v1.DeleteFareAttributeRequest
  */
-export declare type DeleteFareAttributeRequest =
-	Message<"admin.v1.DeleteFareAttributeRequest"> & {
-		/**
-		 * @generated from field: string fare_id = 1;
-		 */
-		fareId: string;
-	};
+export declare type DeleteFareAttributeRequest = Message<"admin.v1.DeleteFareAttributeRequest"> & {
+  /**
+   * @generated from field: string fare_id = 1;
+   */
+  fareId: string;
+};
 
 /**
  * Describes the message admin.v1.DeleteFareAttributeRequest.
@@ -234,8 +220,8 @@ export declare const DeleteFareAttributeRequestSchema: GenMessage<DeleteFareAttr
 /**
  * @generated from message admin.v1.DeleteFareAttributeResponse
  */
-export declare type DeleteFareAttributeResponse =
-	Message<"admin.v1.DeleteFareAttributeResponse"> & {};
+export declare type DeleteFareAttributeResponse = Message<"admin.v1.DeleteFareAttributeResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteFareAttributeResponse.
@@ -247,15 +233,15 @@ export declare const DeleteFareAttributeResponseSchema: GenMessage<DeleteFareAtt
  * @generated from enum admin.v1.FareAttributeRiderCategory
  */
 export enum FareAttributeRiderCategory {
-	/**
-	 * @generated from enum value: FARE_ATTRIBUTE_RIDER_CATEGORY_UNSPECIFIED = 0;
-	 */
-	UNSPECIFIED = 0,
+  /**
+   * @generated from enum value: FARE_ATTRIBUTE_RIDER_CATEGORY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
 
-	/**
-	 * @generated from enum value: FARE_ATTRIBUTE_RIDER_CATEGORY_ADULT = 1;
-	 */
-	ADULT = 1,
+  /**
+   * @generated from enum value: FARE_ATTRIBUTE_RIDER_CATEGORY_ADULT = 1;
+   */
+  ADULT = 1,
 }
 
 /**
@@ -267,44 +253,45 @@ export declare const FareAttributeRiderCategorySchema: GenEnum<FareAttributeRide
  * @generated from service admin.v1.FareAttributeService
  */
 export declare const FareAttributeService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.FareAttributeService.ListFareAttributes
-	 */
-	listFareAttributes: {
-		methodKind: "unary";
-		input: typeof ListFareAttributesRequestSchema;
-		output: typeof ListFareAttributesResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.FareAttributeService.GetFareAttribute
-	 */
-	getFareAttribute: {
-		methodKind: "unary";
-		input: typeof GetFareAttributeRequestSchema;
-		output: typeof GetFareAttributeResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.FareAttributeService.CreateFareAttribute
-	 */
-	createFareAttribute: {
-		methodKind: "unary";
-		input: typeof CreateFareAttributeRequestSchema;
-		output: typeof CreateFareAttributeResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.FareAttributeService.UpdateFareAttribute
-	 */
-	updateFareAttribute: {
-		methodKind: "unary";
-		input: typeof UpdateFareAttributeRequestSchema;
-		output: typeof UpdateFareAttributeResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.FareAttributeService.DeleteFareAttribute
-	 */
-	deleteFareAttribute: {
-		methodKind: "unary";
-		input: typeof DeleteFareAttributeRequestSchema;
-		output: typeof DeleteFareAttributeResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.FareAttributeService.ListFareAttributes
+   */
+  listFareAttributes: {
+    methodKind: "unary";
+    input: typeof ListFareAttributesRequestSchema;
+    output: typeof ListFareAttributesResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.FareAttributeService.GetFareAttribute
+   */
+  getFareAttribute: {
+    methodKind: "unary";
+    input: typeof GetFareAttributeRequestSchema;
+    output: typeof GetFareAttributeResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.FareAttributeService.CreateFareAttribute
+   */
+  createFareAttribute: {
+    methodKind: "unary";
+    input: typeof CreateFareAttributeRequestSchema;
+    output: typeof CreateFareAttributeResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.FareAttributeService.UpdateFareAttribute
+   */
+  updateFareAttribute: {
+    methodKind: "unary";
+    input: typeof UpdateFareAttributeRequestSchema;
+    output: typeof UpdateFareAttributeResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.FareAttributeService.DeleteFareAttribute
+   */
+  deleteFareAttribute: {
+    methodKind: "unary";
+    input: typeof DeleteFareAttributeRequestSchema;
+    output: typeof DeleteFareAttributeResponseSchema;
+  },
 }>;
+

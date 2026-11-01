@@ -2,11 +2,7 @@
 // @generated from file admin/v1/zone.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { FieldMask } from "@bufbuild/protobuf/wkt";
 
@@ -19,10 +15,10 @@ export declare const file_admin_v1_zone: GenFile;
  * @generated from message admin.v1.Zone
  */
 export declare type Zone = Message<"admin.v1.Zone"> & {
-	/**
-	 * @generated from field: string zone_id = 1;
-	 */
-	zoneId: string;
+  /**
+   * @generated from field: string zone_id = 1;
+   */
+  zoneId: string;
 };
 
 /**
@@ -35,15 +31,15 @@ export declare const ZoneSchema: GenMessage<Zone>;
  * @generated from message admin.v1.ListZonesRequest
  */
 export declare type ListZonesRequest = Message<"admin.v1.ListZonesRequest"> & {
-	/**
-	 * @generated from field: int32 page_size = 1;
-	 */
-	pageSize: number;
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-	/**
-	 * @generated from field: string page_token = 2;
-	 */
-	pageToken: string;
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
 };
 
 /**
@@ -55,18 +51,17 @@ export declare const ListZonesRequestSchema: GenMessage<ListZonesRequest>;
 /**
  * @generated from message admin.v1.ListZonesResponse
  */
-export declare type ListZonesResponse =
-	Message<"admin.v1.ListZonesResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.Zone zones = 1;
-		 */
-		zones: Zone[];
+export declare type ListZonesResponse = Message<"admin.v1.ListZonesResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.Zone zones = 1;
+   */
+  zones: Zone[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListZonesResponse.
@@ -78,10 +73,10 @@ export declare const ListZonesResponseSchema: GenMessage<ListZonesResponse>;
  * @generated from message admin.v1.GetZoneRequest
  */
 export declare type GetZoneRequest = Message<"admin.v1.GetZoneRequest"> & {
-	/**
-	 * @generated from field: string zone_id = 1;
-	 */
-	zoneId: string;
+  /**
+   * @generated from field: string zone_id = 1;
+   */
+  zoneId: string;
 };
 
 /**
@@ -94,10 +89,10 @@ export declare const GetZoneRequestSchema: GenMessage<GetZoneRequest>;
  * @generated from message admin.v1.GetZoneResponse
  */
 export declare type GetZoneResponse = Message<"admin.v1.GetZoneResponse"> & {
-	/**
-	 * @generated from field: admin.v1.Zone zone = 1;
-	 */
-	zone?: Zone | undefined;
+  /**
+   * @generated from field: admin.v1.Zone zone = 1;
+   */
+  zone?: Zone | undefined;
 };
 
 /**
@@ -109,13 +104,12 @@ export declare const GetZoneResponseSchema: GenMessage<GetZoneResponse>;
 /**
  * @generated from message admin.v1.CreateZoneRequest
  */
-export declare type CreateZoneRequest =
-	Message<"admin.v1.CreateZoneRequest"> & {
-		/**
-		 * @generated from field: string zone_id = 1;
-		 */
-		zoneId: string;
-	};
+export declare type CreateZoneRequest = Message<"admin.v1.CreateZoneRequest"> & {
+  /**
+   * @generated from field: string zone_id = 1;
+   */
+  zoneId: string;
+};
 
 /**
  * Describes the message admin.v1.CreateZoneRequest.
@@ -126,13 +120,12 @@ export declare const CreateZoneRequestSchema: GenMessage<CreateZoneRequest>;
 /**
  * @generated from message admin.v1.CreateZoneResponse
  */
-export declare type CreateZoneResponse =
-	Message<"admin.v1.CreateZoneResponse"> & {
-		/**
-		 * @generated from field: admin.v1.Zone zone = 1;
-		 */
-		zone?: Zone | undefined;
-	};
+export declare type CreateZoneResponse = Message<"admin.v1.CreateZoneResponse"> & {
+  /**
+   * @generated from field: admin.v1.Zone zone = 1;
+   */
+  zone?: Zone | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateZoneResponse.
@@ -143,18 +136,17 @@ export declare const CreateZoneResponseSchema: GenMessage<CreateZoneResponse>;
 /**
  * @generated from message admin.v1.UpdateZoneRequest
  */
-export declare type UpdateZoneRequest =
-	Message<"admin.v1.UpdateZoneRequest"> & {
-		/**
-		 * @generated from field: string zone_id = 1;
-		 */
-		zoneId: string;
+export declare type UpdateZoneRequest = Message<"admin.v1.UpdateZoneRequest"> & {
+  /**
+   * @generated from field: string zone_id = 1;
+   */
+  zoneId: string;
 
-		/**
-		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
-		 */
-		updateMask?: FieldMask | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 99;
+   */
+  updateMask?: FieldMask | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateZoneRequest.
@@ -165,13 +157,12 @@ export declare const UpdateZoneRequestSchema: GenMessage<UpdateZoneRequest>;
 /**
  * @generated from message admin.v1.UpdateZoneResponse
  */
-export declare type UpdateZoneResponse =
-	Message<"admin.v1.UpdateZoneResponse"> & {
-		/**
-		 * @generated from field: admin.v1.Zone zone = 1;
-		 */
-		zone?: Zone | undefined;
-	};
+export declare type UpdateZoneResponse = Message<"admin.v1.UpdateZoneResponse"> & {
+  /**
+   * @generated from field: admin.v1.Zone zone = 1;
+   */
+  zone?: Zone | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateZoneResponse.
@@ -182,13 +173,12 @@ export declare const UpdateZoneResponseSchema: GenMessage<UpdateZoneResponse>;
 /**
  * @generated from message admin.v1.DeleteZoneRequest
  */
-export declare type DeleteZoneRequest =
-	Message<"admin.v1.DeleteZoneRequest"> & {
-		/**
-		 * @generated from field: string zone_id = 1;
-		 */
-		zoneId: string;
-	};
+export declare type DeleteZoneRequest = Message<"admin.v1.DeleteZoneRequest"> & {
+  /**
+   * @generated from field: string zone_id = 1;
+   */
+  zoneId: string;
+};
 
 /**
  * Describes the message admin.v1.DeleteZoneRequest.
@@ -199,8 +189,8 @@ export declare const DeleteZoneRequestSchema: GenMessage<DeleteZoneRequest>;
 /**
  * @generated from message admin.v1.DeleteZoneResponse
  */
-export declare type DeleteZoneResponse =
-	Message<"admin.v1.DeleteZoneResponse"> & {};
+export declare type DeleteZoneResponse = Message<"admin.v1.DeleteZoneResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteZoneResponse.
@@ -212,44 +202,45 @@ export declare const DeleteZoneResponseSchema: GenMessage<DeleteZoneResponse>;
  * @generated from service admin.v1.ZoneService
  */
 export declare const ZoneService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.ZoneService.ListZones
-	 */
-	listZones: {
-		methodKind: "unary";
-		input: typeof ListZonesRequestSchema;
-		output: typeof ListZonesResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.ZoneService.GetZone
-	 */
-	getZone: {
-		methodKind: "unary";
-		input: typeof GetZoneRequestSchema;
-		output: typeof GetZoneResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.ZoneService.CreateZone
-	 */
-	createZone: {
-		methodKind: "unary";
-		input: typeof CreateZoneRequestSchema;
-		output: typeof CreateZoneResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.ZoneService.UpdateZone
-	 */
-	updateZone: {
-		methodKind: "unary";
-		input: typeof UpdateZoneRequestSchema;
-		output: typeof UpdateZoneResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.ZoneService.DeleteZone
-	 */
-	deleteZone: {
-		methodKind: "unary";
-		input: typeof DeleteZoneRequestSchema;
-		output: typeof DeleteZoneResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.ZoneService.ListZones
+   */
+  listZones: {
+    methodKind: "unary";
+    input: typeof ListZonesRequestSchema;
+    output: typeof ListZonesResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.ZoneService.GetZone
+   */
+  getZone: {
+    methodKind: "unary";
+    input: typeof GetZoneRequestSchema;
+    output: typeof GetZoneResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.ZoneService.CreateZone
+   */
+  createZone: {
+    methodKind: "unary";
+    input: typeof CreateZoneRequestSchema;
+    output: typeof CreateZoneResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.ZoneService.UpdateZone
+   */
+  updateZone: {
+    methodKind: "unary";
+    input: typeof UpdateZoneRequestSchema;
+    output: typeof UpdateZoneResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.ZoneService.DeleteZone
+   */
+  deleteZone: {
+    methodKind: "unary";
+    input: typeof DeleteZoneRequestSchema;
+    output: typeof DeleteZoneResponseSchema;
+  },
 }>;
+

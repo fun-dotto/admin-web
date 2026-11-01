@@ -2,11 +2,7 @@
 // @generated from file admin/v1/fare_rule.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { FieldMask } from "@bufbuild/protobuf/wkt";
 
@@ -19,30 +15,30 @@ export declare const file_admin_v1_fare_rule: GenFile;
  * @generated from message admin.v1.FareRule
  */
 export declare type FareRule = Message<"admin.v1.FareRule"> & {
-	/**
-	 * @generated from field: string id = 1;
-	 */
-	id: string;
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-	/**
-	 * @generated from field: string fare_id = 2;
-	 */
-	fareId: string;
+  /**
+   * @generated from field: string fare_id = 2;
+   */
+  fareId: string;
 
-	/**
-	 * @generated from field: optional string route_id = 3;
-	 */
-	routeId?: string | undefined;
+  /**
+   * @generated from field: optional string route_id = 3;
+   */
+  routeId?: string | undefined;
 
-	/**
-	 * @generated from field: optional string origin_id = 4;
-	 */
-	originId?: string | undefined;
+  /**
+   * @generated from field: optional string origin_id = 4;
+   */
+  originId?: string | undefined;
 
-	/**
-	 * @generated from field: optional string destination_id = 5;
-	 */
-	destinationId?: string | undefined;
+  /**
+   * @generated from field: optional string destination_id = 5;
+   */
+  destinationId?: string | undefined;
 };
 
 /**
@@ -54,18 +50,17 @@ export declare const FareRuleSchema: GenMessage<FareRule>;
 /**
  * @generated from message admin.v1.ListFareRulesRequest
  */
-export declare type ListFareRulesRequest =
-	Message<"admin.v1.ListFareRulesRequest"> & {
-		/**
-		 * @generated from field: int32 page_size = 1;
-		 */
-		pageSize: number;
+export declare type ListFareRulesRequest = Message<"admin.v1.ListFareRulesRequest"> & {
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-		/**
-		 * @generated from field: string page_token = 2;
-		 */
-		pageToken: string;
-	};
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListFareRulesRequest.
@@ -76,18 +71,17 @@ export declare const ListFareRulesRequestSchema: GenMessage<ListFareRulesRequest
 /**
  * @generated from message admin.v1.ListFareRulesResponse
  */
-export declare type ListFareRulesResponse =
-	Message<"admin.v1.ListFareRulesResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.FareRule fare_rules = 1;
-		 */
-		fareRules: FareRule[];
+export declare type ListFareRulesResponse = Message<"admin.v1.ListFareRulesResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.FareRule fare_rules = 1;
+   */
+  fareRules: FareRule[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListFareRulesResponse.
@@ -98,13 +92,12 @@ export declare const ListFareRulesResponseSchema: GenMessage<ListFareRulesRespon
 /**
  * @generated from message admin.v1.GetFareRuleRequest
  */
-export declare type GetFareRuleRequest =
-	Message<"admin.v1.GetFareRuleRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
-	};
+export declare type GetFareRuleRequest = Message<"admin.v1.GetFareRuleRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
 
 /**
  * Describes the message admin.v1.GetFareRuleRequest.
@@ -115,13 +108,12 @@ export declare const GetFareRuleRequestSchema: GenMessage<GetFareRuleRequest>;
 /**
  * @generated from message admin.v1.GetFareRuleResponse
  */
-export declare type GetFareRuleResponse =
-	Message<"admin.v1.GetFareRuleResponse"> & {
-		/**
-		 * @generated from field: admin.v1.FareRule fare_rule = 1;
-		 */
-		fareRule?: FareRule | undefined;
-	};
+export declare type GetFareRuleResponse = Message<"admin.v1.GetFareRuleResponse"> & {
+  /**
+   * @generated from field: admin.v1.FareRule fare_rule = 1;
+   */
+  fareRule?: FareRule | undefined;
+};
 
 /**
  * Describes the message admin.v1.GetFareRuleResponse.
@@ -132,28 +124,27 @@ export declare const GetFareRuleResponseSchema: GenMessage<GetFareRuleResponse>;
 /**
  * @generated from message admin.v1.CreateFareRuleRequest
  */
-export declare type CreateFareRuleRequest =
-	Message<"admin.v1.CreateFareRuleRequest"> & {
-		/**
-		 * @generated from field: string fare_id = 1;
-		 */
-		fareId: string;
+export declare type CreateFareRuleRequest = Message<"admin.v1.CreateFareRuleRequest"> & {
+  /**
+   * @generated from field: string fare_id = 1;
+   */
+  fareId: string;
 
-		/**
-		 * @generated from field: optional string route_id = 2;
-		 */
-		routeId?: string | undefined;
+  /**
+   * @generated from field: optional string route_id = 2;
+   */
+  routeId?: string | undefined;
 
-		/**
-		 * @generated from field: optional string origin_id = 3;
-		 */
-		originId?: string | undefined;
+  /**
+   * @generated from field: optional string origin_id = 3;
+   */
+  originId?: string | undefined;
 
-		/**
-		 * @generated from field: optional string destination_id = 4;
-		 */
-		destinationId?: string | undefined;
-	};
+  /**
+   * @generated from field: optional string destination_id = 4;
+   */
+  destinationId?: string | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateFareRuleRequest.
@@ -164,13 +155,12 @@ export declare const CreateFareRuleRequestSchema: GenMessage<CreateFareRuleReque
 /**
  * @generated from message admin.v1.CreateFareRuleResponse
  */
-export declare type CreateFareRuleResponse =
-	Message<"admin.v1.CreateFareRuleResponse"> & {
-		/**
-		 * @generated from field: admin.v1.FareRule fare_rule = 1;
-		 */
-		fareRule?: FareRule | undefined;
-	};
+export declare type CreateFareRuleResponse = Message<"admin.v1.CreateFareRuleResponse"> & {
+  /**
+   * @generated from field: admin.v1.FareRule fare_rule = 1;
+   */
+  fareRule?: FareRule | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateFareRuleResponse.
@@ -181,38 +171,37 @@ export declare const CreateFareRuleResponseSchema: GenMessage<CreateFareRuleResp
 /**
  * @generated from message admin.v1.UpdateFareRuleRequest
  */
-export declare type UpdateFareRuleRequest =
-	Message<"admin.v1.UpdateFareRuleRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
+export declare type UpdateFareRuleRequest = Message<"admin.v1.UpdateFareRuleRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-		/**
-		 * @generated from field: string fare_id = 2;
-		 */
-		fareId: string;
+  /**
+   * @generated from field: string fare_id = 2;
+   */
+  fareId: string;
 
-		/**
-		 * @generated from field: optional string route_id = 3;
-		 */
-		routeId?: string | undefined;
+  /**
+   * @generated from field: optional string route_id = 3;
+   */
+  routeId?: string | undefined;
 
-		/**
-		 * @generated from field: optional string origin_id = 4;
-		 */
-		originId?: string | undefined;
+  /**
+   * @generated from field: optional string origin_id = 4;
+   */
+  originId?: string | undefined;
 
-		/**
-		 * @generated from field: optional string destination_id = 5;
-		 */
-		destinationId?: string | undefined;
+  /**
+   * @generated from field: optional string destination_id = 5;
+   */
+  destinationId?: string | undefined;
 
-		/**
-		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
-		 */
-		updateMask?: FieldMask | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 99;
+   */
+  updateMask?: FieldMask | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateFareRuleRequest.
@@ -223,13 +212,12 @@ export declare const UpdateFareRuleRequestSchema: GenMessage<UpdateFareRuleReque
 /**
  * @generated from message admin.v1.UpdateFareRuleResponse
  */
-export declare type UpdateFareRuleResponse =
-	Message<"admin.v1.UpdateFareRuleResponse"> & {
-		/**
-		 * @generated from field: admin.v1.FareRule fare_rule = 1;
-		 */
-		fareRule?: FareRule | undefined;
-	};
+export declare type UpdateFareRuleResponse = Message<"admin.v1.UpdateFareRuleResponse"> & {
+  /**
+   * @generated from field: admin.v1.FareRule fare_rule = 1;
+   */
+  fareRule?: FareRule | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateFareRuleResponse.
@@ -240,13 +228,12 @@ export declare const UpdateFareRuleResponseSchema: GenMessage<UpdateFareRuleResp
 /**
  * @generated from message admin.v1.DeleteFareRuleRequest
  */
-export declare type DeleteFareRuleRequest =
-	Message<"admin.v1.DeleteFareRuleRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
-	};
+export declare type DeleteFareRuleRequest = Message<"admin.v1.DeleteFareRuleRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
 
 /**
  * Describes the message admin.v1.DeleteFareRuleRequest.
@@ -257,8 +244,8 @@ export declare const DeleteFareRuleRequestSchema: GenMessage<DeleteFareRuleReque
 /**
  * @generated from message admin.v1.DeleteFareRuleResponse
  */
-export declare type DeleteFareRuleResponse =
-	Message<"admin.v1.DeleteFareRuleResponse"> & {};
+export declare type DeleteFareRuleResponse = Message<"admin.v1.DeleteFareRuleResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteFareRuleResponse.
@@ -270,44 +257,45 @@ export declare const DeleteFareRuleResponseSchema: GenMessage<DeleteFareRuleResp
  * @generated from service admin.v1.FareRuleService
  */
 export declare const FareRuleService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.FareRuleService.ListFareRules
-	 */
-	listFareRules: {
-		methodKind: "unary";
-		input: typeof ListFareRulesRequestSchema;
-		output: typeof ListFareRulesResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.FareRuleService.GetFareRule
-	 */
-	getFareRule: {
-		methodKind: "unary";
-		input: typeof GetFareRuleRequestSchema;
-		output: typeof GetFareRuleResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.FareRuleService.CreateFareRule
-	 */
-	createFareRule: {
-		methodKind: "unary";
-		input: typeof CreateFareRuleRequestSchema;
-		output: typeof CreateFareRuleResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.FareRuleService.UpdateFareRule
-	 */
-	updateFareRule: {
-		methodKind: "unary";
-		input: typeof UpdateFareRuleRequestSchema;
-		output: typeof UpdateFareRuleResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.FareRuleService.DeleteFareRule
-	 */
-	deleteFareRule: {
-		methodKind: "unary";
-		input: typeof DeleteFareRuleRequestSchema;
-		output: typeof DeleteFareRuleResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.FareRuleService.ListFareRules
+   */
+  listFareRules: {
+    methodKind: "unary";
+    input: typeof ListFareRulesRequestSchema;
+    output: typeof ListFareRulesResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.FareRuleService.GetFareRule
+   */
+  getFareRule: {
+    methodKind: "unary";
+    input: typeof GetFareRuleRequestSchema;
+    output: typeof GetFareRuleResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.FareRuleService.CreateFareRule
+   */
+  createFareRule: {
+    methodKind: "unary";
+    input: typeof CreateFareRuleRequestSchema;
+    output: typeof CreateFareRuleResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.FareRuleService.UpdateFareRule
+   */
+  updateFareRule: {
+    methodKind: "unary";
+    input: typeof UpdateFareRuleRequestSchema;
+    output: typeof UpdateFareRuleResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.FareRuleService.DeleteFareRule
+   */
+  deleteFareRule: {
+    methodKind: "unary";
+    input: typeof DeleteFareRuleRequestSchema;
+    output: typeof DeleteFareRuleResponseSchema;
+  },
 }>;
+

@@ -2,11 +2,7 @@
 // @generated from file admin/v1/stop_time.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { FieldMask } from "@bufbuild/protobuf/wkt";
 
@@ -19,35 +15,35 @@ export declare const file_admin_v1_stop_time: GenFile;
  * @generated from message admin.v1.StopTime
  */
 export declare type StopTime = Message<"admin.v1.StopTime"> & {
-	/**
-	 * @generated from field: string trip_id = 1;
-	 */
-	tripId: string;
+  /**
+   * @generated from field: string trip_id = 1;
+   */
+  tripId: string;
 
-	/**
-	 * @generated from field: int32 stop_sequence = 2;
-	 */
-	stopSequence: number;
+  /**
+   * @generated from field: int32 stop_sequence = 2;
+   */
+  stopSequence: number;
 
-	/**
-	 * @generated from field: string stop_id = 3;
-	 */
-	stopId: string;
+  /**
+   * @generated from field: string stop_id = 3;
+   */
+  stopId: string;
 
-	/**
-	 * @generated from field: string arrival_time = 4;
-	 */
-	arrivalTime: string;
+  /**
+   * @generated from field: string arrival_time = 4;
+   */
+  arrivalTime: string;
 
-	/**
-	 * @generated from field: string departure_time = 5;
-	 */
-	departureTime: string;
+  /**
+   * @generated from field: string departure_time = 5;
+   */
+  departureTime: string;
 
-	/**
-	 * @generated from field: optional string stop_headsign = 6;
-	 */
-	stopHeadsign?: string | undefined;
+  /**
+   * @generated from field: optional string stop_headsign = 6;
+   */
+  stopHeadsign?: string | undefined;
 };
 
 /**
@@ -59,18 +55,17 @@ export declare const StopTimeSchema: GenMessage<StopTime>;
 /**
  * @generated from message admin.v1.ListStopTimesRequest
  */
-export declare type ListStopTimesRequest =
-	Message<"admin.v1.ListStopTimesRequest"> & {
-		/**
-		 * @generated from field: int32 page_size = 1;
-		 */
-		pageSize: number;
+export declare type ListStopTimesRequest = Message<"admin.v1.ListStopTimesRequest"> & {
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-		/**
-		 * @generated from field: string page_token = 2;
-		 */
-		pageToken: string;
-	};
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListStopTimesRequest.
@@ -81,18 +76,17 @@ export declare const ListStopTimesRequestSchema: GenMessage<ListStopTimesRequest
 /**
  * @generated from message admin.v1.ListStopTimesResponse
  */
-export declare type ListStopTimesResponse =
-	Message<"admin.v1.ListStopTimesResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.StopTime stop_times = 1;
-		 */
-		stopTimes: StopTime[];
+export declare type ListStopTimesResponse = Message<"admin.v1.ListStopTimesResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.StopTime stop_times = 1;
+   */
+  stopTimes: StopTime[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListStopTimesResponse.
@@ -103,18 +97,17 @@ export declare const ListStopTimesResponseSchema: GenMessage<ListStopTimesRespon
 /**
  * @generated from message admin.v1.GetStopTimeRequest
  */
-export declare type GetStopTimeRequest =
-	Message<"admin.v1.GetStopTimeRequest"> & {
-		/**
-		 * @generated from field: string trip_id = 1;
-		 */
-		tripId: string;
+export declare type GetStopTimeRequest = Message<"admin.v1.GetStopTimeRequest"> & {
+  /**
+   * @generated from field: string trip_id = 1;
+   */
+  tripId: string;
 
-		/**
-		 * @generated from field: int32 stop_sequence = 2;
-		 */
-		stopSequence: number;
-	};
+  /**
+   * @generated from field: int32 stop_sequence = 2;
+   */
+  stopSequence: number;
+};
 
 /**
  * Describes the message admin.v1.GetStopTimeRequest.
@@ -125,13 +118,12 @@ export declare const GetStopTimeRequestSchema: GenMessage<GetStopTimeRequest>;
 /**
  * @generated from message admin.v1.GetStopTimeResponse
  */
-export declare type GetStopTimeResponse =
-	Message<"admin.v1.GetStopTimeResponse"> & {
-		/**
-		 * @generated from field: admin.v1.StopTime stop_time = 1;
-		 */
-		stopTime?: StopTime | undefined;
-	};
+export declare type GetStopTimeResponse = Message<"admin.v1.GetStopTimeResponse"> & {
+  /**
+   * @generated from field: admin.v1.StopTime stop_time = 1;
+   */
+  stopTime?: StopTime | undefined;
+};
 
 /**
  * Describes the message admin.v1.GetStopTimeResponse.
@@ -142,38 +134,37 @@ export declare const GetStopTimeResponseSchema: GenMessage<GetStopTimeResponse>;
 /**
  * @generated from message admin.v1.CreateStopTimeRequest
  */
-export declare type CreateStopTimeRequest =
-	Message<"admin.v1.CreateStopTimeRequest"> & {
-		/**
-		 * @generated from field: string trip_id = 1;
-		 */
-		tripId: string;
+export declare type CreateStopTimeRequest = Message<"admin.v1.CreateStopTimeRequest"> & {
+  /**
+   * @generated from field: string trip_id = 1;
+   */
+  tripId: string;
 
-		/**
-		 * @generated from field: int32 stop_sequence = 2;
-		 */
-		stopSequence: number;
+  /**
+   * @generated from field: int32 stop_sequence = 2;
+   */
+  stopSequence: number;
 
-		/**
-		 * @generated from field: string stop_id = 3;
-		 */
-		stopId: string;
+  /**
+   * @generated from field: string stop_id = 3;
+   */
+  stopId: string;
 
-		/**
-		 * @generated from field: string arrival_time = 4;
-		 */
-		arrivalTime: string;
+  /**
+   * @generated from field: string arrival_time = 4;
+   */
+  arrivalTime: string;
 
-		/**
-		 * @generated from field: string departure_time = 5;
-		 */
-		departureTime: string;
+  /**
+   * @generated from field: string departure_time = 5;
+   */
+  departureTime: string;
 
-		/**
-		 * @generated from field: optional string stop_headsign = 6;
-		 */
-		stopHeadsign?: string | undefined;
-	};
+  /**
+   * @generated from field: optional string stop_headsign = 6;
+   */
+  stopHeadsign?: string | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateStopTimeRequest.
@@ -184,13 +175,12 @@ export declare const CreateStopTimeRequestSchema: GenMessage<CreateStopTimeReque
 /**
  * @generated from message admin.v1.CreateStopTimeResponse
  */
-export declare type CreateStopTimeResponse =
-	Message<"admin.v1.CreateStopTimeResponse"> & {
-		/**
-		 * @generated from field: admin.v1.StopTime stop_time = 1;
-		 */
-		stopTime?: StopTime | undefined;
-	};
+export declare type CreateStopTimeResponse = Message<"admin.v1.CreateStopTimeResponse"> & {
+  /**
+   * @generated from field: admin.v1.StopTime stop_time = 1;
+   */
+  stopTime?: StopTime | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateStopTimeResponse.
@@ -201,43 +191,42 @@ export declare const CreateStopTimeResponseSchema: GenMessage<CreateStopTimeResp
 /**
  * @generated from message admin.v1.UpdateStopTimeRequest
  */
-export declare type UpdateStopTimeRequest =
-	Message<"admin.v1.UpdateStopTimeRequest"> & {
-		/**
-		 * @generated from field: string trip_id = 1;
-		 */
-		tripId: string;
+export declare type UpdateStopTimeRequest = Message<"admin.v1.UpdateStopTimeRequest"> & {
+  /**
+   * @generated from field: string trip_id = 1;
+   */
+  tripId: string;
 
-		/**
-		 * @generated from field: int32 stop_sequence = 2;
-		 */
-		stopSequence: number;
+  /**
+   * @generated from field: int32 stop_sequence = 2;
+   */
+  stopSequence: number;
 
-		/**
-		 * @generated from field: string stop_id = 3;
-		 */
-		stopId: string;
+  /**
+   * @generated from field: string stop_id = 3;
+   */
+  stopId: string;
 
-		/**
-		 * @generated from field: string arrival_time = 4;
-		 */
-		arrivalTime: string;
+  /**
+   * @generated from field: string arrival_time = 4;
+   */
+  arrivalTime: string;
 
-		/**
-		 * @generated from field: string departure_time = 5;
-		 */
-		departureTime: string;
+  /**
+   * @generated from field: string departure_time = 5;
+   */
+  departureTime: string;
 
-		/**
-		 * @generated from field: optional string stop_headsign = 6;
-		 */
-		stopHeadsign?: string | undefined;
+  /**
+   * @generated from field: optional string stop_headsign = 6;
+   */
+  stopHeadsign?: string | undefined;
 
-		/**
-		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
-		 */
-		updateMask?: FieldMask | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 99;
+   */
+  updateMask?: FieldMask | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateStopTimeRequest.
@@ -248,13 +237,12 @@ export declare const UpdateStopTimeRequestSchema: GenMessage<UpdateStopTimeReque
 /**
  * @generated from message admin.v1.UpdateStopTimeResponse
  */
-export declare type UpdateStopTimeResponse =
-	Message<"admin.v1.UpdateStopTimeResponse"> & {
-		/**
-		 * @generated from field: admin.v1.StopTime stop_time = 1;
-		 */
-		stopTime?: StopTime | undefined;
-	};
+export declare type UpdateStopTimeResponse = Message<"admin.v1.UpdateStopTimeResponse"> & {
+  /**
+   * @generated from field: admin.v1.StopTime stop_time = 1;
+   */
+  stopTime?: StopTime | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateStopTimeResponse.
@@ -265,18 +253,17 @@ export declare const UpdateStopTimeResponseSchema: GenMessage<UpdateStopTimeResp
 /**
  * @generated from message admin.v1.DeleteStopTimeRequest
  */
-export declare type DeleteStopTimeRequest =
-	Message<"admin.v1.DeleteStopTimeRequest"> & {
-		/**
-		 * @generated from field: string trip_id = 1;
-		 */
-		tripId: string;
+export declare type DeleteStopTimeRequest = Message<"admin.v1.DeleteStopTimeRequest"> & {
+  /**
+   * @generated from field: string trip_id = 1;
+   */
+  tripId: string;
 
-		/**
-		 * @generated from field: int32 stop_sequence = 2;
-		 */
-		stopSequence: number;
-	};
+  /**
+   * @generated from field: int32 stop_sequence = 2;
+   */
+  stopSequence: number;
+};
 
 /**
  * Describes the message admin.v1.DeleteStopTimeRequest.
@@ -287,8 +274,8 @@ export declare const DeleteStopTimeRequestSchema: GenMessage<DeleteStopTimeReque
 /**
  * @generated from message admin.v1.DeleteStopTimeResponse
  */
-export declare type DeleteStopTimeResponse =
-	Message<"admin.v1.DeleteStopTimeResponse"> & {};
+export declare type DeleteStopTimeResponse = Message<"admin.v1.DeleteStopTimeResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteStopTimeResponse.
@@ -300,44 +287,45 @@ export declare const DeleteStopTimeResponseSchema: GenMessage<DeleteStopTimeResp
  * @generated from service admin.v1.StopTimeService
  */
 export declare const StopTimeService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.StopTimeService.ListStopTimes
-	 */
-	listStopTimes: {
-		methodKind: "unary";
-		input: typeof ListStopTimesRequestSchema;
-		output: typeof ListStopTimesResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.StopTimeService.GetStopTime
-	 */
-	getStopTime: {
-		methodKind: "unary";
-		input: typeof GetStopTimeRequestSchema;
-		output: typeof GetStopTimeResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.StopTimeService.CreateStopTime
-	 */
-	createStopTime: {
-		methodKind: "unary";
-		input: typeof CreateStopTimeRequestSchema;
-		output: typeof CreateStopTimeResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.StopTimeService.UpdateStopTime
-	 */
-	updateStopTime: {
-		methodKind: "unary";
-		input: typeof UpdateStopTimeRequestSchema;
-		output: typeof UpdateStopTimeResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.StopTimeService.DeleteStopTime
-	 */
-	deleteStopTime: {
-		methodKind: "unary";
-		input: typeof DeleteStopTimeRequestSchema;
-		output: typeof DeleteStopTimeResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.StopTimeService.ListStopTimes
+   */
+  listStopTimes: {
+    methodKind: "unary";
+    input: typeof ListStopTimesRequestSchema;
+    output: typeof ListStopTimesResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.StopTimeService.GetStopTime
+   */
+  getStopTime: {
+    methodKind: "unary";
+    input: typeof GetStopTimeRequestSchema;
+    output: typeof GetStopTimeResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.StopTimeService.CreateStopTime
+   */
+  createStopTime: {
+    methodKind: "unary";
+    input: typeof CreateStopTimeRequestSchema;
+    output: typeof CreateStopTimeResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.StopTimeService.UpdateStopTime
+   */
+  updateStopTime: {
+    methodKind: "unary";
+    input: typeof UpdateStopTimeRequestSchema;
+    output: typeof UpdateStopTimeResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.StopTimeService.DeleteStopTime
+   */
+  deleteStopTime: {
+    methodKind: "unary";
+    input: typeof DeleteStopTimeRequestSchema;
+    output: typeof DeleteStopTimeResponseSchema;
+  },
 }>;
+

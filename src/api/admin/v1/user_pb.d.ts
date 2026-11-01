@@ -2,11 +2,7 @@
 // @generated from file admin/v1/user.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Class, Course, Grade } from "./common_pb";
 import type { FieldMask } from "@bufbuild/protobuf/wkt";
@@ -20,30 +16,30 @@ export declare const file_admin_v1_user: GenFile;
  * @generated from message admin.v1.User
  */
 export declare type User = Message<"admin.v1.User"> & {
-	/**
-	 * @generated from field: string id = 1;
-	 */
-	id: string;
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-	/**
-	 * @generated from field: string email = 2;
-	 */
-	email: string;
+  /**
+   * @generated from field: string email = 2;
+   */
+  email: string;
 
-	/**
-	 * @generated from field: optional admin.v1.Grade grade = 3;
-	 */
-	grade?: Grade | undefined;
+  /**
+   * @generated from field: optional admin.v1.Grade grade = 3;
+   */
+  grade?: Grade | undefined;
 
-	/**
-	 * @generated from field: optional admin.v1.Course course = 4;
-	 */
-	course?: Course | undefined;
+  /**
+   * @generated from field: optional admin.v1.Course course = 4;
+   */
+  course?: Course | undefined;
 
-	/**
-	 * @generated from field: optional admin.v1.Class class = 5;
-	 */
-	class?: Class | undefined;
+  /**
+   * @generated from field: optional admin.v1.Class class = 5;
+   */
+  class?: Class | undefined;
 };
 
 /**
@@ -56,15 +52,15 @@ export declare const UserSchema: GenMessage<User>;
  * @generated from message admin.v1.ListUsersRequest
  */
 export declare type ListUsersRequest = Message<"admin.v1.ListUsersRequest"> & {
-	/**
-	 * @generated from field: int32 page_size = 1;
-	 */
-	pageSize: number;
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-	/**
-	 * @generated from field: string page_token = 2;
-	 */
-	pageToken: string;
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
 };
 
 /**
@@ -76,18 +72,17 @@ export declare const ListUsersRequestSchema: GenMessage<ListUsersRequest>;
 /**
  * @generated from message admin.v1.ListUsersResponse
  */
-export declare type ListUsersResponse =
-	Message<"admin.v1.ListUsersResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.User users = 1;
-		 */
-		users: User[];
+export declare type ListUsersResponse = Message<"admin.v1.ListUsersResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.User users = 1;
+   */
+  users: User[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListUsersResponse.
@@ -99,10 +94,10 @@ export declare const ListUsersResponseSchema: GenMessage<ListUsersResponse>;
  * @generated from message admin.v1.GetUserRequest
  */
 export declare type GetUserRequest = Message<"admin.v1.GetUserRequest"> & {
-	/**
-	 * @generated from field: string id = 1;
-	 */
-	id: string;
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 };
 
 /**
@@ -115,10 +110,10 @@ export declare const GetUserRequestSchema: GenMessage<GetUserRequest>;
  * @generated from message admin.v1.GetUserResponse
  */
 export declare type GetUserResponse = Message<"admin.v1.GetUserResponse"> & {
-	/**
-	 * @generated from field: admin.v1.User user = 1;
-	 */
-	user?: User | undefined;
+  /**
+   * @generated from field: admin.v1.User user = 1;
+   */
+  user?: User | undefined;
 };
 
 /**
@@ -130,33 +125,32 @@ export declare const GetUserResponseSchema: GenMessage<GetUserResponse>;
 /**
  * @generated from message admin.v1.CreateUserRequest
  */
-export declare type CreateUserRequest =
-	Message<"admin.v1.CreateUserRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
+export declare type CreateUserRequest = Message<"admin.v1.CreateUserRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-		/**
-		 * @generated from field: string email = 2;
-		 */
-		email: string;
+  /**
+   * @generated from field: string email = 2;
+   */
+  email: string;
 
-		/**
-		 * @generated from field: optional admin.v1.Grade grade = 3;
-		 */
-		grade?: Grade | undefined;
+  /**
+   * @generated from field: optional admin.v1.Grade grade = 3;
+   */
+  grade?: Grade | undefined;
 
-		/**
-		 * @generated from field: optional admin.v1.Course course = 4;
-		 */
-		course?: Course | undefined;
+  /**
+   * @generated from field: optional admin.v1.Course course = 4;
+   */
+  course?: Course | undefined;
 
-		/**
-		 * @generated from field: optional admin.v1.Class class = 5;
-		 */
-		class?: Class | undefined;
-	};
+  /**
+   * @generated from field: optional admin.v1.Class class = 5;
+   */
+  class?: Class | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateUserRequest.
@@ -167,13 +161,12 @@ export declare const CreateUserRequestSchema: GenMessage<CreateUserRequest>;
 /**
  * @generated from message admin.v1.CreateUserResponse
  */
-export declare type CreateUserResponse =
-	Message<"admin.v1.CreateUserResponse"> & {
-		/**
-		 * @generated from field: admin.v1.User user = 1;
-		 */
-		user?: User | undefined;
-	};
+export declare type CreateUserResponse = Message<"admin.v1.CreateUserResponse"> & {
+  /**
+   * @generated from field: admin.v1.User user = 1;
+   */
+  user?: User | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateUserResponse.
@@ -184,38 +177,37 @@ export declare const CreateUserResponseSchema: GenMessage<CreateUserResponse>;
 /**
  * @generated from message admin.v1.UpdateUserRequest
  */
-export declare type UpdateUserRequest =
-	Message<"admin.v1.UpdateUserRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
+export declare type UpdateUserRequest = Message<"admin.v1.UpdateUserRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-		/**
-		 * @generated from field: string email = 2;
-		 */
-		email: string;
+  /**
+   * @generated from field: string email = 2;
+   */
+  email: string;
 
-		/**
-		 * @generated from field: optional admin.v1.Grade grade = 3;
-		 */
-		grade?: Grade | undefined;
+  /**
+   * @generated from field: optional admin.v1.Grade grade = 3;
+   */
+  grade?: Grade | undefined;
 
-		/**
-		 * @generated from field: optional admin.v1.Course course = 4;
-		 */
-		course?: Course | undefined;
+  /**
+   * @generated from field: optional admin.v1.Course course = 4;
+   */
+  course?: Course | undefined;
 
-		/**
-		 * @generated from field: optional admin.v1.Class class = 5;
-		 */
-		class?: Class | undefined;
+  /**
+   * @generated from field: optional admin.v1.Class class = 5;
+   */
+  class?: Class | undefined;
 
-		/**
-		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
-		 */
-		updateMask?: FieldMask | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 99;
+   */
+  updateMask?: FieldMask | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateUserRequest.
@@ -226,13 +218,12 @@ export declare const UpdateUserRequestSchema: GenMessage<UpdateUserRequest>;
 /**
  * @generated from message admin.v1.UpdateUserResponse
  */
-export declare type UpdateUserResponse =
-	Message<"admin.v1.UpdateUserResponse"> & {
-		/**
-		 * @generated from field: admin.v1.User user = 1;
-		 */
-		user?: User | undefined;
-	};
+export declare type UpdateUserResponse = Message<"admin.v1.UpdateUserResponse"> & {
+  /**
+   * @generated from field: admin.v1.User user = 1;
+   */
+  user?: User | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateUserResponse.
@@ -243,13 +234,12 @@ export declare const UpdateUserResponseSchema: GenMessage<UpdateUserResponse>;
 /**
  * @generated from message admin.v1.DeleteUserRequest
  */
-export declare type DeleteUserRequest =
-	Message<"admin.v1.DeleteUserRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
-	};
+export declare type DeleteUserRequest = Message<"admin.v1.DeleteUserRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
 
 /**
  * Describes the message admin.v1.DeleteUserRequest.
@@ -260,8 +250,8 @@ export declare const DeleteUserRequestSchema: GenMessage<DeleteUserRequest>;
 /**
  * @generated from message admin.v1.DeleteUserResponse
  */
-export declare type DeleteUserResponse =
-	Message<"admin.v1.DeleteUserResponse"> & {};
+export declare type DeleteUserResponse = Message<"admin.v1.DeleteUserResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteUserResponse.
@@ -273,44 +263,45 @@ export declare const DeleteUserResponseSchema: GenMessage<DeleteUserResponse>;
  * @generated from service admin.v1.UserService
  */
 export declare const UserService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.UserService.ListUsers
-	 */
-	listUsers: {
-		methodKind: "unary";
-		input: typeof ListUsersRequestSchema;
-		output: typeof ListUsersResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.UserService.GetUser
-	 */
-	getUser: {
-		methodKind: "unary";
-		input: typeof GetUserRequestSchema;
-		output: typeof GetUserResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.UserService.CreateUser
-	 */
-	createUser: {
-		methodKind: "unary";
-		input: typeof CreateUserRequestSchema;
-		output: typeof CreateUserResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.UserService.UpdateUser
-	 */
-	updateUser: {
-		methodKind: "unary";
-		input: typeof UpdateUserRequestSchema;
-		output: typeof UpdateUserResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.UserService.DeleteUser
-	 */
-	deleteUser: {
-		methodKind: "unary";
-		input: typeof DeleteUserRequestSchema;
-		output: typeof DeleteUserResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.UserService.ListUsers
+   */
+  listUsers: {
+    methodKind: "unary";
+    input: typeof ListUsersRequestSchema;
+    output: typeof ListUsersResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.UserService.GetUser
+   */
+  getUser: {
+    methodKind: "unary";
+    input: typeof GetUserRequestSchema;
+    output: typeof GetUserResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.UserService.CreateUser
+   */
+  createUser: {
+    methodKind: "unary";
+    input: typeof CreateUserRequestSchema;
+    output: typeof CreateUserResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.UserService.UpdateUser
+   */
+  updateUser: {
+    methodKind: "unary";
+    input: typeof UpdateUserRequestSchema;
+    output: typeof UpdateUserResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.UserService.DeleteUser
+   */
+  deleteUser: {
+    methodKind: "unary";
+    input: typeof DeleteUserRequestSchema;
+    output: typeof DeleteUserResponseSchema;
+  },
 }>;
+

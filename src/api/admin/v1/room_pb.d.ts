@@ -2,12 +2,7 @@
 // @generated from file admin/v1/room.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenEnum,
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 
@@ -20,30 +15,30 @@ export declare const file_admin_v1_room: GenFile;
  * @generated from message admin.v1.Room
  */
 export declare type Room = Message<"admin.v1.Room"> & {
-	/**
-	 * @generated from field: string id = 1;
-	 */
-	id: string;
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-	/**
-	 * @generated from field: string name = 2;
-	 */
-	name: string;
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
 
-	/**
-	 * @generated from field: admin.v1.RoomFloor floor = 3;
-	 */
-	floor: RoomFloor;
+  /**
+   * @generated from field: admin.v1.RoomFloor floor = 3;
+   */
+  floor: RoomFloor;
 
-	/**
-	 * @generated from field: google.protobuf.Timestamp created_at = 4;
-	 */
-	createdAt?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 4;
+   */
+  createdAt?: Timestamp | undefined;
 
-	/**
-	 * @generated from field: google.protobuf.Timestamp updated_at = 5;
-	 */
-	updatedAt?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 5;
+   */
+  updatedAt?: Timestamp | undefined;
 };
 
 /**
@@ -56,15 +51,15 @@ export declare const RoomSchema: GenMessage<Room>;
  * @generated from message admin.v1.ListRoomsRequest
  */
 export declare type ListRoomsRequest = Message<"admin.v1.ListRoomsRequest"> & {
-	/**
-	 * @generated from field: int32 page_size = 1;
-	 */
-	pageSize: number;
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-	/**
-	 * @generated from field: string page_token = 2;
-	 */
-	pageToken: string;
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
 };
 
 /**
@@ -76,18 +71,17 @@ export declare const ListRoomsRequestSchema: GenMessage<ListRoomsRequest>;
 /**
  * @generated from message admin.v1.ListRoomsResponse
  */
-export declare type ListRoomsResponse =
-	Message<"admin.v1.ListRoomsResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.Room rooms = 1;
-		 */
-		rooms: Room[];
+export declare type ListRoomsResponse = Message<"admin.v1.ListRoomsResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.Room rooms = 1;
+   */
+  rooms: Room[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListRoomsResponse.
@@ -99,10 +93,10 @@ export declare const ListRoomsResponseSchema: GenMessage<ListRoomsResponse>;
  * @generated from message admin.v1.GetRoomRequest
  */
 export declare type GetRoomRequest = Message<"admin.v1.GetRoomRequest"> & {
-	/**
-	 * @generated from field: string id = 1;
-	 */
-	id: string;
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 };
 
 /**
@@ -115,10 +109,10 @@ export declare const GetRoomRequestSchema: GenMessage<GetRoomRequest>;
  * @generated from message admin.v1.GetRoomResponse
  */
 export declare type GetRoomResponse = Message<"admin.v1.GetRoomResponse"> & {
-	/**
-	 * @generated from field: admin.v1.Room room = 1;
-	 */
-	room?: Room | undefined;
+  /**
+   * @generated from field: admin.v1.Room room = 1;
+   */
+  room?: Room | undefined;
 };
 
 /**
@@ -130,18 +124,17 @@ export declare const GetRoomResponseSchema: GenMessage<GetRoomResponse>;
 /**
  * @generated from message admin.v1.CreateRoomRequest
  */
-export declare type CreateRoomRequest =
-	Message<"admin.v1.CreateRoomRequest"> & {
-		/**
-		 * @generated from field: string name = 1;
-		 */
-		name: string;
+export declare type CreateRoomRequest = Message<"admin.v1.CreateRoomRequest"> & {
+  /**
+   * @generated from field: string name = 1;
+   */
+  name: string;
 
-		/**
-		 * @generated from field: admin.v1.RoomFloor floor = 2;
-		 */
-		floor: RoomFloor;
-	};
+  /**
+   * @generated from field: admin.v1.RoomFloor floor = 2;
+   */
+  floor: RoomFloor;
+};
 
 /**
  * Describes the message admin.v1.CreateRoomRequest.
@@ -152,13 +145,12 @@ export declare const CreateRoomRequestSchema: GenMessage<CreateRoomRequest>;
 /**
  * @generated from message admin.v1.CreateRoomResponse
  */
-export declare type CreateRoomResponse =
-	Message<"admin.v1.CreateRoomResponse"> & {
-		/**
-		 * @generated from field: admin.v1.Room room = 1;
-		 */
-		room?: Room | undefined;
-	};
+export declare type CreateRoomResponse = Message<"admin.v1.CreateRoomResponse"> & {
+  /**
+   * @generated from field: admin.v1.Room room = 1;
+   */
+  room?: Room | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateRoomResponse.
@@ -169,28 +161,27 @@ export declare const CreateRoomResponseSchema: GenMessage<CreateRoomResponse>;
 /**
  * @generated from message admin.v1.UpdateRoomRequest
  */
-export declare type UpdateRoomRequest =
-	Message<"admin.v1.UpdateRoomRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
+export declare type UpdateRoomRequest = Message<"admin.v1.UpdateRoomRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
 
-		/**
-		 * @generated from field: string name = 2;
-		 */
-		name: string;
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
 
-		/**
-		 * @generated from field: admin.v1.RoomFloor floor = 3;
-		 */
-		floor: RoomFloor;
+  /**
+   * @generated from field: admin.v1.RoomFloor floor = 3;
+   */
+  floor: RoomFloor;
 
-		/**
-		 * @generated from field: google.protobuf.FieldMask update_mask = 99;
-		 */
-		updateMask?: FieldMask | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 99;
+   */
+  updateMask?: FieldMask | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateRoomRequest.
@@ -201,13 +192,12 @@ export declare const UpdateRoomRequestSchema: GenMessage<UpdateRoomRequest>;
 /**
  * @generated from message admin.v1.UpdateRoomResponse
  */
-export declare type UpdateRoomResponse =
-	Message<"admin.v1.UpdateRoomResponse"> & {
-		/**
-		 * @generated from field: admin.v1.Room room = 1;
-		 */
-		room?: Room | undefined;
-	};
+export declare type UpdateRoomResponse = Message<"admin.v1.UpdateRoomResponse"> & {
+  /**
+   * @generated from field: admin.v1.Room room = 1;
+   */
+  room?: Room | undefined;
+};
 
 /**
  * Describes the message admin.v1.UpdateRoomResponse.
@@ -218,13 +208,12 @@ export declare const UpdateRoomResponseSchema: GenMessage<UpdateRoomResponse>;
 /**
  * @generated from message admin.v1.DeleteRoomRequest
  */
-export declare type DeleteRoomRequest =
-	Message<"admin.v1.DeleteRoomRequest"> & {
-		/**
-		 * @generated from field: string id = 1;
-		 */
-		id: string;
-	};
+export declare type DeleteRoomRequest = Message<"admin.v1.DeleteRoomRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
 
 /**
  * Describes the message admin.v1.DeleteRoomRequest.
@@ -235,8 +224,8 @@ export declare const DeleteRoomRequestSchema: GenMessage<DeleteRoomRequest>;
 /**
  * @generated from message admin.v1.DeleteRoomResponse
  */
-export declare type DeleteRoomResponse =
-	Message<"admin.v1.DeleteRoomResponse"> & {};
+export declare type DeleteRoomResponse = Message<"admin.v1.DeleteRoomResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteRoomResponse.
@@ -248,50 +237,50 @@ export declare const DeleteRoomResponseSchema: GenMessage<DeleteRoomResponse>;
  * @generated from enum admin.v1.RoomFloor
  */
 export enum RoomFloor {
-	/**
-	 * @generated from enum value: ROOM_FLOOR_UNSPECIFIED = 0;
-	 */
-	ROOM_FLOOR_UNSPECIFIED = 0,
+  /**
+   * @generated from enum value: ROOM_FLOOR_UNSPECIFIED = 0;
+   */
+  ROOM_FLOOR_UNSPECIFIED = 0,
 
-	/**
-	 * @generated from enum value: ROOM_FLOOR_1 = 1;
-	 */
-	ROOM_FLOOR_1 = 1,
+  /**
+   * @generated from enum value: ROOM_FLOOR_1 = 1;
+   */
+  ROOM_FLOOR_1 = 1,
 
-	/**
-	 * @generated from enum value: ROOM_FLOOR_2 = 2;
-	 */
-	ROOM_FLOOR_2 = 2,
+  /**
+   * @generated from enum value: ROOM_FLOOR_2 = 2;
+   */
+  ROOM_FLOOR_2 = 2,
 
-	/**
-	 * @generated from enum value: ROOM_FLOOR_3 = 3;
-	 */
-	ROOM_FLOOR_3 = 3,
+  /**
+   * @generated from enum value: ROOM_FLOOR_3 = 3;
+   */
+  ROOM_FLOOR_3 = 3,
 
-	/**
-	 * @generated from enum value: ROOM_FLOOR_4 = 4;
-	 */
-	ROOM_FLOOR_4 = 4,
+  /**
+   * @generated from enum value: ROOM_FLOOR_4 = 4;
+   */
+  ROOM_FLOOR_4 = 4,
 
-	/**
-	 * @generated from enum value: ROOM_FLOOR_5 = 5;
-	 */
-	ROOM_FLOOR_5 = 5,
+  /**
+   * @generated from enum value: ROOM_FLOOR_5 = 5;
+   */
+  ROOM_FLOOR_5 = 5,
 
-	/**
-	 * @generated from enum value: ROOM_FLOOR_6 = 6;
-	 */
-	ROOM_FLOOR_6 = 6,
+  /**
+   * @generated from enum value: ROOM_FLOOR_6 = 6;
+   */
+  ROOM_FLOOR_6 = 6,
 
-	/**
-	 * @generated from enum value: ROOM_FLOOR_7 = 7;
-	 */
-	ROOM_FLOOR_7 = 7,
+  /**
+   * @generated from enum value: ROOM_FLOOR_7 = 7;
+   */
+  ROOM_FLOOR_7 = 7,
 
-	/**
-	 * @generated from enum value: ROOM_FLOOR_VIRTUAL = 8;
-	 */
-	ROOM_FLOOR_VIRTUAL = 8,
+  /**
+   * @generated from enum value: ROOM_FLOOR_VIRTUAL = 8;
+   */
+  ROOM_FLOOR_VIRTUAL = 8,
 }
 
 /**
@@ -303,44 +292,45 @@ export declare const RoomFloorSchema: GenEnum<RoomFloor>;
  * @generated from service admin.v1.RoomService
  */
 export declare const RoomService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.RoomService.ListRooms
-	 */
-	listRooms: {
-		methodKind: "unary";
-		input: typeof ListRoomsRequestSchema;
-		output: typeof ListRoomsResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.RoomService.GetRoom
-	 */
-	getRoom: {
-		methodKind: "unary";
-		input: typeof GetRoomRequestSchema;
-		output: typeof GetRoomResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.RoomService.CreateRoom
-	 */
-	createRoom: {
-		methodKind: "unary";
-		input: typeof CreateRoomRequestSchema;
-		output: typeof CreateRoomResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.RoomService.UpdateRoom
-	 */
-	updateRoom: {
-		methodKind: "unary";
-		input: typeof UpdateRoomRequestSchema;
-		output: typeof UpdateRoomResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.RoomService.DeleteRoom
-	 */
-	deleteRoom: {
-		methodKind: "unary";
-		input: typeof DeleteRoomRequestSchema;
-		output: typeof DeleteRoomResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.RoomService.ListRooms
+   */
+  listRooms: {
+    methodKind: "unary";
+    input: typeof ListRoomsRequestSchema;
+    output: typeof ListRoomsResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.RoomService.GetRoom
+   */
+  getRoom: {
+    methodKind: "unary";
+    input: typeof GetRoomRequestSchema;
+    output: typeof GetRoomResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.RoomService.CreateRoom
+   */
+  createRoom: {
+    methodKind: "unary";
+    input: typeof CreateRoomRequestSchema;
+    output: typeof CreateRoomResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.RoomService.UpdateRoom
+   */
+  updateRoom: {
+    methodKind: "unary";
+    input: typeof UpdateRoomRequestSchema;
+    output: typeof UpdateRoomResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.RoomService.DeleteRoom
+   */
+  deleteRoom: {
+    methodKind: "unary";
+    input: typeof DeleteRoomRequestSchema;
+    output: typeof DeleteRoomResponseSchema;
+  },
 }>;
+

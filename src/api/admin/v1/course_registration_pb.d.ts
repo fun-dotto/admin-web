@@ -2,11 +2,7 @@
 // @generated from file admin/v1/course_registration.proto (package admin.v1, syntax proto3)
 /* eslint-disable */
 
-import type {
-	GenFile,
-	GenMessage,
-	GenService,
-} from "@bufbuild/protobuf/codegenv2";
+import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Timestamp } from "@bufbuild/protobuf/wkt";
 
@@ -18,28 +14,27 @@ export declare const file_admin_v1_course_registration: GenFile;
 /**
  * @generated from message admin.v1.CourseRegistration
  */
-export declare type CourseRegistration =
-	Message<"admin.v1.CourseRegistration"> & {
-		/**
-		 * @generated from field: string user_id = 1;
-		 */
-		userId: string;
+export declare type CourseRegistration = Message<"admin.v1.CourseRegistration"> & {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
 
-		/**
-		 * @generated from field: string subject_id = 2;
-		 */
-		subjectId: string;
+  /**
+   * @generated from field: string subject_id = 2;
+   */
+  subjectId: string;
 
-		/**
-		 * @generated from field: google.protobuf.Timestamp created_at = 3;
-		 */
-		createdAt?: Timestamp | undefined;
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 3;
+   */
+  createdAt?: Timestamp | undefined;
 
-		/**
-		 * @generated from field: google.protobuf.Timestamp updated_at = 4;
-		 */
-		updatedAt?: Timestamp | undefined;
-	};
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 4;
+   */
+  updatedAt?: Timestamp | undefined;
+};
 
 /**
  * Describes the message admin.v1.CourseRegistration.
@@ -50,18 +45,17 @@ export declare const CourseRegistrationSchema: GenMessage<CourseRegistration>;
 /**
  * @generated from message admin.v1.ListCourseRegistrationsRequest
  */
-export declare type ListCourseRegistrationsRequest =
-	Message<"admin.v1.ListCourseRegistrationsRequest"> & {
-		/**
-		 * @generated from field: int32 page_size = 1;
-		 */
-		pageSize: number;
+export declare type ListCourseRegistrationsRequest = Message<"admin.v1.ListCourseRegistrationsRequest"> & {
+  /**
+   * @generated from field: int32 page_size = 1;
+   */
+  pageSize: number;
 
-		/**
-		 * @generated from field: string page_token = 2;
-		 */
-		pageToken: string;
-	};
+  /**
+   * @generated from field: string page_token = 2;
+   */
+  pageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListCourseRegistrationsRequest.
@@ -72,18 +66,17 @@ export declare const ListCourseRegistrationsRequestSchema: GenMessage<ListCourse
 /**
  * @generated from message admin.v1.ListCourseRegistrationsResponse
  */
-export declare type ListCourseRegistrationsResponse =
-	Message<"admin.v1.ListCourseRegistrationsResponse"> & {
-		/**
-		 * @generated from field: repeated admin.v1.CourseRegistration course_registrations = 1;
-		 */
-		courseRegistrations: CourseRegistration[];
+export declare type ListCourseRegistrationsResponse = Message<"admin.v1.ListCourseRegistrationsResponse"> & {
+  /**
+   * @generated from field: repeated admin.v1.CourseRegistration course_registrations = 1;
+   */
+  courseRegistrations: CourseRegistration[];
 
-		/**
-		 * @generated from field: string next_page_token = 2;
-		 */
-		nextPageToken: string;
-	};
+  /**
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
+};
 
 /**
  * Describes the message admin.v1.ListCourseRegistrationsResponse.
@@ -94,18 +87,17 @@ export declare const ListCourseRegistrationsResponseSchema: GenMessage<ListCours
 /**
  * @generated from message admin.v1.GetCourseRegistrationRequest
  */
-export declare type GetCourseRegistrationRequest =
-	Message<"admin.v1.GetCourseRegistrationRequest"> & {
-		/**
-		 * @generated from field: string user_id = 1;
-		 */
-		userId: string;
+export declare type GetCourseRegistrationRequest = Message<"admin.v1.GetCourseRegistrationRequest"> & {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
 
-		/**
-		 * @generated from field: string subject_id = 2;
-		 */
-		subjectId: string;
-	};
+  /**
+   * @generated from field: string subject_id = 2;
+   */
+  subjectId: string;
+};
 
 /**
  * Describes the message admin.v1.GetCourseRegistrationRequest.
@@ -116,13 +108,12 @@ export declare const GetCourseRegistrationRequestSchema: GenMessage<GetCourseReg
 /**
  * @generated from message admin.v1.GetCourseRegistrationResponse
  */
-export declare type GetCourseRegistrationResponse =
-	Message<"admin.v1.GetCourseRegistrationResponse"> & {
-		/**
-		 * @generated from field: admin.v1.CourseRegistration course_registration = 1;
-		 */
-		courseRegistration?: CourseRegistration | undefined;
-	};
+export declare type GetCourseRegistrationResponse = Message<"admin.v1.GetCourseRegistrationResponse"> & {
+  /**
+   * @generated from field: admin.v1.CourseRegistration course_registration = 1;
+   */
+  courseRegistration?: CourseRegistration | undefined;
+};
 
 /**
  * Describes the message admin.v1.GetCourseRegistrationResponse.
@@ -133,18 +124,17 @@ export declare const GetCourseRegistrationResponseSchema: GenMessage<GetCourseRe
 /**
  * @generated from message admin.v1.CreateCourseRegistrationRequest
  */
-export declare type CreateCourseRegistrationRequest =
-	Message<"admin.v1.CreateCourseRegistrationRequest"> & {
-		/**
-		 * @generated from field: string user_id = 1;
-		 */
-		userId: string;
+export declare type CreateCourseRegistrationRequest = Message<"admin.v1.CreateCourseRegistrationRequest"> & {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
 
-		/**
-		 * @generated from field: string subject_id = 2;
-		 */
-		subjectId: string;
-	};
+  /**
+   * @generated from field: string subject_id = 2;
+   */
+  subjectId: string;
+};
 
 /**
  * Describes the message admin.v1.CreateCourseRegistrationRequest.
@@ -155,13 +145,12 @@ export declare const CreateCourseRegistrationRequestSchema: GenMessage<CreateCou
 /**
  * @generated from message admin.v1.CreateCourseRegistrationResponse
  */
-export declare type CreateCourseRegistrationResponse =
-	Message<"admin.v1.CreateCourseRegistrationResponse"> & {
-		/**
-		 * @generated from field: admin.v1.CourseRegistration course_registration = 1;
-		 */
-		courseRegistration?: CourseRegistration | undefined;
-	};
+export declare type CreateCourseRegistrationResponse = Message<"admin.v1.CreateCourseRegistrationResponse"> & {
+  /**
+   * @generated from field: admin.v1.CourseRegistration course_registration = 1;
+   */
+  courseRegistration?: CourseRegistration | undefined;
+};
 
 /**
  * Describes the message admin.v1.CreateCourseRegistrationResponse.
@@ -172,18 +161,17 @@ export declare const CreateCourseRegistrationResponseSchema: GenMessage<CreateCo
 /**
  * @generated from message admin.v1.DeleteCourseRegistrationRequest
  */
-export declare type DeleteCourseRegistrationRequest =
-	Message<"admin.v1.DeleteCourseRegistrationRequest"> & {
-		/**
-		 * @generated from field: string user_id = 1;
-		 */
-		userId: string;
+export declare type DeleteCourseRegistrationRequest = Message<"admin.v1.DeleteCourseRegistrationRequest"> & {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
 
-		/**
-		 * @generated from field: string subject_id = 2;
-		 */
-		subjectId: string;
-	};
+  /**
+   * @generated from field: string subject_id = 2;
+   */
+  subjectId: string;
+};
 
 /**
  * Describes the message admin.v1.DeleteCourseRegistrationRequest.
@@ -194,8 +182,8 @@ export declare const DeleteCourseRegistrationRequestSchema: GenMessage<DeleteCou
 /**
  * @generated from message admin.v1.DeleteCourseRegistrationResponse
  */
-export declare type DeleteCourseRegistrationResponse =
-	Message<"admin.v1.DeleteCourseRegistrationResponse"> & {};
+export declare type DeleteCourseRegistrationResponse = Message<"admin.v1.DeleteCourseRegistrationResponse"> & {
+};
 
 /**
  * Describes the message admin.v1.DeleteCourseRegistrationResponse.
@@ -207,36 +195,37 @@ export declare const DeleteCourseRegistrationResponseSchema: GenMessage<DeleteCo
  * @generated from service admin.v1.CourseRegistrationService
  */
 export declare const CourseRegistrationService: GenService<{
-	/**
-	 * @generated from rpc admin.v1.CourseRegistrationService.ListCourseRegistrations
-	 */
-	listCourseRegistrations: {
-		methodKind: "unary";
-		input: typeof ListCourseRegistrationsRequestSchema;
-		output: typeof ListCourseRegistrationsResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.CourseRegistrationService.GetCourseRegistration
-	 */
-	getCourseRegistration: {
-		methodKind: "unary";
-		input: typeof GetCourseRegistrationRequestSchema;
-		output: typeof GetCourseRegistrationResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.CourseRegistrationService.CreateCourseRegistration
-	 */
-	createCourseRegistration: {
-		methodKind: "unary";
-		input: typeof CreateCourseRegistrationRequestSchema;
-		output: typeof CreateCourseRegistrationResponseSchema;
-	};
-	/**
-	 * @generated from rpc admin.v1.CourseRegistrationService.DeleteCourseRegistration
-	 */
-	deleteCourseRegistration: {
-		methodKind: "unary";
-		input: typeof DeleteCourseRegistrationRequestSchema;
-		output: typeof DeleteCourseRegistrationResponseSchema;
-	};
+  /**
+   * @generated from rpc admin.v1.CourseRegistrationService.ListCourseRegistrations
+   */
+  listCourseRegistrations: {
+    methodKind: "unary";
+    input: typeof ListCourseRegistrationsRequestSchema;
+    output: typeof ListCourseRegistrationsResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.CourseRegistrationService.GetCourseRegistration
+   */
+  getCourseRegistration: {
+    methodKind: "unary";
+    input: typeof GetCourseRegistrationRequestSchema;
+    output: typeof GetCourseRegistrationResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.CourseRegistrationService.CreateCourseRegistration
+   */
+  createCourseRegistration: {
+    methodKind: "unary";
+    input: typeof CreateCourseRegistrationRequestSchema;
+    output: typeof CreateCourseRegistrationResponseSchema;
+  },
+  /**
+   * @generated from rpc admin.v1.CourseRegistrationService.DeleteCourseRegistration
+   */
+  deleteCourseRegistration: {
+    methodKind: "unary";
+    input: typeof DeleteCourseRegistrationRequestSchema;
+    output: typeof DeleteCourseRegistrationResponseSchema;
+  },
 }>;
+
