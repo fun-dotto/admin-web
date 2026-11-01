@@ -11,7 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResourceIndexRouteImport } from './routes/$resource.index'
-import { Route as ResourceIdRouteImport } from './routes/$resource.$id'
+import { Route as ResourceNewRouteImport } from './routes/$resource.new'
+import { Route as ResourceIdIndexRouteImport } from './routes/$resource.$id.index'
+import { Route as ResourceIdEditRouteImport } from './routes/$resource.$id.edit'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,40 +25,74 @@ const ResourceIndexRoute = ResourceIndexRouteImport.update({
   path: '/$resource/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ResourceIdRoute = ResourceIdRouteImport.update({
-  id: '/$resource/$id',
-  path: '/$resource/$id',
+const ResourceNewRoute = ResourceNewRouteImport.update({
+  id: '/$resource/new',
+  path: '/$resource/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourceIdIndexRoute = ResourceIdIndexRouteImport.update({
+  id: '/$resource/$id/',
+  path: '/$resource/$id/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourceIdEditRoute = ResourceIdEditRouteImport.update({
+  id: '/$resource/$id/edit',
+  path: '/$resource/$id/edit',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/$resource/$id': typeof ResourceIdRoute
+  '/$resource/new': typeof ResourceNewRoute
   '/$resource/': typeof ResourceIndexRoute
+  '/$resource/$id/edit': typeof ResourceIdEditRoute
+  '/$resource/$id/': typeof ResourceIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/$resource/$id': typeof ResourceIdRoute
+  '/$resource/new': typeof ResourceNewRoute
   '/$resource': typeof ResourceIndexRoute
+  '/$resource/$id/edit': typeof ResourceIdEditRoute
+  '/$resource/$id': typeof ResourceIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/$resource/$id': typeof ResourceIdRoute
+  '/$resource/new': typeof ResourceNewRoute
   '/$resource/': typeof ResourceIndexRoute
+  '/$resource/$id/edit': typeof ResourceIdEditRoute
+  '/$resource/$id/': typeof ResourceIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$resource/$id' | '/$resource/'
+  fullPaths:
+    | '/'
+    | '/$resource/new'
+    | '/$resource/'
+    | '/$resource/$id/edit'
+    | '/$resource/$id/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$resource/$id' | '/$resource'
-  id: '__root__' | '/' | '/$resource/$id' | '/$resource/'
+  to:
+    | '/'
+    | '/$resource/new'
+    | '/$resource'
+    | '/$resource/$id/edit'
+    | '/$resource/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/$resource/new'
+    | '/$resource/'
+    | '/$resource/$id/edit'
+    | '/$resource/$id/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ResourceIdRoute: typeof ResourceIdRoute
+  ResourceNewRoute: typeof ResourceNewRoute
   ResourceIndexRoute: typeof ResourceIndexRoute
+  ResourceIdEditRoute: typeof ResourceIdEditRoute
+  ResourceIdIndexRoute: typeof ResourceIdIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,11 +111,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourceIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/$resource/$id': {
-      id: '/$resource/$id'
+    '/$resource/new': {
+      id: '/$resource/new'
+      path: '/$resource/new'
+      fullPath: '/$resource/new'
+      preLoaderRoute: typeof ResourceNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$resource/$id/': {
+      id: '/$resource/$id/'
       path: '/$resource/$id'
-      fullPath: '/$resource/$id'
-      preLoaderRoute: typeof ResourceIdRouteImport
+      fullPath: '/$resource/$id/'
+      preLoaderRoute: typeof ResourceIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$resource/$id/edit': {
+      id: '/$resource/$id/edit'
+      path: '/$resource/$id/edit'
+      fullPath: '/$resource/$id/edit'
+      preLoaderRoute: typeof ResourceIdEditRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -87,8 +137,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ResourceIdRoute: ResourceIdRoute,
+  ResourceNewRoute: ResourceNewRoute,
   ResourceIndexRoute: ResourceIndexRoute,
+  ResourceIdEditRoute: ResourceIdEditRoute,
+  ResourceIdIndexRoute: ResourceIdIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

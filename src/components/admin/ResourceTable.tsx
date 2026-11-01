@@ -21,11 +21,8 @@ export type ResourceTableProps = React.ComponentProps<"div"> & {
 	rows: ResourceTableRowData[];
 	loading?: boolean;
 	error?: string;
-	/** 指定しない場合は編集ボタンを表示しない */
-	onEdit?: (id: string) => void;
 	/** 指定すると各行が詳細画面へのリンクになる */
 	resourceSlug?: string;
-	onDelete?: (id: string) => void;
 };
 
 const skeletonRows = ["a", "b", "c"];
@@ -35,14 +32,11 @@ export function ResourceTable({
 	rows,
 	loading,
 	error,
-	onEdit,
 	resourceSlug,
-	onDelete,
 	className,
 	...props
 }: ResourceTableProps) {
-	const hasActions = Boolean(onEdit || onDelete);
-	const colSpan = columns.length + (hasActions ? 1 : 0);
+	const colSpan = columns.length;
 
 	return (
 		<div className={cn("rounded-lg border bg-card", className)} {...props}>
@@ -52,7 +46,6 @@ export function ResourceTable({
 						{columns.map((column) => (
 							<TableHead key={column.key}>{column.label}</TableHead>
 						))}
-						{hasActions && <TableHead className="text-right">操作</TableHead>}
 					</TableRow>
 				</TableHeader>
 				<TableBody>
@@ -89,8 +82,6 @@ export function ResourceTable({
 								columns={columns}
 								row={row}
 								resourceSlug={resourceSlug}
-								onEdit={onEdit}
-								onDelete={onDelete}
 							/>
 						))
 					)}

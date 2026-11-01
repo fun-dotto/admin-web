@@ -1,6 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { Pencil, Trash2 } from "lucide-react";
-import { Button } from "#/components/ui/button";
 import { TableCell, TableRow } from "#/components/ui/table";
 import type { ResourceTableColumn } from "./ResourceTable";
 
@@ -14,16 +12,12 @@ export type ResourceTableRowProps = {
 	row: ResourceTableRowData;
 	/** 指定すると行全体が詳細画面 (/$resource/$id) へのリンクになる */
 	resourceSlug?: string;
-	onEdit?: (id: string) => void;
-	onDelete?: (id: string) => void;
 };
 
 export function ResourceTableRow({
 	columns,
 	row,
 	resourceSlug,
-	onEdit,
-	onDelete,
 }: ResourceTableRowProps) {
 	return (
 		<TableRow className="relative">
@@ -47,33 +41,6 @@ export function ResourceTableRow({
 					)}
 				</TableCell>
 			))}
-			{(onEdit || onDelete) && (
-				<TableCell className="text-right">
-					<div className="relative z-10 flex justify-end gap-1">
-						{onEdit && (
-							<Button
-								variant="ghost"
-								size="icon-sm"
-								aria-label={`${row.id} を編集`}
-								onClick={() => onEdit(row.id)}
-							>
-								<Pencil />
-							</Button>
-						)}
-						{onDelete && (
-							<Button
-								variant="ghost"
-								size="icon-sm"
-								aria-label={`${row.id} を削除`}
-								className="text-destructive"
-								onClick={() => onDelete(row.id)}
-							>
-								<Trash2 />
-							</Button>
-						)}
-					</div>
-				</TableCell>
-			)}
 		</TableRow>
 	);
 }
