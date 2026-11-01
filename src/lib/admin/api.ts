@@ -23,6 +23,9 @@ export const callAdminApi = createServerFn({ method: "POST" })
 	.handler(async ({ data }): Promise<JsonObject> => {
 		const { ConnectError } = await import("@connectrpc/connect");
 		const { createConnectTransport } = await import("@connectrpc/connect-node");
+		const { createCfAccessInterceptor, readCfAccessCredentials } = await import(
+			"./cf-access"
+		);
 
 		const resource = findResource(data.slug);
 		const method = resource && findMethod(resource, data.operation);
@@ -36,7 +39,14 @@ export const callAdminApi = createServerFn({ method: "POST" })
 
 		// methodKind は上で検証済み
 		const unary = method as DescMethodUnary;
-		const transport = createConnectTransport({ baseUrl, httpVersion: "1.1" });
+		// Cloudflare Access の Service Token（未設定ならヘッダーを付けない）。
+		// ブラウザから届いた Cf-Access-Jwt-Assertion は aud が異なるので転送しない
+		const credentials = readCfAccessCredentials();
+		const transport = createConnectTransport({
+			baseUrl,
+			httpVersion: "1.1",
+			interceptors: credentials ? [createCfAccessInterceptor(credentials)] : [],
+		});
 		try {
 			const response = await transport.unary(
 				unary,

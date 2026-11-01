@@ -9,6 +9,19 @@ bun install
 bun --bun run dev
 ```
 
+## 環境変数
+
+`.env.example` を参考に設定する。いずれもサーバー側（`process.env`）でのみ読み、ブラウザには渡さない。
+
+| 変数 | 説明 |
+| --- | --- |
+| `ADMIN_API_URL` | Admin API の URL。Cloudflare 経由の公開ホスト名（例: `https://admin-api-dev.fun-dotto.com`） |
+| `CF_ACCESS_CLIENT_ID` | Cloudflare Access の Service Token の client ID。`CF-Access-Client-Id` ヘッダーで送る |
+| `CF_ACCESS_CLIENT_SECRET` | Cloudflare Access の Service Token の client secret。`CF-Access-Client-Secret` ヘッダーで送る |
+
+`CF_ACCESS_CLIENT_ID` と `CF_ACCESS_CLIENT_SECRET` は両方設定するか、両方未設定にする（片方だけだとエラー）。
+両方未設定ならヘッダーを付けないので、ローカルの admin-api に直接つなぐ開発時は空のままでよい。
+
 # Building For Production
 
 To build this application for production:
@@ -29,6 +42,12 @@ If you prefer not to use Tailwind CSS:
 2. Replace the Tailwind import in `src/styles.css` with your own styles
 3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
 4. Remove `@tailwindcss/vite` and `tailwindcss` from `package.json`
+
+## Testing
+
+```bash
+bun run test
+```
 
 ## Linting & Formatting
 
