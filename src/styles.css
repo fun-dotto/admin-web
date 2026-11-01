@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap');
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Design System 2026 (Figma) Color styles */
+  --label-primary: #252325;
+  --label-secondary: #6d676d;
+  --label-tertiary: #ffffff;
+  --background-primary: #f5f1f1;
+  --background-secondary: #ffffff;
+  --border-primary: #bcbcbc;
+  --border-secondary: #333131;
+  --accent-brand: #990000;
+  --accent-warning: #ff9500;
+  --accent-error: #f51f1f;
+  /* 接続先環境ごとのサイドバー色（デザインシステム外の管理画面専用色） */
+  --environment-production-subtle: #fde3e3;
+  --environment-staging-subtle: #ffe6c2;
+  --environment-development-subtle: #dfeafb;
+
+  /* shadcn/ui のセマンティックトークン: デザインシステムの色に割り当てる */
+  --background: var(--background-primary);
+  --foreground: var(--label-primary);
+  --card: var(--background-secondary);
+  --card-foreground: var(--label-primary);
+  --popover: var(--background-secondary);
+  --popover-foreground: var(--label-primary);
+  --primary: var(--accent-brand);
+  --primary-foreground: var(--label-tertiary);
+  --secondary: var(--background-secondary);
+  --secondary-foreground: var(--label-primary);
+  --muted: var(--background-primary);
+  --muted-foreground: var(--label-secondary);
+  --accent: var(--background-primary);
+  --accent-foreground: var(--label-primary);
+  --destructive: var(--accent-error);
+  --destructive-foreground: var(--accent-error);
+  --border: var(--border-primary);
+  --input: var(--border-primary);
+  --ring: var(--accent-brand);
+  --sidebar: var(--background-secondary);
+  --sidebar-foreground: var(--label-primary);
+  --sidebar-primary: var(--accent-brand);
+  --sidebar-primary-foreground: var(--label-tertiary);
+  --sidebar-accent: var(--background-primary);
+  --sidebar-accent-foreground: var(--label-primary);
+  --sidebar-border: var(--border-primary);
+  --sidebar-ring: var(--accent-brand);
+
+  --radius: 0.625rem;
+}
+
+.dark {
+  /* Figma にダークモードが未定義のためライトと同値 */
+  --label-primary: #252325;
+  --label-secondary: #6d676d;
+  --label-tertiary: #ffffff;
+  --background-primary: #f5f1f1;
+  --background-secondary: #ffffff;
+  --border-primary: #bcbcbc;
+  --border-secondary: #333131;
+  --accent-brand: #990000;
+  --accent-warning: #ff9500;
+  --accent-error: #f51f1f;
+  /* 接続先環境ごとのサイドバー色（デザインシステム外の管理画面専用色） */
+  --environment-production-subtle: #fde3e3;
+  --environment-staging-subtle: #ffe6c2;
+  --environment-development-subtle: #dfeafb;
+}
+
+@theme {
+  /* デザインシステム外の色・フォントを使わせないよう Tailwind 標準の値を無効化する */
+  --color-*: initial;
+  --font-*: initial;
+  --text-*: initial;
+  --font-weight-*: initial;
+}
+
+@theme inline {
+  /* Design System 2026 (Figma) Color styles */
+  --color-label-primary: var(--label-primary);
+  --color-label-secondary: var(--label-secondary);
+  --color-label-tertiary: var(--label-tertiary);
+  --color-background-primary: var(--background-primary);
+  --color-background-secondary: var(--background-secondary);
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+  --color-accent-brand: var(--accent-brand);
+  --color-accent-warning: var(--accent-warning);
+  --color-accent-error: var(--accent-error);
+
+  /* shadcn/ui のセマンティックトークン */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-environment-production-subtle: var(--environment-production-subtle);
+  --color-environment-staging-subtle: var(--environment-staging-subtle);
+  --color-environment-development-subtle: var(--environment-development-subtle);
+
+  /* Design System 2026 (Figma) Text styles */
+  --font-sans: 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --text-large-title: 22px;
+  --text-large-title--line-height: normal;
+  --text-large-title--font-weight: 400;
+  --text-title: 20px;
+  --text-title--line-height: normal;
+  --text-title--font-weight: 500;
+  --text-subtitle-1: 16px;
+  --text-subtitle-1--line-height: normal;
+  --text-subtitle-1--font-weight: 500;
+  --text-subtitle-2: 14px;
+  --text-subtitle-2--line-height: normal;
+  --text-subtitle-2--font-weight: 500;
+  --text-body: 14px;
+  --text-body--line-height: normal;
+  --text-body--font-weight: 400;
+  --text-caption-1: 12px;
+  --text-caption-1--line-height: normal;
+  --text-caption-1--font-weight: 400;
+  --text-caption-2: 10px;
+  --text-caption-2--line-height: normal;
+  --text-caption-2--font-weight: 400;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
