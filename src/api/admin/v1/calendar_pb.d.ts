@@ -13,55 +13,77 @@ import type { FieldMask } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_calendar: GenFile;
 
 /**
+ * 運行区分情報（GTFS の calendar）。
+ *
  * @generated from message admin.v1.Calendar
  */
 export declare type Calendar = Message<"admin.v1.Calendar"> & {
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 1;
    */
   serviceId: string;
 
   /**
+   * 月曜日に運行するか。
+   *
    * @generated from field: bool monday = 2;
    */
   monday: boolean;
 
   /**
+   * 火曜日に運行するか。
+   *
    * @generated from field: bool tuesday = 3;
    */
   tuesday: boolean;
 
   /**
+   * 水曜日に運行するか。
+   *
    * @generated from field: bool wednesday = 4;
    */
   wednesday: boolean;
 
   /**
+   * 木曜日に運行するか。
+   *
    * @generated from field: bool thursday = 5;
    */
   thursday: boolean;
 
   /**
+   * 金曜日に運行するか。
+   *
    * @generated from field: bool friday = 6;
    */
   friday: boolean;
 
   /**
+   * 土曜日に運行するか。
+   *
    * @generated from field: bool saturday = 7;
    */
   saturday: boolean;
 
   /**
+   * 日曜日に運行するか。
+   *
    * @generated from field: bool sunday = 8;
    */
   sunday: boolean;
 
   /**
+   * 適用開始日（GTFS の start_date）。
+   *
    * @generated from field: google.type.Date start_date = 9;
    */
   startDate?: Date | undefined;
 
   /**
+   * 適用終了日（GTFS の end_date）。
+   *
    * @generated from field: google.type.Date end_date = 10;
    */
   endDate?: Date | undefined;
@@ -74,15 +96,21 @@ export declare type Calendar = Message<"admin.v1.Calendar"> & {
 export declare const CalendarSchema: GenMessage<Calendar>;
 
 /**
+ * ListCalendars の Request。
+ *
  * @generated from message admin.v1.ListCalendarsRequest
  */
 export declare type ListCalendarsRequest = Message<"admin.v1.ListCalendarsRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -95,15 +123,21 @@ export declare type ListCalendarsRequest = Message<"admin.v1.ListCalendarsReques
 export declare const ListCalendarsRequestSchema: GenMessage<ListCalendarsRequest>;
 
 /**
+ * ListCalendars の Response。
+ *
  * @generated from message admin.v1.ListCalendarsResponse
  */
 export declare type ListCalendarsResponse = Message<"admin.v1.ListCalendarsResponse"> & {
   /**
+   * 運行区分情報（GTFS の calendar）の一覧。
+   *
    * @generated from field: repeated admin.v1.Calendar calendars = 1;
    */
   calendars: Calendar[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -116,10 +150,14 @@ export declare type ListCalendarsResponse = Message<"admin.v1.ListCalendarsRespo
 export declare const ListCalendarsResponseSchema: GenMessage<ListCalendarsResponse>;
 
 /**
+ * GetCalendar の Request。
+ *
  * @generated from message admin.v1.GetCalendarRequest
  */
 export declare type GetCalendarRequest = Message<"admin.v1.GetCalendarRequest"> & {
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 1;
    */
   serviceId: string;
@@ -132,10 +170,14 @@ export declare type GetCalendarRequest = Message<"admin.v1.GetCalendarRequest"> 
 export declare const GetCalendarRequestSchema: GenMessage<GetCalendarRequest>;
 
 /**
+ * GetCalendar の Response。
+ *
  * @generated from message admin.v1.GetCalendarResponse
  */
 export declare type GetCalendarResponse = Message<"admin.v1.GetCalendarResponse"> & {
   /**
+   * 取得した運行区分情報（GTFS の calendar）。
+   *
    * @generated from field: admin.v1.Calendar calendar = 1;
    */
   calendar?: Calendar | undefined;
@@ -148,55 +190,77 @@ export declare type GetCalendarResponse = Message<"admin.v1.GetCalendarResponse"
 export declare const GetCalendarResponseSchema: GenMessage<GetCalendarResponse>;
 
 /**
+ * CreateCalendar の Request。
+ *
  * @generated from message admin.v1.CreateCalendarRequest
  */
 export declare type CreateCalendarRequest = Message<"admin.v1.CreateCalendarRequest"> & {
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 1;
    */
   serviceId: string;
 
   /**
+   * 月曜日に運行するか。
+   *
    * @generated from field: bool monday = 2;
    */
   monday: boolean;
 
   /**
+   * 火曜日に運行するか。
+   *
    * @generated from field: bool tuesday = 3;
    */
   tuesday: boolean;
 
   /**
+   * 水曜日に運行するか。
+   *
    * @generated from field: bool wednesday = 4;
    */
   wednesday: boolean;
 
   /**
+   * 木曜日に運行するか。
+   *
    * @generated from field: bool thursday = 5;
    */
   thursday: boolean;
 
   /**
+   * 金曜日に運行するか。
+   *
    * @generated from field: bool friday = 6;
    */
   friday: boolean;
 
   /**
+   * 土曜日に運行するか。
+   *
    * @generated from field: bool saturday = 7;
    */
   saturday: boolean;
 
   /**
+   * 日曜日に運行するか。
+   *
    * @generated from field: bool sunday = 8;
    */
   sunday: boolean;
 
   /**
+   * 適用開始日（GTFS の start_date）。
+   *
    * @generated from field: google.type.Date start_date = 9;
    */
   startDate?: Date | undefined;
 
   /**
+   * 適用終了日（GTFS の end_date）。
+   *
    * @generated from field: google.type.Date end_date = 10;
    */
   endDate?: Date | undefined;
@@ -209,10 +273,14 @@ export declare type CreateCalendarRequest = Message<"admin.v1.CreateCalendarRequ
 export declare const CreateCalendarRequestSchema: GenMessage<CreateCalendarRequest>;
 
 /**
+ * CreateCalendar の Response。
+ *
  * @generated from message admin.v1.CreateCalendarResponse
  */
 export declare type CreateCalendarResponse = Message<"admin.v1.CreateCalendarResponse"> & {
   /**
+   * 作成した運行区分情報（GTFS の calendar）。
+   *
    * @generated from field: admin.v1.Calendar calendar = 1;
    */
   calendar?: Calendar | undefined;
@@ -225,60 +293,84 @@ export declare type CreateCalendarResponse = Message<"admin.v1.CreateCalendarRes
 export declare const CreateCalendarResponseSchema: GenMessage<CreateCalendarResponse>;
 
 /**
+ * UpdateCalendar の Request。
+ *
  * @generated from message admin.v1.UpdateCalendarRequest
  */
 export declare type UpdateCalendarRequest = Message<"admin.v1.UpdateCalendarRequest"> & {
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 1;
    */
   serviceId: string;
 
   /**
+   * 月曜日に運行するか。
+   *
    * @generated from field: bool monday = 2;
    */
   monday: boolean;
 
   /**
+   * 火曜日に運行するか。
+   *
    * @generated from field: bool tuesday = 3;
    */
   tuesday: boolean;
 
   /**
+   * 水曜日に運行するか。
+   *
    * @generated from field: bool wednesday = 4;
    */
   wednesday: boolean;
 
   /**
+   * 木曜日に運行するか。
+   *
    * @generated from field: bool thursday = 5;
    */
   thursday: boolean;
 
   /**
+   * 金曜日に運行するか。
+   *
    * @generated from field: bool friday = 6;
    */
   friday: boolean;
 
   /**
+   * 土曜日に運行するか。
+   *
    * @generated from field: bool saturday = 7;
    */
   saturday: boolean;
 
   /**
+   * 日曜日に運行するか。
+   *
    * @generated from field: bool sunday = 8;
    */
   sunday: boolean;
 
   /**
+   * 適用開始日（GTFS の start_date）。
+   *
    * @generated from field: google.type.Date start_date = 9;
    */
   startDate?: Date | undefined;
 
   /**
+   * 適用終了日（GTFS の end_date）。
+   *
    * @generated from field: google.type.Date end_date = 10;
    */
   endDate?: Date | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -291,10 +383,14 @@ export declare type UpdateCalendarRequest = Message<"admin.v1.UpdateCalendarRequ
 export declare const UpdateCalendarRequestSchema: GenMessage<UpdateCalendarRequest>;
 
 /**
+ * UpdateCalendar の Response。
+ *
  * @generated from message admin.v1.UpdateCalendarResponse
  */
 export declare type UpdateCalendarResponse = Message<"admin.v1.UpdateCalendarResponse"> & {
   /**
+   * 更新した運行区分情報（GTFS の calendar）。
+   *
    * @generated from field: admin.v1.Calendar calendar = 1;
    */
   calendar?: Calendar | undefined;
@@ -307,10 +403,14 @@ export declare type UpdateCalendarResponse = Message<"admin.v1.UpdateCalendarRes
 export declare const UpdateCalendarResponseSchema: GenMessage<UpdateCalendarResponse>;
 
 /**
+ * DeleteCalendar の Request。
+ *
  * @generated from message admin.v1.DeleteCalendarRequest
  */
 export declare type DeleteCalendarRequest = Message<"admin.v1.DeleteCalendarRequest"> & {
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 1;
    */
   serviceId: string;
@@ -323,6 +423,8 @@ export declare type DeleteCalendarRequest = Message<"admin.v1.DeleteCalendarRequ
 export declare const DeleteCalendarRequestSchema: GenMessage<DeleteCalendarRequest>;
 
 /**
+ * DeleteCalendar の Response。
+ *
  * @generated from message admin.v1.DeleteCalendarResponse
  */
 export declare type DeleteCalendarResponse = Message<"admin.v1.DeleteCalendarResponse"> & {
@@ -335,10 +437,14 @@ export declare type DeleteCalendarResponse = Message<"admin.v1.DeleteCalendarRes
 export declare const DeleteCalendarResponseSchema: GenMessage<DeleteCalendarResponse>;
 
 /**
+ * 運行区分情報（GTFS の calendar）を管理する。
+ *
  * @generated from service admin.v1.CalendarService
  */
 export declare const CalendarService: GenService<{
   /**
+   * 運行区分情報（GTFS の calendar）の一覧を取得する。
+   *
    * @generated from rpc admin.v1.CalendarService.ListCalendars
    */
   listCalendars: {
@@ -347,6 +453,8 @@ export declare const CalendarService: GenService<{
     output: typeof ListCalendarsResponseSchema;
   },
   /**
+   * 運行区分情報（GTFS の calendar）を取得する。
+   *
    * @generated from rpc admin.v1.CalendarService.GetCalendar
    */
   getCalendar: {
@@ -355,6 +463,8 @@ export declare const CalendarService: GenService<{
     output: typeof GetCalendarResponseSchema;
   },
   /**
+   * 運行区分情報（GTFS の calendar）を作成する。
+   *
    * @generated from rpc admin.v1.CalendarService.CreateCalendar
    */
   createCalendar: {
@@ -363,6 +473,8 @@ export declare const CalendarService: GenService<{
     output: typeof CreateCalendarResponseSchema;
   },
   /**
+   * 運行区分情報（GTFS の calendar）を更新する。
+   *
    * @generated from rpc admin.v1.CalendarService.UpdateCalendar
    */
   updateCalendar: {
@@ -371,6 +483,8 @@ export declare const CalendarService: GenService<{
     output: typeof UpdateCalendarResponseSchema;
   },
   /**
+   * 運行区分情報（GTFS の calendar）を削除する。
+   *
    * @generated from rpc admin.v1.CalendarService.DeleteCalendar
    */
   deleteCalendar: {

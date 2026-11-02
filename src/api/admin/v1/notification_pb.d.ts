@@ -12,90 +12,126 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_notification: GenFile;
 
 /**
+ * 通知。
+ *
  * @generated from message admin.v1.Notification
  */
 export declare type Notification = Message<"admin.v1.Notification"> & {
   /**
+   * ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 通知タイトル。
+   *
    * @generated from field: string title = 2;
    */
   title: string;
 
   /**
+   * 通知本文。
+   *
    * @generated from field: string body = 3;
    */
   body: string;
 
   /**
+   * 通知に表示する画像のURL。
+   *
    * @generated from field: optional string image_url = 4;
    */
   imageUrl?: string | undefined;
 
   /**
+   * Firebase Analytics に記録する分析ラベル。通知の開封率計測などに利用する。
+   *
    * @generated from field: optional string analytics_label = 5;
    */
   analyticsLabel?: string | undefined;
 
   /**
+   * APNs のバッジ数。アプリアイコンに表示される数値。0 でバッジを消去する。
+   *
    * @generated from field: optional int32 apns_badge = 6;
    */
   apnsBadge?: number | undefined;
 
   /**
+   * APNs の通知音。
+   *
    * @generated from field: optional string apns_sound = 7;
    */
   apnsSound?: string | undefined;
 
   /**
+   * APNs の content-available フラグ。true でサイレントプッシュ（バックグラウンド更新）になる。
+   *
    * @generated from field: optional bool apns_content_available = 8;
    */
   apnsContentAvailable?: boolean | undefined;
 
   /**
+   * Android の通知チャンネルID。Android 8.0 以降、通知はチャンネル単位で管理される。
+   *
    * @generated from field: optional string android_channel_id = 9;
    */
   androidChannelId?: string | undefined;
 
   /**
+   * Android の通知優先度。
+   *
    * @generated from field: optional admin.v1.NotificationAndroidPriority android_priority = 10;
    */
   androidPriority?: NotificationAndroidPriority | undefined;
 
   /**
+   * Android の通知TTL（秒）。FCM がメッセージを保持する最大時間で、期限切れで破棄される。
+   *
    * @generated from field: optional int32 android_ttl_seconds = 11;
    */
   androidTtlSeconds?: number | undefined;
 
   /**
+   * Web Push 通知をクリックした際に開くURL。
+   *
    * @generated from field: optional string webpush_link = 12;
    */
   webpushLink?: string | undefined;
 
   /**
+   * 通知をタップした時に開くURL。アプリを開くのみの場合は未設定。
+   *
    * @generated from field: optional string url = 13;
    */
   url?: string | undefined;
 
   /**
+   * 通知送信可能になる日時（この時刻以降に送信対象となる）。
+   *
    * @generated from field: google.protobuf.Timestamp notify_after = 14;
    */
   notifyAfter?: Timestamp | undefined;
 
   /**
+   * 通知送信期限日時（この時刻を過ぎた場合は送信しない）。
+   *
    * @generated from field: google.protobuf.Timestamp notify_before = 15;
    */
   notifyBefore?: Timestamp | undefined;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 16;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 17;
    */
   updatedAt?: Timestamp | undefined;
@@ -108,15 +144,21 @@ export declare type Notification = Message<"admin.v1.Notification"> & {
 export declare const NotificationSchema: GenMessage<Notification>;
 
 /**
+ * ListNotifications の Request。
+ *
  * @generated from message admin.v1.ListNotificationsRequest
  */
 export declare type ListNotificationsRequest = Message<"admin.v1.ListNotificationsRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -129,15 +171,21 @@ export declare type ListNotificationsRequest = Message<"admin.v1.ListNotificatio
 export declare const ListNotificationsRequestSchema: GenMessage<ListNotificationsRequest>;
 
 /**
+ * ListNotifications の Response。
+ *
  * @generated from message admin.v1.ListNotificationsResponse
  */
 export declare type ListNotificationsResponse = Message<"admin.v1.ListNotificationsResponse"> & {
   /**
+   * 通知の一覧。
+   *
    * @generated from field: repeated admin.v1.Notification notifications = 1;
    */
   notifications: Notification[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -150,10 +198,14 @@ export declare type ListNotificationsResponse = Message<"admin.v1.ListNotificati
 export declare const ListNotificationsResponseSchema: GenMessage<ListNotificationsResponse>;
 
 /**
+ * GetNotification の Request。
+ *
  * @generated from message admin.v1.GetNotificationRequest
  */
 export declare type GetNotificationRequest = Message<"admin.v1.GetNotificationRequest"> & {
   /**
+   * 取得する通知ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -166,10 +218,14 @@ export declare type GetNotificationRequest = Message<"admin.v1.GetNotificationRe
 export declare const GetNotificationRequestSchema: GenMessage<GetNotificationRequest>;
 
 /**
+ * GetNotification の Response。
+ *
  * @generated from message admin.v1.GetNotificationResponse
  */
 export declare type GetNotificationResponse = Message<"admin.v1.GetNotificationResponse"> & {
   /**
+   * 取得した通知。
+   *
    * @generated from field: admin.v1.Notification notification = 1;
    */
   notification?: Notification | undefined;
@@ -182,75 +238,105 @@ export declare type GetNotificationResponse = Message<"admin.v1.GetNotificationR
 export declare const GetNotificationResponseSchema: GenMessage<GetNotificationResponse>;
 
 /**
+ * CreateNotification の Request。
+ *
  * @generated from message admin.v1.CreateNotificationRequest
  */
 export declare type CreateNotificationRequest = Message<"admin.v1.CreateNotificationRequest"> & {
   /**
+   * 通知タイトル。
+   *
    * @generated from field: string title = 1;
    */
   title: string;
 
   /**
+   * 通知本文。
+   *
    * @generated from field: string body = 2;
    */
   body: string;
 
   /**
+   * 通知に表示する画像のURL。
+   *
    * @generated from field: optional string image_url = 3;
    */
   imageUrl?: string | undefined;
 
   /**
+   * Firebase Analytics に記録する分析ラベル。通知の開封率計測などに利用する。
+   *
    * @generated from field: optional string analytics_label = 4;
    */
   analyticsLabel?: string | undefined;
 
   /**
+   * APNs のバッジ数。アプリアイコンに表示される数値。0 でバッジを消去する。
+   *
    * @generated from field: optional int32 apns_badge = 5;
    */
   apnsBadge?: number | undefined;
 
   /**
+   * APNs の通知音。
+   *
    * @generated from field: optional string apns_sound = 6;
    */
   apnsSound?: string | undefined;
 
   /**
+   * APNs の content-available フラグ。true でサイレントプッシュ（バックグラウンド更新）になる。
+   *
    * @generated from field: optional bool apns_content_available = 7;
    */
   apnsContentAvailable?: boolean | undefined;
 
   /**
+   * Android の通知チャンネルID。Android 8.0 以降、通知はチャンネル単位で管理される。
+   *
    * @generated from field: optional string android_channel_id = 8;
    */
   androidChannelId?: string | undefined;
 
   /**
+   * Android の通知優先度。
+   *
    * @generated from field: optional admin.v1.NotificationAndroidPriority android_priority = 9;
    */
   androidPriority?: NotificationAndroidPriority | undefined;
 
   /**
+   * Android の通知TTL（秒）。FCM がメッセージを保持する最大時間で、期限切れで破棄される。
+   *
    * @generated from field: optional int32 android_ttl_seconds = 10;
    */
   androidTtlSeconds?: number | undefined;
 
   /**
+   * Web Push 通知をクリックした際に開くURL。
+   *
    * @generated from field: optional string webpush_link = 11;
    */
   webpushLink?: string | undefined;
 
   /**
+   * 通知をタップした時に開くURL。アプリを開くのみの場合は未設定。
+   *
    * @generated from field: optional string url = 12;
    */
   url?: string | undefined;
 
   /**
+   * 通知送信可能になる日時（この時刻以降に送信対象となる）。
+   *
    * @generated from field: google.protobuf.Timestamp notify_after = 13;
    */
   notifyAfter?: Timestamp | undefined;
 
   /**
+   * 通知送信期限日時（この時刻を過ぎた場合は送信しない）。
+   *
    * @generated from field: google.protobuf.Timestamp notify_before = 14;
    */
   notifyBefore?: Timestamp | undefined;
@@ -263,10 +349,14 @@ export declare type CreateNotificationRequest = Message<"admin.v1.CreateNotifica
 export declare const CreateNotificationRequestSchema: GenMessage<CreateNotificationRequest>;
 
 /**
+ * CreateNotification の Response。
+ *
  * @generated from message admin.v1.CreateNotificationResponse
  */
 export declare type CreateNotificationResponse = Message<"admin.v1.CreateNotificationResponse"> & {
   /**
+   * 作成した通知。
+   *
    * @generated from field: admin.v1.Notification notification = 1;
    */
   notification?: Notification | undefined;
@@ -279,85 +369,119 @@ export declare type CreateNotificationResponse = Message<"admin.v1.CreateNotific
 export declare const CreateNotificationResponseSchema: GenMessage<CreateNotificationResponse>;
 
 /**
+ * UpdateNotification の Request。
+ *
  * @generated from message admin.v1.UpdateNotificationRequest
  */
 export declare type UpdateNotificationRequest = Message<"admin.v1.UpdateNotificationRequest"> & {
   /**
+   * 更新する通知ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 通知タイトル。
+   *
    * @generated from field: string title = 2;
    */
   title: string;
 
   /**
+   * 通知本文。
+   *
    * @generated from field: string body = 3;
    */
   body: string;
 
   /**
+   * 通知に表示する画像のURL。
+   *
    * @generated from field: optional string image_url = 4;
    */
   imageUrl?: string | undefined;
 
   /**
+   * Firebase Analytics に記録する分析ラベル。通知の開封率計測などに利用する。
+   *
    * @generated from field: optional string analytics_label = 5;
    */
   analyticsLabel?: string | undefined;
 
   /**
+   * APNs のバッジ数。アプリアイコンに表示される数値。0 でバッジを消去する。
+   *
    * @generated from field: optional int32 apns_badge = 6;
    */
   apnsBadge?: number | undefined;
 
   /**
+   * APNs の通知音。
+   *
    * @generated from field: optional string apns_sound = 7;
    */
   apnsSound?: string | undefined;
 
   /**
+   * APNs の content-available フラグ。true でサイレントプッシュ（バックグラウンド更新）になる。
+   *
    * @generated from field: optional bool apns_content_available = 8;
    */
   apnsContentAvailable?: boolean | undefined;
 
   /**
+   * Android の通知チャンネルID。Android 8.0 以降、通知はチャンネル単位で管理される。
+   *
    * @generated from field: optional string android_channel_id = 9;
    */
   androidChannelId?: string | undefined;
 
   /**
+   * Android の通知優先度。
+   *
    * @generated from field: optional admin.v1.NotificationAndroidPriority android_priority = 10;
    */
   androidPriority?: NotificationAndroidPriority | undefined;
 
   /**
+   * Android の通知TTL（秒）。FCM がメッセージを保持する最大時間で、期限切れで破棄される。
+   *
    * @generated from field: optional int32 android_ttl_seconds = 11;
    */
   androidTtlSeconds?: number | undefined;
 
   /**
+   * Web Push 通知をクリックした際に開くURL。
+   *
    * @generated from field: optional string webpush_link = 12;
    */
   webpushLink?: string | undefined;
 
   /**
+   * 通知をタップした時に開くURL。アプリを開くのみの場合は未設定。
+   *
    * @generated from field: optional string url = 13;
    */
   url?: string | undefined;
 
   /**
+   * 通知送信可能になる日時（この時刻以降に送信対象となる）。
+   *
    * @generated from field: google.protobuf.Timestamp notify_after = 14;
    */
   notifyAfter?: Timestamp | undefined;
 
   /**
+   * 通知送信期限日時（この時刻を過ぎた場合は送信しない）。
+   *
    * @generated from field: google.protobuf.Timestamp notify_before = 15;
    */
   notifyBefore?: Timestamp | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -370,10 +494,14 @@ export declare type UpdateNotificationRequest = Message<"admin.v1.UpdateNotifica
 export declare const UpdateNotificationRequestSchema: GenMessage<UpdateNotificationRequest>;
 
 /**
+ * UpdateNotification の Response。
+ *
  * @generated from message admin.v1.UpdateNotificationResponse
  */
 export declare type UpdateNotificationResponse = Message<"admin.v1.UpdateNotificationResponse"> & {
   /**
+   * 更新した通知。
+   *
    * @generated from field: admin.v1.Notification notification = 1;
    */
   notification?: Notification | undefined;
@@ -386,10 +514,14 @@ export declare type UpdateNotificationResponse = Message<"admin.v1.UpdateNotific
 export declare const UpdateNotificationResponseSchema: GenMessage<UpdateNotificationResponse>;
 
 /**
+ * DeleteNotification の Request。
+ *
  * @generated from message admin.v1.DeleteNotificationRequest
  */
 export declare type DeleteNotificationRequest = Message<"admin.v1.DeleteNotificationRequest"> & {
   /**
+   * 削除する通知ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -402,6 +534,8 @@ export declare type DeleteNotificationRequest = Message<"admin.v1.DeleteNotifica
 export declare const DeleteNotificationRequestSchema: GenMessage<DeleteNotificationRequest>;
 
 /**
+ * DeleteNotification の Response。
+ *
  * @generated from message admin.v1.DeleteNotificationResponse
  */
 export declare type DeleteNotificationResponse = Message<"admin.v1.DeleteNotificationResponse"> & {
@@ -414,20 +548,28 @@ export declare type DeleteNotificationResponse = Message<"admin.v1.DeleteNotific
 export declare const DeleteNotificationResponseSchema: GenMessage<DeleteNotificationResponse>;
 
 /**
+ * Android の通知優先度。
+ *
  * @generated from enum admin.v1.NotificationAndroidPriority
  */
 export enum NotificationAndroidPriority {
   /**
+   * 未指定。
+   *
    * @generated from enum value: NOTIFICATION_ANDROID_PRIORITY_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 通常。
+   *
    * @generated from enum value: NOTIFICATION_ANDROID_PRIORITY_NORMAL = 1;
    */
   NORMAL = 1,
 
   /**
+   * 高。
+   *
    * @generated from enum value: NOTIFICATION_ANDROID_PRIORITY_HIGH = 2;
    */
   HIGH = 2,
@@ -439,10 +581,14 @@ export enum NotificationAndroidPriority {
 export declare const NotificationAndroidPrioritySchema: GenEnum<NotificationAndroidPriority>;
 
 /**
+ * 通知を管理する。
+ *
  * @generated from service admin.v1.NotificationService
  */
 export declare const NotificationService: GenService<{
   /**
+   * 通知の一覧を取得する。
+   *
    * @generated from rpc admin.v1.NotificationService.ListNotifications
    */
   listNotifications: {
@@ -451,6 +597,8 @@ export declare const NotificationService: GenService<{
     output: typeof ListNotificationsResponseSchema;
   },
   /**
+   * 通知を取得する。
+   *
    * @generated from rpc admin.v1.NotificationService.GetNotification
    */
   getNotification: {
@@ -459,6 +607,8 @@ export declare const NotificationService: GenService<{
     output: typeof GetNotificationResponseSchema;
   },
   /**
+   * 通知を作成する。
+   *
    * @generated from rpc admin.v1.NotificationService.CreateNotification
    */
   createNotification: {
@@ -467,6 +617,8 @@ export declare const NotificationService: GenService<{
     output: typeof CreateNotificationResponseSchema;
   },
   /**
+   * 通知を更新する。
+   *
    * @generated from rpc admin.v1.NotificationService.UpdateNotification
    */
   updateNotification: {
@@ -475,6 +627,8 @@ export declare const NotificationService: GenService<{
     output: typeof UpdateNotificationResponseSchema;
   },
   /**
+   * 通知を削除する。
+   *
    * @generated from rpc admin.v1.NotificationService.DeleteNotification
    */
   deleteNotification: {

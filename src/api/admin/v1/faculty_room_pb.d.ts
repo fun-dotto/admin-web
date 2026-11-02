@@ -12,30 +12,42 @@ import type { Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_faculty_room: GenFile;
 
 /**
+ * 教員室。
+ *
  * @generated from message admin.v1.FacultyRoom
  */
 export declare type FacultyRoom = Message<"admin.v1.FacultyRoom"> & {
   /**
+   * 教員ID。
+   *
    * @generated from field: string faculty_id = 1;
    */
   facultyId: string;
 
   /**
+   * 教室ID。
+   *
    * @generated from field: string room_id = 2;
    */
   roomId: string;
 
   /**
+   * 年度。
+   *
    * @generated from field: int32 year = 3;
    */
   year: number;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 4;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 5;
    */
   updatedAt?: Timestamp | undefined;
@@ -48,15 +60,21 @@ export declare type FacultyRoom = Message<"admin.v1.FacultyRoom"> & {
 export declare const FacultyRoomSchema: GenMessage<FacultyRoom>;
 
 /**
+ * ListFacultyRooms の Request。
+ *
  * @generated from message admin.v1.ListFacultyRoomsRequest
  */
 export declare type ListFacultyRoomsRequest = Message<"admin.v1.ListFacultyRoomsRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -69,15 +87,21 @@ export declare type ListFacultyRoomsRequest = Message<"admin.v1.ListFacultyRooms
 export declare const ListFacultyRoomsRequestSchema: GenMessage<ListFacultyRoomsRequest>;
 
 /**
+ * ListFacultyRooms の Response。
+ *
  * @generated from message admin.v1.ListFacultyRoomsResponse
  */
 export declare type ListFacultyRoomsResponse = Message<"admin.v1.ListFacultyRoomsResponse"> & {
   /**
+   * 教員室の一覧。
+   *
    * @generated from field: repeated admin.v1.FacultyRoom faculty_rooms = 1;
    */
   facultyRooms: FacultyRoom[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -90,20 +114,28 @@ export declare type ListFacultyRoomsResponse = Message<"admin.v1.ListFacultyRoom
 export declare const ListFacultyRoomsResponseSchema: GenMessage<ListFacultyRoomsResponse>;
 
 /**
+ * GetFacultyRoom の Request。
+ *
  * @generated from message admin.v1.GetFacultyRoomRequest
  */
 export declare type GetFacultyRoomRequest = Message<"admin.v1.GetFacultyRoomRequest"> & {
   /**
+   * 教員ID。
+   *
    * @generated from field: string faculty_id = 1;
    */
   facultyId: string;
 
   /**
+   * 教室ID。
+   *
    * @generated from field: string room_id = 2;
    */
   roomId: string;
 
   /**
+   * 年度。
+   *
    * @generated from field: int32 year = 3;
    */
   year: number;
@@ -116,10 +148,14 @@ export declare type GetFacultyRoomRequest = Message<"admin.v1.GetFacultyRoomRequ
 export declare const GetFacultyRoomRequestSchema: GenMessage<GetFacultyRoomRequest>;
 
 /**
+ * GetFacultyRoom の Response。
+ *
  * @generated from message admin.v1.GetFacultyRoomResponse
  */
 export declare type GetFacultyRoomResponse = Message<"admin.v1.GetFacultyRoomResponse"> & {
   /**
+   * 取得した教員室。
+   *
    * @generated from field: admin.v1.FacultyRoom faculty_room = 1;
    */
   facultyRoom?: FacultyRoom | undefined;
@@ -132,20 +168,28 @@ export declare type GetFacultyRoomResponse = Message<"admin.v1.GetFacultyRoomRes
 export declare const GetFacultyRoomResponseSchema: GenMessage<GetFacultyRoomResponse>;
 
 /**
+ * CreateFacultyRoom の Request。
+ *
  * @generated from message admin.v1.CreateFacultyRoomRequest
  */
 export declare type CreateFacultyRoomRequest = Message<"admin.v1.CreateFacultyRoomRequest"> & {
   /**
+   * 教員ID。
+   *
    * @generated from field: string faculty_id = 1;
    */
   facultyId: string;
 
   /**
+   * 教室ID。
+   *
    * @generated from field: string room_id = 2;
    */
   roomId: string;
 
   /**
+   * 年度。
+   *
    * @generated from field: int32 year = 3;
    */
   year: number;
@@ -158,10 +202,14 @@ export declare type CreateFacultyRoomRequest = Message<"admin.v1.CreateFacultyRo
 export declare const CreateFacultyRoomRequestSchema: GenMessage<CreateFacultyRoomRequest>;
 
 /**
+ * CreateFacultyRoom の Response。
+ *
  * @generated from message admin.v1.CreateFacultyRoomResponse
  */
 export declare type CreateFacultyRoomResponse = Message<"admin.v1.CreateFacultyRoomResponse"> & {
   /**
+   * 作成した教員室。
+   *
    * @generated from field: admin.v1.FacultyRoom faculty_room = 1;
    */
   facultyRoom?: FacultyRoom | undefined;
@@ -174,20 +222,28 @@ export declare type CreateFacultyRoomResponse = Message<"admin.v1.CreateFacultyR
 export declare const CreateFacultyRoomResponseSchema: GenMessage<CreateFacultyRoomResponse>;
 
 /**
+ * DeleteFacultyRoom の Request。
+ *
  * @generated from message admin.v1.DeleteFacultyRoomRequest
  */
 export declare type DeleteFacultyRoomRequest = Message<"admin.v1.DeleteFacultyRoomRequest"> & {
   /**
+   * 教員ID。
+   *
    * @generated from field: string faculty_id = 1;
    */
   facultyId: string;
 
   /**
+   * 教室ID。
+   *
    * @generated from field: string room_id = 2;
    */
   roomId: string;
 
   /**
+   * 年度。
+   *
    * @generated from field: int32 year = 3;
    */
   year: number;
@@ -200,6 +256,8 @@ export declare type DeleteFacultyRoomRequest = Message<"admin.v1.DeleteFacultyRo
 export declare const DeleteFacultyRoomRequestSchema: GenMessage<DeleteFacultyRoomRequest>;
 
 /**
+ * DeleteFacultyRoom の Response。
+ *
  * @generated from message admin.v1.DeleteFacultyRoomResponse
  */
 export declare type DeleteFacultyRoomResponse = Message<"admin.v1.DeleteFacultyRoomResponse"> & {
@@ -212,10 +270,14 @@ export declare type DeleteFacultyRoomResponse = Message<"admin.v1.DeleteFacultyR
 export declare const DeleteFacultyRoomResponseSchema: GenMessage<DeleteFacultyRoomResponse>;
 
 /**
+ * 教員室を管理する。
+ *
  * @generated from service admin.v1.FacultyRoomService
  */
 export declare const FacultyRoomService: GenService<{
   /**
+   * 教員室の一覧を取得する。
+   *
    * @generated from rpc admin.v1.FacultyRoomService.ListFacultyRooms
    */
   listFacultyRooms: {
@@ -224,6 +286,8 @@ export declare const FacultyRoomService: GenService<{
     output: typeof ListFacultyRoomsResponseSchema;
   },
   /**
+   * 教員室を取得する。
+   *
    * @generated from rpc admin.v1.FacultyRoomService.GetFacultyRoom
    */
   getFacultyRoom: {
@@ -232,6 +296,8 @@ export declare const FacultyRoomService: GenService<{
     output: typeof GetFacultyRoomResponseSchema;
   },
   /**
+   * 教員室を作成する。
+   *
    * @generated from rpc admin.v1.FacultyRoomService.CreateFacultyRoom
    */
   createFacultyRoom: {
@@ -240,6 +306,8 @@ export declare const FacultyRoomService: GenService<{
     output: typeof CreateFacultyRoomResponseSchema;
   },
   /**
+   * 教員室を削除する。
+   *
    * @generated from rpc admin.v1.FacultyRoomService.DeleteFacultyRoom
    */
   deleteFacultyRoom: {

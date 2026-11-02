@@ -13,25 +13,35 @@ import type { FieldMask } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_stop: GenFile;
 
 /**
+ * 停留所・標柱情報（GTFS の stops）。
+ *
  * @generated from message admin.v1.Stop
  */
 export declare type Stop = Message<"admin.v1.Stop"> & {
   /**
+   * 停留所・標柱ID（GTFS の stop_id）。
+   *
    * @generated from field: string stop_id = 1;
    */
   stopId: string;
 
   /**
+   * 停留所・標柱名称（GTFS の stop_name）。
+   *
    * @generated from field: string stop_name = 2;
    */
   stopName: string;
 
   /**
+   * 緯度・経度（GTFS の stop_lat / stop_lon）。
+   *
    * @generated from field: google.type.LatLng stop_location = 3;
    */
   stopLocation?: LatLng | undefined;
 
   /**
+   * 運賃エリアID（GTFS の zone_id）。
+   *
    * @generated from field: optional string zone_id = 4;
    */
   zoneId?: string | undefined;
@@ -44,15 +54,21 @@ export declare type Stop = Message<"admin.v1.Stop"> & {
 export declare const StopSchema: GenMessage<Stop>;
 
 /**
+ * ListStops の Request。
+ *
  * @generated from message admin.v1.ListStopsRequest
  */
 export declare type ListStopsRequest = Message<"admin.v1.ListStopsRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -65,15 +81,21 @@ export declare type ListStopsRequest = Message<"admin.v1.ListStopsRequest"> & {
 export declare const ListStopsRequestSchema: GenMessage<ListStopsRequest>;
 
 /**
+ * ListStops の Response。
+ *
  * @generated from message admin.v1.ListStopsResponse
  */
 export declare type ListStopsResponse = Message<"admin.v1.ListStopsResponse"> & {
   /**
+   * 停留所・標柱情報（GTFS の stops）の一覧。
+   *
    * @generated from field: repeated admin.v1.Stop stops = 1;
    */
   stops: Stop[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -86,10 +108,14 @@ export declare type ListStopsResponse = Message<"admin.v1.ListStopsResponse"> & 
 export declare const ListStopsResponseSchema: GenMessage<ListStopsResponse>;
 
 /**
+ * GetStop の Request。
+ *
  * @generated from message admin.v1.GetStopRequest
  */
 export declare type GetStopRequest = Message<"admin.v1.GetStopRequest"> & {
   /**
+   * 停留所・標柱ID（GTFS の stop_id）。
+   *
    * @generated from field: string stop_id = 1;
    */
   stopId: string;
@@ -102,10 +128,14 @@ export declare type GetStopRequest = Message<"admin.v1.GetStopRequest"> & {
 export declare const GetStopRequestSchema: GenMessage<GetStopRequest>;
 
 /**
+ * GetStop の Response。
+ *
  * @generated from message admin.v1.GetStopResponse
  */
 export declare type GetStopResponse = Message<"admin.v1.GetStopResponse"> & {
   /**
+   * 取得した停留所・標柱情報（GTFS の stops）。
+   *
    * @generated from field: admin.v1.Stop stop = 1;
    */
   stop?: Stop | undefined;
@@ -118,25 +148,35 @@ export declare type GetStopResponse = Message<"admin.v1.GetStopResponse"> & {
 export declare const GetStopResponseSchema: GenMessage<GetStopResponse>;
 
 /**
+ * CreateStop の Request。
+ *
  * @generated from message admin.v1.CreateStopRequest
  */
 export declare type CreateStopRequest = Message<"admin.v1.CreateStopRequest"> & {
   /**
+   * 停留所・標柱ID（GTFS の stop_id）。
+   *
    * @generated from field: string stop_id = 1;
    */
   stopId: string;
 
   /**
+   * 停留所・標柱名称（GTFS の stop_name）。
+   *
    * @generated from field: string stop_name = 2;
    */
   stopName: string;
 
   /**
+   * 緯度・経度（GTFS の stop_lat / stop_lon）。
+   *
    * @generated from field: google.type.LatLng stop_location = 3;
    */
   stopLocation?: LatLng | undefined;
 
   /**
+   * 運賃エリアID（GTFS の zone_id）。
+   *
    * @generated from field: optional string zone_id = 4;
    */
   zoneId?: string | undefined;
@@ -149,10 +189,14 @@ export declare type CreateStopRequest = Message<"admin.v1.CreateStopRequest"> & 
 export declare const CreateStopRequestSchema: GenMessage<CreateStopRequest>;
 
 /**
+ * CreateStop の Response。
+ *
  * @generated from message admin.v1.CreateStopResponse
  */
 export declare type CreateStopResponse = Message<"admin.v1.CreateStopResponse"> & {
   /**
+   * 作成した停留所・標柱情報（GTFS の stops）。
+   *
    * @generated from field: admin.v1.Stop stop = 1;
    */
   stop?: Stop | undefined;
@@ -165,30 +209,42 @@ export declare type CreateStopResponse = Message<"admin.v1.CreateStopResponse"> 
 export declare const CreateStopResponseSchema: GenMessage<CreateStopResponse>;
 
 /**
+ * UpdateStop の Request。
+ *
  * @generated from message admin.v1.UpdateStopRequest
  */
 export declare type UpdateStopRequest = Message<"admin.v1.UpdateStopRequest"> & {
   /**
+   * 停留所・標柱ID（GTFS の stop_id）。
+   *
    * @generated from field: string stop_id = 1;
    */
   stopId: string;
 
   /**
+   * 停留所・標柱名称（GTFS の stop_name）。
+   *
    * @generated from field: string stop_name = 2;
    */
   stopName: string;
 
   /**
+   * 緯度・経度（GTFS の stop_lat / stop_lon）。
+   *
    * @generated from field: google.type.LatLng stop_location = 3;
    */
   stopLocation?: LatLng | undefined;
 
   /**
+   * 運賃エリアID（GTFS の zone_id）。
+   *
    * @generated from field: optional string zone_id = 4;
    */
   zoneId?: string | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -201,10 +257,14 @@ export declare type UpdateStopRequest = Message<"admin.v1.UpdateStopRequest"> & 
 export declare const UpdateStopRequestSchema: GenMessage<UpdateStopRequest>;
 
 /**
+ * UpdateStop の Response。
+ *
  * @generated from message admin.v1.UpdateStopResponse
  */
 export declare type UpdateStopResponse = Message<"admin.v1.UpdateStopResponse"> & {
   /**
+   * 更新した停留所・標柱情報（GTFS の stops）。
+   *
    * @generated from field: admin.v1.Stop stop = 1;
    */
   stop?: Stop | undefined;
@@ -217,10 +277,14 @@ export declare type UpdateStopResponse = Message<"admin.v1.UpdateStopResponse"> 
 export declare const UpdateStopResponseSchema: GenMessage<UpdateStopResponse>;
 
 /**
+ * DeleteStop の Request。
+ *
  * @generated from message admin.v1.DeleteStopRequest
  */
 export declare type DeleteStopRequest = Message<"admin.v1.DeleteStopRequest"> & {
   /**
+   * 停留所・標柱ID（GTFS の stop_id）。
+   *
    * @generated from field: string stop_id = 1;
    */
   stopId: string;
@@ -233,6 +297,8 @@ export declare type DeleteStopRequest = Message<"admin.v1.DeleteStopRequest"> & 
 export declare const DeleteStopRequestSchema: GenMessage<DeleteStopRequest>;
 
 /**
+ * DeleteStop の Response。
+ *
  * @generated from message admin.v1.DeleteStopResponse
  */
 export declare type DeleteStopResponse = Message<"admin.v1.DeleteStopResponse"> & {
@@ -245,10 +311,14 @@ export declare type DeleteStopResponse = Message<"admin.v1.DeleteStopResponse"> 
 export declare const DeleteStopResponseSchema: GenMessage<DeleteStopResponse>;
 
 /**
+ * 停留所・標柱情報（GTFS の stops）を管理する。
+ *
  * @generated from service admin.v1.StopService
  */
 export declare const StopService: GenService<{
   /**
+   * 停留所・標柱情報（GTFS の stops）の一覧を取得する。
+   *
    * @generated from rpc admin.v1.StopService.ListStops
    */
   listStops: {
@@ -257,6 +327,8 @@ export declare const StopService: GenService<{
     output: typeof ListStopsResponseSchema;
   },
   /**
+   * 停留所・標柱情報（GTFS の stops）を取得する。
+   *
    * @generated from rpc admin.v1.StopService.GetStop
    */
   getStop: {
@@ -265,6 +337,8 @@ export declare const StopService: GenService<{
     output: typeof GetStopResponseSchema;
   },
   /**
+   * 停留所・標柱情報（GTFS の stops）を作成する。
+   *
    * @generated from rpc admin.v1.StopService.CreateStop
    */
   createStop: {
@@ -273,6 +347,8 @@ export declare const StopService: GenService<{
     output: typeof CreateStopResponseSchema;
   },
   /**
+   * 停留所・標柱情報（GTFS の stops）を更新する。
+   *
    * @generated from rpc admin.v1.StopService.UpdateStop
    */
   updateStop: {
@@ -281,6 +357,8 @@ export declare const StopService: GenService<{
     output: typeof UpdateStopResponseSchema;
   },
   /**
+   * 停留所・標柱情報（GTFS の stops）を削除する。
+   *
    * @generated from rpc admin.v1.StopService.DeleteStop
    */
   deleteStop: {

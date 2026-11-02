@@ -14,40 +14,56 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_cancelled_class: GenFile;
 
 /**
+ * 休講。
+ *
  * @generated from message admin.v1.CancelledClass
  */
 export declare type CancelledClass = Message<"admin.v1.CancelledClass"> & {
   /**
+   * ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
 
   /**
+   * 休講する日付。
+   *
    * @generated from field: google.type.Date date = 3;
    */
   date?: Date | undefined;
 
   /**
+   * 休講する時限。
+   *
    * @generated from field: admin.v1.Period period = 4;
    */
   period: Period;
 
   /**
+   * 補足のコメント。
+   *
    * @generated from field: optional string comment = 5;
    */
   comment?: string | undefined;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 6;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 7;
    */
   updatedAt?: Timestamp | undefined;
@@ -60,15 +76,21 @@ export declare type CancelledClass = Message<"admin.v1.CancelledClass"> & {
 export declare const CancelledClassSchema: GenMessage<CancelledClass>;
 
 /**
+ * ListCancelledClasses の Request。
+ *
  * @generated from message admin.v1.ListCancelledClassesRequest
  */
 export declare type ListCancelledClassesRequest = Message<"admin.v1.ListCancelledClassesRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -81,15 +103,21 @@ export declare type ListCancelledClassesRequest = Message<"admin.v1.ListCancelle
 export declare const ListCancelledClassesRequestSchema: GenMessage<ListCancelledClassesRequest>;
 
 /**
+ * ListCancelledClasses の Response。
+ *
  * @generated from message admin.v1.ListCancelledClassesResponse
  */
 export declare type ListCancelledClassesResponse = Message<"admin.v1.ListCancelledClassesResponse"> & {
   /**
+   * 休講の一覧。
+   *
    * @generated from field: repeated admin.v1.CancelledClass cancelled_classes = 1;
    */
   cancelledClasses: CancelledClass[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -102,10 +130,14 @@ export declare type ListCancelledClassesResponse = Message<"admin.v1.ListCancell
 export declare const ListCancelledClassesResponseSchema: GenMessage<ListCancelledClassesResponse>;
 
 /**
+ * GetCancelledClass の Request。
+ *
  * @generated from message admin.v1.GetCancelledClassRequest
  */
 export declare type GetCancelledClassRequest = Message<"admin.v1.GetCancelledClassRequest"> & {
   /**
+   * 取得する休講ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -118,10 +150,14 @@ export declare type GetCancelledClassRequest = Message<"admin.v1.GetCancelledCla
 export declare const GetCancelledClassRequestSchema: GenMessage<GetCancelledClassRequest>;
 
 /**
+ * GetCancelledClass の Response。
+ *
  * @generated from message admin.v1.GetCancelledClassResponse
  */
 export declare type GetCancelledClassResponse = Message<"admin.v1.GetCancelledClassResponse"> & {
   /**
+   * 取得した休講。
+   *
    * @generated from field: admin.v1.CancelledClass cancelled_class = 1;
    */
   cancelledClass?: CancelledClass | undefined;
@@ -134,25 +170,35 @@ export declare type GetCancelledClassResponse = Message<"admin.v1.GetCancelledCl
 export declare const GetCancelledClassResponseSchema: GenMessage<GetCancelledClassResponse>;
 
 /**
+ * CreateCancelledClass の Request。
+ *
  * @generated from message admin.v1.CreateCancelledClassRequest
  */
 export declare type CreateCancelledClassRequest = Message<"admin.v1.CreateCancelledClassRequest"> & {
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 1;
    */
   subjectId: string;
 
   /**
+   * 休講する日付。
+   *
    * @generated from field: google.type.Date date = 2;
    */
   date?: Date | undefined;
 
   /**
+   * 休講する時限。
+   *
    * @generated from field: admin.v1.Period period = 3;
    */
   period: Period;
 
   /**
+   * 補足のコメント。
+   *
    * @generated from field: optional string comment = 4;
    */
   comment?: string | undefined;
@@ -165,10 +211,14 @@ export declare type CreateCancelledClassRequest = Message<"admin.v1.CreateCancel
 export declare const CreateCancelledClassRequestSchema: GenMessage<CreateCancelledClassRequest>;
 
 /**
+ * CreateCancelledClass の Response。
+ *
  * @generated from message admin.v1.CreateCancelledClassResponse
  */
 export declare type CreateCancelledClassResponse = Message<"admin.v1.CreateCancelledClassResponse"> & {
   /**
+   * 作成した休講。
+   *
    * @generated from field: admin.v1.CancelledClass cancelled_class = 1;
    */
   cancelledClass?: CancelledClass | undefined;
@@ -181,35 +231,49 @@ export declare type CreateCancelledClassResponse = Message<"admin.v1.CreateCance
 export declare const CreateCancelledClassResponseSchema: GenMessage<CreateCancelledClassResponse>;
 
 /**
+ * UpdateCancelledClass の Request。
+ *
  * @generated from message admin.v1.UpdateCancelledClassRequest
  */
 export declare type UpdateCancelledClassRequest = Message<"admin.v1.UpdateCancelledClassRequest"> & {
   /**
+   * 更新する休講ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
 
   /**
+   * 休講する日付。
+   *
    * @generated from field: google.type.Date date = 3;
    */
   date?: Date | undefined;
 
   /**
+   * 休講する時限。
+   *
    * @generated from field: admin.v1.Period period = 4;
    */
   period: Period;
 
   /**
+   * 補足のコメント。
+   *
    * @generated from field: optional string comment = 5;
    */
   comment?: string | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -222,10 +286,14 @@ export declare type UpdateCancelledClassRequest = Message<"admin.v1.UpdateCancel
 export declare const UpdateCancelledClassRequestSchema: GenMessage<UpdateCancelledClassRequest>;
 
 /**
+ * UpdateCancelledClass の Response。
+ *
  * @generated from message admin.v1.UpdateCancelledClassResponse
  */
 export declare type UpdateCancelledClassResponse = Message<"admin.v1.UpdateCancelledClassResponse"> & {
   /**
+   * 更新した休講。
+   *
    * @generated from field: admin.v1.CancelledClass cancelled_class = 1;
    */
   cancelledClass?: CancelledClass | undefined;
@@ -238,10 +306,14 @@ export declare type UpdateCancelledClassResponse = Message<"admin.v1.UpdateCance
 export declare const UpdateCancelledClassResponseSchema: GenMessage<UpdateCancelledClassResponse>;
 
 /**
+ * DeleteCancelledClass の Request。
+ *
  * @generated from message admin.v1.DeleteCancelledClassRequest
  */
 export declare type DeleteCancelledClassRequest = Message<"admin.v1.DeleteCancelledClassRequest"> & {
   /**
+   * 削除する休講ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -254,6 +326,8 @@ export declare type DeleteCancelledClassRequest = Message<"admin.v1.DeleteCancel
 export declare const DeleteCancelledClassRequestSchema: GenMessage<DeleteCancelledClassRequest>;
 
 /**
+ * DeleteCancelledClass の Response。
+ *
  * @generated from message admin.v1.DeleteCancelledClassResponse
  */
 export declare type DeleteCancelledClassResponse = Message<"admin.v1.DeleteCancelledClassResponse"> & {
@@ -266,10 +340,14 @@ export declare type DeleteCancelledClassResponse = Message<"admin.v1.DeleteCance
 export declare const DeleteCancelledClassResponseSchema: GenMessage<DeleteCancelledClassResponse>;
 
 /**
+ * 休講を管理する。
+ *
  * @generated from service admin.v1.CancelledClassService
  */
 export declare const CancelledClassService: GenService<{
   /**
+   * 休講の一覧を取得する。
+   *
    * @generated from rpc admin.v1.CancelledClassService.ListCancelledClasses
    */
   listCancelledClasses: {
@@ -278,6 +356,8 @@ export declare const CancelledClassService: GenService<{
     output: typeof ListCancelledClassesResponseSchema;
   },
   /**
+   * 休講を取得する。
+   *
    * @generated from rpc admin.v1.CancelledClassService.GetCancelledClass
    */
   getCancelledClass: {
@@ -286,6 +366,8 @@ export declare const CancelledClassService: GenService<{
     output: typeof GetCancelledClassResponseSchema;
   },
   /**
+   * 休講を作成する。
+   *
    * @generated from rpc admin.v1.CancelledClassService.CreateCancelledClass
    */
   createCancelledClass: {
@@ -294,6 +376,8 @@ export declare const CancelledClassService: GenService<{
     output: typeof CreateCancelledClassResponseSchema;
   },
   /**
+   * 休講を更新する。
+   *
    * @generated from rpc admin.v1.CancelledClassService.UpdateCancelledClass
    */
   updateCancelledClass: {
@@ -302,6 +386,8 @@ export declare const CancelledClassService: GenService<{
     output: typeof UpdateCancelledClassResponseSchema;
   },
   /**
+   * 休講を削除する。
+   *
    * @generated from rpc admin.v1.CancelledClassService.DeleteCancelledClass
    */
   deleteCancelledClass: {

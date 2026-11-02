@@ -13,15 +13,21 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_subject: GenFile;
 
 /**
+ * 科目の担当教員。
+ *
  * @generated from message admin.v1.SubjectFaculty
  */
 export declare type SubjectFaculty = Message<"admin.v1.SubjectFaculty"> & {
   /**
+   * 教員ID。
+   *
    * @generated from field: string faculty_id = 1;
    */
   facultyId: string;
 
   /**
+   * 主担当かどうか。
+   *
    * @generated from field: bool is_primary = 2;
    */
   isPrimary: boolean;
@@ -34,15 +40,21 @@ export declare type SubjectFaculty = Message<"admin.v1.SubjectFaculty"> & {
 export declare const SubjectFacultySchema: GenMessage<SubjectFaculty>;
 
 /**
+ * 対象学年・クラス。
+ *
  * @generated from message admin.v1.SubjectEligibleAttribute
  */
 export declare type SubjectEligibleAttribute = Message<"admin.v1.SubjectEligibleAttribute"> & {
   /**
+   * 学年。
+   *
    * @generated from field: admin.v1.Grade grade = 1;
    */
   grade: Grade;
 
   /**
+   * クラス。修士課程・博士課程対象の場合は未設定。
+   *
    * @generated from field: optional admin.v1.Class class = 2;
    */
   class?: Class | undefined;
@@ -55,15 +67,21 @@ export declare type SubjectEligibleAttribute = Message<"admin.v1.SubjectEligible
 export declare const SubjectEligibleAttributeSchema: GenMessage<SubjectEligibleAttribute>;
 
 /**
+ * コースごとの必修・選択。
+ *
  * @generated from message admin.v1.SubjectRequirement
  */
 export declare type SubjectRequirement = Message<"admin.v1.SubjectRequirement"> & {
   /**
+   * コース。
+   *
    * @generated from field: admin.v1.Course course = 1;
    */
   course: Course;
 
   /**
+   * 必修・選択・選択必修。
+   *
    * @generated from field: admin.v1.SubjectRequirementType requirement_type = 2;
    */
   requirementType: SubjectRequirementType;
@@ -76,70 +94,98 @@ export declare type SubjectRequirement = Message<"admin.v1.SubjectRequirement"> 
 export declare const SubjectRequirementSchema: GenMessage<SubjectRequirement>;
 
 /**
+ * 科目。
+ *
  * @generated from message admin.v1.Subject
  */
 export declare type Subject = Message<"admin.v1.Subject"> & {
   /**
+   * ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 科目名。
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * 開講年度。
+   *
    * @generated from field: int32 year = 3;
    */
   year: number;
 
   /**
+   * 開講時期。
+   *
    * @generated from field: admin.v1.SubjectSemester semester = 4;
    */
   semester: SubjectSemester;
 
   /**
+   * 単位数。
+   *
    * @generated from field: int32 credit = 5;
    */
   credit: number;
 
   /**
+   * 科目カテゴリ。
+   *
    * @generated from field: admin.v1.SubjectClassification classification = 6;
    */
   classification: SubjectClassification;
 
   /**
+   * 教養科目カテゴリ。教養科目以外では UNSPECIFIED。
+   *
    * @generated from field: admin.v1.SubjectCulturalSubjectCategory cultural_subject_category = 7;
    */
   culturalSubjectCategory: SubjectCulturalSubjectCategory;
 
   /**
+   * シラバスID。
+   *
    * @generated from field: string syllabus_id = 8;
    */
   syllabusId: string;
 
   /**
+   * 担当教員。
+   *
    * @generated from field: repeated admin.v1.SubjectFaculty faculties = 9;
    */
   faculties: SubjectFaculty[];
 
   /**
+   * 対象学年・クラス。授業名末尾の `学年-クラス` をもとに決定する。
+   *
    * @generated from field: repeated admin.v1.SubjectEligibleAttribute eligible_attributes = 10;
    */
   eligibleAttributes: SubjectEligibleAttribute[];
 
   /**
+   * コースごとの必修・選択。科目群・科目区分をもとに決定する。
+   *
    * @generated from field: repeated admin.v1.SubjectRequirement requirements = 11;
    */
   requirements: SubjectRequirement[];
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 12;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 13;
    */
   updatedAt?: Timestamp | undefined;
@@ -152,15 +198,21 @@ export declare type Subject = Message<"admin.v1.Subject"> & {
 export declare const SubjectSchema: GenMessage<Subject>;
 
 /**
+ * ListSubjects の Request。
+ *
  * @generated from message admin.v1.ListSubjectsRequest
  */
 export declare type ListSubjectsRequest = Message<"admin.v1.ListSubjectsRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -173,15 +225,21 @@ export declare type ListSubjectsRequest = Message<"admin.v1.ListSubjectsRequest"
 export declare const ListSubjectsRequestSchema: GenMessage<ListSubjectsRequest>;
 
 /**
+ * ListSubjects の Response。
+ *
  * @generated from message admin.v1.ListSubjectsResponse
  */
 export declare type ListSubjectsResponse = Message<"admin.v1.ListSubjectsResponse"> & {
   /**
+   * 科目の一覧。
+   *
    * @generated from field: repeated admin.v1.Subject subjects = 1;
    */
   subjects: Subject[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -194,10 +252,14 @@ export declare type ListSubjectsResponse = Message<"admin.v1.ListSubjectsRespons
 export declare const ListSubjectsResponseSchema: GenMessage<ListSubjectsResponse>;
 
 /**
+ * GetSubject の Request。
+ *
  * @generated from message admin.v1.GetSubjectRequest
  */
 export declare type GetSubjectRequest = Message<"admin.v1.GetSubjectRequest"> & {
   /**
+   * 取得する科目ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -210,10 +272,14 @@ export declare type GetSubjectRequest = Message<"admin.v1.GetSubjectRequest"> & 
 export declare const GetSubjectRequestSchema: GenMessage<GetSubjectRequest>;
 
 /**
+ * GetSubject の Response。
+ *
  * @generated from message admin.v1.GetSubjectResponse
  */
 export declare type GetSubjectResponse = Message<"admin.v1.GetSubjectResponse"> & {
   /**
+   * 取得した科目。
+   *
    * @generated from field: admin.v1.Subject subject = 1;
    */
   subject?: Subject | undefined;
@@ -226,55 +292,77 @@ export declare type GetSubjectResponse = Message<"admin.v1.GetSubjectResponse"> 
 export declare const GetSubjectResponseSchema: GenMessage<GetSubjectResponse>;
 
 /**
+ * CreateSubject の Request。
+ *
  * @generated from message admin.v1.CreateSubjectRequest
  */
 export declare type CreateSubjectRequest = Message<"admin.v1.CreateSubjectRequest"> & {
   /**
+   * 科目名。
+   *
    * @generated from field: string name = 1;
    */
   name: string;
 
   /**
+   * 開講年度。
+   *
    * @generated from field: int32 year = 2;
    */
   year: number;
 
   /**
+   * 開講時期。
+   *
    * @generated from field: admin.v1.SubjectSemester semester = 3;
    */
   semester: SubjectSemester;
 
   /**
+   * 単位数。
+   *
    * @generated from field: int32 credit = 4;
    */
   credit: number;
 
   /**
+   * 科目カテゴリ。
+   *
    * @generated from field: admin.v1.SubjectClassification classification = 5;
    */
   classification: SubjectClassification;
 
   /**
+   * 教養科目カテゴリ。教養科目以外では UNSPECIFIED。
+   *
    * @generated from field: admin.v1.SubjectCulturalSubjectCategory cultural_subject_category = 6;
    */
   culturalSubjectCategory: SubjectCulturalSubjectCategory;
 
   /**
+   * シラバスID。
+   *
    * @generated from field: string syllabus_id = 7;
    */
   syllabusId: string;
 
   /**
+   * 担当教員。
+   *
    * @generated from field: repeated admin.v1.SubjectFaculty faculties = 8;
    */
   faculties: SubjectFaculty[];
 
   /**
+   * 対象学年・クラス。授業名末尾の `学年-クラス` をもとに決定する。
+   *
    * @generated from field: repeated admin.v1.SubjectEligibleAttribute eligible_attributes = 9;
    */
   eligibleAttributes: SubjectEligibleAttribute[];
 
   /**
+   * コースごとの必修・選択。科目群・科目区分をもとに決定する。
+   *
    * @generated from field: repeated admin.v1.SubjectRequirement requirements = 10;
    */
   requirements: SubjectRequirement[];
@@ -287,10 +375,14 @@ export declare type CreateSubjectRequest = Message<"admin.v1.CreateSubjectReques
 export declare const CreateSubjectRequestSchema: GenMessage<CreateSubjectRequest>;
 
 /**
+ * CreateSubject の Response。
+ *
  * @generated from message admin.v1.CreateSubjectResponse
  */
 export declare type CreateSubjectResponse = Message<"admin.v1.CreateSubjectResponse"> & {
   /**
+   * 作成した科目。
+   *
    * @generated from field: admin.v1.Subject subject = 1;
    */
   subject?: Subject | undefined;
@@ -303,65 +395,91 @@ export declare type CreateSubjectResponse = Message<"admin.v1.CreateSubjectRespo
 export declare const CreateSubjectResponseSchema: GenMessage<CreateSubjectResponse>;
 
 /**
+ * UpdateSubject の Request。
+ *
  * @generated from message admin.v1.UpdateSubjectRequest
  */
 export declare type UpdateSubjectRequest = Message<"admin.v1.UpdateSubjectRequest"> & {
   /**
+   * 更新する科目ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 科目名。
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * 開講年度。
+   *
    * @generated from field: int32 year = 3;
    */
   year: number;
 
   /**
+   * 開講時期。
+   *
    * @generated from field: admin.v1.SubjectSemester semester = 4;
    */
   semester: SubjectSemester;
 
   /**
+   * 単位数。
+   *
    * @generated from field: int32 credit = 5;
    */
   credit: number;
 
   /**
+   * 科目カテゴリ。
+   *
    * @generated from field: admin.v1.SubjectClassification classification = 6;
    */
   classification: SubjectClassification;
 
   /**
+   * 教養科目カテゴリ。教養科目以外では UNSPECIFIED。
+   *
    * @generated from field: admin.v1.SubjectCulturalSubjectCategory cultural_subject_category = 7;
    */
   culturalSubjectCategory: SubjectCulturalSubjectCategory;
 
   /**
+   * シラバスID。
+   *
    * @generated from field: string syllabus_id = 8;
    */
   syllabusId: string;
 
   /**
+   * 担当教員。
+   *
    * @generated from field: repeated admin.v1.SubjectFaculty faculties = 9;
    */
   faculties: SubjectFaculty[];
 
   /**
+   * 対象学年・クラス。授業名末尾の `学年-クラス` をもとに決定する。
+   *
    * @generated from field: repeated admin.v1.SubjectEligibleAttribute eligible_attributes = 10;
    */
   eligibleAttributes: SubjectEligibleAttribute[];
 
   /**
+   * コースごとの必修・選択。科目群・科目区分をもとに決定する。
+   *
    * @generated from field: repeated admin.v1.SubjectRequirement requirements = 11;
    */
   requirements: SubjectRequirement[];
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -374,10 +492,14 @@ export declare type UpdateSubjectRequest = Message<"admin.v1.UpdateSubjectReques
 export declare const UpdateSubjectRequestSchema: GenMessage<UpdateSubjectRequest>;
 
 /**
+ * UpdateSubject の Response。
+ *
  * @generated from message admin.v1.UpdateSubjectResponse
  */
 export declare type UpdateSubjectResponse = Message<"admin.v1.UpdateSubjectResponse"> & {
   /**
+   * 更新した科目。
+   *
    * @generated from field: admin.v1.Subject subject = 1;
    */
   subject?: Subject | undefined;
@@ -390,10 +512,14 @@ export declare type UpdateSubjectResponse = Message<"admin.v1.UpdateSubjectRespo
 export declare const UpdateSubjectResponseSchema: GenMessage<UpdateSubjectResponse>;
 
 /**
+ * DeleteSubject の Request。
+ *
  * @generated from message admin.v1.DeleteSubjectRequest
  */
 export declare type DeleteSubjectRequest = Message<"admin.v1.DeleteSubjectRequest"> & {
   /**
+   * 削除する科目ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -406,6 +532,8 @@ export declare type DeleteSubjectRequest = Message<"admin.v1.DeleteSubjectReques
 export declare const DeleteSubjectRequestSchema: GenMessage<DeleteSubjectRequest>;
 
 /**
+ * DeleteSubject の Response。
+ *
  * @generated from message admin.v1.DeleteSubjectResponse
  */
 export declare type DeleteSubjectResponse = Message<"admin.v1.DeleteSubjectResponse"> & {
@@ -418,55 +546,77 @@ export declare type DeleteSubjectResponse = Message<"admin.v1.DeleteSubjectRespo
 export declare const DeleteSubjectResponseSchema: GenMessage<DeleteSubjectResponse>;
 
 /**
+ * 科目の開講時期。
+ *
  * @generated from enum admin.v1.SubjectSemester
  */
 export enum SubjectSemester {
   /**
+   * 未指定。
+   *
    * @generated from enum value: SUBJECT_SEMESTER_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 通年。
+   *
    * @generated from enum value: SUBJECT_SEMESTER_ALL_YEAR = 1;
    */
   ALL_YEAR = 1,
 
   /**
+   * 前期。
+   *
    * @generated from enum value: SUBJECT_SEMESTER_H1 = 2;
    */
   H1 = 2,
 
   /**
+   * 後期。
+   *
    * @generated from enum value: SUBJECT_SEMESTER_H2 = 3;
    */
   H2 = 3,
 
   /**
+   * 第1クオーター。
+   *
    * @generated from enum value: SUBJECT_SEMESTER_Q1 = 4;
    */
   Q1 = 4,
 
   /**
+   * 第2クオーター。
+   *
    * @generated from enum value: SUBJECT_SEMESTER_Q2 = 5;
    */
   Q2 = 5,
 
   /**
+   * 第3クオーター。
+   *
    * @generated from enum value: SUBJECT_SEMESTER_Q3 = 6;
    */
   Q3 = 6,
 
   /**
+   * 第4クオーター。
+   *
    * @generated from enum value: SUBJECT_SEMESTER_Q4 = 7;
    */
   Q4 = 7,
 
   /**
+   * 夏期集中。
+   *
    * @generated from enum value: SUBJECT_SEMESTER_SUMMER_INTENSIVE = 8;
    */
   SUMMER_INTENSIVE = 8,
 
   /**
+   * 冬期集中。
+   *
    * @generated from enum value: SUBJECT_SEMESTER_WINTER_INTENSIVE = 9;
    */
   WINTER_INTENSIVE = 9,
@@ -478,25 +628,35 @@ export enum SubjectSemester {
 export declare const SubjectSemesterSchema: GenEnum<SubjectSemester>;
 
 /**
+ * 科目カテゴリ。
+ *
  * @generated from enum admin.v1.SubjectClassification
  */
 export enum SubjectClassification {
   /**
+   * 未指定。
+   *
    * @generated from enum value: SUBJECT_CLASSIFICATION_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 専門科目。
+   *
    * @generated from enum value: SUBJECT_CLASSIFICATION_SPECIALIZED = 1;
    */
   SPECIALIZED = 1,
 
   /**
+   * 教養科目。
+   *
    * @generated from enum value: SUBJECT_CLASSIFICATION_CULTURAL = 2;
    */
   CULTURAL = 2,
 
   /**
+   * 研究指導。
+   *
    * @generated from enum value: SUBJECT_CLASSIFICATION_RESEARCH_INSTRUCTION = 3;
    */
   RESEARCH_INSTRUCTION = 3,
@@ -508,35 +668,49 @@ export enum SubjectClassification {
 export declare const SubjectClassificationSchema: GenEnum<SubjectClassification>;
 
 /**
+ * 教養科目カテゴリ。
+ *
  * @generated from enum admin.v1.SubjectCulturalSubjectCategory
  */
 export enum SubjectCulturalSubjectCategory {
   /**
+   * 未指定。
+   *
    * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 社会。
+   *
    * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_SOCIETY = 1;
    */
   SOCIETY = 1,
 
   /**
+   * 人間。
+   *
    * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_HUMAN = 2;
    */
   HUMAN = 2,
 
   /**
+   * 科学。
+   *
    * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_SCIENCE = 3;
    */
   SCIENCE = 3,
 
   /**
+   * 健康。
+   *
    * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_HEALTH = 4;
    */
   HEALTH = 4,
 
   /**
+   * コミュニケーション。
+   *
    * @generated from enum value: SUBJECT_CULTURAL_SUBJECT_CATEGORY_COMMUNICATION = 5;
    */
   COMMUNICATION = 5,
@@ -548,25 +722,35 @@ export enum SubjectCulturalSubjectCategory {
 export declare const SubjectCulturalSubjectCategorySchema: GenEnum<SubjectCulturalSubjectCategory>;
 
 /**
+ * 必修・選択。
+ *
  * @generated from enum admin.v1.SubjectRequirementType
  */
 export enum SubjectRequirementType {
   /**
+   * 未指定。
+   *
    * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 必修。
+   *
    * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_REQUIRED = 1;
    */
   REQUIRED = 1,
 
   /**
+   * 選択。
+   *
    * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_OPTIONAL = 2;
    */
   OPTIONAL = 2,
 
   /**
+   * 選択必修。
+   *
    * @generated from enum value: SUBJECT_REQUIREMENT_TYPE_OPTIONAL_REQUIRED = 3;
    */
   OPTIONAL_REQUIRED = 3,
@@ -578,10 +762,14 @@ export enum SubjectRequirementType {
 export declare const SubjectRequirementTypeSchema: GenEnum<SubjectRequirementType>;
 
 /**
+ * 科目を管理する。
+ *
  * @generated from service admin.v1.SubjectService
  */
 export declare const SubjectService: GenService<{
   /**
+   * 科目の一覧を取得する。
+   *
    * @generated from rpc admin.v1.SubjectService.ListSubjects
    */
   listSubjects: {
@@ -590,6 +778,8 @@ export declare const SubjectService: GenService<{
     output: typeof ListSubjectsResponseSchema;
   },
   /**
+   * 科目を取得する。
+   *
    * @generated from rpc admin.v1.SubjectService.GetSubject
    */
   getSubject: {
@@ -598,6 +788,8 @@ export declare const SubjectService: GenService<{
     output: typeof GetSubjectResponseSchema;
   },
   /**
+   * 科目を作成する。
+   *
    * @generated from rpc admin.v1.SubjectService.CreateSubject
    */
   createSubject: {
@@ -606,6 +798,8 @@ export declare const SubjectService: GenService<{
     output: typeof CreateSubjectResponseSchema;
   },
   /**
+   * 科目を更新する。
+   *
    * @generated from rpc admin.v1.SubjectService.UpdateSubject
    */
   updateSubject: {
@@ -614,6 +808,8 @@ export declare const SubjectService: GenService<{
     output: typeof UpdateSubjectResponseSchema;
   },
   /**
+   * 科目を削除する。
+   *
    * @generated from rpc admin.v1.SubjectService.DeleteSubject
    */
   deleteSubject: {

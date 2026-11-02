@@ -10,55 +10,77 @@ import type { GenEnum, GenFile } from "@bufbuild/protobuf/codegenv2";
 export declare const file_admin_v1_common: GenFile;
 
 /**
+ * 学年。
+ *
  * @generated from enum admin.v1.Grade
  */
 export enum Grade {
   /**
+   * 未指定。
+   *
    * @generated from enum value: GRADE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 学部 1 年。
+   *
    * @generated from enum value: GRADE_B1 = 1;
    */
   B1 = 1,
 
   /**
+   * 学部 2 年。
+   *
    * @generated from enum value: GRADE_B2 = 2;
    */
   B2 = 2,
 
   /**
+   * 学部 3 年。
+   *
    * @generated from enum value: GRADE_B3 = 3;
    */
   B3 = 3,
 
   /**
+   * 学部 4 年。
+   *
    * @generated from enum value: GRADE_B4 = 4;
    */
   B4 = 4,
 
   /**
+   * 修士 1 年。
+   *
    * @generated from enum value: GRADE_M1 = 5;
    */
   M1 = 5,
 
   /**
+   * 修士 2 年。
+   *
    * @generated from enum value: GRADE_M2 = 6;
    */
   M2 = 6,
 
   /**
+   * 博士 1 年。
+   *
    * @generated from enum value: GRADE_D1 = 7;
    */
   D1 = 7,
 
   /**
+   * 博士 2 年。
+   *
    * @generated from enum value: GRADE_D2 = 8;
    */
   D2 = 8,
 
   /**
+   * 博士 3 年。
+   *
    * @generated from enum value: GRADE_D3 = 9;
    */
   D3 = 9,
@@ -70,35 +92,49 @@ export enum Grade {
 export declare const GradeSchema: GenEnum<Grade>;
 
 /**
+ * コース。
+ *
  * @generated from enum admin.v1.Course
  */
 export enum Course {
   /**
+   * 未指定。
+   *
    * @generated from enum value: COURSE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 情報システムコース。
+   *
    * @generated from enum value: COURSE_INFORMATION_SYSTEM = 1;
    */
   INFORMATION_SYSTEM = 1,
 
   /**
+   * 情報デザインコース。
+   *
    * @generated from enum value: COURSE_INFORMATION_DESIGN = 2;
    */
   INFORMATION_DESIGN = 2,
 
   /**
+   * 高度ICTコース。
+   *
    * @generated from enum value: COURSE_ADVANCED_ICT = 3;
    */
   ADVANCED_ICT = 3,
 
   /**
+   * 複雑系コース。
+   *
    * @generated from enum value: COURSE_COMPLEX_SYSTEM = 4;
    */
   COMPLEX_SYSTEM = 4,
 
   /**
+   * 知能システムコース。
+   *
    * @generated from enum value: COURSE_INTELLIGENT_SYSTEM = 5;
    */
   INTELLIGENT_SYSTEM = 5,
@@ -110,70 +146,98 @@ export enum Course {
 export declare const CourseSchema: GenEnum<Course>;
 
 /**
+ * クラス。
+ *
  * @generated from enum admin.v1.Class
  */
 export enum Class {
   /**
+   * 未指定。
+   *
    * @generated from enum value: CLASS_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * A クラス。
+   *
    * @generated from enum value: CLASS_A = 1;
    */
   A = 1,
 
   /**
+   * B クラス。
+   *
    * @generated from enum value: CLASS_B = 2;
    */
   B = 2,
 
   /**
+   * C クラス。
+   *
    * @generated from enum value: CLASS_C = 3;
    */
   C = 3,
 
   /**
+   * D クラス。
+   *
    * @generated from enum value: CLASS_D = 4;
    */
   D = 4,
 
   /**
+   * E クラス。
+   *
    * @generated from enum value: CLASS_E = 5;
    */
   E = 5,
 
   /**
+   * F クラス。
+   *
    * @generated from enum value: CLASS_F = 6;
    */
   F = 6,
 
   /**
+   * G クラス。
+   *
    * @generated from enum value: CLASS_G = 7;
    */
   G = 7,
 
   /**
+   * H クラス。
+   *
    * @generated from enum value: CLASS_H = 8;
    */
   H = 8,
 
   /**
+   * I クラス。
+   *
    * @generated from enum value: CLASS_I = 9;
    */
   I = 9,
 
   /**
+   * J クラス。
+   *
    * @generated from enum value: CLASS_J = 10;
    */
   J = 10,
 
   /**
+   * K クラス。
+   *
    * @generated from enum value: CLASS_K = 11;
    */
   K = 11,
 
   /**
+   * L クラス。
+   *
    * @generated from enum value: CLASS_L = 12;
    */
   L = 12,
@@ -185,40 +249,56 @@ export enum Class {
 export declare const ClassSchema: GenEnum<Class>;
 
 /**
+ * 時限。
+ *
  * @generated from enum admin.v1.Period
  */
 export enum Period {
   /**
+   * 未指定。
+   *
    * @generated from enum value: PERIOD_UNSPECIFIED = 0;
    */
   PERIOD_UNSPECIFIED = 0,
 
   /**
+   * 1限。
+   *
    * @generated from enum value: PERIOD_1 = 1;
    */
   PERIOD_1 = 1,
 
   /**
+   * 2限。
+   *
    * @generated from enum value: PERIOD_2 = 2;
    */
   PERIOD_2 = 2,
 
   /**
+   * 3限。
+   *
    * @generated from enum value: PERIOD_3 = 3;
    */
   PERIOD_3 = 3,
 
   /**
+   * 4限。
+   *
    * @generated from enum value: PERIOD_4 = 4;
    */
   PERIOD_4 = 4,
 
   /**
+   * 5限。
+   *
    * @generated from enum value: PERIOD_5 = 5;
    */
   PERIOD_5 = 5,
 
   /**
+   * 6限。
+   *
    * @generated from enum value: PERIOD_6 = 6;
    */
   PERIOD_6 = 6,

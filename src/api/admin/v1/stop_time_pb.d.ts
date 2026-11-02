@@ -12,35 +12,49 @@ import type { FieldMask } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_stop_time: GenFile;
 
 /**
+ * 通過時刻情報（GTFS の stop_times）。
+ *
  * @generated from message admin.v1.StopTime
  */
 export declare type StopTime = Message<"admin.v1.StopTime"> & {
   /**
+   * 便ID（GTFS の trip_id）。
+   *
    * @generated from field: string trip_id = 1;
    */
   tripId: string;
 
   /**
+   * 通過順位（GTFS の stop_sequence）。
+   *
    * @generated from field: int32 stop_sequence = 2;
    */
   stopSequence: number;
 
   /**
+   * 停留所・標柱ID（GTFS の stop_id）。
+   *
    * @generated from field: string stop_id = 3;
    */
   stopId: string;
 
   /**
+   * 到着時刻（GTFS の arrival_time）。HH:MM:SS 形式で、24 時以降も表せる。
+   *
    * @generated from field: string arrival_time = 4;
    */
   arrivalTime: string;
 
   /**
+   * 出発時刻（GTFS の departure_time）。HH:MM:SS 形式で、24 時以降も表せる。
+   *
    * @generated from field: string departure_time = 5;
    */
   departureTime: string;
 
   /**
+   * 停留所行先（GTFS の stop_headsign）。
+   *
    * @generated from field: optional string stop_headsign = 6;
    */
   stopHeadsign?: string | undefined;
@@ -53,15 +67,21 @@ export declare type StopTime = Message<"admin.v1.StopTime"> & {
 export declare const StopTimeSchema: GenMessage<StopTime>;
 
 /**
+ * ListStopTimes の Request。
+ *
  * @generated from message admin.v1.ListStopTimesRequest
  */
 export declare type ListStopTimesRequest = Message<"admin.v1.ListStopTimesRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -74,15 +94,21 @@ export declare type ListStopTimesRequest = Message<"admin.v1.ListStopTimesReques
 export declare const ListStopTimesRequestSchema: GenMessage<ListStopTimesRequest>;
 
 /**
+ * ListStopTimes の Response。
+ *
  * @generated from message admin.v1.ListStopTimesResponse
  */
 export declare type ListStopTimesResponse = Message<"admin.v1.ListStopTimesResponse"> & {
   /**
+   * 通過時刻情報（GTFS の stop_times）の一覧。
+   *
    * @generated from field: repeated admin.v1.StopTime stop_times = 1;
    */
   stopTimes: StopTime[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -95,15 +121,21 @@ export declare type ListStopTimesResponse = Message<"admin.v1.ListStopTimesRespo
 export declare const ListStopTimesResponseSchema: GenMessage<ListStopTimesResponse>;
 
 /**
+ * GetStopTime の Request。
+ *
  * @generated from message admin.v1.GetStopTimeRequest
  */
 export declare type GetStopTimeRequest = Message<"admin.v1.GetStopTimeRequest"> & {
   /**
+   * 便ID（GTFS の trip_id）。
+   *
    * @generated from field: string trip_id = 1;
    */
   tripId: string;
 
   /**
+   * 通過順位（GTFS の stop_sequence）。
+   *
    * @generated from field: int32 stop_sequence = 2;
    */
   stopSequence: number;
@@ -116,10 +148,14 @@ export declare type GetStopTimeRequest = Message<"admin.v1.GetStopTimeRequest"> 
 export declare const GetStopTimeRequestSchema: GenMessage<GetStopTimeRequest>;
 
 /**
+ * GetStopTime の Response。
+ *
  * @generated from message admin.v1.GetStopTimeResponse
  */
 export declare type GetStopTimeResponse = Message<"admin.v1.GetStopTimeResponse"> & {
   /**
+   * 取得した通過時刻情報（GTFS の stop_times）。
+   *
    * @generated from field: admin.v1.StopTime stop_time = 1;
    */
   stopTime?: StopTime | undefined;
@@ -132,35 +168,49 @@ export declare type GetStopTimeResponse = Message<"admin.v1.GetStopTimeResponse"
 export declare const GetStopTimeResponseSchema: GenMessage<GetStopTimeResponse>;
 
 /**
+ * CreateStopTime の Request。
+ *
  * @generated from message admin.v1.CreateStopTimeRequest
  */
 export declare type CreateStopTimeRequest = Message<"admin.v1.CreateStopTimeRequest"> & {
   /**
+   * 便ID（GTFS の trip_id）。
+   *
    * @generated from field: string trip_id = 1;
    */
   tripId: string;
 
   /**
+   * 通過順位（GTFS の stop_sequence）。
+   *
    * @generated from field: int32 stop_sequence = 2;
    */
   stopSequence: number;
 
   /**
+   * 停留所・標柱ID（GTFS の stop_id）。
+   *
    * @generated from field: string stop_id = 3;
    */
   stopId: string;
 
   /**
+   * 到着時刻（GTFS の arrival_time）。HH:MM:SS 形式で、24 時以降も表せる。
+   *
    * @generated from field: string arrival_time = 4;
    */
   arrivalTime: string;
 
   /**
+   * 出発時刻（GTFS の departure_time）。HH:MM:SS 形式で、24 時以降も表せる。
+   *
    * @generated from field: string departure_time = 5;
    */
   departureTime: string;
 
   /**
+   * 停留所行先（GTFS の stop_headsign）。
+   *
    * @generated from field: optional string stop_headsign = 6;
    */
   stopHeadsign?: string | undefined;
@@ -173,10 +223,14 @@ export declare type CreateStopTimeRequest = Message<"admin.v1.CreateStopTimeRequ
 export declare const CreateStopTimeRequestSchema: GenMessage<CreateStopTimeRequest>;
 
 /**
+ * CreateStopTime の Response。
+ *
  * @generated from message admin.v1.CreateStopTimeResponse
  */
 export declare type CreateStopTimeResponse = Message<"admin.v1.CreateStopTimeResponse"> & {
   /**
+   * 作成した通過時刻情報（GTFS の stop_times）。
+   *
    * @generated from field: admin.v1.StopTime stop_time = 1;
    */
   stopTime?: StopTime | undefined;
@@ -189,40 +243,56 @@ export declare type CreateStopTimeResponse = Message<"admin.v1.CreateStopTimeRes
 export declare const CreateStopTimeResponseSchema: GenMessage<CreateStopTimeResponse>;
 
 /**
+ * UpdateStopTime の Request。
+ *
  * @generated from message admin.v1.UpdateStopTimeRequest
  */
 export declare type UpdateStopTimeRequest = Message<"admin.v1.UpdateStopTimeRequest"> & {
   /**
+   * 便ID（GTFS の trip_id）。
+   *
    * @generated from field: string trip_id = 1;
    */
   tripId: string;
 
   /**
+   * 通過順位（GTFS の stop_sequence）。
+   *
    * @generated from field: int32 stop_sequence = 2;
    */
   stopSequence: number;
 
   /**
+   * 停留所・標柱ID（GTFS の stop_id）。
+   *
    * @generated from field: string stop_id = 3;
    */
   stopId: string;
 
   /**
+   * 到着時刻（GTFS の arrival_time）。HH:MM:SS 形式で、24 時以降も表せる。
+   *
    * @generated from field: string arrival_time = 4;
    */
   arrivalTime: string;
 
   /**
+   * 出発時刻（GTFS の departure_time）。HH:MM:SS 形式で、24 時以降も表せる。
+   *
    * @generated from field: string departure_time = 5;
    */
   departureTime: string;
 
   /**
+   * 停留所行先（GTFS の stop_headsign）。
+   *
    * @generated from field: optional string stop_headsign = 6;
    */
   stopHeadsign?: string | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -235,10 +305,14 @@ export declare type UpdateStopTimeRequest = Message<"admin.v1.UpdateStopTimeRequ
 export declare const UpdateStopTimeRequestSchema: GenMessage<UpdateStopTimeRequest>;
 
 /**
+ * UpdateStopTime の Response。
+ *
  * @generated from message admin.v1.UpdateStopTimeResponse
  */
 export declare type UpdateStopTimeResponse = Message<"admin.v1.UpdateStopTimeResponse"> & {
   /**
+   * 更新した通過時刻情報（GTFS の stop_times）。
+   *
    * @generated from field: admin.v1.StopTime stop_time = 1;
    */
   stopTime?: StopTime | undefined;
@@ -251,15 +325,21 @@ export declare type UpdateStopTimeResponse = Message<"admin.v1.UpdateStopTimeRes
 export declare const UpdateStopTimeResponseSchema: GenMessage<UpdateStopTimeResponse>;
 
 /**
+ * DeleteStopTime の Request。
+ *
  * @generated from message admin.v1.DeleteStopTimeRequest
  */
 export declare type DeleteStopTimeRequest = Message<"admin.v1.DeleteStopTimeRequest"> & {
   /**
+   * 便ID（GTFS の trip_id）。
+   *
    * @generated from field: string trip_id = 1;
    */
   tripId: string;
 
   /**
+   * 通過順位（GTFS の stop_sequence）。
+   *
    * @generated from field: int32 stop_sequence = 2;
    */
   stopSequence: number;
@@ -272,6 +352,8 @@ export declare type DeleteStopTimeRequest = Message<"admin.v1.DeleteStopTimeRequ
 export declare const DeleteStopTimeRequestSchema: GenMessage<DeleteStopTimeRequest>;
 
 /**
+ * DeleteStopTime の Response。
+ *
  * @generated from message admin.v1.DeleteStopTimeResponse
  */
 export declare type DeleteStopTimeResponse = Message<"admin.v1.DeleteStopTimeResponse"> & {
@@ -284,10 +366,14 @@ export declare type DeleteStopTimeResponse = Message<"admin.v1.DeleteStopTimeRes
 export declare const DeleteStopTimeResponseSchema: GenMessage<DeleteStopTimeResponse>;
 
 /**
+ * 通過時刻情報（GTFS の stop_times）を管理する。
+ *
  * @generated from service admin.v1.StopTimeService
  */
 export declare const StopTimeService: GenService<{
   /**
+   * 通過時刻情報（GTFS の stop_times）の一覧を取得する。
+   *
    * @generated from rpc admin.v1.StopTimeService.ListStopTimes
    */
   listStopTimes: {
@@ -296,6 +382,8 @@ export declare const StopTimeService: GenService<{
     output: typeof ListStopTimesResponseSchema;
   },
   /**
+   * 通過時刻情報（GTFS の stop_times）を取得する。
+   *
    * @generated from rpc admin.v1.StopTimeService.GetStopTime
    */
   getStopTime: {
@@ -304,6 +392,8 @@ export declare const StopTimeService: GenService<{
     output: typeof GetStopTimeResponseSchema;
   },
   /**
+   * 通過時刻情報（GTFS の stop_times）を作成する。
+   *
    * @generated from rpc admin.v1.StopTimeService.CreateStopTime
    */
   createStopTime: {
@@ -312,6 +402,8 @@ export declare const StopTimeService: GenService<{
     output: typeof CreateStopTimeResponseSchema;
   },
   /**
+   * 通過時刻情報（GTFS の stop_times）を更新する。
+   *
    * @generated from rpc admin.v1.StopTimeService.UpdateStopTime
    */
   updateStopTime: {
@@ -320,6 +412,8 @@ export declare const StopTimeService: GenService<{
     output: typeof UpdateStopTimeResponseSchema;
   },
   /**
+   * 通過時刻情報（GTFS の stop_times）を削除する。
+   *
    * @generated from rpc admin.v1.StopTimeService.DeleteStopTime
    */
   deleteStopTime: {

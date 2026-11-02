@@ -12,25 +12,35 @@ import type { FieldMask } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_trip: GenFile;
 
 /**
+ * 便情報（GTFS の trips）。
+ *
  * @generated from message admin.v1.Trip
  */
 export declare type Trip = Message<"admin.v1.Trip"> & {
   /**
+   * 便ID（GTFS の trip_id）。
+   *
    * @generated from field: string trip_id = 1;
    */
   tripId: string;
 
   /**
+   * 経路ID（GTFS の route_id）。
+   *
    * @generated from field: string route_id = 2;
    */
   routeId: string;
 
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 3;
    */
   serviceId: string;
 
   /**
+   * 上下区分（GTFS の direction_id）。
+   *
    * @generated from field: optional admin.v1.TripDirection direction = 4;
    */
   direction?: TripDirection | undefined;
@@ -43,15 +53,21 @@ export declare type Trip = Message<"admin.v1.Trip"> & {
 export declare const TripSchema: GenMessage<Trip>;
 
 /**
+ * ListTrips の Request。
+ *
  * @generated from message admin.v1.ListTripsRequest
  */
 export declare type ListTripsRequest = Message<"admin.v1.ListTripsRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -64,15 +80,21 @@ export declare type ListTripsRequest = Message<"admin.v1.ListTripsRequest"> & {
 export declare const ListTripsRequestSchema: GenMessage<ListTripsRequest>;
 
 /**
+ * ListTrips の Response。
+ *
  * @generated from message admin.v1.ListTripsResponse
  */
 export declare type ListTripsResponse = Message<"admin.v1.ListTripsResponse"> & {
   /**
+   * 便情報（GTFS の trips）の一覧。
+   *
    * @generated from field: repeated admin.v1.Trip trips = 1;
    */
   trips: Trip[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -85,10 +107,14 @@ export declare type ListTripsResponse = Message<"admin.v1.ListTripsResponse"> & 
 export declare const ListTripsResponseSchema: GenMessage<ListTripsResponse>;
 
 /**
+ * GetTrip の Request。
+ *
  * @generated from message admin.v1.GetTripRequest
  */
 export declare type GetTripRequest = Message<"admin.v1.GetTripRequest"> & {
   /**
+   * 便ID（GTFS の trip_id）。
+   *
    * @generated from field: string trip_id = 1;
    */
   tripId: string;
@@ -101,10 +127,14 @@ export declare type GetTripRequest = Message<"admin.v1.GetTripRequest"> & {
 export declare const GetTripRequestSchema: GenMessage<GetTripRequest>;
 
 /**
+ * GetTrip の Response。
+ *
  * @generated from message admin.v1.GetTripResponse
  */
 export declare type GetTripResponse = Message<"admin.v1.GetTripResponse"> & {
   /**
+   * 取得した便情報（GTFS の trips）。
+   *
    * @generated from field: admin.v1.Trip trip = 1;
    */
   trip?: Trip | undefined;
@@ -117,25 +147,35 @@ export declare type GetTripResponse = Message<"admin.v1.GetTripResponse"> & {
 export declare const GetTripResponseSchema: GenMessage<GetTripResponse>;
 
 /**
+ * CreateTrip の Request。
+ *
  * @generated from message admin.v1.CreateTripRequest
  */
 export declare type CreateTripRequest = Message<"admin.v1.CreateTripRequest"> & {
   /**
+   * 便ID（GTFS の trip_id）。
+   *
    * @generated from field: string trip_id = 1;
    */
   tripId: string;
 
   /**
+   * 経路ID（GTFS の route_id）。
+   *
    * @generated from field: string route_id = 2;
    */
   routeId: string;
 
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 3;
    */
   serviceId: string;
 
   /**
+   * 上下区分（GTFS の direction_id）。
+   *
    * @generated from field: optional admin.v1.TripDirection direction = 4;
    */
   direction?: TripDirection | undefined;
@@ -148,10 +188,14 @@ export declare type CreateTripRequest = Message<"admin.v1.CreateTripRequest"> & 
 export declare const CreateTripRequestSchema: GenMessage<CreateTripRequest>;
 
 /**
+ * CreateTrip の Response。
+ *
  * @generated from message admin.v1.CreateTripResponse
  */
 export declare type CreateTripResponse = Message<"admin.v1.CreateTripResponse"> & {
   /**
+   * 作成した便情報（GTFS の trips）。
+   *
    * @generated from field: admin.v1.Trip trip = 1;
    */
   trip?: Trip | undefined;
@@ -164,30 +208,42 @@ export declare type CreateTripResponse = Message<"admin.v1.CreateTripResponse"> 
 export declare const CreateTripResponseSchema: GenMessage<CreateTripResponse>;
 
 /**
+ * UpdateTrip の Request。
+ *
  * @generated from message admin.v1.UpdateTripRequest
  */
 export declare type UpdateTripRequest = Message<"admin.v1.UpdateTripRequest"> & {
   /**
+   * 便ID（GTFS の trip_id）。
+   *
    * @generated from field: string trip_id = 1;
    */
   tripId: string;
 
   /**
+   * 経路ID（GTFS の route_id）。
+   *
    * @generated from field: string route_id = 2;
    */
   routeId: string;
 
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 3;
    */
   serviceId: string;
 
   /**
+   * 上下区分（GTFS の direction_id）。
+   *
    * @generated from field: optional admin.v1.TripDirection direction = 4;
    */
   direction?: TripDirection | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -200,10 +256,14 @@ export declare type UpdateTripRequest = Message<"admin.v1.UpdateTripRequest"> & 
 export declare const UpdateTripRequestSchema: GenMessage<UpdateTripRequest>;
 
 /**
+ * UpdateTrip の Response。
+ *
  * @generated from message admin.v1.UpdateTripResponse
  */
 export declare type UpdateTripResponse = Message<"admin.v1.UpdateTripResponse"> & {
   /**
+   * 更新した便情報（GTFS の trips）。
+   *
    * @generated from field: admin.v1.Trip trip = 1;
    */
   trip?: Trip | undefined;
@@ -216,10 +276,14 @@ export declare type UpdateTripResponse = Message<"admin.v1.UpdateTripResponse"> 
 export declare const UpdateTripResponseSchema: GenMessage<UpdateTripResponse>;
 
 /**
+ * DeleteTrip の Request。
+ *
  * @generated from message admin.v1.DeleteTripRequest
  */
 export declare type DeleteTripRequest = Message<"admin.v1.DeleteTripRequest"> & {
   /**
+   * 便ID（GTFS の trip_id）。
+   *
    * @generated from field: string trip_id = 1;
    */
   tripId: string;
@@ -232,6 +296,8 @@ export declare type DeleteTripRequest = Message<"admin.v1.DeleteTripRequest"> & 
 export declare const DeleteTripRequestSchema: GenMessage<DeleteTripRequest>;
 
 /**
+ * DeleteTrip の Response。
+ *
  * @generated from message admin.v1.DeleteTripResponse
  */
 export declare type DeleteTripResponse = Message<"admin.v1.DeleteTripResponse"> & {
@@ -244,20 +310,28 @@ export declare type DeleteTripResponse = Message<"admin.v1.DeleteTripResponse"> 
 export declare const DeleteTripResponseSchema: GenMessage<DeleteTripResponse>;
 
 /**
+ * 上下区分（GTFS の direction_id）。
+ *
  * @generated from enum admin.v1.TripDirection
  */
 export enum TripDirection {
   /**
+   * 未指定。
+   *
    * @generated from enum value: TRIP_DIRECTION_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 往路（direction_id = 1）。
+   *
    * @generated from enum value: TRIP_DIRECTION_OUTBOUND = 1;
    */
   OUTBOUND = 1,
 
   /**
+   * 復路（direction_id = 0）。
+   *
    * @generated from enum value: TRIP_DIRECTION_INBOUND = 2;
    */
   INBOUND = 2,
@@ -269,10 +343,14 @@ export enum TripDirection {
 export declare const TripDirectionSchema: GenEnum<TripDirection>;
 
 /**
+ * 便情報（GTFS の trips）を管理する。
+ *
  * @generated from service admin.v1.TripService
  */
 export declare const TripService: GenService<{
   /**
+   * 便情報（GTFS の trips）の一覧を取得する。
+   *
    * @generated from rpc admin.v1.TripService.ListTrips
    */
   listTrips: {
@@ -281,6 +359,8 @@ export declare const TripService: GenService<{
     output: typeof ListTripsResponseSchema;
   },
   /**
+   * 便情報（GTFS の trips）を取得する。
+   *
    * @generated from rpc admin.v1.TripService.GetTrip
    */
   getTrip: {
@@ -289,6 +369,8 @@ export declare const TripService: GenService<{
     output: typeof GetTripResponseSchema;
   },
   /**
+   * 便情報（GTFS の trips）を作成する。
+   *
    * @generated from rpc admin.v1.TripService.CreateTrip
    */
   createTrip: {
@@ -297,6 +379,8 @@ export declare const TripService: GenService<{
     output: typeof CreateTripResponseSchema;
   },
   /**
+   * 便情報（GTFS の trips）を更新する。
+   *
    * @generated from rpc admin.v1.TripService.UpdateTrip
    */
   updateTrip: {
@@ -305,6 +389,8 @@ export declare const TripService: GenService<{
     output: typeof UpdateTripResponseSchema;
   },
   /**
+   * 便情報（GTFS の trips）を削除する。
+   *
    * @generated from rpc admin.v1.TripService.DeleteTrip
    */
   deleteTrip: {

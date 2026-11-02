@@ -12,40 +12,56 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_announcement: GenFile;
 
 /**
+ * おしらせ。
+ *
  * @generated from message admin.v1.Announcement
  */
 export declare type Announcement = Message<"admin.v1.Announcement"> & {
   /**
+   * ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * タイトル。
+   *
    * @generated from field: string title = 2;
    */
   title: string;
 
   /**
+   * リンク先の URL。
+   *
    * @generated from field: string url = 3;
    */
   url: string;
 
   /**
+   * 公開を開始する日時。
+   *
    * @generated from field: google.protobuf.Timestamp available_from = 4;
    */
   availableFrom?: Timestamp | undefined;
 
   /**
+   * 公開を終了する日時。未設定の場合は終了しない。
+   *
    * @generated from field: optional google.protobuf.Timestamp available_until = 5;
    */
   availableUntil?: Timestamp | undefined;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 6;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 7;
    */
   updatedAt?: Timestamp | undefined;
@@ -58,15 +74,21 @@ export declare type Announcement = Message<"admin.v1.Announcement"> & {
 export declare const AnnouncementSchema: GenMessage<Announcement>;
 
 /**
+ * ListAnnouncements の Request。
+ *
  * @generated from message admin.v1.ListAnnouncementsRequest
  */
 export declare type ListAnnouncementsRequest = Message<"admin.v1.ListAnnouncementsRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -79,15 +101,21 @@ export declare type ListAnnouncementsRequest = Message<"admin.v1.ListAnnouncemen
 export declare const ListAnnouncementsRequestSchema: GenMessage<ListAnnouncementsRequest>;
 
 /**
+ * ListAnnouncements の Response。
+ *
  * @generated from message admin.v1.ListAnnouncementsResponse
  */
 export declare type ListAnnouncementsResponse = Message<"admin.v1.ListAnnouncementsResponse"> & {
   /**
+   * おしらせの一覧。
+   *
    * @generated from field: repeated admin.v1.Announcement announcements = 1;
    */
   announcements: Announcement[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -100,10 +128,14 @@ export declare type ListAnnouncementsResponse = Message<"admin.v1.ListAnnounceme
 export declare const ListAnnouncementsResponseSchema: GenMessage<ListAnnouncementsResponse>;
 
 /**
+ * GetAnnouncement の Request。
+ *
  * @generated from message admin.v1.GetAnnouncementRequest
  */
 export declare type GetAnnouncementRequest = Message<"admin.v1.GetAnnouncementRequest"> & {
   /**
+   * 取得するおしらせID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -116,10 +148,14 @@ export declare type GetAnnouncementRequest = Message<"admin.v1.GetAnnouncementRe
 export declare const GetAnnouncementRequestSchema: GenMessage<GetAnnouncementRequest>;
 
 /**
+ * GetAnnouncement の Response。
+ *
  * @generated from message admin.v1.GetAnnouncementResponse
  */
 export declare type GetAnnouncementResponse = Message<"admin.v1.GetAnnouncementResponse"> & {
   /**
+   * 取得したおしらせ。
+   *
    * @generated from field: admin.v1.Announcement announcement = 1;
    */
   announcement?: Announcement | undefined;
@@ -132,25 +168,35 @@ export declare type GetAnnouncementResponse = Message<"admin.v1.GetAnnouncementR
 export declare const GetAnnouncementResponseSchema: GenMessage<GetAnnouncementResponse>;
 
 /**
+ * CreateAnnouncement の Request。
+ *
  * @generated from message admin.v1.CreateAnnouncementRequest
  */
 export declare type CreateAnnouncementRequest = Message<"admin.v1.CreateAnnouncementRequest"> & {
   /**
+   * タイトル。
+   *
    * @generated from field: string title = 1;
    */
   title: string;
 
   /**
+   * リンク先の URL。
+   *
    * @generated from field: string url = 2;
    */
   url: string;
 
   /**
+   * 公開を開始する日時。
+   *
    * @generated from field: google.protobuf.Timestamp available_from = 3;
    */
   availableFrom?: Timestamp | undefined;
 
   /**
+   * 公開を終了する日時。未設定の場合は終了しない。
+   *
    * @generated from field: optional google.protobuf.Timestamp available_until = 4;
    */
   availableUntil?: Timestamp | undefined;
@@ -163,10 +209,14 @@ export declare type CreateAnnouncementRequest = Message<"admin.v1.CreateAnnounce
 export declare const CreateAnnouncementRequestSchema: GenMessage<CreateAnnouncementRequest>;
 
 /**
+ * CreateAnnouncement の Response。
+ *
  * @generated from message admin.v1.CreateAnnouncementResponse
  */
 export declare type CreateAnnouncementResponse = Message<"admin.v1.CreateAnnouncementResponse"> & {
   /**
+   * 作成したおしらせ。
+   *
    * @generated from field: admin.v1.Announcement announcement = 1;
    */
   announcement?: Announcement | undefined;
@@ -179,35 +229,49 @@ export declare type CreateAnnouncementResponse = Message<"admin.v1.CreateAnnounc
 export declare const CreateAnnouncementResponseSchema: GenMessage<CreateAnnouncementResponse>;
 
 /**
+ * UpdateAnnouncement の Request。
+ *
  * @generated from message admin.v1.UpdateAnnouncementRequest
  */
 export declare type UpdateAnnouncementRequest = Message<"admin.v1.UpdateAnnouncementRequest"> & {
   /**
+   * 更新するおしらせID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * タイトル。
+   *
    * @generated from field: string title = 2;
    */
   title: string;
 
   /**
+   * リンク先の URL。
+   *
    * @generated from field: string url = 3;
    */
   url: string;
 
   /**
+   * 公開を開始する日時。
+   *
    * @generated from field: google.protobuf.Timestamp available_from = 4;
    */
   availableFrom?: Timestamp | undefined;
 
   /**
+   * 公開を終了する日時。未設定の場合は終了しない。
+   *
    * @generated from field: optional google.protobuf.Timestamp available_until = 5;
    */
   availableUntil?: Timestamp | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -220,10 +284,14 @@ export declare type UpdateAnnouncementRequest = Message<"admin.v1.UpdateAnnounce
 export declare const UpdateAnnouncementRequestSchema: GenMessage<UpdateAnnouncementRequest>;
 
 /**
+ * UpdateAnnouncement の Response。
+ *
  * @generated from message admin.v1.UpdateAnnouncementResponse
  */
 export declare type UpdateAnnouncementResponse = Message<"admin.v1.UpdateAnnouncementResponse"> & {
   /**
+   * 更新したおしらせ。
+   *
    * @generated from field: admin.v1.Announcement announcement = 1;
    */
   announcement?: Announcement | undefined;
@@ -236,10 +304,14 @@ export declare type UpdateAnnouncementResponse = Message<"admin.v1.UpdateAnnounc
 export declare const UpdateAnnouncementResponseSchema: GenMessage<UpdateAnnouncementResponse>;
 
 /**
+ * DeleteAnnouncement の Request。
+ *
  * @generated from message admin.v1.DeleteAnnouncementRequest
  */
 export declare type DeleteAnnouncementRequest = Message<"admin.v1.DeleteAnnouncementRequest"> & {
   /**
+   * 削除するおしらせID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -252,6 +324,8 @@ export declare type DeleteAnnouncementRequest = Message<"admin.v1.DeleteAnnounce
 export declare const DeleteAnnouncementRequestSchema: GenMessage<DeleteAnnouncementRequest>;
 
 /**
+ * DeleteAnnouncement の Response。
+ *
  * @generated from message admin.v1.DeleteAnnouncementResponse
  */
 export declare type DeleteAnnouncementResponse = Message<"admin.v1.DeleteAnnouncementResponse"> & {
@@ -264,10 +338,14 @@ export declare type DeleteAnnouncementResponse = Message<"admin.v1.DeleteAnnounc
 export declare const DeleteAnnouncementResponseSchema: GenMessage<DeleteAnnouncementResponse>;
 
 /**
+ * おしらせを管理する。
+ *
  * @generated from service admin.v1.AnnouncementService
  */
 export declare const AnnouncementService: GenService<{
   /**
+   * おしらせの一覧を取得する。
+   *
    * @generated from rpc admin.v1.AnnouncementService.ListAnnouncements
    */
   listAnnouncements: {
@@ -276,6 +354,8 @@ export declare const AnnouncementService: GenService<{
     output: typeof ListAnnouncementsResponseSchema;
   },
   /**
+   * おしらせを取得する。
+   *
    * @generated from rpc admin.v1.AnnouncementService.GetAnnouncement
    */
   getAnnouncement: {
@@ -284,6 +364,8 @@ export declare const AnnouncementService: GenService<{
     output: typeof GetAnnouncementResponseSchema;
   },
   /**
+   * おしらせを作成する。
+   *
    * @generated from rpc admin.v1.AnnouncementService.CreateAnnouncement
    */
   createAnnouncement: {
@@ -292,6 +374,8 @@ export declare const AnnouncementService: GenService<{
     output: typeof CreateAnnouncementResponseSchema;
   },
   /**
+   * おしらせを更新する。
+   *
    * @generated from rpc admin.v1.AnnouncementService.UpdateAnnouncement
    */
   updateAnnouncement: {
@@ -300,6 +384,8 @@ export declare const AnnouncementService: GenService<{
     output: typeof UpdateAnnouncementResponseSchema;
   },
   /**
+   * おしらせを削除する。
+   *
    * @generated from rpc admin.v1.AnnouncementService.DeleteAnnouncement
    */
   deleteAnnouncement: {

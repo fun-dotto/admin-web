@@ -12,30 +12,42 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_faculty: GenFile;
 
 /**
+ * 教員。
+ *
  * @generated from message admin.v1.Faculty
  */
 export declare type Faculty = Message<"admin.v1.Faculty"> & {
   /**
+   * ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 名前。
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * メールアドレス。
+   *
    * @generated from field: string email = 3;
    */
   email: string;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 4;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 5;
    */
   updatedAt?: Timestamp | undefined;
@@ -48,15 +60,21 @@ export declare type Faculty = Message<"admin.v1.Faculty"> & {
 export declare const FacultySchema: GenMessage<Faculty>;
 
 /**
+ * ListFaculties の Request。
+ *
  * @generated from message admin.v1.ListFacultiesRequest
  */
 export declare type ListFacultiesRequest = Message<"admin.v1.ListFacultiesRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -69,15 +87,21 @@ export declare type ListFacultiesRequest = Message<"admin.v1.ListFacultiesReques
 export declare const ListFacultiesRequestSchema: GenMessage<ListFacultiesRequest>;
 
 /**
+ * ListFaculties の Response。
+ *
  * @generated from message admin.v1.ListFacultiesResponse
  */
 export declare type ListFacultiesResponse = Message<"admin.v1.ListFacultiesResponse"> & {
   /**
+   * 教員の一覧。
+   *
    * @generated from field: repeated admin.v1.Faculty faculties = 1;
    */
   faculties: Faculty[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -90,10 +114,14 @@ export declare type ListFacultiesResponse = Message<"admin.v1.ListFacultiesRespo
 export declare const ListFacultiesResponseSchema: GenMessage<ListFacultiesResponse>;
 
 /**
+ * GetFaculty の Request。
+ *
  * @generated from message admin.v1.GetFacultyRequest
  */
 export declare type GetFacultyRequest = Message<"admin.v1.GetFacultyRequest"> & {
   /**
+   * 取得する教員ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -106,10 +134,14 @@ export declare type GetFacultyRequest = Message<"admin.v1.GetFacultyRequest"> & 
 export declare const GetFacultyRequestSchema: GenMessage<GetFacultyRequest>;
 
 /**
+ * GetFaculty の Response。
+ *
  * @generated from message admin.v1.GetFacultyResponse
  */
 export declare type GetFacultyResponse = Message<"admin.v1.GetFacultyResponse"> & {
   /**
+   * 取得した教員。
+   *
    * @generated from field: admin.v1.Faculty faculty = 1;
    */
   faculty?: Faculty | undefined;
@@ -122,15 +154,21 @@ export declare type GetFacultyResponse = Message<"admin.v1.GetFacultyResponse"> 
 export declare const GetFacultyResponseSchema: GenMessage<GetFacultyResponse>;
 
 /**
+ * CreateFaculty の Request。
+ *
  * @generated from message admin.v1.CreateFacultyRequest
  */
 export declare type CreateFacultyRequest = Message<"admin.v1.CreateFacultyRequest"> & {
   /**
+   * 名前。
+   *
    * @generated from field: string name = 1;
    */
   name: string;
 
   /**
+   * メールアドレス。
+   *
    * @generated from field: string email = 2;
    */
   email: string;
@@ -143,10 +181,14 @@ export declare type CreateFacultyRequest = Message<"admin.v1.CreateFacultyReques
 export declare const CreateFacultyRequestSchema: GenMessage<CreateFacultyRequest>;
 
 /**
+ * CreateFaculty の Response。
+ *
  * @generated from message admin.v1.CreateFacultyResponse
  */
 export declare type CreateFacultyResponse = Message<"admin.v1.CreateFacultyResponse"> & {
   /**
+   * 作成した教員。
+   *
    * @generated from field: admin.v1.Faculty faculty = 1;
    */
   faculty?: Faculty | undefined;
@@ -159,25 +201,35 @@ export declare type CreateFacultyResponse = Message<"admin.v1.CreateFacultyRespo
 export declare const CreateFacultyResponseSchema: GenMessage<CreateFacultyResponse>;
 
 /**
+ * UpdateFaculty の Request。
+ *
  * @generated from message admin.v1.UpdateFacultyRequest
  */
 export declare type UpdateFacultyRequest = Message<"admin.v1.UpdateFacultyRequest"> & {
   /**
+   * 更新する教員ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 名前。
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * メールアドレス。
+   *
    * @generated from field: string email = 3;
    */
   email: string;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -190,10 +242,14 @@ export declare type UpdateFacultyRequest = Message<"admin.v1.UpdateFacultyReques
 export declare const UpdateFacultyRequestSchema: GenMessage<UpdateFacultyRequest>;
 
 /**
+ * UpdateFaculty の Response。
+ *
  * @generated from message admin.v1.UpdateFacultyResponse
  */
 export declare type UpdateFacultyResponse = Message<"admin.v1.UpdateFacultyResponse"> & {
   /**
+   * 更新した教員。
+   *
    * @generated from field: admin.v1.Faculty faculty = 1;
    */
   faculty?: Faculty | undefined;
@@ -206,10 +262,14 @@ export declare type UpdateFacultyResponse = Message<"admin.v1.UpdateFacultyRespo
 export declare const UpdateFacultyResponseSchema: GenMessage<UpdateFacultyResponse>;
 
 /**
+ * DeleteFaculty の Request。
+ *
  * @generated from message admin.v1.DeleteFacultyRequest
  */
 export declare type DeleteFacultyRequest = Message<"admin.v1.DeleteFacultyRequest"> & {
   /**
+   * 削除する教員ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -222,6 +282,8 @@ export declare type DeleteFacultyRequest = Message<"admin.v1.DeleteFacultyReques
 export declare const DeleteFacultyRequestSchema: GenMessage<DeleteFacultyRequest>;
 
 /**
+ * DeleteFaculty の Response。
+ *
  * @generated from message admin.v1.DeleteFacultyResponse
  */
 export declare type DeleteFacultyResponse = Message<"admin.v1.DeleteFacultyResponse"> & {
@@ -234,10 +296,14 @@ export declare type DeleteFacultyResponse = Message<"admin.v1.DeleteFacultyRespo
 export declare const DeleteFacultyResponseSchema: GenMessage<DeleteFacultyResponse>;
 
 /**
+ * 教員を管理する。
+ *
  * @generated from service admin.v1.FacultyService
  */
 export declare const FacultyService: GenService<{
   /**
+   * 教員の一覧を取得する。
+   *
    * @generated from rpc admin.v1.FacultyService.ListFaculties
    */
   listFaculties: {
@@ -246,6 +312,8 @@ export declare const FacultyService: GenService<{
     output: typeof ListFacultiesResponseSchema;
   },
   /**
+   * 教員を取得する。
+   *
    * @generated from rpc admin.v1.FacultyService.GetFaculty
    */
   getFaculty: {
@@ -254,6 +322,8 @@ export declare const FacultyService: GenService<{
     output: typeof GetFacultyResponseSchema;
   },
   /**
+   * 教員を作成する。
+   *
    * @generated from rpc admin.v1.FacultyService.CreateFaculty
    */
   createFaculty: {
@@ -262,6 +332,8 @@ export declare const FacultyService: GenService<{
     output: typeof CreateFacultyResponseSchema;
   },
   /**
+   * 教員を更新する。
+   *
    * @generated from rpc admin.v1.FacultyService.UpdateFaculty
    */
   updateFaculty: {
@@ -270,6 +342,8 @@ export declare const FacultyService: GenService<{
     output: typeof UpdateFacultyResponseSchema;
   },
   /**
+   * 教員を削除する。
+   *
    * @generated from rpc admin.v1.FacultyService.DeleteFaculty
    */
   deleteFaculty: {

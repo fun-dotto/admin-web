@@ -14,45 +14,63 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_room_change: GenFile;
 
 /**
+ * 教室変更。
+ *
  * @generated from message admin.v1.RoomChange
  */
 export declare type RoomChange = Message<"admin.v1.RoomChange"> & {
   /**
+   * ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
 
   /**
+   * 教室を変更する日付。
+   *
    * @generated from field: google.type.Date date = 3;
    */
   date?: Date | undefined;
 
   /**
+   * 教室を変更する時限。
+   *
    * @generated from field: admin.v1.Period period = 4;
    */
   period: Period;
 
   /**
+   * 変更前の教室ID。
+   *
    * @generated from field: string original_room_id = 5;
    */
   originalRoomId: string;
 
   /**
+   * 変更後の教室ID。
+   *
    * @generated from field: string new_room_id = 6;
    */
   newRoomId: string;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 7;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 8;
    */
   updatedAt?: Timestamp | undefined;
@@ -65,15 +83,21 @@ export declare type RoomChange = Message<"admin.v1.RoomChange"> & {
 export declare const RoomChangeSchema: GenMessage<RoomChange>;
 
 /**
+ * ListRoomChanges の Request。
+ *
  * @generated from message admin.v1.ListRoomChangesRequest
  */
 export declare type ListRoomChangesRequest = Message<"admin.v1.ListRoomChangesRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -86,15 +110,21 @@ export declare type ListRoomChangesRequest = Message<"admin.v1.ListRoomChangesRe
 export declare const ListRoomChangesRequestSchema: GenMessage<ListRoomChangesRequest>;
 
 /**
+ * ListRoomChanges の Response。
+ *
  * @generated from message admin.v1.ListRoomChangesResponse
  */
 export declare type ListRoomChangesResponse = Message<"admin.v1.ListRoomChangesResponse"> & {
   /**
+   * 教室変更の一覧。
+   *
    * @generated from field: repeated admin.v1.RoomChange room_changes = 1;
    */
   roomChanges: RoomChange[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -107,10 +137,14 @@ export declare type ListRoomChangesResponse = Message<"admin.v1.ListRoomChangesR
 export declare const ListRoomChangesResponseSchema: GenMessage<ListRoomChangesResponse>;
 
 /**
+ * GetRoomChange の Request。
+ *
  * @generated from message admin.v1.GetRoomChangeRequest
  */
 export declare type GetRoomChangeRequest = Message<"admin.v1.GetRoomChangeRequest"> & {
   /**
+   * 取得する教室変更ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -123,10 +157,14 @@ export declare type GetRoomChangeRequest = Message<"admin.v1.GetRoomChangeReques
 export declare const GetRoomChangeRequestSchema: GenMessage<GetRoomChangeRequest>;
 
 /**
+ * GetRoomChange の Response。
+ *
  * @generated from message admin.v1.GetRoomChangeResponse
  */
 export declare type GetRoomChangeResponse = Message<"admin.v1.GetRoomChangeResponse"> & {
   /**
+   * 取得した教室変更。
+   *
    * @generated from field: admin.v1.RoomChange room_change = 1;
    */
   roomChange?: RoomChange | undefined;
@@ -139,30 +177,42 @@ export declare type GetRoomChangeResponse = Message<"admin.v1.GetRoomChangeRespo
 export declare const GetRoomChangeResponseSchema: GenMessage<GetRoomChangeResponse>;
 
 /**
+ * CreateRoomChange の Request。
+ *
  * @generated from message admin.v1.CreateRoomChangeRequest
  */
 export declare type CreateRoomChangeRequest = Message<"admin.v1.CreateRoomChangeRequest"> & {
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 1;
    */
   subjectId: string;
 
   /**
+   * 教室を変更する日付。
+   *
    * @generated from field: google.type.Date date = 2;
    */
   date?: Date | undefined;
 
   /**
+   * 教室を変更する時限。
+   *
    * @generated from field: admin.v1.Period period = 3;
    */
   period: Period;
 
   /**
+   * 変更前の教室ID。
+   *
    * @generated from field: string original_room_id = 4;
    */
   originalRoomId: string;
 
   /**
+   * 変更後の教室ID。
+   *
    * @generated from field: string new_room_id = 5;
    */
   newRoomId: string;
@@ -175,10 +225,14 @@ export declare type CreateRoomChangeRequest = Message<"admin.v1.CreateRoomChange
 export declare const CreateRoomChangeRequestSchema: GenMessage<CreateRoomChangeRequest>;
 
 /**
+ * CreateRoomChange の Response。
+ *
  * @generated from message admin.v1.CreateRoomChangeResponse
  */
 export declare type CreateRoomChangeResponse = Message<"admin.v1.CreateRoomChangeResponse"> & {
   /**
+   * 作成した教室変更。
+   *
    * @generated from field: admin.v1.RoomChange room_change = 1;
    */
   roomChange?: RoomChange | undefined;
@@ -191,40 +245,56 @@ export declare type CreateRoomChangeResponse = Message<"admin.v1.CreateRoomChang
 export declare const CreateRoomChangeResponseSchema: GenMessage<CreateRoomChangeResponse>;
 
 /**
+ * UpdateRoomChange の Request。
+ *
  * @generated from message admin.v1.UpdateRoomChangeRequest
  */
 export declare type UpdateRoomChangeRequest = Message<"admin.v1.UpdateRoomChangeRequest"> & {
   /**
+   * 更新する教室変更ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
 
   /**
+   * 教室を変更する日付。
+   *
    * @generated from field: google.type.Date date = 3;
    */
   date?: Date | undefined;
 
   /**
+   * 教室を変更する時限。
+   *
    * @generated from field: admin.v1.Period period = 4;
    */
   period: Period;
 
   /**
+   * 変更前の教室ID。
+   *
    * @generated from field: string original_room_id = 5;
    */
   originalRoomId: string;
 
   /**
+   * 変更後の教室ID。
+   *
    * @generated from field: string new_room_id = 6;
    */
   newRoomId: string;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -237,10 +307,14 @@ export declare type UpdateRoomChangeRequest = Message<"admin.v1.UpdateRoomChange
 export declare const UpdateRoomChangeRequestSchema: GenMessage<UpdateRoomChangeRequest>;
 
 /**
+ * UpdateRoomChange の Response。
+ *
  * @generated from message admin.v1.UpdateRoomChangeResponse
  */
 export declare type UpdateRoomChangeResponse = Message<"admin.v1.UpdateRoomChangeResponse"> & {
   /**
+   * 更新した教室変更。
+   *
    * @generated from field: admin.v1.RoomChange room_change = 1;
    */
   roomChange?: RoomChange | undefined;
@@ -253,10 +327,14 @@ export declare type UpdateRoomChangeResponse = Message<"admin.v1.UpdateRoomChang
 export declare const UpdateRoomChangeResponseSchema: GenMessage<UpdateRoomChangeResponse>;
 
 /**
+ * DeleteRoomChange の Request。
+ *
  * @generated from message admin.v1.DeleteRoomChangeRequest
  */
 export declare type DeleteRoomChangeRequest = Message<"admin.v1.DeleteRoomChangeRequest"> & {
   /**
+   * 削除する教室変更ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -269,6 +347,8 @@ export declare type DeleteRoomChangeRequest = Message<"admin.v1.DeleteRoomChange
 export declare const DeleteRoomChangeRequestSchema: GenMessage<DeleteRoomChangeRequest>;
 
 /**
+ * DeleteRoomChange の Response。
+ *
  * @generated from message admin.v1.DeleteRoomChangeResponse
  */
 export declare type DeleteRoomChangeResponse = Message<"admin.v1.DeleteRoomChangeResponse"> & {
@@ -281,10 +361,14 @@ export declare type DeleteRoomChangeResponse = Message<"admin.v1.DeleteRoomChang
 export declare const DeleteRoomChangeResponseSchema: GenMessage<DeleteRoomChangeResponse>;
 
 /**
+ * 教室変更を管理する。
+ *
  * @generated from service admin.v1.RoomChangeService
  */
 export declare const RoomChangeService: GenService<{
   /**
+   * 教室変更の一覧を取得する。
+   *
    * @generated from rpc admin.v1.RoomChangeService.ListRoomChanges
    */
   listRoomChanges: {
@@ -293,6 +377,8 @@ export declare const RoomChangeService: GenService<{
     output: typeof ListRoomChangesResponseSchema;
   },
   /**
+   * 教室変更を取得する。
+   *
    * @generated from rpc admin.v1.RoomChangeService.GetRoomChange
    */
   getRoomChange: {
@@ -301,6 +387,8 @@ export declare const RoomChangeService: GenService<{
     output: typeof GetRoomChangeResponseSchema;
   },
   /**
+   * 教室変更を作成する。
+   *
    * @generated from rpc admin.v1.RoomChangeService.CreateRoomChange
    */
   createRoomChange: {
@@ -309,6 +397,8 @@ export declare const RoomChangeService: GenService<{
     output: typeof CreateRoomChangeResponseSchema;
   },
   /**
+   * 教室変更を更新する。
+   *
    * @generated from rpc admin.v1.RoomChangeService.UpdateRoomChange
    */
   updateRoomChange: {
@@ -317,6 +407,8 @@ export declare const RoomChangeService: GenService<{
     output: typeof UpdateRoomChangeResponseSchema;
   },
   /**
+   * 教室変更を削除する。
+   *
    * @generated from rpc admin.v1.RoomChangeService.DeleteRoomChange
    */
   deleteRoomChange: {

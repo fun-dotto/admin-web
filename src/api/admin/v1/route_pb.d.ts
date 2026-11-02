@@ -12,15 +12,21 @@ import type { FieldMask } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_route: GenFile;
 
 /**
+ * 経路情報（GTFS の routes）。
+ *
  * @generated from message admin.v1.Route
  */
 export declare type Route = Message<"admin.v1.Route"> & {
   /**
+   * 経路ID（GTFS の route_id）。
+   *
    * @generated from field: string route_id = 1;
    */
   routeId: string;
 
   /**
+   * 経路略称（GTFS の route_short_name）。
+   *
    * @generated from field: string route_short_name = 2;
    */
   routeShortName: string;
@@ -33,15 +39,21 @@ export declare type Route = Message<"admin.v1.Route"> & {
 export declare const RouteSchema: GenMessage<Route>;
 
 /**
+ * ListRoutes の Request。
+ *
  * @generated from message admin.v1.ListRoutesRequest
  */
 export declare type ListRoutesRequest = Message<"admin.v1.ListRoutesRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -54,15 +66,21 @@ export declare type ListRoutesRequest = Message<"admin.v1.ListRoutesRequest"> & 
 export declare const ListRoutesRequestSchema: GenMessage<ListRoutesRequest>;
 
 /**
+ * ListRoutes の Response。
+ *
  * @generated from message admin.v1.ListRoutesResponse
  */
 export declare type ListRoutesResponse = Message<"admin.v1.ListRoutesResponse"> & {
   /**
+   * 経路情報（GTFS の routes）の一覧。
+   *
    * @generated from field: repeated admin.v1.Route routes = 1;
    */
   routes: Route[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -75,10 +93,14 @@ export declare type ListRoutesResponse = Message<"admin.v1.ListRoutesResponse"> 
 export declare const ListRoutesResponseSchema: GenMessage<ListRoutesResponse>;
 
 /**
+ * GetRoute の Request。
+ *
  * @generated from message admin.v1.GetRouteRequest
  */
 export declare type GetRouteRequest = Message<"admin.v1.GetRouteRequest"> & {
   /**
+   * 経路ID（GTFS の route_id）。
+   *
    * @generated from field: string route_id = 1;
    */
   routeId: string;
@@ -91,10 +113,14 @@ export declare type GetRouteRequest = Message<"admin.v1.GetRouteRequest"> & {
 export declare const GetRouteRequestSchema: GenMessage<GetRouteRequest>;
 
 /**
+ * GetRoute の Response。
+ *
  * @generated from message admin.v1.GetRouteResponse
  */
 export declare type GetRouteResponse = Message<"admin.v1.GetRouteResponse"> & {
   /**
+   * 取得した経路情報（GTFS の routes）。
+   *
    * @generated from field: admin.v1.Route route = 1;
    */
   route?: Route | undefined;
@@ -107,15 +133,21 @@ export declare type GetRouteResponse = Message<"admin.v1.GetRouteResponse"> & {
 export declare const GetRouteResponseSchema: GenMessage<GetRouteResponse>;
 
 /**
+ * CreateRoute の Request。
+ *
  * @generated from message admin.v1.CreateRouteRequest
  */
 export declare type CreateRouteRequest = Message<"admin.v1.CreateRouteRequest"> & {
   /**
+   * 経路ID（GTFS の route_id）。
+   *
    * @generated from field: string route_id = 1;
    */
   routeId: string;
 
   /**
+   * 経路略称（GTFS の route_short_name）。
+   *
    * @generated from field: string route_short_name = 2;
    */
   routeShortName: string;
@@ -128,10 +160,14 @@ export declare type CreateRouteRequest = Message<"admin.v1.CreateRouteRequest"> 
 export declare const CreateRouteRequestSchema: GenMessage<CreateRouteRequest>;
 
 /**
+ * CreateRoute の Response。
+ *
  * @generated from message admin.v1.CreateRouteResponse
  */
 export declare type CreateRouteResponse = Message<"admin.v1.CreateRouteResponse"> & {
   /**
+   * 作成した経路情報（GTFS の routes）。
+   *
    * @generated from field: admin.v1.Route route = 1;
    */
   route?: Route | undefined;
@@ -144,20 +180,28 @@ export declare type CreateRouteResponse = Message<"admin.v1.CreateRouteResponse"
 export declare const CreateRouteResponseSchema: GenMessage<CreateRouteResponse>;
 
 /**
+ * UpdateRoute の Request。
+ *
  * @generated from message admin.v1.UpdateRouteRequest
  */
 export declare type UpdateRouteRequest = Message<"admin.v1.UpdateRouteRequest"> & {
   /**
+   * 経路ID（GTFS の route_id）。
+   *
    * @generated from field: string route_id = 1;
    */
   routeId: string;
 
   /**
+   * 経路略称（GTFS の route_short_name）。
+   *
    * @generated from field: string route_short_name = 2;
    */
   routeShortName: string;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -170,10 +214,14 @@ export declare type UpdateRouteRequest = Message<"admin.v1.UpdateRouteRequest"> 
 export declare const UpdateRouteRequestSchema: GenMessage<UpdateRouteRequest>;
 
 /**
+ * UpdateRoute の Response。
+ *
  * @generated from message admin.v1.UpdateRouteResponse
  */
 export declare type UpdateRouteResponse = Message<"admin.v1.UpdateRouteResponse"> & {
   /**
+   * 更新した経路情報（GTFS の routes）。
+   *
    * @generated from field: admin.v1.Route route = 1;
    */
   route?: Route | undefined;
@@ -186,10 +234,14 @@ export declare type UpdateRouteResponse = Message<"admin.v1.UpdateRouteResponse"
 export declare const UpdateRouteResponseSchema: GenMessage<UpdateRouteResponse>;
 
 /**
+ * DeleteRoute の Request。
+ *
  * @generated from message admin.v1.DeleteRouteRequest
  */
 export declare type DeleteRouteRequest = Message<"admin.v1.DeleteRouteRequest"> & {
   /**
+   * 経路ID（GTFS の route_id）。
+   *
    * @generated from field: string route_id = 1;
    */
   routeId: string;
@@ -202,6 +254,8 @@ export declare type DeleteRouteRequest = Message<"admin.v1.DeleteRouteRequest"> 
 export declare const DeleteRouteRequestSchema: GenMessage<DeleteRouteRequest>;
 
 /**
+ * DeleteRoute の Response。
+ *
  * @generated from message admin.v1.DeleteRouteResponse
  */
 export declare type DeleteRouteResponse = Message<"admin.v1.DeleteRouteResponse"> & {
@@ -214,10 +268,14 @@ export declare type DeleteRouteResponse = Message<"admin.v1.DeleteRouteResponse"
 export declare const DeleteRouteResponseSchema: GenMessage<DeleteRouteResponse>;
 
 /**
+ * 経路情報（GTFS の routes）を管理する。
+ *
  * @generated from service admin.v1.RouteService
  */
 export declare const RouteService: GenService<{
   /**
+   * 経路情報（GTFS の routes）の一覧を取得する。
+   *
    * @generated from rpc admin.v1.RouteService.ListRoutes
    */
   listRoutes: {
@@ -226,6 +284,8 @@ export declare const RouteService: GenService<{
     output: typeof ListRoutesResponseSchema;
   },
   /**
+   * 経路情報（GTFS の routes）を取得する。
+   *
    * @generated from rpc admin.v1.RouteService.GetRoute
    */
   getRoute: {
@@ -234,6 +294,8 @@ export declare const RouteService: GenService<{
     output: typeof GetRouteResponseSchema;
   },
   /**
+   * 経路情報（GTFS の routes）を作成する。
+   *
    * @generated from rpc admin.v1.RouteService.CreateRoute
    */
   createRoute: {
@@ -242,6 +304,8 @@ export declare const RouteService: GenService<{
     output: typeof CreateRouteResponseSchema;
   },
   /**
+   * 経路情報（GTFS の routes）を更新する。
+   *
    * @generated from rpc admin.v1.RouteService.UpdateRoute
    */
   updateRoute: {
@@ -250,6 +314,8 @@ export declare const RouteService: GenService<{
     output: typeof UpdateRouteResponseSchema;
   },
   /**
+   * 経路情報（GTFS の routes）を削除する。
+   *
    * @generated from rpc admin.v1.RouteService.DeleteRoute
    */
   deleteRoute: {

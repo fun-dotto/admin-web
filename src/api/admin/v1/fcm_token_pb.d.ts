@@ -12,25 +12,35 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_fcm_token: GenFile;
 
 /**
+ * FCMトークン。
+ *
  * @generated from message admin.v1.FcmToken
  */
 export declare type FcmToken = Message<"admin.v1.FcmToken"> & {
   /**
+   * FCMトークン。
+   *
    * @generated from field: string token = 1;
    */
   token: string;
 
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 2;
    */
   userId: string;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 3;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 4;
    */
   updatedAt?: Timestamp | undefined;
@@ -43,15 +53,21 @@ export declare type FcmToken = Message<"admin.v1.FcmToken"> & {
 export declare const FcmTokenSchema: GenMessage<FcmToken>;
 
 /**
+ * ListFcmTokens の Request。
+ *
  * @generated from message admin.v1.ListFcmTokensRequest
  */
 export declare type ListFcmTokensRequest = Message<"admin.v1.ListFcmTokensRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -64,15 +80,21 @@ export declare type ListFcmTokensRequest = Message<"admin.v1.ListFcmTokensReques
 export declare const ListFcmTokensRequestSchema: GenMessage<ListFcmTokensRequest>;
 
 /**
+ * ListFcmTokens の Response。
+ *
  * @generated from message admin.v1.ListFcmTokensResponse
  */
 export declare type ListFcmTokensResponse = Message<"admin.v1.ListFcmTokensResponse"> & {
   /**
+   * FCMトークンの一覧。
+   *
    * @generated from field: repeated admin.v1.FcmToken fcm_tokens = 1;
    */
   fcmTokens: FcmToken[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -85,10 +107,14 @@ export declare type ListFcmTokensResponse = Message<"admin.v1.ListFcmTokensRespo
 export declare const ListFcmTokensResponseSchema: GenMessage<ListFcmTokensResponse>;
 
 /**
+ * GetFcmToken の Request。
+ *
  * @generated from message admin.v1.GetFcmTokenRequest
  */
 export declare type GetFcmTokenRequest = Message<"admin.v1.GetFcmTokenRequest"> & {
   /**
+   * FCMトークン。
+   *
    * @generated from field: string token = 1;
    */
   token: string;
@@ -101,10 +127,14 @@ export declare type GetFcmTokenRequest = Message<"admin.v1.GetFcmTokenRequest"> 
 export declare const GetFcmTokenRequestSchema: GenMessage<GetFcmTokenRequest>;
 
 /**
+ * GetFcmToken の Response。
+ *
  * @generated from message admin.v1.GetFcmTokenResponse
  */
 export declare type GetFcmTokenResponse = Message<"admin.v1.GetFcmTokenResponse"> & {
   /**
+   * 取得したFCMトークン。
+   *
    * @generated from field: admin.v1.FcmToken fcm_token = 1;
    */
   fcmToken?: FcmToken | undefined;
@@ -117,15 +147,21 @@ export declare type GetFcmTokenResponse = Message<"admin.v1.GetFcmTokenResponse"
 export declare const GetFcmTokenResponseSchema: GenMessage<GetFcmTokenResponse>;
 
 /**
+ * CreateFcmToken の Request。
+ *
  * @generated from message admin.v1.CreateFcmTokenRequest
  */
 export declare type CreateFcmTokenRequest = Message<"admin.v1.CreateFcmTokenRequest"> & {
   /**
+   * FCMトークン。
+   *
    * @generated from field: string token = 1;
    */
   token: string;
 
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 2;
    */
   userId: string;
@@ -138,10 +174,14 @@ export declare type CreateFcmTokenRequest = Message<"admin.v1.CreateFcmTokenRequ
 export declare const CreateFcmTokenRequestSchema: GenMessage<CreateFcmTokenRequest>;
 
 /**
+ * CreateFcmToken の Response。
+ *
  * @generated from message admin.v1.CreateFcmTokenResponse
  */
 export declare type CreateFcmTokenResponse = Message<"admin.v1.CreateFcmTokenResponse"> & {
   /**
+   * 作成したFCMトークン。
+   *
    * @generated from field: admin.v1.FcmToken fcm_token = 1;
    */
   fcmToken?: FcmToken | undefined;
@@ -154,20 +194,28 @@ export declare type CreateFcmTokenResponse = Message<"admin.v1.CreateFcmTokenRes
 export declare const CreateFcmTokenResponseSchema: GenMessage<CreateFcmTokenResponse>;
 
 /**
+ * UpdateFcmToken の Request。
+ *
  * @generated from message admin.v1.UpdateFcmTokenRequest
  */
 export declare type UpdateFcmTokenRequest = Message<"admin.v1.UpdateFcmTokenRequest"> & {
   /**
+   * FCMトークン。
+   *
    * @generated from field: string token = 1;
    */
   token: string;
 
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 2;
    */
   userId: string;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -180,10 +228,14 @@ export declare type UpdateFcmTokenRequest = Message<"admin.v1.UpdateFcmTokenRequ
 export declare const UpdateFcmTokenRequestSchema: GenMessage<UpdateFcmTokenRequest>;
 
 /**
+ * UpdateFcmToken の Response。
+ *
  * @generated from message admin.v1.UpdateFcmTokenResponse
  */
 export declare type UpdateFcmTokenResponse = Message<"admin.v1.UpdateFcmTokenResponse"> & {
   /**
+   * 更新したFCMトークン。
+   *
    * @generated from field: admin.v1.FcmToken fcm_token = 1;
    */
   fcmToken?: FcmToken | undefined;
@@ -196,10 +248,14 @@ export declare type UpdateFcmTokenResponse = Message<"admin.v1.UpdateFcmTokenRes
 export declare const UpdateFcmTokenResponseSchema: GenMessage<UpdateFcmTokenResponse>;
 
 /**
+ * DeleteFcmToken の Request。
+ *
  * @generated from message admin.v1.DeleteFcmTokenRequest
  */
 export declare type DeleteFcmTokenRequest = Message<"admin.v1.DeleteFcmTokenRequest"> & {
   /**
+   * FCMトークン。
+   *
    * @generated from field: string token = 1;
    */
   token: string;
@@ -212,6 +268,8 @@ export declare type DeleteFcmTokenRequest = Message<"admin.v1.DeleteFcmTokenRequ
 export declare const DeleteFcmTokenRequestSchema: GenMessage<DeleteFcmTokenRequest>;
 
 /**
+ * DeleteFcmToken の Response。
+ *
  * @generated from message admin.v1.DeleteFcmTokenResponse
  */
 export declare type DeleteFcmTokenResponse = Message<"admin.v1.DeleteFcmTokenResponse"> & {
@@ -224,10 +282,14 @@ export declare type DeleteFcmTokenResponse = Message<"admin.v1.DeleteFcmTokenRes
 export declare const DeleteFcmTokenResponseSchema: GenMessage<DeleteFcmTokenResponse>;
 
 /**
+ * FCMトークンを管理する。
+ *
  * @generated from service admin.v1.FcmTokenService
  */
 export declare const FcmTokenService: GenService<{
   /**
+   * FCMトークンの一覧を取得する。
+   *
    * @generated from rpc admin.v1.FcmTokenService.ListFcmTokens
    */
   listFcmTokens: {
@@ -236,6 +298,8 @@ export declare const FcmTokenService: GenService<{
     output: typeof ListFcmTokensResponseSchema;
   },
   /**
+   * FCMトークンを取得する。
+   *
    * @generated from rpc admin.v1.FcmTokenService.GetFcmToken
    */
   getFcmToken: {
@@ -244,6 +308,8 @@ export declare const FcmTokenService: GenService<{
     output: typeof GetFcmTokenResponseSchema;
   },
   /**
+   * FCMトークンを作成する。
+   *
    * @generated from rpc admin.v1.FcmTokenService.CreateFcmToken
    */
   createFcmToken: {
@@ -252,6 +318,8 @@ export declare const FcmTokenService: GenService<{
     output: typeof CreateFcmTokenResponseSchema;
   },
   /**
+   * FCMトークンを更新する。
+   *
    * @generated from rpc admin.v1.FcmTokenService.UpdateFcmToken
    */
   updateFcmToken: {
@@ -260,6 +328,8 @@ export declare const FcmTokenService: GenService<{
     output: typeof UpdateFcmTokenResponseSchema;
   },
   /**
+   * FCMトークンを削除する。
+   *
    * @generated from rpc admin.v1.FcmTokenService.DeleteFcmToken
    */
   deleteFcmToken: {
