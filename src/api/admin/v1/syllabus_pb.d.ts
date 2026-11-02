@@ -12,150 +12,210 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_syllabus: GenFile;
 
 /**
+ * シラバス。
+ *
  * @generated from message admin.v1.Syllabus
  */
 export declare type Syllabus = Message<"admin.v1.Syllabus"> & {
   /**
+   * 教務システムのシラバスID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 授業名。
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * 授業名（英語）。
+   *
    * @generated from field: string en_name = 3;
    */
   enName: string;
 
   /**
+   * 配当年次。
+   *
    * @generated from field: string grades = 4;
    */
   grades: string;
 
   /**
+   * 単位数。
+   *
    * @generated from field: int32 credit = 5;
    */
   credit: number;
 
   /**
+   * 担当教員名。
+   *
    * @generated from field: string faculty_names = 6;
    */
   facultyNames: string;
 
   /**
+   * 実務家教員区分。
+   *
    * @generated from field: string practical_home_faculty_category = 7;
    */
   practicalHomeFacultyCategory: string;
 
   /**
+   * 複数人担当形式。
+   *
    * @generated from field: string multiple_person_teaching_form = 8;
    */
   multiplePersonTeachingForm: string;
 
   /**
+   * 授業形態。
+   *
    * @generated from field: string teaching_form = 9;
    */
   teachingForm: string;
 
   /**
+   * 授業の概要。
+   *
    * @generated from field: string summary = 10;
    */
   summary: string;
 
   /**
+   * 授業の到達目標。
+   *
    * @generated from field: string learning_outcomes = 11;
    */
   learningOutcomes: string;
 
   /**
+   * 提出課題等。
+   *
    * @generated from field: string assignments = 12;
    */
   assignments: string;
 
   /**
+   * 成績の評価方法・基準。
+   *
    * @generated from field: string evaluation_method = 13;
    */
   evaluationMethod: string;
 
   /**
+   * テキスト。
+   *
    * @generated from field: string textbooks = 14;
    */
   textbooks: string;
 
   /**
+   * 参考書。
+   *
    * @generated from field: string reference_books = 15;
    */
   referenceBooks: string;
 
   /**
+   * 履修条件。
+   *
    * @generated from field: string prerequisites = 16;
    */
   prerequisites: string;
 
   /**
+   * 事前学習。
+   *
    * @generated from field: string pre_learning = 17;
    */
   preLearning: string;
 
   /**
+   * 事後学習。
+   *
    * @generated from field: string post_learning = 18;
    */
   postLearning: string;
 
   /**
+   * 履修上の留意点。
+   *
    * @generated from field: string notes = 19;
    */
   notes: string;
 
   /**
+   * キーワード。
+   *
    * @generated from field: string keywords = 20;
    */
   keywords: string;
 
   /**
+   * 対象コース・領域。
+   *
    * @generated from field: string target_courses = 21;
    */
   targetCourses: string;
 
   /**
+   * 対象領域。
+   *
    * @generated from field: string target_areas = 22;
    */
   targetAreas: string;
 
   /**
+   * 科目群・科目区分。
+   *
    * @generated from field: string classifications = 23;
    */
   classifications: string;
 
   /**
+   * 教授言語。
+   *
    * @generated from field: string teaching_language = 24;
    */
   teachingLanguage: string;
 
   /**
+   * 授業内容とスケジュール。
+   *
    * @generated from field: string contents_and_schedule = 25;
    */
   contentsAndSchedule: string;
 
   /**
+   * 授業・試験の形式。
+   *
    * @generated from field: string teaching_and_exam_form = 26;
    */
   teachingAndExamForm: string;
 
   /**
+   * DSOP対象科目。
+   *
    * @generated from field: string dsop_subject = 27;
    */
   dsopSubject: string;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 28;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 29;
    */
   updatedAt?: Timestamp | undefined;
@@ -168,15 +228,21 @@ export declare type Syllabus = Message<"admin.v1.Syllabus"> & {
 export declare const SyllabusSchema: GenMessage<Syllabus>;
 
 /**
+ * ListSyllabi の Request。
+ *
  * @generated from message admin.v1.ListSyllabiRequest
  */
 export declare type ListSyllabiRequest = Message<"admin.v1.ListSyllabiRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -189,15 +255,21 @@ export declare type ListSyllabiRequest = Message<"admin.v1.ListSyllabiRequest"> 
 export declare const ListSyllabiRequestSchema: GenMessage<ListSyllabiRequest>;
 
 /**
+ * ListSyllabi の Response。
+ *
  * @generated from message admin.v1.ListSyllabiResponse
  */
 export declare type ListSyllabiResponse = Message<"admin.v1.ListSyllabiResponse"> & {
   /**
+   * シラバスの一覧。
+   *
    * @generated from field: repeated admin.v1.Syllabus syllabi = 1;
    */
   syllabi: Syllabus[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -210,10 +282,14 @@ export declare type ListSyllabiResponse = Message<"admin.v1.ListSyllabiResponse"
 export declare const ListSyllabiResponseSchema: GenMessage<ListSyllabiResponse>;
 
 /**
+ * GetSyllabus の Request。
+ *
  * @generated from message admin.v1.GetSyllabusRequest
  */
 export declare type GetSyllabusRequest = Message<"admin.v1.GetSyllabusRequest"> & {
   /**
+   * 取得するシラバスID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -226,10 +302,14 @@ export declare type GetSyllabusRequest = Message<"admin.v1.GetSyllabusRequest"> 
 export declare const GetSyllabusRequestSchema: GenMessage<GetSyllabusRequest>;
 
 /**
+ * GetSyllabus の Response。
+ *
  * @generated from message admin.v1.GetSyllabusResponse
  */
 export declare type GetSyllabusResponse = Message<"admin.v1.GetSyllabusResponse"> & {
   /**
+   * 取得したシラバス。
+   *
    * @generated from field: admin.v1.Syllabus syllabus = 1;
    */
   syllabus?: Syllabus | undefined;
@@ -242,140 +322,196 @@ export declare type GetSyllabusResponse = Message<"admin.v1.GetSyllabusResponse"
 export declare const GetSyllabusResponseSchema: GenMessage<GetSyllabusResponse>;
 
 /**
+ * CreateSyllabus の Request。
+ *
  * @generated from message admin.v1.CreateSyllabusRequest
  */
 export declare type CreateSyllabusRequest = Message<"admin.v1.CreateSyllabusRequest"> & {
   /**
+   * 教務システムのシラバスID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 授業名。
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * 授業名（英語）。
+   *
    * @generated from field: string en_name = 3;
    */
   enName: string;
 
   /**
+   * 配当年次。
+   *
    * @generated from field: string grades = 4;
    */
   grades: string;
 
   /**
+   * 単位数。
+   *
    * @generated from field: int32 credit = 5;
    */
   credit: number;
 
   /**
+   * 担当教員名。
+   *
    * @generated from field: string faculty_names = 6;
    */
   facultyNames: string;
 
   /**
+   * 実務家教員区分。
+   *
    * @generated from field: string practical_home_faculty_category = 7;
    */
   practicalHomeFacultyCategory: string;
 
   /**
+   * 複数人担当形式。
+   *
    * @generated from field: string multiple_person_teaching_form = 8;
    */
   multiplePersonTeachingForm: string;
 
   /**
+   * 授業形態。
+   *
    * @generated from field: string teaching_form = 9;
    */
   teachingForm: string;
 
   /**
+   * 授業の概要。
+   *
    * @generated from field: string summary = 10;
    */
   summary: string;
 
   /**
+   * 授業の到達目標。
+   *
    * @generated from field: string learning_outcomes = 11;
    */
   learningOutcomes: string;
 
   /**
+   * 提出課題等。
+   *
    * @generated from field: string assignments = 12;
    */
   assignments: string;
 
   /**
+   * 成績の評価方法・基準。
+   *
    * @generated from field: string evaluation_method = 13;
    */
   evaluationMethod: string;
 
   /**
+   * テキスト。
+   *
    * @generated from field: string textbooks = 14;
    */
   textbooks: string;
 
   /**
+   * 参考書。
+   *
    * @generated from field: string reference_books = 15;
    */
   referenceBooks: string;
 
   /**
+   * 履修条件。
+   *
    * @generated from field: string prerequisites = 16;
    */
   prerequisites: string;
 
   /**
+   * 事前学習。
+   *
    * @generated from field: string pre_learning = 17;
    */
   preLearning: string;
 
   /**
+   * 事後学習。
+   *
    * @generated from field: string post_learning = 18;
    */
   postLearning: string;
 
   /**
+   * 履修上の留意点。
+   *
    * @generated from field: string notes = 19;
    */
   notes: string;
 
   /**
+   * キーワード。
+   *
    * @generated from field: string keywords = 20;
    */
   keywords: string;
 
   /**
+   * 対象コース・領域。
+   *
    * @generated from field: string target_courses = 21;
    */
   targetCourses: string;
 
   /**
+   * 対象領域。
+   *
    * @generated from field: string target_areas = 22;
    */
   targetAreas: string;
 
   /**
+   * 科目群・科目区分。
+   *
    * @generated from field: string classifications = 23;
    */
   classifications: string;
 
   /**
+   * 教授言語。
+   *
    * @generated from field: string teaching_language = 24;
    */
   teachingLanguage: string;
 
   /**
+   * 授業内容とスケジュール。
+   *
    * @generated from field: string contents_and_schedule = 25;
    */
   contentsAndSchedule: string;
 
   /**
+   * 授業・試験の形式。
+   *
    * @generated from field: string teaching_and_exam_form = 26;
    */
   teachingAndExamForm: string;
 
   /**
+   * DSOP対象科目。
+   *
    * @generated from field: string dsop_subject = 27;
    */
   dsopSubject: string;
@@ -388,10 +524,14 @@ export declare type CreateSyllabusRequest = Message<"admin.v1.CreateSyllabusRequ
 export declare const CreateSyllabusRequestSchema: GenMessage<CreateSyllabusRequest>;
 
 /**
+ * CreateSyllabus の Response。
+ *
  * @generated from message admin.v1.CreateSyllabusResponse
  */
 export declare type CreateSyllabusResponse = Message<"admin.v1.CreateSyllabusResponse"> & {
   /**
+   * 作成したシラバス。
+   *
    * @generated from field: admin.v1.Syllabus syllabus = 1;
    */
   syllabus?: Syllabus | undefined;
@@ -404,145 +544,203 @@ export declare type CreateSyllabusResponse = Message<"admin.v1.CreateSyllabusRes
 export declare const CreateSyllabusResponseSchema: GenMessage<CreateSyllabusResponse>;
 
 /**
+ * UpdateSyllabus の Request。
+ *
  * @generated from message admin.v1.UpdateSyllabusRequest
  */
 export declare type UpdateSyllabusRequest = Message<"admin.v1.UpdateSyllabusRequest"> & {
   /**
+   * 更新するシラバスID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 授業名。
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * 授業名（英語）。
+   *
    * @generated from field: string en_name = 3;
    */
   enName: string;
 
   /**
+   * 配当年次。
+   *
    * @generated from field: string grades = 4;
    */
   grades: string;
 
   /**
+   * 単位数。
+   *
    * @generated from field: int32 credit = 5;
    */
   credit: number;
 
   /**
+   * 担当教員名。
+   *
    * @generated from field: string faculty_names = 6;
    */
   facultyNames: string;
 
   /**
+   * 実務家教員区分。
+   *
    * @generated from field: string practical_home_faculty_category = 7;
    */
   practicalHomeFacultyCategory: string;
 
   /**
+   * 複数人担当形式。
+   *
    * @generated from field: string multiple_person_teaching_form = 8;
    */
   multiplePersonTeachingForm: string;
 
   /**
+   * 授業形態。
+   *
    * @generated from field: string teaching_form = 9;
    */
   teachingForm: string;
 
   /**
+   * 授業の概要。
+   *
    * @generated from field: string summary = 10;
    */
   summary: string;
 
   /**
+   * 授業の到達目標。
+   *
    * @generated from field: string learning_outcomes = 11;
    */
   learningOutcomes: string;
 
   /**
+   * 提出課題等。
+   *
    * @generated from field: string assignments = 12;
    */
   assignments: string;
 
   /**
+   * 成績の評価方法・基準。
+   *
    * @generated from field: string evaluation_method = 13;
    */
   evaluationMethod: string;
 
   /**
+   * テキスト。
+   *
    * @generated from field: string textbooks = 14;
    */
   textbooks: string;
 
   /**
+   * 参考書。
+   *
    * @generated from field: string reference_books = 15;
    */
   referenceBooks: string;
 
   /**
+   * 履修条件。
+   *
    * @generated from field: string prerequisites = 16;
    */
   prerequisites: string;
 
   /**
+   * 事前学習。
+   *
    * @generated from field: string pre_learning = 17;
    */
   preLearning: string;
 
   /**
+   * 事後学習。
+   *
    * @generated from field: string post_learning = 18;
    */
   postLearning: string;
 
   /**
+   * 履修上の留意点。
+   *
    * @generated from field: string notes = 19;
    */
   notes: string;
 
   /**
+   * キーワード。
+   *
    * @generated from field: string keywords = 20;
    */
   keywords: string;
 
   /**
+   * 対象コース・領域。
+   *
    * @generated from field: string target_courses = 21;
    */
   targetCourses: string;
 
   /**
+   * 対象領域。
+   *
    * @generated from field: string target_areas = 22;
    */
   targetAreas: string;
 
   /**
+   * 科目群・科目区分。
+   *
    * @generated from field: string classifications = 23;
    */
   classifications: string;
 
   /**
+   * 教授言語。
+   *
    * @generated from field: string teaching_language = 24;
    */
   teachingLanguage: string;
 
   /**
+   * 授業内容とスケジュール。
+   *
    * @generated from field: string contents_and_schedule = 25;
    */
   contentsAndSchedule: string;
 
   /**
+   * 授業・試験の形式。
+   *
    * @generated from field: string teaching_and_exam_form = 26;
    */
   teachingAndExamForm: string;
 
   /**
+   * DSOP対象科目。
+   *
    * @generated from field: string dsop_subject = 27;
    */
   dsopSubject: string;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -555,10 +753,14 @@ export declare type UpdateSyllabusRequest = Message<"admin.v1.UpdateSyllabusRequ
 export declare const UpdateSyllabusRequestSchema: GenMessage<UpdateSyllabusRequest>;
 
 /**
+ * UpdateSyllabus の Response。
+ *
  * @generated from message admin.v1.UpdateSyllabusResponse
  */
 export declare type UpdateSyllabusResponse = Message<"admin.v1.UpdateSyllabusResponse"> & {
   /**
+   * 更新したシラバス。
+   *
    * @generated from field: admin.v1.Syllabus syllabus = 1;
    */
   syllabus?: Syllabus | undefined;
@@ -571,10 +773,14 @@ export declare type UpdateSyllabusResponse = Message<"admin.v1.UpdateSyllabusRes
 export declare const UpdateSyllabusResponseSchema: GenMessage<UpdateSyllabusResponse>;
 
 /**
+ * DeleteSyllabus の Request。
+ *
  * @generated from message admin.v1.DeleteSyllabusRequest
  */
 export declare type DeleteSyllabusRequest = Message<"admin.v1.DeleteSyllabusRequest"> & {
   /**
+   * 削除するシラバスID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -587,6 +793,8 @@ export declare type DeleteSyllabusRequest = Message<"admin.v1.DeleteSyllabusRequ
 export declare const DeleteSyllabusRequestSchema: GenMessage<DeleteSyllabusRequest>;
 
 /**
+ * DeleteSyllabus の Response。
+ *
  * @generated from message admin.v1.DeleteSyllabusResponse
  */
 export declare type DeleteSyllabusResponse = Message<"admin.v1.DeleteSyllabusResponse"> & {
@@ -599,10 +807,14 @@ export declare type DeleteSyllabusResponse = Message<"admin.v1.DeleteSyllabusRes
 export declare const DeleteSyllabusResponseSchema: GenMessage<DeleteSyllabusResponse>;
 
 /**
+ * シラバスを管理する。
+ *
  * @generated from service admin.v1.SyllabusService
  */
 export declare const SyllabusService: GenService<{
   /**
+   * シラバスの一覧を取得する。
+   *
    * @generated from rpc admin.v1.SyllabusService.ListSyllabi
    */
   listSyllabi: {
@@ -611,6 +823,8 @@ export declare const SyllabusService: GenService<{
     output: typeof ListSyllabiResponseSchema;
   },
   /**
+   * シラバスを取得する。
+   *
    * @generated from rpc admin.v1.SyllabusService.GetSyllabus
    */
   getSyllabus: {
@@ -619,6 +833,8 @@ export declare const SyllabusService: GenService<{
     output: typeof GetSyllabusResponseSchema;
   },
   /**
+   * シラバスを作成する。
+   *
    * @generated from rpc admin.v1.SyllabusService.CreateSyllabus
    */
   createSyllabus: {
@@ -627,6 +843,8 @@ export declare const SyllabusService: GenService<{
     output: typeof CreateSyllabusResponseSchema;
   },
   /**
+   * シラバスを更新する。
+   *
    * @generated from rpc admin.v1.SyllabusService.UpdateSyllabus
    */
   updateSyllabus: {
@@ -635,6 +853,8 @@ export declare const SyllabusService: GenService<{
     output: typeof UpdateSyllabusResponseSchema;
   },
   /**
+   * シラバスを削除する。
+   *
    * @generated from rpc admin.v1.SyllabusService.DeleteSyllabus
    */
   deleteSyllabus: {

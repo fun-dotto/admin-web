@@ -12,40 +12,56 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_room_reservation: GenFile;
 
 /**
+ * 教室の予約。
+ *
  * @generated from message admin.v1.RoomReservation
  */
 export declare type RoomReservation = Message<"admin.v1.RoomReservation"> & {
   /**
+   * ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 予約のタイトル。
+   *
    * @generated from field: string title = 2;
    */
   title: string;
 
   /**
+   * 教室ID。
+   *
    * @generated from field: string room_id = 3;
    */
   roomId: string;
 
   /**
+   * 予約の開始日時。
+   *
    * @generated from field: google.protobuf.Timestamp start_time = 4;
    */
   startTime?: Timestamp | undefined;
 
   /**
+   * 予約の終了日時。
+   *
    * @generated from field: google.protobuf.Timestamp end_time = 5;
    */
   endTime?: Timestamp | undefined;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 6;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 7;
    */
   updatedAt?: Timestamp | undefined;
@@ -58,15 +74,21 @@ export declare type RoomReservation = Message<"admin.v1.RoomReservation"> & {
 export declare const RoomReservationSchema: GenMessage<RoomReservation>;
 
 /**
+ * ListRoomReservations の Request。
+ *
  * @generated from message admin.v1.ListRoomReservationsRequest
  */
 export declare type ListRoomReservationsRequest = Message<"admin.v1.ListRoomReservationsRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -79,15 +101,21 @@ export declare type ListRoomReservationsRequest = Message<"admin.v1.ListRoomRese
 export declare const ListRoomReservationsRequestSchema: GenMessage<ListRoomReservationsRequest>;
 
 /**
+ * ListRoomReservations の Response。
+ *
  * @generated from message admin.v1.ListRoomReservationsResponse
  */
 export declare type ListRoomReservationsResponse = Message<"admin.v1.ListRoomReservationsResponse"> & {
   /**
+   * 教室の予約の一覧。
+   *
    * @generated from field: repeated admin.v1.RoomReservation room_reservations = 1;
    */
   roomReservations: RoomReservation[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -100,10 +128,14 @@ export declare type ListRoomReservationsResponse = Message<"admin.v1.ListRoomRes
 export declare const ListRoomReservationsResponseSchema: GenMessage<ListRoomReservationsResponse>;
 
 /**
+ * GetRoomReservation の Request。
+ *
  * @generated from message admin.v1.GetRoomReservationRequest
  */
 export declare type GetRoomReservationRequest = Message<"admin.v1.GetRoomReservationRequest"> & {
   /**
+   * 取得する教室の予約ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -116,10 +148,14 @@ export declare type GetRoomReservationRequest = Message<"admin.v1.GetRoomReserva
 export declare const GetRoomReservationRequestSchema: GenMessage<GetRoomReservationRequest>;
 
 /**
+ * GetRoomReservation の Response。
+ *
  * @generated from message admin.v1.GetRoomReservationResponse
  */
 export declare type GetRoomReservationResponse = Message<"admin.v1.GetRoomReservationResponse"> & {
   /**
+   * 取得した教室の予約。
+   *
    * @generated from field: admin.v1.RoomReservation room_reservation = 1;
    */
   roomReservation?: RoomReservation | undefined;
@@ -132,25 +168,35 @@ export declare type GetRoomReservationResponse = Message<"admin.v1.GetRoomReserv
 export declare const GetRoomReservationResponseSchema: GenMessage<GetRoomReservationResponse>;
 
 /**
+ * CreateRoomReservation の Request。
+ *
  * @generated from message admin.v1.CreateRoomReservationRequest
  */
 export declare type CreateRoomReservationRequest = Message<"admin.v1.CreateRoomReservationRequest"> & {
   /**
+   * 予約のタイトル。
+   *
    * @generated from field: string title = 1;
    */
   title: string;
 
   /**
+   * 教室ID。
+   *
    * @generated from field: string room_id = 2;
    */
   roomId: string;
 
   /**
+   * 予約の開始日時。
+   *
    * @generated from field: google.protobuf.Timestamp start_time = 3;
    */
   startTime?: Timestamp | undefined;
 
   /**
+   * 予約の終了日時。
+   *
    * @generated from field: google.protobuf.Timestamp end_time = 4;
    */
   endTime?: Timestamp | undefined;
@@ -163,10 +209,14 @@ export declare type CreateRoomReservationRequest = Message<"admin.v1.CreateRoomR
 export declare const CreateRoomReservationRequestSchema: GenMessage<CreateRoomReservationRequest>;
 
 /**
+ * CreateRoomReservation の Response。
+ *
  * @generated from message admin.v1.CreateRoomReservationResponse
  */
 export declare type CreateRoomReservationResponse = Message<"admin.v1.CreateRoomReservationResponse"> & {
   /**
+   * 作成した教室の予約。
+   *
    * @generated from field: admin.v1.RoomReservation room_reservation = 1;
    */
   roomReservation?: RoomReservation | undefined;
@@ -179,35 +229,49 @@ export declare type CreateRoomReservationResponse = Message<"admin.v1.CreateRoom
 export declare const CreateRoomReservationResponseSchema: GenMessage<CreateRoomReservationResponse>;
 
 /**
+ * UpdateRoomReservation の Request。
+ *
  * @generated from message admin.v1.UpdateRoomReservationRequest
  */
 export declare type UpdateRoomReservationRequest = Message<"admin.v1.UpdateRoomReservationRequest"> & {
   /**
+   * 更新する教室の予約ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 予約のタイトル。
+   *
    * @generated from field: string title = 2;
    */
   title: string;
 
   /**
+   * 教室ID。
+   *
    * @generated from field: string room_id = 3;
    */
   roomId: string;
 
   /**
+   * 予約の開始日時。
+   *
    * @generated from field: google.protobuf.Timestamp start_time = 4;
    */
   startTime?: Timestamp | undefined;
 
   /**
+   * 予約の終了日時。
+   *
    * @generated from field: google.protobuf.Timestamp end_time = 5;
    */
   endTime?: Timestamp | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -220,10 +284,14 @@ export declare type UpdateRoomReservationRequest = Message<"admin.v1.UpdateRoomR
 export declare const UpdateRoomReservationRequestSchema: GenMessage<UpdateRoomReservationRequest>;
 
 /**
+ * UpdateRoomReservation の Response。
+ *
  * @generated from message admin.v1.UpdateRoomReservationResponse
  */
 export declare type UpdateRoomReservationResponse = Message<"admin.v1.UpdateRoomReservationResponse"> & {
   /**
+   * 更新した教室の予約。
+   *
    * @generated from field: admin.v1.RoomReservation room_reservation = 1;
    */
   roomReservation?: RoomReservation | undefined;
@@ -236,10 +304,14 @@ export declare type UpdateRoomReservationResponse = Message<"admin.v1.UpdateRoom
 export declare const UpdateRoomReservationResponseSchema: GenMessage<UpdateRoomReservationResponse>;
 
 /**
+ * DeleteRoomReservation の Request。
+ *
  * @generated from message admin.v1.DeleteRoomReservationRequest
  */
 export declare type DeleteRoomReservationRequest = Message<"admin.v1.DeleteRoomReservationRequest"> & {
   /**
+   * 削除する教室の予約ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -252,6 +324,8 @@ export declare type DeleteRoomReservationRequest = Message<"admin.v1.DeleteRoomR
 export declare const DeleteRoomReservationRequestSchema: GenMessage<DeleteRoomReservationRequest>;
 
 /**
+ * DeleteRoomReservation の Response。
+ *
  * @generated from message admin.v1.DeleteRoomReservationResponse
  */
 export declare type DeleteRoomReservationResponse = Message<"admin.v1.DeleteRoomReservationResponse"> & {
@@ -264,10 +338,14 @@ export declare type DeleteRoomReservationResponse = Message<"admin.v1.DeleteRoom
 export declare const DeleteRoomReservationResponseSchema: GenMessage<DeleteRoomReservationResponse>;
 
 /**
+ * 教室の予約を管理する。
+ *
  * @generated from service admin.v1.RoomReservationService
  */
 export declare const RoomReservationService: GenService<{
   /**
+   * 教室の予約の一覧を取得する。
+   *
    * @generated from rpc admin.v1.RoomReservationService.ListRoomReservations
    */
   listRoomReservations: {
@@ -276,6 +354,8 @@ export declare const RoomReservationService: GenService<{
     output: typeof ListRoomReservationsResponseSchema;
   },
   /**
+   * 教室の予約を取得する。
+   *
    * @generated from rpc admin.v1.RoomReservationService.GetRoomReservation
    */
   getRoomReservation: {
@@ -284,6 +364,8 @@ export declare const RoomReservationService: GenService<{
     output: typeof GetRoomReservationResponseSchema;
   },
   /**
+   * 教室の予約を作成する。
+   *
    * @generated from rpc admin.v1.RoomReservationService.CreateRoomReservation
    */
   createRoomReservation: {
@@ -292,6 +374,8 @@ export declare const RoomReservationService: GenService<{
     output: typeof CreateRoomReservationResponseSchema;
   },
   /**
+   * 教室の予約を更新する。
+   *
    * @generated from rpc admin.v1.RoomReservationService.UpdateRoomReservation
    */
   updateRoomReservation: {
@@ -300,6 +384,8 @@ export declare const RoomReservationService: GenService<{
     output: typeof UpdateRoomReservationResponseSchema;
   },
   /**
+   * 教室の予約を削除する。
+   *
    * @generated from rpc admin.v1.RoomReservationService.DeleteRoomReservation
    */
   deleteRoomReservation: {

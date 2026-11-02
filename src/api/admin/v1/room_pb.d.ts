@@ -12,30 +12,42 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_room: GenFile;
 
 /**
+ * 教室。
+ *
  * @generated from message admin.v1.Room
  */
 export declare type Room = Message<"admin.v1.Room"> & {
   /**
+   * ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 部屋名。
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * フロア。オンラインなどの仮想教室の場合は VIRTUAL を使用する。
+   *
    * @generated from field: admin.v1.RoomFloor floor = 3;
    */
   floor: RoomFloor;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 4;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 5;
    */
   updatedAt?: Timestamp | undefined;
@@ -48,15 +60,21 @@ export declare type Room = Message<"admin.v1.Room"> & {
 export declare const RoomSchema: GenMessage<Room>;
 
 /**
+ * ListRooms の Request。
+ *
  * @generated from message admin.v1.ListRoomsRequest
  */
 export declare type ListRoomsRequest = Message<"admin.v1.ListRoomsRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -69,15 +87,21 @@ export declare type ListRoomsRequest = Message<"admin.v1.ListRoomsRequest"> & {
 export declare const ListRoomsRequestSchema: GenMessage<ListRoomsRequest>;
 
 /**
+ * ListRooms の Response。
+ *
  * @generated from message admin.v1.ListRoomsResponse
  */
 export declare type ListRoomsResponse = Message<"admin.v1.ListRoomsResponse"> & {
   /**
+   * 教室の一覧。
+   *
    * @generated from field: repeated admin.v1.Room rooms = 1;
    */
   rooms: Room[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -90,10 +114,14 @@ export declare type ListRoomsResponse = Message<"admin.v1.ListRoomsResponse"> & 
 export declare const ListRoomsResponseSchema: GenMessage<ListRoomsResponse>;
 
 /**
+ * GetRoom の Request。
+ *
  * @generated from message admin.v1.GetRoomRequest
  */
 export declare type GetRoomRequest = Message<"admin.v1.GetRoomRequest"> & {
   /**
+   * 取得する教室ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -106,10 +134,14 @@ export declare type GetRoomRequest = Message<"admin.v1.GetRoomRequest"> & {
 export declare const GetRoomRequestSchema: GenMessage<GetRoomRequest>;
 
 /**
+ * GetRoom の Response。
+ *
  * @generated from message admin.v1.GetRoomResponse
  */
 export declare type GetRoomResponse = Message<"admin.v1.GetRoomResponse"> & {
   /**
+   * 取得した教室。
+   *
    * @generated from field: admin.v1.Room room = 1;
    */
   room?: Room | undefined;
@@ -122,15 +154,21 @@ export declare type GetRoomResponse = Message<"admin.v1.GetRoomResponse"> & {
 export declare const GetRoomResponseSchema: GenMessage<GetRoomResponse>;
 
 /**
+ * CreateRoom の Request。
+ *
  * @generated from message admin.v1.CreateRoomRequest
  */
 export declare type CreateRoomRequest = Message<"admin.v1.CreateRoomRequest"> & {
   /**
+   * 部屋名。
+   *
    * @generated from field: string name = 1;
    */
   name: string;
 
   /**
+   * フロア。オンラインなどの仮想教室の場合は VIRTUAL を使用する。
+   *
    * @generated from field: admin.v1.RoomFloor floor = 2;
    */
   floor: RoomFloor;
@@ -143,10 +181,14 @@ export declare type CreateRoomRequest = Message<"admin.v1.CreateRoomRequest"> & 
 export declare const CreateRoomRequestSchema: GenMessage<CreateRoomRequest>;
 
 /**
+ * CreateRoom の Response。
+ *
  * @generated from message admin.v1.CreateRoomResponse
  */
 export declare type CreateRoomResponse = Message<"admin.v1.CreateRoomResponse"> & {
   /**
+   * 作成した教室。
+   *
    * @generated from field: admin.v1.Room room = 1;
    */
   room?: Room | undefined;
@@ -159,25 +201,35 @@ export declare type CreateRoomResponse = Message<"admin.v1.CreateRoomResponse"> 
 export declare const CreateRoomResponseSchema: GenMessage<CreateRoomResponse>;
 
 /**
+ * UpdateRoom の Request。
+ *
  * @generated from message admin.v1.UpdateRoomRequest
  */
 export declare type UpdateRoomRequest = Message<"admin.v1.UpdateRoomRequest"> & {
   /**
+   * 更新する教室ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 部屋名。
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * フロア。オンラインなどの仮想教室の場合は VIRTUAL を使用する。
+   *
    * @generated from field: admin.v1.RoomFloor floor = 3;
    */
   floor: RoomFloor;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -190,10 +242,14 @@ export declare type UpdateRoomRequest = Message<"admin.v1.UpdateRoomRequest"> & 
 export declare const UpdateRoomRequestSchema: GenMessage<UpdateRoomRequest>;
 
 /**
+ * UpdateRoom の Response。
+ *
  * @generated from message admin.v1.UpdateRoomResponse
  */
 export declare type UpdateRoomResponse = Message<"admin.v1.UpdateRoomResponse"> & {
   /**
+   * 更新した教室。
+   *
    * @generated from field: admin.v1.Room room = 1;
    */
   room?: Room | undefined;
@@ -206,10 +262,14 @@ export declare type UpdateRoomResponse = Message<"admin.v1.UpdateRoomResponse"> 
 export declare const UpdateRoomResponseSchema: GenMessage<UpdateRoomResponse>;
 
 /**
+ * DeleteRoom の Request。
+ *
  * @generated from message admin.v1.DeleteRoomRequest
  */
 export declare type DeleteRoomRequest = Message<"admin.v1.DeleteRoomRequest"> & {
   /**
+   * 削除する教室ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -222,6 +282,8 @@ export declare type DeleteRoomRequest = Message<"admin.v1.DeleteRoomRequest"> & 
 export declare const DeleteRoomRequestSchema: GenMessage<DeleteRoomRequest>;
 
 /**
+ * DeleteRoom の Response。
+ *
  * @generated from message admin.v1.DeleteRoomResponse
  */
 export declare type DeleteRoomResponse = Message<"admin.v1.DeleteRoomResponse"> & {
@@ -234,50 +296,70 @@ export declare type DeleteRoomResponse = Message<"admin.v1.DeleteRoomResponse"> 
 export declare const DeleteRoomResponseSchema: GenMessage<DeleteRoomResponse>;
 
 /**
+ * フロア。
+ *
  * @generated from enum admin.v1.RoomFloor
  */
 export enum RoomFloor {
   /**
+   * 未指定。
+   *
    * @generated from enum value: ROOM_FLOOR_UNSPECIFIED = 0;
    */
   ROOM_FLOOR_UNSPECIFIED = 0,
 
   /**
+   * 1F。
+   *
    * @generated from enum value: ROOM_FLOOR_1 = 1;
    */
   ROOM_FLOOR_1 = 1,
 
   /**
+   * 2F。
+   *
    * @generated from enum value: ROOM_FLOOR_2 = 2;
    */
   ROOM_FLOOR_2 = 2,
 
   /**
+   * 3F。
+   *
    * @generated from enum value: ROOM_FLOOR_3 = 3;
    */
   ROOM_FLOOR_3 = 3,
 
   /**
+   * 4F。
+   *
    * @generated from enum value: ROOM_FLOOR_4 = 4;
    */
   ROOM_FLOOR_4 = 4,
 
   /**
+   * 5F。
+   *
    * @generated from enum value: ROOM_FLOOR_5 = 5;
    */
   ROOM_FLOOR_5 = 5,
 
   /**
+   * R6F。
+   *
    * @generated from enum value: ROOM_FLOOR_6 = 6;
    */
   ROOM_FLOOR_6 = 6,
 
   /**
+   * R7F。
+   *
    * @generated from enum value: ROOM_FLOOR_7 = 7;
    */
   ROOM_FLOOR_7 = 7,
 
   /**
+   * 仮想教室（オンラインなど）。
+   *
    * @generated from enum value: ROOM_FLOOR_VIRTUAL = 8;
    */
   ROOM_FLOOR_VIRTUAL = 8,
@@ -289,10 +371,14 @@ export enum RoomFloor {
 export declare const RoomFloorSchema: GenEnum<RoomFloor>;
 
 /**
+ * 教室を管理する。
+ *
  * @generated from service admin.v1.RoomService
  */
 export declare const RoomService: GenService<{
   /**
+   * 教室の一覧を取得する。
+   *
    * @generated from rpc admin.v1.RoomService.ListRooms
    */
   listRooms: {
@@ -301,6 +387,8 @@ export declare const RoomService: GenService<{
     output: typeof ListRoomsResponseSchema;
   },
   /**
+   * 教室を取得する。
+   *
    * @generated from rpc admin.v1.RoomService.GetRoom
    */
   getRoom: {
@@ -309,6 +397,8 @@ export declare const RoomService: GenService<{
     output: typeof GetRoomResponseSchema;
   },
   /**
+   * 教室を作成する。
+   *
    * @generated from rpc admin.v1.RoomService.CreateRoom
    */
   createRoom: {
@@ -317,6 +407,8 @@ export declare const RoomService: GenService<{
     output: typeof CreateRoomResponseSchema;
   },
   /**
+   * 教室を更新する。
+   *
    * @generated from rpc admin.v1.RoomService.UpdateRoom
    */
   updateRoom: {
@@ -325,6 +417,8 @@ export declare const RoomService: GenService<{
     output: typeof UpdateRoomResponseSchema;
   },
   /**
+   * 教室を削除する。
+   *
    * @generated from rpc admin.v1.RoomService.DeleteRoom
    */
   deleteRoom: {

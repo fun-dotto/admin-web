@@ -12,20 +12,28 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_notification_target_user: GenFile;
 
 /**
+ * 通知の対象ユーザー。
+ *
  * @generated from message admin.v1.NotificationTargetUser
  */
 export declare type NotificationTargetUser = Message<"admin.v1.NotificationTargetUser"> & {
   /**
+   * 通知ID。
+   *
    * @generated from field: string notification_id = 1;
    */
   notificationId: string;
 
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 2;
    */
   userId: string;
 
   /**
+   * 通知送信日時。送信前は未設定。
+   *
    * @generated from field: optional google.protobuf.Timestamp notified_at = 3;
    */
   notifiedAt?: Timestamp | undefined;
@@ -38,15 +46,21 @@ export declare type NotificationTargetUser = Message<"admin.v1.NotificationTarge
 export declare const NotificationTargetUserSchema: GenMessage<NotificationTargetUser>;
 
 /**
+ * ListNotificationTargetUsers の Request。
+ *
  * @generated from message admin.v1.ListNotificationTargetUsersRequest
  */
 export declare type ListNotificationTargetUsersRequest = Message<"admin.v1.ListNotificationTargetUsersRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -59,15 +73,21 @@ export declare type ListNotificationTargetUsersRequest = Message<"admin.v1.ListN
 export declare const ListNotificationTargetUsersRequestSchema: GenMessage<ListNotificationTargetUsersRequest>;
 
 /**
+ * ListNotificationTargetUsers の Response。
+ *
  * @generated from message admin.v1.ListNotificationTargetUsersResponse
  */
 export declare type ListNotificationTargetUsersResponse = Message<"admin.v1.ListNotificationTargetUsersResponse"> & {
   /**
+   * 通知の対象ユーザーの一覧。
+   *
    * @generated from field: repeated admin.v1.NotificationTargetUser notification_target_users = 1;
    */
   notificationTargetUsers: NotificationTargetUser[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -80,15 +100,21 @@ export declare type ListNotificationTargetUsersResponse = Message<"admin.v1.List
 export declare const ListNotificationTargetUsersResponseSchema: GenMessage<ListNotificationTargetUsersResponse>;
 
 /**
+ * GetNotificationTargetUser の Request。
+ *
  * @generated from message admin.v1.GetNotificationTargetUserRequest
  */
 export declare type GetNotificationTargetUserRequest = Message<"admin.v1.GetNotificationTargetUserRequest"> & {
   /**
+   * 通知ID。
+   *
    * @generated from field: string notification_id = 1;
    */
   notificationId: string;
 
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 2;
    */
   userId: string;
@@ -101,10 +127,14 @@ export declare type GetNotificationTargetUserRequest = Message<"admin.v1.GetNoti
 export declare const GetNotificationTargetUserRequestSchema: GenMessage<GetNotificationTargetUserRequest>;
 
 /**
+ * GetNotificationTargetUser の Response。
+ *
  * @generated from message admin.v1.GetNotificationTargetUserResponse
  */
 export declare type GetNotificationTargetUserResponse = Message<"admin.v1.GetNotificationTargetUserResponse"> & {
   /**
+   * 取得した通知の対象ユーザー。
+   *
    * @generated from field: admin.v1.NotificationTargetUser notification_target_user = 1;
    */
   notificationTargetUser?: NotificationTargetUser | undefined;
@@ -117,20 +147,28 @@ export declare type GetNotificationTargetUserResponse = Message<"admin.v1.GetNot
 export declare const GetNotificationTargetUserResponseSchema: GenMessage<GetNotificationTargetUserResponse>;
 
 /**
+ * CreateNotificationTargetUser の Request。
+ *
  * @generated from message admin.v1.CreateNotificationTargetUserRequest
  */
 export declare type CreateNotificationTargetUserRequest = Message<"admin.v1.CreateNotificationTargetUserRequest"> & {
   /**
+   * 通知ID。
+   *
    * @generated from field: string notification_id = 1;
    */
   notificationId: string;
 
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 2;
    */
   userId: string;
 
   /**
+   * 通知送信日時。送信前は未設定。
+   *
    * @generated from field: optional google.protobuf.Timestamp notified_at = 3;
    */
   notifiedAt?: Timestamp | undefined;
@@ -143,10 +181,14 @@ export declare type CreateNotificationTargetUserRequest = Message<"admin.v1.Crea
 export declare const CreateNotificationTargetUserRequestSchema: GenMessage<CreateNotificationTargetUserRequest>;
 
 /**
+ * CreateNotificationTargetUser の Response。
+ *
  * @generated from message admin.v1.CreateNotificationTargetUserResponse
  */
 export declare type CreateNotificationTargetUserResponse = Message<"admin.v1.CreateNotificationTargetUserResponse"> & {
   /**
+   * 作成した通知の対象ユーザー。
+   *
    * @generated from field: admin.v1.NotificationTargetUser notification_target_user = 1;
    */
   notificationTargetUser?: NotificationTargetUser | undefined;
@@ -159,25 +201,35 @@ export declare type CreateNotificationTargetUserResponse = Message<"admin.v1.Cre
 export declare const CreateNotificationTargetUserResponseSchema: GenMessage<CreateNotificationTargetUserResponse>;
 
 /**
+ * UpdateNotificationTargetUser の Request。
+ *
  * @generated from message admin.v1.UpdateNotificationTargetUserRequest
  */
 export declare type UpdateNotificationTargetUserRequest = Message<"admin.v1.UpdateNotificationTargetUserRequest"> & {
   /**
+   * 通知ID。
+   *
    * @generated from field: string notification_id = 1;
    */
   notificationId: string;
 
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 2;
    */
   userId: string;
 
   /**
+   * 通知送信日時。送信前は未設定。
+   *
    * @generated from field: optional google.protobuf.Timestamp notified_at = 3;
    */
   notifiedAt?: Timestamp | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -190,10 +242,14 @@ export declare type UpdateNotificationTargetUserRequest = Message<"admin.v1.Upda
 export declare const UpdateNotificationTargetUserRequestSchema: GenMessage<UpdateNotificationTargetUserRequest>;
 
 /**
+ * UpdateNotificationTargetUser の Response。
+ *
  * @generated from message admin.v1.UpdateNotificationTargetUserResponse
  */
 export declare type UpdateNotificationTargetUserResponse = Message<"admin.v1.UpdateNotificationTargetUserResponse"> & {
   /**
+   * 更新した通知の対象ユーザー。
+   *
    * @generated from field: admin.v1.NotificationTargetUser notification_target_user = 1;
    */
   notificationTargetUser?: NotificationTargetUser | undefined;
@@ -206,15 +262,21 @@ export declare type UpdateNotificationTargetUserResponse = Message<"admin.v1.Upd
 export declare const UpdateNotificationTargetUserResponseSchema: GenMessage<UpdateNotificationTargetUserResponse>;
 
 /**
+ * DeleteNotificationTargetUser の Request。
+ *
  * @generated from message admin.v1.DeleteNotificationTargetUserRequest
  */
 export declare type DeleteNotificationTargetUserRequest = Message<"admin.v1.DeleteNotificationTargetUserRequest"> & {
   /**
+   * 通知ID。
+   *
    * @generated from field: string notification_id = 1;
    */
   notificationId: string;
 
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 2;
    */
   userId: string;
@@ -227,6 +289,8 @@ export declare type DeleteNotificationTargetUserRequest = Message<"admin.v1.Dele
 export declare const DeleteNotificationTargetUserRequestSchema: GenMessage<DeleteNotificationTargetUserRequest>;
 
 /**
+ * DeleteNotificationTargetUser の Response。
+ *
  * @generated from message admin.v1.DeleteNotificationTargetUserResponse
  */
 export declare type DeleteNotificationTargetUserResponse = Message<"admin.v1.DeleteNotificationTargetUserResponse"> & {
@@ -239,10 +303,14 @@ export declare type DeleteNotificationTargetUserResponse = Message<"admin.v1.Del
 export declare const DeleteNotificationTargetUserResponseSchema: GenMessage<DeleteNotificationTargetUserResponse>;
 
 /**
+ * 通知の対象ユーザーを管理する。
+ *
  * @generated from service admin.v1.NotificationTargetUserService
  */
 export declare const NotificationTargetUserService: GenService<{
   /**
+   * 通知の対象ユーザーの一覧を取得する。
+   *
    * @generated from rpc admin.v1.NotificationTargetUserService.ListNotificationTargetUsers
    */
   listNotificationTargetUsers: {
@@ -251,6 +319,8 @@ export declare const NotificationTargetUserService: GenService<{
     output: typeof ListNotificationTargetUsersResponseSchema;
   },
   /**
+   * 通知の対象ユーザーを取得する。
+   *
    * @generated from rpc admin.v1.NotificationTargetUserService.GetNotificationTargetUser
    */
   getNotificationTargetUser: {
@@ -259,6 +329,8 @@ export declare const NotificationTargetUserService: GenService<{
     output: typeof GetNotificationTargetUserResponseSchema;
   },
   /**
+   * 通知の対象ユーザーを作成する。
+   *
    * @generated from rpc admin.v1.NotificationTargetUserService.CreateNotificationTargetUser
    */
   createNotificationTargetUser: {
@@ -267,6 +339,8 @@ export declare const NotificationTargetUserService: GenService<{
     output: typeof CreateNotificationTargetUserResponseSchema;
   },
   /**
+   * 通知の対象ユーザーを更新する。
+   *
    * @generated from rpc admin.v1.NotificationTargetUserService.UpdateNotificationTargetUser
    */
   updateNotificationTargetUser: {
@@ -275,6 +349,8 @@ export declare const NotificationTargetUserService: GenService<{
     output: typeof UpdateNotificationTargetUserResponseSchema;
   },
   /**
+   * 通知の対象ユーザーを削除する。
+   *
    * @generated from rpc admin.v1.NotificationTargetUserService.DeleteNotificationTargetUser
    */
   deleteNotificationTargetUser: {

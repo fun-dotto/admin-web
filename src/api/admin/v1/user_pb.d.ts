@@ -13,30 +13,42 @@ import type { FieldMask } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_user: GenFile;
 
 /**
+ * ユーザー。
+ *
  * @generated from message admin.v1.User
  */
 export declare type User = Message<"admin.v1.User"> & {
   /**
+   * ユーザーID。Firebase Authentication の UID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * メールアドレス。Firebase Authentication のメールアドレス。
+   *
    * @generated from field: string email = 2;
    */
   email: string;
 
   /**
+   * 学年。
+   *
    * @generated from field: optional admin.v1.Grade grade = 3;
    */
   grade?: Grade | undefined;
 
   /**
+   * コース。
+   *
    * @generated from field: optional admin.v1.Course course = 4;
    */
   course?: Course | undefined;
 
   /**
+   * クラス。
+   *
    * @generated from field: optional admin.v1.Class class = 5;
    */
   class?: Class | undefined;
@@ -49,15 +61,21 @@ export declare type User = Message<"admin.v1.User"> & {
 export declare const UserSchema: GenMessage<User>;
 
 /**
+ * ListUsers の Request。
+ *
  * @generated from message admin.v1.ListUsersRequest
  */
 export declare type ListUsersRequest = Message<"admin.v1.ListUsersRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -70,15 +88,21 @@ export declare type ListUsersRequest = Message<"admin.v1.ListUsersRequest"> & {
 export declare const ListUsersRequestSchema: GenMessage<ListUsersRequest>;
 
 /**
+ * ListUsers の Response。
+ *
  * @generated from message admin.v1.ListUsersResponse
  */
 export declare type ListUsersResponse = Message<"admin.v1.ListUsersResponse"> & {
   /**
+   * ユーザーの一覧。
+   *
    * @generated from field: repeated admin.v1.User users = 1;
    */
   users: User[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -91,10 +115,14 @@ export declare type ListUsersResponse = Message<"admin.v1.ListUsersResponse"> & 
 export declare const ListUsersResponseSchema: GenMessage<ListUsersResponse>;
 
 /**
+ * GetUser の Request。
+ *
  * @generated from message admin.v1.GetUserRequest
  */
 export declare type GetUserRequest = Message<"admin.v1.GetUserRequest"> & {
   /**
+   * 取得するユーザーID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -107,10 +135,14 @@ export declare type GetUserRequest = Message<"admin.v1.GetUserRequest"> & {
 export declare const GetUserRequestSchema: GenMessage<GetUserRequest>;
 
 /**
+ * GetUser の Response。
+ *
  * @generated from message admin.v1.GetUserResponse
  */
 export declare type GetUserResponse = Message<"admin.v1.GetUserResponse"> & {
   /**
+   * 取得したユーザー。
+   *
    * @generated from field: admin.v1.User user = 1;
    */
   user?: User | undefined;
@@ -123,30 +155,42 @@ export declare type GetUserResponse = Message<"admin.v1.GetUserResponse"> & {
 export declare const GetUserResponseSchema: GenMessage<GetUserResponse>;
 
 /**
+ * CreateUser の Request。
+ *
  * @generated from message admin.v1.CreateUserRequest
  */
 export declare type CreateUserRequest = Message<"admin.v1.CreateUserRequest"> & {
   /**
+   * ユーザーID。Firebase Authentication の UID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * メールアドレス。Firebase Authentication のメールアドレス。
+   *
    * @generated from field: string email = 2;
    */
   email: string;
 
   /**
+   * 学年。
+   *
    * @generated from field: optional admin.v1.Grade grade = 3;
    */
   grade?: Grade | undefined;
 
   /**
+   * コース。
+   *
    * @generated from field: optional admin.v1.Course course = 4;
    */
   course?: Course | undefined;
 
   /**
+   * クラス。
+   *
    * @generated from field: optional admin.v1.Class class = 5;
    */
   class?: Class | undefined;
@@ -159,10 +203,14 @@ export declare type CreateUserRequest = Message<"admin.v1.CreateUserRequest"> & 
 export declare const CreateUserRequestSchema: GenMessage<CreateUserRequest>;
 
 /**
+ * CreateUser の Response。
+ *
  * @generated from message admin.v1.CreateUserResponse
  */
 export declare type CreateUserResponse = Message<"admin.v1.CreateUserResponse"> & {
   /**
+   * 作成したユーザー。
+   *
    * @generated from field: admin.v1.User user = 1;
    */
   user?: User | undefined;
@@ -175,35 +223,49 @@ export declare type CreateUserResponse = Message<"admin.v1.CreateUserResponse"> 
 export declare const CreateUserResponseSchema: GenMessage<CreateUserResponse>;
 
 /**
+ * UpdateUser の Request。
+ *
  * @generated from message admin.v1.UpdateUserRequest
  */
 export declare type UpdateUserRequest = Message<"admin.v1.UpdateUserRequest"> & {
   /**
+   * 更新するユーザーID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * メールアドレス。Firebase Authentication のメールアドレス。
+   *
    * @generated from field: string email = 2;
    */
   email: string;
 
   /**
+   * 学年。
+   *
    * @generated from field: optional admin.v1.Grade grade = 3;
    */
   grade?: Grade | undefined;
 
   /**
+   * コース。
+   *
    * @generated from field: optional admin.v1.Course course = 4;
    */
   course?: Course | undefined;
 
   /**
+   * クラス。
+   *
    * @generated from field: optional admin.v1.Class class = 5;
    */
   class?: Class | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -216,10 +278,14 @@ export declare type UpdateUserRequest = Message<"admin.v1.UpdateUserRequest"> & 
 export declare const UpdateUserRequestSchema: GenMessage<UpdateUserRequest>;
 
 /**
+ * UpdateUser の Response。
+ *
  * @generated from message admin.v1.UpdateUserResponse
  */
 export declare type UpdateUserResponse = Message<"admin.v1.UpdateUserResponse"> & {
   /**
+   * 更新したユーザー。
+   *
    * @generated from field: admin.v1.User user = 1;
    */
   user?: User | undefined;
@@ -232,10 +298,14 @@ export declare type UpdateUserResponse = Message<"admin.v1.UpdateUserResponse"> 
 export declare const UpdateUserResponseSchema: GenMessage<UpdateUserResponse>;
 
 /**
+ * DeleteUser の Request。
+ *
  * @generated from message admin.v1.DeleteUserRequest
  */
 export declare type DeleteUserRequest = Message<"admin.v1.DeleteUserRequest"> & {
   /**
+   * 削除するユーザーID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -248,6 +318,8 @@ export declare type DeleteUserRequest = Message<"admin.v1.DeleteUserRequest"> & 
 export declare const DeleteUserRequestSchema: GenMessage<DeleteUserRequest>;
 
 /**
+ * DeleteUser の Response。
+ *
  * @generated from message admin.v1.DeleteUserResponse
  */
 export declare type DeleteUserResponse = Message<"admin.v1.DeleteUserResponse"> & {
@@ -260,10 +332,14 @@ export declare type DeleteUserResponse = Message<"admin.v1.DeleteUserResponse"> 
 export declare const DeleteUserResponseSchema: GenMessage<DeleteUserResponse>;
 
 /**
+ * ユーザーを管理する。
+ *
  * @generated from service admin.v1.UserService
  */
 export declare const UserService: GenService<{
   /**
+   * ユーザーの一覧を取得する。
+   *
    * @generated from rpc admin.v1.UserService.ListUsers
    */
   listUsers: {
@@ -272,6 +348,8 @@ export declare const UserService: GenService<{
     output: typeof ListUsersResponseSchema;
   },
   /**
+   * ユーザーを取得する。
+   *
    * @generated from rpc admin.v1.UserService.GetUser
    */
   getUser: {
@@ -280,6 +358,8 @@ export declare const UserService: GenService<{
     output: typeof GetUserResponseSchema;
   },
   /**
+   * ユーザーを作成する。
+   *
    * @generated from rpc admin.v1.UserService.CreateUser
    */
   createUser: {
@@ -288,6 +368,8 @@ export declare const UserService: GenService<{
     output: typeof CreateUserResponseSchema;
   },
   /**
+   * ユーザーを更新する。
+   *
    * @generated from rpc admin.v1.UserService.UpdateUser
    */
   updateUser: {
@@ -296,6 +378,8 @@ export declare const UserService: GenService<{
     output: typeof UpdateUserResponseSchema;
   },
   /**
+   * ユーザーを削除する。
+   *
    * @generated from rpc admin.v1.UserService.DeleteUser
    */
   deleteUser: {

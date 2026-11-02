@@ -13,20 +13,28 @@ import type { FieldMask } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_calendar_date: GenFile;
 
 /**
+ * 運行日情報（GTFS の calendar_dates）。
+ *
  * @generated from message admin.v1.CalendarDate
  */
 export declare type CalendarDate = Message<"admin.v1.CalendarDate"> & {
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 1;
    */
   serviceId: string;
 
   /**
+   * 日付（GTFS の date）。
+   *
    * @generated from field: google.type.Date date = 2;
    */
   date?: Date | undefined;
 
   /**
+   * 利用タイプ（GTFS の exception_type）。
+   *
    * @generated from field: admin.v1.CalendarDateExceptionType exception_type = 3;
    */
   exceptionType: CalendarDateExceptionType;
@@ -39,15 +47,21 @@ export declare type CalendarDate = Message<"admin.v1.CalendarDate"> & {
 export declare const CalendarDateSchema: GenMessage<CalendarDate>;
 
 /**
+ * ListCalendarDates の Request。
+ *
  * @generated from message admin.v1.ListCalendarDatesRequest
  */
 export declare type ListCalendarDatesRequest = Message<"admin.v1.ListCalendarDatesRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -60,15 +74,21 @@ export declare type ListCalendarDatesRequest = Message<"admin.v1.ListCalendarDat
 export declare const ListCalendarDatesRequestSchema: GenMessage<ListCalendarDatesRequest>;
 
 /**
+ * ListCalendarDates の Response。
+ *
  * @generated from message admin.v1.ListCalendarDatesResponse
  */
 export declare type ListCalendarDatesResponse = Message<"admin.v1.ListCalendarDatesResponse"> & {
   /**
+   * 運行日情報（GTFS の calendar_dates）の一覧。
+   *
    * @generated from field: repeated admin.v1.CalendarDate calendar_dates = 1;
    */
   calendarDates: CalendarDate[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -81,15 +101,21 @@ export declare type ListCalendarDatesResponse = Message<"admin.v1.ListCalendarDa
 export declare const ListCalendarDatesResponseSchema: GenMessage<ListCalendarDatesResponse>;
 
 /**
+ * GetCalendarDate の Request。
+ *
  * @generated from message admin.v1.GetCalendarDateRequest
  */
 export declare type GetCalendarDateRequest = Message<"admin.v1.GetCalendarDateRequest"> & {
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 1;
    */
   serviceId: string;
 
   /**
+   * 日付（GTFS の date）。
+   *
    * @generated from field: google.type.Date date = 2;
    */
   date?: Date | undefined;
@@ -102,10 +128,14 @@ export declare type GetCalendarDateRequest = Message<"admin.v1.GetCalendarDateRe
 export declare const GetCalendarDateRequestSchema: GenMessage<GetCalendarDateRequest>;
 
 /**
+ * GetCalendarDate の Response。
+ *
  * @generated from message admin.v1.GetCalendarDateResponse
  */
 export declare type GetCalendarDateResponse = Message<"admin.v1.GetCalendarDateResponse"> & {
   /**
+   * 取得した運行日情報（GTFS の calendar_dates）。
+   *
    * @generated from field: admin.v1.CalendarDate calendar_date = 1;
    */
   calendarDate?: CalendarDate | undefined;
@@ -118,20 +148,28 @@ export declare type GetCalendarDateResponse = Message<"admin.v1.GetCalendarDateR
 export declare const GetCalendarDateResponseSchema: GenMessage<GetCalendarDateResponse>;
 
 /**
+ * CreateCalendarDate の Request。
+ *
  * @generated from message admin.v1.CreateCalendarDateRequest
  */
 export declare type CreateCalendarDateRequest = Message<"admin.v1.CreateCalendarDateRequest"> & {
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 1;
    */
   serviceId: string;
 
   /**
+   * 日付（GTFS の date）。
+   *
    * @generated from field: google.type.Date date = 2;
    */
   date?: Date | undefined;
 
   /**
+   * 利用タイプ（GTFS の exception_type）。
+   *
    * @generated from field: admin.v1.CalendarDateExceptionType exception_type = 3;
    */
   exceptionType: CalendarDateExceptionType;
@@ -144,10 +182,14 @@ export declare type CreateCalendarDateRequest = Message<"admin.v1.CreateCalendar
 export declare const CreateCalendarDateRequestSchema: GenMessage<CreateCalendarDateRequest>;
 
 /**
+ * CreateCalendarDate の Response。
+ *
  * @generated from message admin.v1.CreateCalendarDateResponse
  */
 export declare type CreateCalendarDateResponse = Message<"admin.v1.CreateCalendarDateResponse"> & {
   /**
+   * 作成した運行日情報（GTFS の calendar_dates）。
+   *
    * @generated from field: admin.v1.CalendarDate calendar_date = 1;
    */
   calendarDate?: CalendarDate | undefined;
@@ -160,25 +202,35 @@ export declare type CreateCalendarDateResponse = Message<"admin.v1.CreateCalenda
 export declare const CreateCalendarDateResponseSchema: GenMessage<CreateCalendarDateResponse>;
 
 /**
+ * UpdateCalendarDate の Request。
+ *
  * @generated from message admin.v1.UpdateCalendarDateRequest
  */
 export declare type UpdateCalendarDateRequest = Message<"admin.v1.UpdateCalendarDateRequest"> & {
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 1;
    */
   serviceId: string;
 
   /**
+   * 日付（GTFS の date）。
+   *
    * @generated from field: google.type.Date date = 2;
    */
   date?: Date | undefined;
 
   /**
+   * 利用タイプ（GTFS の exception_type）。
+   *
    * @generated from field: admin.v1.CalendarDateExceptionType exception_type = 3;
    */
   exceptionType: CalendarDateExceptionType;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -191,10 +243,14 @@ export declare type UpdateCalendarDateRequest = Message<"admin.v1.UpdateCalendar
 export declare const UpdateCalendarDateRequestSchema: GenMessage<UpdateCalendarDateRequest>;
 
 /**
+ * UpdateCalendarDate の Response。
+ *
  * @generated from message admin.v1.UpdateCalendarDateResponse
  */
 export declare type UpdateCalendarDateResponse = Message<"admin.v1.UpdateCalendarDateResponse"> & {
   /**
+   * 更新した運行日情報（GTFS の calendar_dates）。
+   *
    * @generated from field: admin.v1.CalendarDate calendar_date = 1;
    */
   calendarDate?: CalendarDate | undefined;
@@ -207,15 +263,21 @@ export declare type UpdateCalendarDateResponse = Message<"admin.v1.UpdateCalenda
 export declare const UpdateCalendarDateResponseSchema: GenMessage<UpdateCalendarDateResponse>;
 
 /**
+ * DeleteCalendarDate の Request。
+ *
  * @generated from message admin.v1.DeleteCalendarDateRequest
  */
 export declare type DeleteCalendarDateRequest = Message<"admin.v1.DeleteCalendarDateRequest"> & {
   /**
+   * 運行日ID（GTFS の service_id）。
+   *
    * @generated from field: string service_id = 1;
    */
   serviceId: string;
 
   /**
+   * 日付（GTFS の date）。
+   *
    * @generated from field: google.type.Date date = 2;
    */
   date?: Date | undefined;
@@ -228,6 +290,8 @@ export declare type DeleteCalendarDateRequest = Message<"admin.v1.DeleteCalendar
 export declare const DeleteCalendarDateRequestSchema: GenMessage<DeleteCalendarDateRequest>;
 
 /**
+ * DeleteCalendarDate の Response。
+ *
  * @generated from message admin.v1.DeleteCalendarDateResponse
  */
 export declare type DeleteCalendarDateResponse = Message<"admin.v1.DeleteCalendarDateResponse"> & {
@@ -240,20 +304,28 @@ export declare type DeleteCalendarDateResponse = Message<"admin.v1.DeleteCalenda
 export declare const DeleteCalendarDateResponseSchema: GenMessage<DeleteCalendarDateResponse>;
 
 /**
+ * 運行日情報の利用タイプ（GTFS の exception_type）。
+ *
  * @generated from enum admin.v1.CalendarDateExceptionType
  */
 export enum CalendarDateExceptionType {
   /**
+   * 未指定。
+   *
    * @generated from enum value: CALENDAR_DATE_EXCEPTION_TYPE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 運行（exception_type = 1）。
+   *
    * @generated from enum value: CALENDAR_DATE_EXCEPTION_TYPE_ADDED = 1;
    */
   ADDED = 1,
 
   /**
+   * 運休（exception_type = 2）。
+   *
    * @generated from enum value: CALENDAR_DATE_EXCEPTION_TYPE_REMOVED = 2;
    */
   REMOVED = 2,
@@ -265,10 +337,14 @@ export enum CalendarDateExceptionType {
 export declare const CalendarDateExceptionTypeSchema: GenEnum<CalendarDateExceptionType>;
 
 /**
+ * 運行日情報（GTFS の calendar_dates）を管理する。
+ *
  * @generated from service admin.v1.CalendarDateService
  */
 export declare const CalendarDateService: GenService<{
   /**
+   * 運行日情報（GTFS の calendar_dates）の一覧を取得する。
+   *
    * @generated from rpc admin.v1.CalendarDateService.ListCalendarDates
    */
   listCalendarDates: {
@@ -277,6 +353,8 @@ export declare const CalendarDateService: GenService<{
     output: typeof ListCalendarDatesResponseSchema;
   },
   /**
+   * 運行日情報（GTFS の calendar_dates）を取得する。
+   *
    * @generated from rpc admin.v1.CalendarDateService.GetCalendarDate
    */
   getCalendarDate: {
@@ -285,6 +363,8 @@ export declare const CalendarDateService: GenService<{
     output: typeof GetCalendarDateResponseSchema;
   },
   /**
+   * 運行日情報（GTFS の calendar_dates）を作成する。
+   *
    * @generated from rpc admin.v1.CalendarDateService.CreateCalendarDate
    */
   createCalendarDate: {
@@ -293,6 +373,8 @@ export declare const CalendarDateService: GenService<{
     output: typeof CreateCalendarDateResponseSchema;
   },
   /**
+   * 運行日情報（GTFS の calendar_dates）を更新する。
+   *
    * @generated from rpc admin.v1.CalendarDateService.UpdateCalendarDate
    */
   updateCalendarDate: {
@@ -301,6 +383,8 @@ export declare const CalendarDateService: GenService<{
     output: typeof UpdateCalendarDateResponseSchema;
   },
   /**
+   * 運行日情報（GTFS の calendar_dates）を削除する。
+   *
    * @generated from rpc admin.v1.CalendarDateService.DeleteCalendarDate
    */
   deleteCalendarDate: {

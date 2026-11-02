@@ -13,20 +13,28 @@ import type { FieldMask } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_fare_attribute: GenFile;
 
 /**
+ * 運賃属性情報（GTFS の fare_attributes）。
+ *
  * @generated from message admin.v1.FareAttribute
  */
 export declare type FareAttribute = Message<"admin.v1.FareAttribute"> & {
   /**
+   * 運賃ID（GTFS の fare_id）。
+   *
    * @generated from field: string fare_id = 1;
    */
   fareId: string;
 
   /**
+   * 乗客の区分。
+   *
    * @generated from field: admin.v1.FareAttributeRiderCategory rider_category = 2;
    */
   riderCategory: FareAttributeRiderCategory;
 
   /**
+   * 運賃（GTFS の price）。通貨は日本円（JPY）。
+   *
    * @generated from field: google.type.Money price = 3;
    */
   price?: Money | undefined;
@@ -39,15 +47,21 @@ export declare type FareAttribute = Message<"admin.v1.FareAttribute"> & {
 export declare const FareAttributeSchema: GenMessage<FareAttribute>;
 
 /**
+ * ListFareAttributes の Request。
+ *
  * @generated from message admin.v1.ListFareAttributesRequest
  */
 export declare type ListFareAttributesRequest = Message<"admin.v1.ListFareAttributesRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -60,15 +74,21 @@ export declare type ListFareAttributesRequest = Message<"admin.v1.ListFareAttrib
 export declare const ListFareAttributesRequestSchema: GenMessage<ListFareAttributesRequest>;
 
 /**
+ * ListFareAttributes の Response。
+ *
  * @generated from message admin.v1.ListFareAttributesResponse
  */
 export declare type ListFareAttributesResponse = Message<"admin.v1.ListFareAttributesResponse"> & {
   /**
+   * 運賃属性情報（GTFS の fare_attributes）の一覧。
+   *
    * @generated from field: repeated admin.v1.FareAttribute fare_attributes = 1;
    */
   fareAttributes: FareAttribute[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -81,10 +101,14 @@ export declare type ListFareAttributesResponse = Message<"admin.v1.ListFareAttri
 export declare const ListFareAttributesResponseSchema: GenMessage<ListFareAttributesResponse>;
 
 /**
+ * GetFareAttribute の Request。
+ *
  * @generated from message admin.v1.GetFareAttributeRequest
  */
 export declare type GetFareAttributeRequest = Message<"admin.v1.GetFareAttributeRequest"> & {
   /**
+   * 運賃ID（GTFS の fare_id）。
+   *
    * @generated from field: string fare_id = 1;
    */
   fareId: string;
@@ -97,10 +121,14 @@ export declare type GetFareAttributeRequest = Message<"admin.v1.GetFareAttribute
 export declare const GetFareAttributeRequestSchema: GenMessage<GetFareAttributeRequest>;
 
 /**
+ * GetFareAttribute の Response。
+ *
  * @generated from message admin.v1.GetFareAttributeResponse
  */
 export declare type GetFareAttributeResponse = Message<"admin.v1.GetFareAttributeResponse"> & {
   /**
+   * 取得した運賃属性情報（GTFS の fare_attributes）。
+   *
    * @generated from field: admin.v1.FareAttribute fare_attribute = 1;
    */
   fareAttribute?: FareAttribute | undefined;
@@ -113,20 +141,28 @@ export declare type GetFareAttributeResponse = Message<"admin.v1.GetFareAttribut
 export declare const GetFareAttributeResponseSchema: GenMessage<GetFareAttributeResponse>;
 
 /**
+ * CreateFareAttribute の Request。
+ *
  * @generated from message admin.v1.CreateFareAttributeRequest
  */
 export declare type CreateFareAttributeRequest = Message<"admin.v1.CreateFareAttributeRequest"> & {
   /**
+   * 運賃ID（GTFS の fare_id）。
+   *
    * @generated from field: string fare_id = 1;
    */
   fareId: string;
 
   /**
+   * 乗客の区分。
+   *
    * @generated from field: admin.v1.FareAttributeRiderCategory rider_category = 2;
    */
   riderCategory: FareAttributeRiderCategory;
 
   /**
+   * 運賃（GTFS の price）。通貨は日本円（JPY）。
+   *
    * @generated from field: google.type.Money price = 3;
    */
   price?: Money | undefined;
@@ -139,10 +175,14 @@ export declare type CreateFareAttributeRequest = Message<"admin.v1.CreateFareAtt
 export declare const CreateFareAttributeRequestSchema: GenMessage<CreateFareAttributeRequest>;
 
 /**
+ * CreateFareAttribute の Response。
+ *
  * @generated from message admin.v1.CreateFareAttributeResponse
  */
 export declare type CreateFareAttributeResponse = Message<"admin.v1.CreateFareAttributeResponse"> & {
   /**
+   * 作成した運賃属性情報（GTFS の fare_attributes）。
+   *
    * @generated from field: admin.v1.FareAttribute fare_attribute = 1;
    */
   fareAttribute?: FareAttribute | undefined;
@@ -155,25 +195,35 @@ export declare type CreateFareAttributeResponse = Message<"admin.v1.CreateFareAt
 export declare const CreateFareAttributeResponseSchema: GenMessage<CreateFareAttributeResponse>;
 
 /**
+ * UpdateFareAttribute の Request。
+ *
  * @generated from message admin.v1.UpdateFareAttributeRequest
  */
 export declare type UpdateFareAttributeRequest = Message<"admin.v1.UpdateFareAttributeRequest"> & {
   /**
+   * 運賃ID（GTFS の fare_id）。
+   *
    * @generated from field: string fare_id = 1;
    */
   fareId: string;
 
   /**
+   * 乗客の区分。
+   *
    * @generated from field: admin.v1.FareAttributeRiderCategory rider_category = 2;
    */
   riderCategory: FareAttributeRiderCategory;
 
   /**
+   * 運賃（GTFS の price）。通貨は日本円（JPY）。
+   *
    * @generated from field: google.type.Money price = 3;
    */
   price?: Money | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -186,10 +236,14 @@ export declare type UpdateFareAttributeRequest = Message<"admin.v1.UpdateFareAtt
 export declare const UpdateFareAttributeRequestSchema: GenMessage<UpdateFareAttributeRequest>;
 
 /**
+ * UpdateFareAttribute の Response。
+ *
  * @generated from message admin.v1.UpdateFareAttributeResponse
  */
 export declare type UpdateFareAttributeResponse = Message<"admin.v1.UpdateFareAttributeResponse"> & {
   /**
+   * 更新した運賃属性情報（GTFS の fare_attributes）。
+   *
    * @generated from field: admin.v1.FareAttribute fare_attribute = 1;
    */
   fareAttribute?: FareAttribute | undefined;
@@ -202,10 +256,14 @@ export declare type UpdateFareAttributeResponse = Message<"admin.v1.UpdateFareAt
 export declare const UpdateFareAttributeResponseSchema: GenMessage<UpdateFareAttributeResponse>;
 
 /**
+ * DeleteFareAttribute の Request。
+ *
  * @generated from message admin.v1.DeleteFareAttributeRequest
  */
 export declare type DeleteFareAttributeRequest = Message<"admin.v1.DeleteFareAttributeRequest"> & {
   /**
+   * 運賃ID（GTFS の fare_id）。
+   *
    * @generated from field: string fare_id = 1;
    */
   fareId: string;
@@ -218,6 +276,8 @@ export declare type DeleteFareAttributeRequest = Message<"admin.v1.DeleteFareAtt
 export declare const DeleteFareAttributeRequestSchema: GenMessage<DeleteFareAttributeRequest>;
 
 /**
+ * DeleteFareAttribute の Response。
+ *
  * @generated from message admin.v1.DeleteFareAttributeResponse
  */
 export declare type DeleteFareAttributeResponse = Message<"admin.v1.DeleteFareAttributeResponse"> & {
@@ -230,15 +290,21 @@ export declare type DeleteFareAttributeResponse = Message<"admin.v1.DeleteFareAt
 export declare const DeleteFareAttributeResponseSchema: GenMessage<DeleteFareAttributeResponse>;
 
 /**
+ * 乗客の区分。
+ *
  * @generated from enum admin.v1.FareAttributeRiderCategory
  */
 export enum FareAttributeRiderCategory {
   /**
+   * 未指定。
+   *
    * @generated from enum value: FARE_ATTRIBUTE_RIDER_CATEGORY_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * 大人。
+   *
    * @generated from enum value: FARE_ATTRIBUTE_RIDER_CATEGORY_ADULT = 1;
    */
   ADULT = 1,
@@ -250,10 +316,14 @@ export enum FareAttributeRiderCategory {
 export declare const FareAttributeRiderCategorySchema: GenEnum<FareAttributeRiderCategory>;
 
 /**
+ * 運賃属性情報（GTFS の fare_attributes）を管理する。
+ *
  * @generated from service admin.v1.FareAttributeService
  */
 export declare const FareAttributeService: GenService<{
   /**
+   * 運賃属性情報（GTFS の fare_attributes）の一覧を取得する。
+   *
    * @generated from rpc admin.v1.FareAttributeService.ListFareAttributes
    */
   listFareAttributes: {
@@ -262,6 +332,8 @@ export declare const FareAttributeService: GenService<{
     output: typeof ListFareAttributesResponseSchema;
   },
   /**
+   * 運賃属性情報（GTFS の fare_attributes）を取得する。
+   *
    * @generated from rpc admin.v1.FareAttributeService.GetFareAttribute
    */
   getFareAttribute: {
@@ -270,6 +342,8 @@ export declare const FareAttributeService: GenService<{
     output: typeof GetFareAttributeResponseSchema;
   },
   /**
+   * 運賃属性情報（GTFS の fare_attributes）を作成する。
+   *
    * @generated from rpc admin.v1.FareAttributeService.CreateFareAttribute
    */
   createFareAttribute: {
@@ -278,6 +352,8 @@ export declare const FareAttributeService: GenService<{
     output: typeof CreateFareAttributeResponseSchema;
   },
   /**
+   * 運賃属性情報（GTFS の fare_attributes）を更新する。
+   *
    * @generated from rpc admin.v1.FareAttributeService.UpdateFareAttribute
    */
   updateFareAttribute: {
@@ -286,6 +362,8 @@ export declare const FareAttributeService: GenService<{
     output: typeof UpdateFareAttributeResponseSchema;
   },
   /**
+   * 運賃属性情報（GTFS の fare_attributes）を削除する。
+   *
    * @generated from rpc admin.v1.FareAttributeService.DeleteFareAttribute
    */
   deleteFareAttribute: {

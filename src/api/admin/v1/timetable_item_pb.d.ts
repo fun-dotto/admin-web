@@ -14,40 +14,56 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_timetable_item: GenFile;
 
 /**
+ * 時間割。
+ *
  * @generated from message admin.v1.TimetableItem
  */
 export declare type TimetableItem = Message<"admin.v1.TimetableItem"> & {
   /**
+   * ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
 
   /**
+   * 曜日。集中講義など、時間割に含まれていない場合は未設定。
+   *
    * @generated from field: optional google.type.DayOfWeek day_of_week = 3;
    */
   dayOfWeek?: DayOfWeek | undefined;
 
   /**
+   * 時限。集中講義など、時間割に含まれていない場合は未設定。
+   *
    * @generated from field: optional admin.v1.Period period = 4;
    */
   period?: Period | undefined;
 
   /**
+   * 使う教室ID。
+   *
    * @generated from field: repeated string room_ids = 5;
    */
   roomIds: string[];
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 6;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 7;
    */
   updatedAt?: Timestamp | undefined;
@@ -60,15 +76,21 @@ export declare type TimetableItem = Message<"admin.v1.TimetableItem"> & {
 export declare const TimetableItemSchema: GenMessage<TimetableItem>;
 
 /**
+ * ListTimetableItems の Request。
+ *
  * @generated from message admin.v1.ListTimetableItemsRequest
  */
 export declare type ListTimetableItemsRequest = Message<"admin.v1.ListTimetableItemsRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -81,15 +103,21 @@ export declare type ListTimetableItemsRequest = Message<"admin.v1.ListTimetableI
 export declare const ListTimetableItemsRequestSchema: GenMessage<ListTimetableItemsRequest>;
 
 /**
+ * ListTimetableItems の Response。
+ *
  * @generated from message admin.v1.ListTimetableItemsResponse
  */
 export declare type ListTimetableItemsResponse = Message<"admin.v1.ListTimetableItemsResponse"> & {
   /**
+   * 時間割の一覧。
+   *
    * @generated from field: repeated admin.v1.TimetableItem timetable_items = 1;
    */
   timetableItems: TimetableItem[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -102,10 +130,14 @@ export declare type ListTimetableItemsResponse = Message<"admin.v1.ListTimetable
 export declare const ListTimetableItemsResponseSchema: GenMessage<ListTimetableItemsResponse>;
 
 /**
+ * GetTimetableItem の Request。
+ *
  * @generated from message admin.v1.GetTimetableItemRequest
  */
 export declare type GetTimetableItemRequest = Message<"admin.v1.GetTimetableItemRequest"> & {
   /**
+   * 取得する時間割ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -118,10 +150,14 @@ export declare type GetTimetableItemRequest = Message<"admin.v1.GetTimetableItem
 export declare const GetTimetableItemRequestSchema: GenMessage<GetTimetableItemRequest>;
 
 /**
+ * GetTimetableItem の Response。
+ *
  * @generated from message admin.v1.GetTimetableItemResponse
  */
 export declare type GetTimetableItemResponse = Message<"admin.v1.GetTimetableItemResponse"> & {
   /**
+   * 取得した時間割。
+   *
    * @generated from field: admin.v1.TimetableItem timetable_item = 1;
    */
   timetableItem?: TimetableItem | undefined;
@@ -134,25 +170,35 @@ export declare type GetTimetableItemResponse = Message<"admin.v1.GetTimetableIte
 export declare const GetTimetableItemResponseSchema: GenMessage<GetTimetableItemResponse>;
 
 /**
+ * CreateTimetableItem の Request。
+ *
  * @generated from message admin.v1.CreateTimetableItemRequest
  */
 export declare type CreateTimetableItemRequest = Message<"admin.v1.CreateTimetableItemRequest"> & {
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 1;
    */
   subjectId: string;
 
   /**
+   * 曜日。集中講義など、時間割に含まれていない場合は未設定。
+   *
    * @generated from field: optional google.type.DayOfWeek day_of_week = 2;
    */
   dayOfWeek?: DayOfWeek | undefined;
 
   /**
+   * 時限。集中講義など、時間割に含まれていない場合は未設定。
+   *
    * @generated from field: optional admin.v1.Period period = 3;
    */
   period?: Period | undefined;
 
   /**
+   * 使う教室ID。
+   *
    * @generated from field: repeated string room_ids = 4;
    */
   roomIds: string[];
@@ -165,10 +211,14 @@ export declare type CreateTimetableItemRequest = Message<"admin.v1.CreateTimetab
 export declare const CreateTimetableItemRequestSchema: GenMessage<CreateTimetableItemRequest>;
 
 /**
+ * CreateTimetableItem の Response。
+ *
  * @generated from message admin.v1.CreateTimetableItemResponse
  */
 export declare type CreateTimetableItemResponse = Message<"admin.v1.CreateTimetableItemResponse"> & {
   /**
+   * 作成した時間割。
+   *
    * @generated from field: admin.v1.TimetableItem timetable_item = 1;
    */
   timetableItem?: TimetableItem | undefined;
@@ -181,35 +231,49 @@ export declare type CreateTimetableItemResponse = Message<"admin.v1.CreateTimeta
 export declare const CreateTimetableItemResponseSchema: GenMessage<CreateTimetableItemResponse>;
 
 /**
+ * UpdateTimetableItem の Request。
+ *
  * @generated from message admin.v1.UpdateTimetableItemRequest
  */
 export declare type UpdateTimetableItemRequest = Message<"admin.v1.UpdateTimetableItemRequest"> & {
   /**
+   * 更新する時間割ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
 
   /**
+   * 曜日。集中講義など、時間割に含まれていない場合は未設定。
+   *
    * @generated from field: optional google.type.DayOfWeek day_of_week = 3;
    */
   dayOfWeek?: DayOfWeek | undefined;
 
   /**
+   * 時限。集中講義など、時間割に含まれていない場合は未設定。
+   *
    * @generated from field: optional admin.v1.Period period = 4;
    */
   period?: Period | undefined;
 
   /**
+   * 使う教室ID。
+   *
    * @generated from field: repeated string room_ids = 5;
    */
   roomIds: string[];
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -222,10 +286,14 @@ export declare type UpdateTimetableItemRequest = Message<"admin.v1.UpdateTimetab
 export declare const UpdateTimetableItemRequestSchema: GenMessage<UpdateTimetableItemRequest>;
 
 /**
+ * UpdateTimetableItem の Response。
+ *
  * @generated from message admin.v1.UpdateTimetableItemResponse
  */
 export declare type UpdateTimetableItemResponse = Message<"admin.v1.UpdateTimetableItemResponse"> & {
   /**
+   * 更新した時間割。
+   *
    * @generated from field: admin.v1.TimetableItem timetable_item = 1;
    */
   timetableItem?: TimetableItem | undefined;
@@ -238,10 +306,14 @@ export declare type UpdateTimetableItemResponse = Message<"admin.v1.UpdateTimeta
 export declare const UpdateTimetableItemResponseSchema: GenMessage<UpdateTimetableItemResponse>;
 
 /**
+ * DeleteTimetableItem の Request。
+ *
  * @generated from message admin.v1.DeleteTimetableItemRequest
  */
 export declare type DeleteTimetableItemRequest = Message<"admin.v1.DeleteTimetableItemRequest"> & {
   /**
+   * 削除する時間割ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -254,6 +326,8 @@ export declare type DeleteTimetableItemRequest = Message<"admin.v1.DeleteTimetab
 export declare const DeleteTimetableItemRequestSchema: GenMessage<DeleteTimetableItemRequest>;
 
 /**
+ * DeleteTimetableItem の Response。
+ *
  * @generated from message admin.v1.DeleteTimetableItemResponse
  */
 export declare type DeleteTimetableItemResponse = Message<"admin.v1.DeleteTimetableItemResponse"> & {
@@ -266,10 +340,14 @@ export declare type DeleteTimetableItemResponse = Message<"admin.v1.DeleteTimeta
 export declare const DeleteTimetableItemResponseSchema: GenMessage<DeleteTimetableItemResponse>;
 
 /**
+ * 時間割を管理する。
+ *
  * @generated from service admin.v1.TimetableItemService
  */
 export declare const TimetableItemService: GenService<{
   /**
+   * 時間割の一覧を取得する。
+   *
    * @generated from rpc admin.v1.TimetableItemService.ListTimetableItems
    */
   listTimetableItems: {
@@ -278,6 +356,8 @@ export declare const TimetableItemService: GenService<{
     output: typeof ListTimetableItemsResponseSchema;
   },
   /**
+   * 時間割を取得する。
+   *
    * @generated from rpc admin.v1.TimetableItemService.GetTimetableItem
    */
   getTimetableItem: {
@@ -286,6 +366,8 @@ export declare const TimetableItemService: GenService<{
     output: typeof GetTimetableItemResponseSchema;
   },
   /**
+   * 時間割を作成する。
+   *
    * @generated from rpc admin.v1.TimetableItemService.CreateTimetableItem
    */
   createTimetableItem: {
@@ -294,6 +376,8 @@ export declare const TimetableItemService: GenService<{
     output: typeof CreateTimetableItemResponseSchema;
   },
   /**
+   * 時間割を更新する。
+   *
    * @generated from rpc admin.v1.TimetableItemService.UpdateTimetableItem
    */
   updateTimetableItem: {
@@ -302,6 +386,8 @@ export declare const TimetableItemService: GenService<{
     output: typeof UpdateTimetableItemResponseSchema;
   },
   /**
+   * 時間割を削除する。
+   *
    * @generated from rpc admin.v1.TimetableItemService.DeleteTimetableItem
    */
   deleteTimetableItem: {

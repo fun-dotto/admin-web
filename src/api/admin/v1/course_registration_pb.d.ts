@@ -12,25 +12,35 @@ import type { Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_course_registration: GenFile;
 
 /**
+ * 履修情報。
+ *
  * @generated from message admin.v1.CourseRegistration
  */
 export declare type CourseRegistration = Message<"admin.v1.CourseRegistration"> & {
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 1;
    */
   userId: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 3;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 4;
    */
   updatedAt?: Timestamp | undefined;
@@ -43,15 +53,21 @@ export declare type CourseRegistration = Message<"admin.v1.CourseRegistration"> 
 export declare const CourseRegistrationSchema: GenMessage<CourseRegistration>;
 
 /**
+ * ListCourseRegistrations の Request。
+ *
  * @generated from message admin.v1.ListCourseRegistrationsRequest
  */
 export declare type ListCourseRegistrationsRequest = Message<"admin.v1.ListCourseRegistrationsRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -64,15 +80,21 @@ export declare type ListCourseRegistrationsRequest = Message<"admin.v1.ListCours
 export declare const ListCourseRegistrationsRequestSchema: GenMessage<ListCourseRegistrationsRequest>;
 
 /**
+ * ListCourseRegistrations の Response。
+ *
  * @generated from message admin.v1.ListCourseRegistrationsResponse
  */
 export declare type ListCourseRegistrationsResponse = Message<"admin.v1.ListCourseRegistrationsResponse"> & {
   /**
+   * 履修情報の一覧。
+   *
    * @generated from field: repeated admin.v1.CourseRegistration course_registrations = 1;
    */
   courseRegistrations: CourseRegistration[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -85,15 +107,21 @@ export declare type ListCourseRegistrationsResponse = Message<"admin.v1.ListCour
 export declare const ListCourseRegistrationsResponseSchema: GenMessage<ListCourseRegistrationsResponse>;
 
 /**
+ * GetCourseRegistration の Request。
+ *
  * @generated from message admin.v1.GetCourseRegistrationRequest
  */
 export declare type GetCourseRegistrationRequest = Message<"admin.v1.GetCourseRegistrationRequest"> & {
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 1;
    */
   userId: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
@@ -106,10 +134,14 @@ export declare type GetCourseRegistrationRequest = Message<"admin.v1.GetCourseRe
 export declare const GetCourseRegistrationRequestSchema: GenMessage<GetCourseRegistrationRequest>;
 
 /**
+ * GetCourseRegistration の Response。
+ *
  * @generated from message admin.v1.GetCourseRegistrationResponse
  */
 export declare type GetCourseRegistrationResponse = Message<"admin.v1.GetCourseRegistrationResponse"> & {
   /**
+   * 取得した履修情報。
+   *
    * @generated from field: admin.v1.CourseRegistration course_registration = 1;
    */
   courseRegistration?: CourseRegistration | undefined;
@@ -122,15 +154,21 @@ export declare type GetCourseRegistrationResponse = Message<"admin.v1.GetCourseR
 export declare const GetCourseRegistrationResponseSchema: GenMessage<GetCourseRegistrationResponse>;
 
 /**
+ * CreateCourseRegistration の Request。
+ *
  * @generated from message admin.v1.CreateCourseRegistrationRequest
  */
 export declare type CreateCourseRegistrationRequest = Message<"admin.v1.CreateCourseRegistrationRequest"> & {
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 1;
    */
   userId: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
@@ -143,10 +181,14 @@ export declare type CreateCourseRegistrationRequest = Message<"admin.v1.CreateCo
 export declare const CreateCourseRegistrationRequestSchema: GenMessage<CreateCourseRegistrationRequest>;
 
 /**
+ * CreateCourseRegistration の Response。
+ *
  * @generated from message admin.v1.CreateCourseRegistrationResponse
  */
 export declare type CreateCourseRegistrationResponse = Message<"admin.v1.CreateCourseRegistrationResponse"> & {
   /**
+   * 作成した履修情報。
+   *
    * @generated from field: admin.v1.CourseRegistration course_registration = 1;
    */
   courseRegistration?: CourseRegistration | undefined;
@@ -159,15 +201,21 @@ export declare type CreateCourseRegistrationResponse = Message<"admin.v1.CreateC
 export declare const CreateCourseRegistrationResponseSchema: GenMessage<CreateCourseRegistrationResponse>;
 
 /**
+ * DeleteCourseRegistration の Request。
+ *
  * @generated from message admin.v1.DeleteCourseRegistrationRequest
  */
 export declare type DeleteCourseRegistrationRequest = Message<"admin.v1.DeleteCourseRegistrationRequest"> & {
   /**
+   * ユーザーID。
+   *
    * @generated from field: string user_id = 1;
    */
   userId: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
@@ -180,6 +228,8 @@ export declare type DeleteCourseRegistrationRequest = Message<"admin.v1.DeleteCo
 export declare const DeleteCourseRegistrationRequestSchema: GenMessage<DeleteCourseRegistrationRequest>;
 
 /**
+ * DeleteCourseRegistration の Response。
+ *
  * @generated from message admin.v1.DeleteCourseRegistrationResponse
  */
 export declare type DeleteCourseRegistrationResponse = Message<"admin.v1.DeleteCourseRegistrationResponse"> & {
@@ -192,10 +242,14 @@ export declare type DeleteCourseRegistrationResponse = Message<"admin.v1.DeleteC
 export declare const DeleteCourseRegistrationResponseSchema: GenMessage<DeleteCourseRegistrationResponse>;
 
 /**
+ * 履修情報を管理する。
+ *
  * @generated from service admin.v1.CourseRegistrationService
  */
 export declare const CourseRegistrationService: GenService<{
   /**
+   * 履修情報の一覧を取得する。
+   *
    * @generated from rpc admin.v1.CourseRegistrationService.ListCourseRegistrations
    */
   listCourseRegistrations: {
@@ -204,6 +258,8 @@ export declare const CourseRegistrationService: GenService<{
     output: typeof ListCourseRegistrationsResponseSchema;
   },
   /**
+   * 履修情報を取得する。
+   *
    * @generated from rpc admin.v1.CourseRegistrationService.GetCourseRegistration
    */
   getCourseRegistration: {
@@ -212,6 +268,8 @@ export declare const CourseRegistrationService: GenService<{
     output: typeof GetCourseRegistrationResponseSchema;
   },
   /**
+   * 履修情報を作成する。
+   *
    * @generated from rpc admin.v1.CourseRegistrationService.CreateCourseRegistration
    */
   createCourseRegistration: {
@@ -220,6 +278,8 @@ export declare const CourseRegistrationService: GenService<{
     output: typeof CreateCourseRegistrationResponseSchema;
   },
   /**
+   * 履修情報を削除する。
+   *
    * @generated from rpc admin.v1.CourseRegistrationService.DeleteCourseRegistration
    */
   deleteCourseRegistration: {

@@ -12,30 +12,42 @@ import type { FieldMask } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_fare_rule: GenFile;
 
 /**
+ * 運賃定義情報（GTFS の fare_rules）。
+ *
  * @generated from message admin.v1.FareRule
  */
 export declare type FareRule = Message<"admin.v1.FareRule"> & {
   /**
+   * ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 運賃ID（GTFS の fare_id）。
+   *
    * @generated from field: string fare_id = 2;
    */
   fareId: string;
 
   /**
+   * 経路ID（GTFS の route_id）。未設定の場合はすべての経路。
+   *
    * @generated from field: optional string route_id = 3;
    */
   routeId?: string | undefined;
 
   /**
+   * 乗車地ゾーン（GTFS の origin_id）。運賃エリアID を指定する。未設定の場合はすべての運賃エリア。
+   *
    * @generated from field: optional string origin_id = 4;
    */
   originId?: string | undefined;
 
   /**
+   * 降車地ゾーン（GTFS の destination_id）。運賃エリアID を指定する。未設定の場合はすべての運賃エリア。
+   *
    * @generated from field: optional string destination_id = 5;
    */
   destinationId?: string | undefined;
@@ -48,15 +60,21 @@ export declare type FareRule = Message<"admin.v1.FareRule"> & {
 export declare const FareRuleSchema: GenMessage<FareRule>;
 
 /**
+ * ListFareRules の Request。
+ *
  * @generated from message admin.v1.ListFareRulesRequest
  */
 export declare type ListFareRulesRequest = Message<"admin.v1.ListFareRulesRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -69,15 +87,21 @@ export declare type ListFareRulesRequest = Message<"admin.v1.ListFareRulesReques
 export declare const ListFareRulesRequestSchema: GenMessage<ListFareRulesRequest>;
 
 /**
+ * ListFareRules の Response。
+ *
  * @generated from message admin.v1.ListFareRulesResponse
  */
 export declare type ListFareRulesResponse = Message<"admin.v1.ListFareRulesResponse"> & {
   /**
+   * 運賃定義情報（GTFS の fare_rules）の一覧。
+   *
    * @generated from field: repeated admin.v1.FareRule fare_rules = 1;
    */
   fareRules: FareRule[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -90,10 +114,14 @@ export declare type ListFareRulesResponse = Message<"admin.v1.ListFareRulesRespo
 export declare const ListFareRulesResponseSchema: GenMessage<ListFareRulesResponse>;
 
 /**
+ * GetFareRule の Request。
+ *
  * @generated from message admin.v1.GetFareRuleRequest
  */
 export declare type GetFareRuleRequest = Message<"admin.v1.GetFareRuleRequest"> & {
   /**
+   * 取得する運賃定義情報（GTFS の fare_rules）のID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -106,10 +134,14 @@ export declare type GetFareRuleRequest = Message<"admin.v1.GetFareRuleRequest"> 
 export declare const GetFareRuleRequestSchema: GenMessage<GetFareRuleRequest>;
 
 /**
+ * GetFareRule の Response。
+ *
  * @generated from message admin.v1.GetFareRuleResponse
  */
 export declare type GetFareRuleResponse = Message<"admin.v1.GetFareRuleResponse"> & {
   /**
+   * 取得した運賃定義情報（GTFS の fare_rules）。
+   *
    * @generated from field: admin.v1.FareRule fare_rule = 1;
    */
   fareRule?: FareRule | undefined;
@@ -122,25 +154,35 @@ export declare type GetFareRuleResponse = Message<"admin.v1.GetFareRuleResponse"
 export declare const GetFareRuleResponseSchema: GenMessage<GetFareRuleResponse>;
 
 /**
+ * CreateFareRule の Request。
+ *
  * @generated from message admin.v1.CreateFareRuleRequest
  */
 export declare type CreateFareRuleRequest = Message<"admin.v1.CreateFareRuleRequest"> & {
   /**
+   * 運賃ID（GTFS の fare_id）。
+   *
    * @generated from field: string fare_id = 1;
    */
   fareId: string;
 
   /**
+   * 経路ID（GTFS の route_id）。未設定の場合はすべての経路。
+   *
    * @generated from field: optional string route_id = 2;
    */
   routeId?: string | undefined;
 
   /**
+   * 乗車地ゾーン（GTFS の origin_id）。運賃エリアID を指定する。未設定の場合はすべての運賃エリア。
+   *
    * @generated from field: optional string origin_id = 3;
    */
   originId?: string | undefined;
 
   /**
+   * 降車地ゾーン（GTFS の destination_id）。運賃エリアID を指定する。未設定の場合はすべての運賃エリア。
+   *
    * @generated from field: optional string destination_id = 4;
    */
   destinationId?: string | undefined;
@@ -153,10 +195,14 @@ export declare type CreateFareRuleRequest = Message<"admin.v1.CreateFareRuleRequ
 export declare const CreateFareRuleRequestSchema: GenMessage<CreateFareRuleRequest>;
 
 /**
+ * CreateFareRule の Response。
+ *
  * @generated from message admin.v1.CreateFareRuleResponse
  */
 export declare type CreateFareRuleResponse = Message<"admin.v1.CreateFareRuleResponse"> & {
   /**
+   * 作成した運賃定義情報（GTFS の fare_rules）。
+   *
    * @generated from field: admin.v1.FareRule fare_rule = 1;
    */
   fareRule?: FareRule | undefined;
@@ -169,35 +215,49 @@ export declare type CreateFareRuleResponse = Message<"admin.v1.CreateFareRuleRes
 export declare const CreateFareRuleResponseSchema: GenMessage<CreateFareRuleResponse>;
 
 /**
+ * UpdateFareRule の Request。
+ *
  * @generated from message admin.v1.UpdateFareRuleRequest
  */
 export declare type UpdateFareRuleRequest = Message<"admin.v1.UpdateFareRuleRequest"> & {
   /**
+   * 更新する運賃定義情報（GTFS の fare_rules）のID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 運賃ID（GTFS の fare_id）。
+   *
    * @generated from field: string fare_id = 2;
    */
   fareId: string;
 
   /**
+   * 経路ID（GTFS の route_id）。未設定の場合はすべての経路。
+   *
    * @generated from field: optional string route_id = 3;
    */
   routeId?: string | undefined;
 
   /**
+   * 乗車地ゾーン（GTFS の origin_id）。運賃エリアID を指定する。未設定の場合はすべての運賃エリア。
+   *
    * @generated from field: optional string origin_id = 4;
    */
   originId?: string | undefined;
 
   /**
+   * 降車地ゾーン（GTFS の destination_id）。運賃エリアID を指定する。未設定の場合はすべての運賃エリア。
+   *
    * @generated from field: optional string destination_id = 5;
    */
   destinationId?: string | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -210,10 +270,14 @@ export declare type UpdateFareRuleRequest = Message<"admin.v1.UpdateFareRuleRequ
 export declare const UpdateFareRuleRequestSchema: GenMessage<UpdateFareRuleRequest>;
 
 /**
+ * UpdateFareRule の Response。
+ *
  * @generated from message admin.v1.UpdateFareRuleResponse
  */
 export declare type UpdateFareRuleResponse = Message<"admin.v1.UpdateFareRuleResponse"> & {
   /**
+   * 更新した運賃定義情報（GTFS の fare_rules）。
+   *
    * @generated from field: admin.v1.FareRule fare_rule = 1;
    */
   fareRule?: FareRule | undefined;
@@ -226,10 +290,14 @@ export declare type UpdateFareRuleResponse = Message<"admin.v1.UpdateFareRuleRes
 export declare const UpdateFareRuleResponseSchema: GenMessage<UpdateFareRuleResponse>;
 
 /**
+ * DeleteFareRule の Request。
+ *
  * @generated from message admin.v1.DeleteFareRuleRequest
  */
 export declare type DeleteFareRuleRequest = Message<"admin.v1.DeleteFareRuleRequest"> & {
   /**
+   * 削除する運賃定義情報（GTFS の fare_rules）のID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -242,6 +310,8 @@ export declare type DeleteFareRuleRequest = Message<"admin.v1.DeleteFareRuleRequ
 export declare const DeleteFareRuleRequestSchema: GenMessage<DeleteFareRuleRequest>;
 
 /**
+ * DeleteFareRule の Response。
+ *
  * @generated from message admin.v1.DeleteFareRuleResponse
  */
 export declare type DeleteFareRuleResponse = Message<"admin.v1.DeleteFareRuleResponse"> & {
@@ -254,10 +324,14 @@ export declare type DeleteFareRuleResponse = Message<"admin.v1.DeleteFareRuleRes
 export declare const DeleteFareRuleResponseSchema: GenMessage<DeleteFareRuleResponse>;
 
 /**
+ * 運賃定義情報（GTFS の fare_rules）を管理する。
+ *
  * @generated from service admin.v1.FareRuleService
  */
 export declare const FareRuleService: GenService<{
   /**
+   * 運賃定義情報（GTFS の fare_rules）の一覧を取得する。
+   *
    * @generated from rpc admin.v1.FareRuleService.ListFareRules
    */
   listFareRules: {
@@ -266,6 +340,8 @@ export declare const FareRuleService: GenService<{
     output: typeof ListFareRulesResponseSchema;
   },
   /**
+   * 運賃定義情報（GTFS の fare_rules）を取得する。
+   *
    * @generated from rpc admin.v1.FareRuleService.GetFareRule
    */
   getFareRule: {
@@ -274,6 +350,8 @@ export declare const FareRuleService: GenService<{
     output: typeof GetFareRuleResponseSchema;
   },
   /**
+   * 運賃定義情報（GTFS の fare_rules）を作成する。
+   *
    * @generated from rpc admin.v1.FareRuleService.CreateFareRule
    */
   createFareRule: {
@@ -282,6 +360,8 @@ export declare const FareRuleService: GenService<{
     output: typeof CreateFareRuleResponseSchema;
   },
   /**
+   * 運賃定義情報（GTFS の fare_rules）を更新する。
+   *
    * @generated from rpc admin.v1.FareRuleService.UpdateFareRule
    */
   updateFareRule: {
@@ -290,6 +370,8 @@ export declare const FareRuleService: GenService<{
     output: typeof UpdateFareRuleResponseSchema;
   },
   /**
+   * 運賃定義情報（GTFS の fare_rules）を削除する。
+   *
    * @generated from rpc admin.v1.FareRuleService.DeleteFareRule
    */
   deleteFareRule: {

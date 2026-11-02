@@ -14,40 +14,56 @@ import type { FieldMask, Timestamp } from "@bufbuild/protobuf/wkt";
 export declare const file_admin_v1_makeup_class: GenFile;
 
 /**
+ * 補講。
+ *
  * @generated from message admin.v1.MakeupClass
  */
 export declare type MakeupClass = Message<"admin.v1.MakeupClass"> & {
   /**
+   * ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
 
   /**
+   * 補講する日付。
+   *
    * @generated from field: google.type.Date date = 3;
    */
   date?: Date | undefined;
 
   /**
+   * 補講する時限。
+   *
    * @generated from field: admin.v1.Period period = 4;
    */
   period: Period;
 
   /**
+   * 補足のコメント。
+   *
    * @generated from field: optional string comment = 5;
    */
   comment?: string | undefined;
 
   /**
+   * 作成日時。
+   *
    * @generated from field: google.protobuf.Timestamp created_at = 6;
    */
   createdAt?: Timestamp | undefined;
 
   /**
+   * 更新日時。
+   *
    * @generated from field: google.protobuf.Timestamp updated_at = 7;
    */
   updatedAt?: Timestamp | undefined;
@@ -60,15 +76,21 @@ export declare type MakeupClass = Message<"admin.v1.MakeupClass"> & {
 export declare const MakeupClassSchema: GenMessage<MakeupClass>;
 
 /**
+ * ListMakeupClasses の Request。
+ *
  * @generated from message admin.v1.ListMakeupClassesRequest
  */
 export declare type ListMakeupClassesRequest = Message<"admin.v1.ListMakeupClassesRequest"> & {
   /**
+   * 1 ページあたりの最大件数。0 の場合はサーバーの既定値（50）を使い、上限（1000）を超えた値は上限に丸める。
+   *
    * @generated from field: int32 page_size = 1;
    */
   pageSize: number;
 
   /**
+   * 前回の List で返された next_page_token。最初のページを取得する場合は空文字。
+   *
    * @generated from field: string page_token = 2;
    */
   pageToken: string;
@@ -81,15 +103,21 @@ export declare type ListMakeupClassesRequest = Message<"admin.v1.ListMakeupClass
 export declare const ListMakeupClassesRequestSchema: GenMessage<ListMakeupClassesRequest>;
 
 /**
+ * ListMakeupClasses の Response。
+ *
  * @generated from message admin.v1.ListMakeupClassesResponse
  */
 export declare type ListMakeupClassesResponse = Message<"admin.v1.ListMakeupClassesResponse"> & {
   /**
+   * 補講の一覧。
+   *
    * @generated from field: repeated admin.v1.MakeupClass makeup_classes = 1;
    */
   makeupClasses: MakeupClass[];
 
   /**
+   * 次のページを取得するためのトークン。最終ページの場合は空文字。
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;
@@ -102,10 +130,14 @@ export declare type ListMakeupClassesResponse = Message<"admin.v1.ListMakeupClas
 export declare const ListMakeupClassesResponseSchema: GenMessage<ListMakeupClassesResponse>;
 
 /**
+ * GetMakeupClass の Request。
+ *
  * @generated from message admin.v1.GetMakeupClassRequest
  */
 export declare type GetMakeupClassRequest = Message<"admin.v1.GetMakeupClassRequest"> & {
   /**
+   * 取得する補講ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -118,10 +150,14 @@ export declare type GetMakeupClassRequest = Message<"admin.v1.GetMakeupClassRequ
 export declare const GetMakeupClassRequestSchema: GenMessage<GetMakeupClassRequest>;
 
 /**
+ * GetMakeupClass の Response。
+ *
  * @generated from message admin.v1.GetMakeupClassResponse
  */
 export declare type GetMakeupClassResponse = Message<"admin.v1.GetMakeupClassResponse"> & {
   /**
+   * 取得した補講。
+   *
    * @generated from field: admin.v1.MakeupClass makeup_class = 1;
    */
   makeupClass?: MakeupClass | undefined;
@@ -134,25 +170,35 @@ export declare type GetMakeupClassResponse = Message<"admin.v1.GetMakeupClassRes
 export declare const GetMakeupClassResponseSchema: GenMessage<GetMakeupClassResponse>;
 
 /**
+ * CreateMakeupClass の Request。
+ *
  * @generated from message admin.v1.CreateMakeupClassRequest
  */
 export declare type CreateMakeupClassRequest = Message<"admin.v1.CreateMakeupClassRequest"> & {
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 1;
    */
   subjectId: string;
 
   /**
+   * 補講する日付。
+   *
    * @generated from field: google.type.Date date = 2;
    */
   date?: Date | undefined;
 
   /**
+   * 補講する時限。
+   *
    * @generated from field: admin.v1.Period period = 3;
    */
   period: Period;
 
   /**
+   * 補足のコメント。
+   *
    * @generated from field: optional string comment = 4;
    */
   comment?: string | undefined;
@@ -165,10 +211,14 @@ export declare type CreateMakeupClassRequest = Message<"admin.v1.CreateMakeupCla
 export declare const CreateMakeupClassRequestSchema: GenMessage<CreateMakeupClassRequest>;
 
 /**
+ * CreateMakeupClass の Response。
+ *
  * @generated from message admin.v1.CreateMakeupClassResponse
  */
 export declare type CreateMakeupClassResponse = Message<"admin.v1.CreateMakeupClassResponse"> & {
   /**
+   * 作成した補講。
+   *
    * @generated from field: admin.v1.MakeupClass makeup_class = 1;
    */
   makeupClass?: MakeupClass | undefined;
@@ -181,35 +231,49 @@ export declare type CreateMakeupClassResponse = Message<"admin.v1.CreateMakeupCl
 export declare const CreateMakeupClassResponseSchema: GenMessage<CreateMakeupClassResponse>;
 
 /**
+ * UpdateMakeupClass の Request。
+ *
  * @generated from message admin.v1.UpdateMakeupClassRequest
  */
 export declare type UpdateMakeupClassRequest = Message<"admin.v1.UpdateMakeupClassRequest"> & {
   /**
+   * 更新する補講ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
 
   /**
+   * 科目ID。
+   *
    * @generated from field: string subject_id = 2;
    */
   subjectId: string;
 
   /**
+   * 補講する日付。
+   *
    * @generated from field: google.type.Date date = 3;
    */
   date?: Date | undefined;
 
   /**
+   * 補講する時限。
+   *
    * @generated from field: admin.v1.Period period = 4;
    */
   period: Period;
 
   /**
+   * 補足のコメント。
+   *
    * @generated from field: optional string comment = 5;
    */
   comment?: string | undefined;
 
   /**
+   * 更新するフィールド。空の場合は値が入っているフィールドをすべて更新する。
+   *
    * @generated from field: google.protobuf.FieldMask update_mask = 99;
    */
   updateMask?: FieldMask | undefined;
@@ -222,10 +286,14 @@ export declare type UpdateMakeupClassRequest = Message<"admin.v1.UpdateMakeupCla
 export declare const UpdateMakeupClassRequestSchema: GenMessage<UpdateMakeupClassRequest>;
 
 /**
+ * UpdateMakeupClass の Response。
+ *
  * @generated from message admin.v1.UpdateMakeupClassResponse
  */
 export declare type UpdateMakeupClassResponse = Message<"admin.v1.UpdateMakeupClassResponse"> & {
   /**
+   * 更新した補講。
+   *
    * @generated from field: admin.v1.MakeupClass makeup_class = 1;
    */
   makeupClass?: MakeupClass | undefined;
@@ -238,10 +306,14 @@ export declare type UpdateMakeupClassResponse = Message<"admin.v1.UpdateMakeupCl
 export declare const UpdateMakeupClassResponseSchema: GenMessage<UpdateMakeupClassResponse>;
 
 /**
+ * DeleteMakeupClass の Request。
+ *
  * @generated from message admin.v1.DeleteMakeupClassRequest
  */
 export declare type DeleteMakeupClassRequest = Message<"admin.v1.DeleteMakeupClassRequest"> & {
   /**
+   * 削除する補講ID。
+   *
    * @generated from field: string id = 1;
    */
   id: string;
@@ -254,6 +326,8 @@ export declare type DeleteMakeupClassRequest = Message<"admin.v1.DeleteMakeupCla
 export declare const DeleteMakeupClassRequestSchema: GenMessage<DeleteMakeupClassRequest>;
 
 /**
+ * DeleteMakeupClass の Response。
+ *
  * @generated from message admin.v1.DeleteMakeupClassResponse
  */
 export declare type DeleteMakeupClassResponse = Message<"admin.v1.DeleteMakeupClassResponse"> & {
@@ -266,10 +340,14 @@ export declare type DeleteMakeupClassResponse = Message<"admin.v1.DeleteMakeupCl
 export declare const DeleteMakeupClassResponseSchema: GenMessage<DeleteMakeupClassResponse>;
 
 /**
+ * 補講を管理する。
+ *
  * @generated from service admin.v1.MakeupClassService
  */
 export declare const MakeupClassService: GenService<{
   /**
+   * 補講の一覧を取得する。
+   *
    * @generated from rpc admin.v1.MakeupClassService.ListMakeupClasses
    */
   listMakeupClasses: {
@@ -278,6 +356,8 @@ export declare const MakeupClassService: GenService<{
     output: typeof ListMakeupClassesResponseSchema;
   },
   /**
+   * 補講を取得する。
+   *
    * @generated from rpc admin.v1.MakeupClassService.GetMakeupClass
    */
   getMakeupClass: {
@@ -286,6 +366,8 @@ export declare const MakeupClassService: GenService<{
     output: typeof GetMakeupClassResponseSchema;
   },
   /**
+   * 補講を作成する。
+   *
    * @generated from rpc admin.v1.MakeupClassService.CreateMakeupClass
    */
   createMakeupClass: {
@@ -294,6 +376,8 @@ export declare const MakeupClassService: GenService<{
     output: typeof CreateMakeupClassResponseSchema;
   },
   /**
+   * 補講を更新する。
+   *
    * @generated from rpc admin.v1.MakeupClassService.UpdateMakeupClass
    */
   updateMakeupClass: {
@@ -302,6 +386,8 @@ export declare const MakeupClassService: GenService<{
     output: typeof UpdateMakeupClassResponseSchema;
   },
   /**
+   * 補講を削除する。
+   *
    * @generated from rpc admin.v1.MakeupClassService.DeleteMakeupClass
    */
   deleteMakeupClass: {

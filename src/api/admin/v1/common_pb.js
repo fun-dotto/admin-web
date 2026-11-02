@@ -17,6 +17,8 @@ export const GradeSchema = /*@__PURE__*/
   enumDesc(file_admin_v1_common, 0);
 
 /**
+ * 学年。
+ *
  * @generated from enum admin.v1.Grade
  */
 export const Grade = /*@__PURE__*/
@@ -29,6 +31,8 @@ export const CourseSchema = /*@__PURE__*/
   enumDesc(file_admin_v1_common, 1);
 
 /**
+ * コース。
+ *
  * @generated from enum admin.v1.Course
  */
 export const Course = /*@__PURE__*/
@@ -41,6 +45,8 @@ export const ClassSchema = /*@__PURE__*/
   enumDesc(file_admin_v1_common, 2);
 
 /**
+ * クラス。
+ *
  * @generated from enum admin.v1.Class
  */
 export const Class = /*@__PURE__*/
@@ -53,6 +59,8 @@ export const PeriodSchema = /*@__PURE__*/
   enumDesc(file_admin_v1_common, 3);
 
 /**
+ * 時限。
+ *
  * @generated from enum admin.v1.Period
  */
 export const Period = /*@__PURE__*/
