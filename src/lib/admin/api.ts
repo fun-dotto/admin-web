@@ -19,7 +19,7 @@ export type AdminRequest = {
  * ブラウザからは直接呼ばずにここを経由する。
  */
 export const callAdminApi = createServerFn({ method: "POST" })
-	.inputValidator((data: AdminRequest) => data)
+	.validator((data: AdminRequest) => data)
 	.handler(async ({ data }): Promise<JsonObject> => {
 		const { ConnectError } = await import("@connectrpc/connect");
 		const { createConnectTransport } = await import("@connectrpc/connect-node");
