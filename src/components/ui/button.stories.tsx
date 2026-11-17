@@ -104,7 +104,10 @@ export const LongLabel: Story = {
 };
 
 export const AsChild: Story = {
-	args: { asChild: true, children: <a href="#">リンクとして描画</a> },
+	args: {
+		asChild: true,
+		children: <a href="https://example.com">リンクとして描画</a>,
+	},
 };
 
 export const Clickable: Story = {
