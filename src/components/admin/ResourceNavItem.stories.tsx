@@ -5,7 +5,7 @@ const meta = {
 	title: "Admin/ResourceNavItem",
 	component: ResourceNavItem,
 	tags: ["autodocs"],
-	args: { slug: "announcements", label: "お知らせ" },
+	args: { slug: "notifications", label: "通知" },
 	decorators: [(Story) => <div className="w-64">{Story()}</div>],
 } satisfies Meta<typeof ResourceNavItem>;
 

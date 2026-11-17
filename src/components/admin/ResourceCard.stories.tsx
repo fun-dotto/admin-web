@@ -6,7 +6,7 @@ const meta = {
 	title: "Admin/ResourceCard",
 	component: ResourceCard,
 	tags: ["autodocs"],
-	args: { slug: "announcements", label: "お知らせ" },
+	args: { slug: "notifications", label: "通知" },
 	decorators: [(Story) => <div className="w-80">{Story()}</div>],
 } satisfies Meta<typeof ResourceCard>;
 
@@ -16,7 +16,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 
 export const WithDescription: Story = {
-	args: { description: "admin.v1.AnnouncementService" },
+	args: { description: "admin.v1.NotificationService" },
 };
 
 export const LongText: Story = {

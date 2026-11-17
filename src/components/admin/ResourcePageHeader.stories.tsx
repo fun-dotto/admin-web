@@ -10,7 +10,7 @@ const meta = {
 	tags: ["autodocs"],
 	args: {
 		title: "お知らせ",
-		description: "admin.v1.AnnouncementService",
+		description: "admin.v1.NotificationService",
 		onCreate: fn(),
 	},
 } satisfies Meta<typeof ResourcePageHeader>;

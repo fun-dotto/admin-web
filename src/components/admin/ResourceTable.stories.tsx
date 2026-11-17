@@ -66,7 +66,7 @@ export const LongText: Story = {
 };
 
 export const WithDetailLink: Story = {
-	args: { resourceSlug: "announcements" },
+	args: { resourceSlug: "notifications" },
 	play: async ({ canvasElement }) => {
 		await expect(
 			within(canvasElement).getByRole("link", { name: "id-1" }),
