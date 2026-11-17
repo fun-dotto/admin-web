@@ -4,7 +4,6 @@ import type {
 	DescMethod,
 	DescService,
 } from "@bufbuild/protobuf";
-import { AnnouncementService } from "#/api/admin/v1/announcement_pb";
 import { CalendarDateService } from "#/api/admin/v1/calendar_date_pb";
 import { CalendarService } from "#/api/admin/v1/calendar_pb";
 import { CancelledClassService } from "#/api/admin/v1/cancelled_class_pb";
@@ -40,12 +39,6 @@ export type Resource = {
 };
 
 export const resources: Resource[] = [
-	{
-		slug: "announcements",
-		label: "お知らせ",
-		group: "お知らせ・通知",
-		service: AnnouncementService,
-	},
 	{
 		slug: "notifications",
 		label: "通知",

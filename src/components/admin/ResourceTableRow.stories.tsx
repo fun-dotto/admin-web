@@ -29,7 +29,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 
 export const WithDetailLink: Story = {
-	args: { resourceSlug: "announcements" },
+	args: { resourceSlug: "notifications" },
 };
 
 export const LongText: Story = {

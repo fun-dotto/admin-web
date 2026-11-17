@@ -11,7 +11,7 @@ const meta = {
 			{
 				label: "お知らせ・通知",
 				items: [
-					{ slug: "announcements", label: "お知らせ" },
+					{ slug: "notifications", label: "通知" },
 					{ slug: "notifications", label: "通知" },
 				],
 			},
