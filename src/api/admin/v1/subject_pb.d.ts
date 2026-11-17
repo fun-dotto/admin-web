@@ -149,7 +149,7 @@ export declare type Subject = Message<"admin.v1.Subject"> & {
   culturalSubjectCategory: SubjectCulturalSubjectCategory;
 
   /**
-   * シラバスID。
+   * 紐付けるシラバスのバージョンID（UUID）。1 つのバージョンは 1 科目からのみ参照できる。
    *
    * @generated from field: string syllabus_id = 8;
    */
@@ -340,7 +340,7 @@ export declare type CreateSubjectRequest = Message<"admin.v1.CreateSubjectReques
   culturalSubjectCategory: SubjectCulturalSubjectCategory;
 
   /**
-   * シラバスID。
+   * 紐付けるシラバスのバージョンID（UUID）。1 つのバージョンは 1 科目からのみ参照できる。
    *
    * @generated from field: string syllabus_id = 7;
    */
@@ -450,7 +450,7 @@ export declare type UpdateSubjectRequest = Message<"admin.v1.UpdateSubjectReques
   culturalSubjectCategory: SubjectCulturalSubjectCategory;
 
   /**
-   * シラバスID。
+   * 紐付けるシラバスのバージョンID（UUID）。1 つのバージョンは 1 科目からのみ参照できる。
    *
    * @generated from field: string syllabus_id = 8;
    */
